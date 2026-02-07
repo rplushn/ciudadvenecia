@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-0;
-  }
-  
   body {
     @apply text-text-primary;
   }
@@ -16,9 +12,7 @@
   }
 }
 
-@layer utilities {
-  /* Disable all border radius globally */
-  * {
-    border-radius: 0 !important;
-  }
+/* Force border-radius 0 globally */
+* {
+  border-radius: 0 !important;
 }
