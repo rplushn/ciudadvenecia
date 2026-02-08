@@ -27,8 +27,7 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* -------------------------------------------------------------------------------- */}
-      {/* PROYECTO 1: CIUDAD VENECIA DANLÍ (Full Detail) */}
+      {/* PROYECTO 1: CIUDAD VENECIA DANLÍ */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
@@ -48,7 +47,6 @@ export default function Proyectos() {
                 El referente inmobiliario de la zona oriental. Un complejo consolidado con más de 3 etapas, 
                 diseñado para familias que buscan seguridad, estatus y un entorno natural inigualable.
               </p>
-              {/* Amenidades Específicas */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
                 {['Seguridad 24/7', 'Áreas Verdes', 'Canchas Padel', 'Agua Propia'].map((amenity, i) => (
                   <div key={i} className="flex flex-col items-center text-center p-3 bg-gray-50 rounded-lg">
@@ -75,8 +73,7 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* -------------------------------------------------------------------------------- */}
-      {/* PROYECTO 2: HILL'S CITY (Dark Theme) */}
+      {/* PROYECTO 2: HILL'S CITY */}
       <section className="py-24 px-4 bg-primary text-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -87,7 +84,6 @@ export default function Proyectos() {
                 La solución definitiva para el comercio y estacionamiento. 7 manzanas de desarrollo mixto 
                 que albergan bancos, franquicias, hospital y el centro de negocios más moderno de la ciudad.
               </p>
-              {/* Amenidades Específicas */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 border-t border-white/10 pt-8">
                 {['Locales', 'Parqueos', 'Hospital', 'Bancos'].map((amenity, i) => (
                   <div key={i} className="text-center">
@@ -124,8 +120,7 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* -------------------------------------------------------------------------------- */}
-      {/* PROYECTO 3: CIUDAD VENECIA OLANCHO (Premium) */}
+      {/* PROYECTO 3: CIUDAD VENECIA OLANCHO */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -167,8 +162,7 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* -------------------------------------------------------------------------------- */}
-      {/* NUEVO PROYECTO: CIUDAD VALENCIA TEGUCIGALPA (Coming Soon) */}
+      {/* NUEVO PROYECTO: CIUDAD VALENCIA TEGUCIGALPA */}
       <section className="py-24 px-4 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-block bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-full">
@@ -193,7 +187,7 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* RESTO DEL PORTAFOLIO (Grid Compacto) */}
+      {/* RESTO DEL PORTAFOLIO */}
       <section className="py-24 bg-white px-4">
         <div className="max-w-7xl mx-auto">
            <h3 className="font-display text-2xl font-bold text-primary mb-10 text-center uppercase tracking-wider">Más Desarrollos</h3>
@@ -217,25 +211,154 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* FORMULARIO (Original restaurado) */}
-      <section className="bg-primary py-24 px-4">
-         <div className="max-w-3xl mx-auto text-center text-white mb-12">
-           <h2 className="font-display text-4xl font-bold mb-4">Empieza a Invertir</h2>
-           <p className="opacity-80">Déjanos tus datos y un asesor te contactará hoy mismo.</p>
-         </div>
-         <form className="max-w-2xl mx-auto space-y-4">
-           <div className="grid md:grid-cols-2 gap-4">
-             <input type="text" placeholder="Nombre" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
-             <input type="tel" placeholder="Teléfono" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
-           </div>
-           <input type="email" placeholder="Correo" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
-           <button className="w-full bg-accent text-white font-bold py-4 uppercase tracking-widest hover:bg-white hover:text-primary transition-colors">
-             Enviar Solicitud
-           </button>
-         </form>
+      {/* FORMULARIO ÉPICO (CLONADO DE CONTACTO) */}
+      <section className="bg-surface py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Encabezado */}
+          <div className="text-center mb-12">
+            <span className="text-accent uppercase tracking-widest text-xs font-bold mb-3 block">
+              Último paso
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-4">
+              ¿Listo para hablar con un asesor?
+            </h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">
+              Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento,
+              sin compromisos ni promesas infladas.
+            </p>
+          </div>
+
+          {/* Beneficios rápidos */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              'Respuesta en menos de 24 horas hábiles.',
+              'Información clara sobre cuotas y primas según proyecto.',
+              'Acompañamiento durante todo el proceso de compra.',
+            ].map((item, i) => (
+              <div key={i} className="bg-white border border-gray-200 p-6 text-center">
+                <span className="text-accent text-2xl mb-3 block">✓</span>
+                <p className="text-text-secondary text-sm leading-relaxed">{item}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Grid: Contacto directo + Formulario */}
+          <div className="grid lg:grid-cols-3 gap-10 items-start">
+            {/* Columna izquierda: contacto directo */}
+            <div className="lg:col-span-1 bg-primary text-white p-8">
+              <h3 className="font-display text-2xl font-bold mb-4">
+                ¿Prefieres hablar directo?
+              </h3>
+              <p className="text-white/80 text-sm leading-relaxed mb-8">
+                También puedes escribir o llamar a nuestro equipo comercial para agendar una
+                visita a proyecto o resolver dudas puntuales sobre financiamiento.
+              </p>
+              <div className="space-y-4 text-sm border-t border-white/10 pt-6">
+                <div>
+                  <p className="text-accent font-bold uppercase tracking-widest text-xs mb-1">
+                    Teléfono
+                  </p>
+                  <p className="text-white">(504) 9890-4449 / 2763-3699</p>
+                </div>
+                <div>
+                  <p className="text-accent font-bold uppercase tracking-widest text-xs mb-1">
+                    WhatsApp ventas
+                  </p>
+                  <p className="text-white">+504 9549-8925</p>
+                </div>
+                <div>
+                  <p className="text-accent font-bold uppercase tracking-widest text-xs mb-1">
+                    Oficina Danlí
+                  </p>
+                  <p className="text-white/80 text-xs leading-relaxed">
+                    Col. El Zarzal, Edificio INMAER, contiguo a Pizza Hut, Danlí.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Columna derecha: formulario WOW */}
+            <div className="lg:col-span-2 bg-white text-left text-primary p-8 md:p-10 shadow-2xl border border-gray-100">
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
+                      Nombre completo
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full border-2 border-gray-200 p-4 focus:outline-none focus:border-accent transition-colors"
+                      placeholder="Ej. Juan Pérez"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
+                      Teléfono / WhatsApp
+                    </label>
+                    <input
+                      type="tel"
+                      className="w-full border-2 border-gray-200 p-4 focus:outline-none focus:border-accent transition-colors"
+                      placeholder="+504 0000-0000"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
+                      Correo electrónico
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full border-2 border-gray-200 p-4 focus:outline-none focus:border-accent transition-colors"
+                      placeholder="tucorreo@ejemplo.com"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold uppercase tracking-widest text-primary">
+                      Proyecto de interés
+                    </label>
+                    <select className="w-full border-2 border-gray-200 p-4 focus:outline-none focus:border-accent transition-colors">
+                      <option>Seleccionar...</option>
+                      <option>Ciudad Venecia Danlí</option>
+                      <option>Hill&apos;s City</option>
+                      <option>Ciudad Venecia Olancho</option>
+                      <option>Ciudad Venecia Valle</option>
+                      <option>Residencial Versalles</option>
+                      <option>Otro / No estoy seguro</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-xs font-bold uppercase tracking-widest text-primary">
+                    ¿Qué tienes en mente?
+                  </label>
+                  <textarea
+                    rows={4}
+                    className="w-full border-2 border-gray-200 p-4 focus:outline-none focus:border-accent transition-colors resize-none"
+                    placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-white py-5 font-bold text-lg uppercase tracking-widest hover:bg-accent transition-colors shadow-lg hover:shadow-xl"
+                >
+                  Enviar y hablar con un asesor
+                </button>
+
+                <p className="text-xs text-text-secondary text-center mt-4">
+                  Tus datos serán utilizados únicamente para contactarte sobre proyectos de
+                  INMAER. No compartimos tu información con terceros.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* CTA FINAL POTENTE (Nueva sección adicional) */}
+      {/* CTA FINAL POTENTE */}
       <section className="bg-white py-20 px-4 border-t border-gray-100">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-accent uppercase tracking-widest text-sm font-bold mb-4 block">
