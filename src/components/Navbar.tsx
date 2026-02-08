@@ -112,9 +112,9 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - Now points to /design-2 */}
             <Link 
-              href="/cotizar" 
+              href="/design-2" 
               className="bg-primary hover:bg-accent text-white text-sm font-bold py-3 px-6 transition-all"
             >
               COTIZA YA
@@ -150,7 +150,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link 
-            href="/cotizar" 
+            href="/design-2" 
             className="bg-primary text-white text-center font-bold py-3 mt-4"
             onClick={() => setIsMobileMenuOpen(false)}
           >
