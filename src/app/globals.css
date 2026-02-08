@@ -1,46 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta "ACRES" (Dark Mode de Lujo) */
-  --color-primary: #121316; /* Fondo Oscuro Principal (Casi negro) */
-  --color-primary-dark: #000000; /* Negro puro para contrastes */
-  --color-primary-light: #1C1D21; /* Gris oscuro para tarjetas/secciones */
+  --color-primary: #0A2342;
+  --color-primary-dark: #051628;
+  --color-primary-light: #0F2F54;
   
-  --color-accent: #D4AF37; /* Dorado Elegante (Metallic Gold) */
-  --color-accent-dark: #B5952F; /* Dorado más oscuro para hover */
-  --color-accent-light: #E5C55D; /* Dorado brillante */
+  --color-accent: #C68E17;
+  --color-accent-dark: #A67512;
+  --color-accent-light: #D9A43D;
   
-  --color-surface: #1C1D21; /* Superficies (Cartas, fondos secundarios) */
+  --color-surface: #F5F5F5;
   
-  --color-text-primary: #F5F5F5; /* Texto casi blanco para leer sobre fondo oscuro */
-  --color-text-secondary: #A0A0A0; /* Gris claro para subtítulos */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
   
   --color-success: #2E5E4E;
   
-  /* Fuentes */
-  --font-display: var(--font-display);
-  --font-sans: var(--font-body);
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
-/* Force border-radius 0 globally (Estilo Minimalista/Brutalista) */
+/* Force border-radius 0 globally */
 * {
   border-radius: 0px !important;
 }
 
 body {
-  background-color: var(--color-primary); /* Forzamos fondo oscuro en toda la web */
   color: var(--color-text-primary);
   font-family: var(--font-sans);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  color: var(--color-text-primary); /* Aseguramos que títulos sean claros */
-}
-
-/* Ajuste para inputs en fondo oscuro (por si usas formularios) */
-input, textarea, select {
-  background-color: var(--color-primary-light);
-  color: var(--color-text-primary);
-  border-color: #333;
 }
