@@ -6,14 +6,40 @@ import Link from 'next/link';
 export default function Design3Page() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
-  const [scrolled, setScrolled] = useState(false);
+  
+  // Smart Navbar State
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
       
+      // Determine if at top (first 100px)
+      if (currentScrollY < 100) {
+        setIsAtTop(true);
+        setIsVisible(true);
+      } else {
+        setIsAtTop(false);
+        
+        // Hide on scroll down (if passed hero threshold ~300px), Show on scroll up
+        if (currentScrollY > 300) {
+             if (currentScrollY > lastScrollY) {
+               setIsVisible(false); // Scrolling DOWN
+             } else {
+               setIsVisible(true);  // Scrolling UP
+             }
+        } else {
+            setIsVisible(true); // Always visible in upper hero area
+        }
+      }
+
+      setLastScrollY(currentScrollY);
+      
+      // Active section logic
       const sections = ['start', 'nosotros', 'proyectos', 'amenidades', 'kontakt'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = currentScrollY + 100;
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -26,7 +52,7 @@ export default function Design3Page() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -43,19 +69,24 @@ export default function Design3Page() {
   return (
     <div className="bg-white text-slate-600 antialiased selection:bg-emerald-100 selection:text-emerald-900 relative font-sans" style={{ fontFamily: "'Inter', sans-serif" }}>
       
-      {/* Navigation - Glassmorphism Effect */}
-      <nav className={`fixed z-50 transition-all duration-500 w-full ${
-        scrolled 
-          ? 'bg-white/70 backdrop-blur-xl border-b border-white/30 shadow-lg shadow-slate-900/5' 
-          : 'bg-white/50 backdrop-blur-lg border-b border-white/20'
-      }`} id="navbar">
-        <div className="flex h-20 max-w-7xl mx-auto px-6 items-center justify-between">
+      {/* Smart Navbar */}
+      <nav 
+        id="navbar"
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out transform ${
+            isVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${
+            isAtTop 
+            ? 'bg-transparent border-transparent py-6' 
+            : 'bg-slate-900/60 backdrop-blur-md border-b border-white/5 py-4 shadow-lg'
+        }`}
+      >
+        <div className="flex max-w-7xl mx-auto px-6 items-center justify-between">
           <Link href="#start" className="flex items-center gap-3 group relative">
             <div className="flex items-center">
               <div className="flex gap-2 items-center">
-                <span className="uppercase text-sm font-medium tracking-widest text-slate-900">Ciudad Venecia</span>
+                <span className={`uppercase text-sm font-medium tracking-widest transition-colors ${isAtTop ? 'text-white' : 'text-white'}`}>Ciudad Venecia</span>
                 <span className="text-xs text-slate-400">|</span>
-                <span className="uppercase text-xs font-medium tracking-widest text-slate-500">by INMAER</span>
+                <span className={`uppercase text-xs font-medium tracking-widest transition-colors ${isAtTop ? 'text-slate-300' : 'text-slate-300'}`}>by INMAER</span>
               </div>
             </div>
           </Link>
@@ -64,20 +95,22 @@ export default function Design3Page() {
               const href = ['#start', '#nosotros', '#proyectos', '#amenidades', '#kontakt'][i];
               const section = href.substring(1);
               return (
-                <Link key={section} href={href} className={`text-sm transition-all hover:text-slate-900 ${activeSection === section ? 'text-slate-900 font-medium' : 'text-slate-600'}`}>
+                <Link key={section} href={href} className={`text-sm transition-all hover:text-emerald-400 ${activeSection === section ? 'text-white font-medium' : 'text-slate-300'}`}>
                   {item}
                 </Link>
               );
             })}
           </div>
-          <button onClick={toggleMenu} className="lg:hidden p-2 relative focus:outline-none text-slate-900">
+          <button onClick={toggleMenu} className="lg:hidden p-2 relative focus:outline-none text-white">
             <span className="sr-only">Abrir menú</span>
             <span className="text-2xl">{isMobileMenuOpen ? '✕' : '☰'}</span>
           </button>
         </div>
-        <div className={`fixed inset-0 bg-white z-40 transform transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) lg:hidden flex flex-col items-center justify-center space-y-8 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        
+        {/* Mobile Menu */}
+        <div className={`fixed inset-0 bg-slate-900 z-40 transform transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) lg:hidden flex flex-col items-center justify-center space-y-8 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           {['Inicio', 'Nosotros', 'Proyectos', 'Amenidades', 'Contacto'].map((item, i) => (
-             <Link key={i} href={['#start', '#nosotros', '#proyectos', '#amenidades', '#kontakt'][i]} onClick={toggleMenu} className="text-3xl font-light text-slate-900 hover:text-emerald-900 transition-colors tracking-tight">
+             <Link key={i} href={['#start', '#nosotros', '#proyectos', '#amenidades', '#kontakt'][i]} onClick={toggleMenu} className="text-3xl font-light text-white hover:text-emerald-400 transition-colors tracking-tight">
                 {item}
              </Link>
           ))}
