@@ -1,26 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --foreground-rgb: 26, 26, 26;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+@theme {
+  --color-primary: #0A2342;
+  --color-primary-dark: #051628;
+  --color-primary-light: #0F2F54;
+  
+  --color-accent: #C68E17;
+  --color-accent-dark: #A67512;
+  --color-accent-light: #D9A43D;
+  
+  --color-surface: #F5F5F5;
+  
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
+  
+  --color-success: #2E5E4E;
+  
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
-@layer base {
-  body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  }
-  
-  /* Force border-radius 0 globally */
-  * {
-    border-radius: 0px !important;
-  }
+/* Force border-radius 0 globally */
+* {
+  border-radius: 0px !important;
+}
+
+body {
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
 }
