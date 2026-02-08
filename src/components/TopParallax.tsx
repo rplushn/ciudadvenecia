@@ -1,12 +1,12 @@
 export default function TopParallax() {
   return (
     <section>
-      {/* Parallax Section 1 */}
+      {/* Parallax Section 1 - Vida en Armonía */}
       <div className="relative min-h-[500px] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=2070')",
+            backgroundImage: "url('/homepage/casa_fachada.jpg.jpeg')",
           }}
         />
         <div className="absolute inset-0 bg-black/40" />
@@ -68,7 +68,7 @@ export default function TopParallax() {
               className="absolute inset-0 bg-cover bg-center opacity-80 transition-transform duration-700 group-hover:scale-110"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074')",
+                  "url('/homepage/san_lorenzo.jpg.jpeg')",
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -82,12 +82,12 @@ export default function TopParallax() {
         </div>
       </section>
 
-      {/* Parallax Section 2 */}
+      {/* Parallax Section 2 - Naturaleza y Confort */}
       <div className="relative min-h-[500px] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070')",
+            backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')",
           }}
         />
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
