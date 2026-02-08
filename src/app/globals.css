@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    border-radius: 0px !important;
+  }
+
   body {
     @apply text-text-primary;
   }
@@ -10,9 +14,4 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
-}
-
-/* Force border-radius 0 globally */
-* {
-  border-radius: 0 !important;
 }
