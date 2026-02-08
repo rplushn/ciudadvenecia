@@ -120,7 +120,14 @@ export default function Design3Page() {
       {/* 1. HERO SECTION */}
       <section className="relative h-screen min-h-[700px] w-full overflow-hidden" id="start">
         <div className="absolute inset-0 z-0">
-          <img src="/homepage/outdoor2.jpg.jpeg" alt="Residencial Ciudad Venecia" className="h-full w-full object-cover" />
+          <video 
+            src="/HERO3.mp4" 
+            className="h-full w-full object-cover"
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+          />
           <div className="absolute inset-0 bg-slate-900/40"></div>
         </div>
         <div className="relative z-10 h-full flex items-center">
