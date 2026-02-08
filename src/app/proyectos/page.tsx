@@ -7,263 +7,232 @@ export default function Proyectos() {
       <Navbar />
       
       {/* 1. CINEMATIC HERO */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-primary">
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-primary">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity"
+          className="absolute inset-0 bg-cover bg-center opacity-50 mix-blend-multiply"
           style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent" />
         
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto border-y border-white/20 py-12">
-          <span className="text-accent uppercase tracking-[0.3em] text-sm font-bold mb-4 block">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto py-12">
+          <span className="text-accent uppercase tracking-[0.3em] text-sm font-bold mb-4 block animate-fade-in-up">
             Portafolio Inmobiliario
           </span>
-          <h1 className="font-display text-6xl md:text-8xl font-bold text-white uppercase tracking-tighter mb-6">
-            Nuestro Legado
+          <h1 className="font-display text-6xl md:text-8xl font-bold text-white uppercase tracking-tighter mb-6 drop-shadow-2xl">
+            Construyendo<br/>Legado
           </h1>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Una colección de desarrollos planificados estratégicamente para generar plusvalía, 
-            seguridad y bienestar en la zona oriental y central de Honduras.
+          <p className="text-white/90 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
+            Más que terrenos y casas, desarrollamos ecosistemas de vida con plusvalía garantizada.
           </p>
         </div>
       </section>
 
-      {/* 2. THE BIG TWO - #1 CIUDAD VENECIA DANLÍ */}
-      <section className="py-24 px-4 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Imagen (Grande) */}
-          <div className="lg:w-3/5 w-full relative group">
-            <div className="aspect-[4/3] bg-gray-200 overflow-hidden relative">
-               <div 
-                 className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074')" }}
-               />
-               <div className="absolute top-6 left-6 bg-primary text-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
-                 Proyecto Insignia
-               </div>
-            </div>
-            {/* Decorative architectural lines */}
-            <div className="absolute -bottom-4 -right-4 w-32 h-32 border-b-4 border-r-4 border-accent hidden md:block" />
-          </div>
-
-          {/* Info */}
-          <div className="lg:w-2/5 w-full">
-            <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">
-              Danlí, El Paraíso
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-              Ciudad Venecia <br/> Danlí
-            </h2>
-            <p className="text-text-secondary text-lg mb-8 leading-relaxed">
-              El proyecto que lo inició todo. Más de 3 etapas desarrolladas con éxito rotundo. 
-              Un entorno fresco y familiar, ubicado estratégicamente cerca de la UNAH-TEC.
-            </p>
-            
-            <div className="grid grid-cols-2 gap-6 mb-8 border-t border-gray-100 pt-6">
-              <div>
-                <p className="font-bold text-primary text-2xl">100%</p>
-                <p className="text-xs text-text-secondary uppercase">Plusvalía</p>
-              </div>
-              <div>
-                <p className="font-bold text-primary text-2xl">3</p>
-                <p className="text-xs text-text-secondary uppercase">Etapas</p>
-              </div>
-            </div>
-
-            <button className="w-full bg-primary text-white py-4 uppercase font-bold hover:bg-accent transition-colors">
-              Ver Detalles
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. THE BIG TWO - #2 HILL'S CITY (Dark/Corporate Theme) */}
-      <section className="bg-primary text-white py-24 px-4">
+      {/* -------------------------------------------------------------------------------- */}
+      {/* PROYECTO 1: CIUDAD VENECIA DANLÍ (Full Detail) */}
+      <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
-            {/* Imagen */}
-            <div className="lg:w-3/5 w-full relative group">
-              <div className="aspect-[16/9] bg-gray-800 overflow-hidden relative border border-white/10">
-                 <div 
-                   className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105 mix-blend-overlay opacity-60"
-                   style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070')" }}
-                 />
-                 <div 
-                   className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105 opacity-40"
-                   style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070')" }}
-                 />
-                 <div className="absolute top-6 right-6 bg-white text-primary px-4 py-2 text-xs font-bold uppercase tracking-wider">
-                   Distrito Comercial
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="relative group">
+              <div className="aspect-[4/3] bg-gray-200 overflow-hidden rounded-sm shadow-2xl">
+                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074')" }} />
+                 <div className="absolute top-8 left-8 bg-primary text-white px-6 py-2 text-sm font-bold uppercase tracking-wider">
+                   Proyecto Insignia
                  </div>
               </div>
             </div>
-
-            {/* Info */}
-            <div className="lg:w-2/5 w-full text-right lg:text-right">
-              <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">
-                Centro de Danlí
-              </span>
-              <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">
-                Hill's City
-              </h2>
-              <p className="text-white/70 text-lg mb-8 leading-relaxed ml-auto max-w-md">
-                La solución definitiva de estacionamiento y locales comerciales. 
-                7 manzanas de desarrollo mixto en el corazón de la ciudad. 
-                Donde los negocios crecen.
+            <div>
+              <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">Danlí, El Paraíso</span>
+              <h2 className="font-display text-5xl md:text-6xl font-bold text-primary mb-6">Ciudad Venecia</h2>
+              <p className="text-text-secondary text-lg mb-8 leading-relaxed">
+                El referente inmobiliario de la zona oriental. Un complejo consolidado con más de 3 etapas, 
+                diseñado para familias que buscan seguridad, estatus y un entorno natural inigualable.
               </p>
-              
-              <div className="flex justify-end gap-8 mb-8 border-t border-white/20 pt-6">
-                <div className="text-right">
-                  <p className="font-bold text-white text-2xl">Comercial</p>
-                  <p className="text-xs text-accent uppercase">Uso Mixto</p>
-                </div>
-                <div className="text-right">
-                  <p className="font-bold text-white text-2xl">7</p>
-                  <p className="text-xs text-accent uppercase">Manzanas</p>
-                </div>
+              {/* Amenidades Específicas */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
+                {['Seguridad 24/7', 'Áreas Verdes', 'Canchas Padel', 'Agua Propia'].map((amenity, i) => (
+                  <div key={i} className="flex flex-col items-center text-center p-3 bg-gray-50 rounded-lg">
+                    <span className="text-accent text-2xl mb-2">✦</span>
+                    <span className="text-xs font-bold text-primary uppercase">{amenity}</span>
+                  </div>
+                ))}
               </div>
-
-              <button className="bg-transparent border border-white text-white px-10 py-4 uppercase font-bold hover:bg-white hover:text-primary transition-colors">
-                Oportunidades de Inversión
+              <button className="bg-primary text-white px-8 py-4 uppercase font-bold hover:bg-accent transition-colors w-full md:w-auto">
+                Cotizar Lote o Casa
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. #3 RESIDENCIAL VERSALLES */}
-      <section className="py-24 px-4 max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="text-accent uppercase tracking-widest text-sm font-bold mb-2 block">Alta Gama</span>
-          <h2 className="font-display text-3xl font-bold text-primary">Exclusividad Garantizada</h2>
-        </div>
-        
-        <div className="relative bg-surface p-8 md:p-12 border border-gray-200 shadow-sm">
-           <div className="grid md:grid-cols-2 gap-12 items-center">
-             <div className="order-2 md:order-1">
-                <span className="text-accent text-xs font-bold uppercase mb-2 block">Carretera Panamericana</span>
-                <h3 className="font-display text-4xl font-bold text-primary mb-4">Residencial Versalles</h3>
-                <p className="text-text-secondary mb-6 leading-relaxed">
-                  Ubicado a solo 5 km del centro. Un concepto exclusivo con lotes amplios (12x20m), 
-                  piscina y áreas recreativas privadas. Disponibilidad limitada para quienes buscan privacidad.
-                </p>
-                <button className="text-primary font-bold border-b-2 border-primary pb-1 hover:text-accent hover:border-accent transition-colors uppercase text-sm">
-                  Ver Disponibilidad
-                </button>
-             </div>
-             <div className="order-1 md:order-2 h-80 md:h-full bg-gray-300 relative overflow-hidden">
-               <div 
-                 className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
-                 style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070')" }}
-               />
-             </div>
-           </div>
+      {/* PARALLAX TRANSITION 1 */}
+      <section className="relative h-[50vh] bg-fixed bg-cover bg-center flex items-center justify-center"
+               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070')" }}>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h3 className="font-display text-4xl md:text-6xl font-bold uppercase">Negocios & Progreso</h3>
+          <p className="text-xl mt-2 font-light">El nuevo corazón comercial de Danlí</p>
         </div>
       </section>
 
-      {/* 5. REST OF PORTFOLIO (Grid) */}
-      <section className="py-24 bg-gray-50 px-4">
+      {/* -------------------------------------------------------------------------------- */}
+      {/* PROYECTO 2: HILL'S CITY (Dark Theme) */}
+      <section className="py-24 px-4 bg-primary text-white">
         <div className="max-w-7xl mx-auto">
-           <div className="text-center mb-16">
-              <h2 className="font-display text-3xl font-bold text-primary mb-4">Más Oportunidades</h2>
-              <p className="text-text-secondary max-w-xl mx-auto">Desde la zona sur hasta Olancho, expandimos nuestra huella de calidad.</p>
-           </div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">Centro de Danlí</span>
+              <h2 className="font-display text-5xl md:text-6xl font-bold mb-6">Hill's City</h2>
+              <p className="text-white/80 text-lg mb-8 leading-relaxed">
+                La solución definitiva para el comercio y estacionamiento. 7 manzanas de desarrollo mixto 
+                que albergan bancos, franquicias, hospital y el centro de negocios más moderno de la ciudad.
+              </p>
+              {/* Amenidades Específicas */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 border-t border-white/10 pt-8">
+                {['Locales', 'Parqueos', 'Hospital', 'Bancos'].map((amenity, i) => (
+                  <div key={i} className="text-center">
+                    <span className="text-white text-xl mb-1 block">■</span>
+                    <span className="text-xs font-bold text-accent uppercase">{amenity}</span>
+                  </div>
+                ))}
+              </div>
+              <button className="border-2 border-white text-white px-8 py-4 uppercase font-bold hover:bg-white hover:text-primary transition-colors w-full md:w-auto">
+                Inversión Comercial
+              </button>
+            </div>
+            <div className="order-1 lg:order-2 relative group">
+              <div className="aspect-video bg-gray-800 overflow-hidden shadow-2xl border border-white/10">
+                 <div className="absolute inset-0 bg-cover bg-center opacity-80 transition-transform duration-1000 group-hover:scale-105"
+                      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070')" }} />
+                 <div className="absolute bottom-6 right-6 text-right">
+                   <p className="text-4xl font-bold text-white">7</p>
+                   <p className="text-xs uppercase tracking-widest text-accent">Manzanas</p>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* PARALLAX TRANSITION 2 */}
+      <section className="relative h-[50vh] bg-fixed bg-cover bg-center flex items-center justify-center"
+               style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053')" }}>
+        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h3 className="font-display text-4xl md:text-6xl font-bold uppercase">Estilo de Vida Premium</h3>
+          <p className="text-xl mt-2 font-light">Olancho se transforma</p>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------------------------------------- */}
+      {/* PROYECTO 3: CIUDAD VENECIA OLANCHO (Premium) */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative group">
+              <div className="aspect-[4/3] bg-gray-200 overflow-hidden shadow-xl">
+                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
+                      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070')" }} />
+              </div>
+              <div className="absolute -bottom-8 -right-8 w-48 bg-white p-6 shadow-xl hidden md:block border-l-4 border-accent">
+                <p className="text-sm font-bold text-primary mb-1">CASA CLUB</p>
+                <p className="text-xs text-text-secondary">Piscina, Gym & Arcade incluidos</p>
+              </div>
+            </div>
+            <div>
+              <span className="text-accent font-bold uppercase tracking-widest text-sm mb-2 block">Valle de Lepaguare</span>
+              <h2 className="font-display text-5xl md:text-6xl font-bold text-primary mb-6">Olancho Premium</h2>
+              <p className="text-text-secondary text-lg mb-8 leading-relaxed">
+                El primer desarrollo "Resort Living" de la región. No solo compras un terreno, 
+                accedes a un estilo de vida con amenidades nunca antes vistas en Olancho.
+              </p>
+              <ul className="space-y-4 mb-10">
+                {[
+                  'Casa Club completa con Restaurante',
+                  'Piscina semi-olímpica y de niños',
+                  'Gimnasio equipado y Salón Arcade',
+                  'Canchas Polideportivas'
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center text-primary font-medium">
+                    <span className="w-2 h-2 bg-accent rounded-full mr-3" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <button className="bg-white border-2 border-primary text-primary px-8 py-4 uppercase font-bold hover:bg-primary hover:text-white transition-colors w-full md:w-auto">
+                Ver Master Plan
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* -------------------------------------------------------------------------------- */}
+      {/* NUEVO PROYECTO: CIUDAD VALENCIA TEGUCIGALPA (Coming Soon) */}
+      <section className="py-24 px-4 bg-gray-50 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-block bg-accent text-white px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-full">
+            Próximamente
+          </div>
+          <h2 className="font-display text-5xl md:text-7xl font-bold text-primary mb-8">
+            Ciudad Valencia <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Tegucigalpa</span>
+          </h2>
+          <p className="text-text-secondary text-xl max-w-2xl mx-auto mb-12">
+            La capital está por recibir el estándar de calidad INMAER. 
+            Regístrate en la lista de espera para precios de Pre-Venta exclusiva.
+          </p>
+          <div className="max-w-4xl mx-auto h-96 bg-gray-300 relative overflow-hidden rounded-lg shadow-inner group cursor-pointer">
+             <div className="absolute inset-0 bg-cover bg-center filter blur-sm scale-105 group-hover:blur-0 group-hover:scale-100 transition-all duration-1000"
+                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070')" }} />
+             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+               <button className="bg-white text-primary px-10 py-4 uppercase font-bold tracking-widest hover:scale-105 transition-transform">
+                 Unirse a Lista de Espera
+               </button>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* RESTO DEL PORTAFOLIO (Grid Compacto) */}
+      <section className="py-24 bg-white px-4">
+        <div className="max-w-7xl mx-auto">
+           <h3 className="font-display text-2xl font-bold text-primary mb-10 text-center uppercase tracking-wider">Más Desarrollos</h3>
+           <div className="grid md:grid-cols-3 gap-8">
               {[
-                { 
-                  name: "Ciudad Venecia Valle", 
-                  loc: "San Lorenzo", 
-                  price: "Primas desde L. 6,000",
-                  img: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009"
-                },
-                { 
-                  name: "CV Raíces Talanga", 
-                  loc: "Talanga, FM", 
-                  price: "Lanzamiento 2026",
-                  img: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=2070"
-                },
-                { 
-                  name: "Ciudad Venecia Olancho", 
-                  loc: "Lepaguare", 
-                  price: "Concepto Premium",
-                  img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053"
-                },
-                { 
-                  name: "Residencial Palmanova", 
-                  loc: "Danlí", 
-                  price: "Carretera Panamericana",
-                  img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070"
-                }
+                { name: "Residencial Versalles", loc: "Danlí (Exclusivo)", img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070" },
+                { name: "Ciudad Venecia Valle", loc: "San Lorenzo (Playa)", img: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009" },
+                { name: "CV Raíces", loc: "Talanga (Nuevo)", img: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=2070" },
               ].map((item, i) => (
-                <div key={i} className="group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-                   <div className="h-64 overflow-hidden relative">
-                      <div 
-                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                        style={{ backgroundImage: `url(${item.img})` }} 
-                      />
-                      <div className="absolute bottom-0 left-0 bg-primary/90 text-white px-4 py-1 text-xs font-bold uppercase">
-                        {item.loc}
-                      </div>
-                   </div>
-                   <div className="p-8">
-                      <h3 className="font-display text-xl font-bold text-primary mb-2">{item.name}</h3>
-                      <p className="text-accent font-medium text-sm mb-6">{item.price}</p>
-                      <button className="text-text-secondary text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
-                        Ver Proyecto +
-                      </button>
-                   </div>
+                <div key={i} className="group relative h-64 overflow-hidden rounded-lg cursor-pointer">
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                       style={{ backgroundImage: `url(${item.img})` }} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <p className="text-xs uppercase font-bold text-accent mb-1">{item.loc}</p>
+                    <h4 className="font-display text-xl font-bold">{item.name}</h4>
+                  </div>
                 </div>
               ))}
            </div>
         </div>
       </section>
 
-      {/* 6. FINAL CONTACT FORM */}
-      <section className="py-24 bg-white px-4">
-        <div className="max-w-4xl mx-auto bg-surface p-8 md:p-16 relative overflow-hidden">
-          {/* Decorative element */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full" />
-          
-          <div className="text-center mb-12 relative z-10">
-            <span className="text-accent uppercase tracking-widest text-xs font-bold mb-4 block">Contacto Directo</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-6">Inicia tu Legado</h2>
-            <p className="text-text-secondary max-w-lg mx-auto">
-              Déjanos tus datos y un asesor especializado te contactará para presentarte el plan de financiamiento ideal.
-            </p>
-          </div>
-
-          <form className="space-y-6 relative z-10 max-w-lg mx-auto">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-primary uppercase">Nombre</label>
-                <input type="text" className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors" placeholder="Tu nombre completo" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-primary uppercase">Teléfono</label>
-                <input type="tel" className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors" placeholder="+504 0000-0000" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary uppercase">Correo Electrónico</label>
-              <input type="email" className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors" placeholder="tucorreo@ejemplo.com" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-xs font-bold text-primary uppercase">Proyecto de Interés</label>
-              <select className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors">
-                <option>Seleccionar proyecto...</option>
-                <option>Ciudad Venecia Danlí</option>
-                <option>Hill's City</option>
-                <option>Ciudad Venecia Olancho</option>
-                <option>Residencial Versalles</option>
-                <option>Otro</option>
-              </select>
-            </div>
-            <button className="w-full bg-primary text-white py-4 font-bold uppercase tracking-widest hover:bg-accent transition-colors">
-              Solicitar Información
-            </button>
-          </form>
-        </div>
+      {/* FINAL FORM */}
+      <section className="bg-primary py-24 px-4">
+         <div className="max-w-3xl mx-auto text-center text-white mb-12">
+           <h2 className="font-display text-4xl font-bold mb-4">Empieza a Invertir</h2>
+           <p className="opacity-80">Déjanos tus datos y un asesor te contactará hoy mismo.</p>
+         </div>
+         <form className="max-w-2xl mx-auto space-y-4">
+           <div className="grid md:grid-cols-2 gap-4">
+             <input type="text" placeholder="Nombre" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
+             <input type="tel" placeholder="Teléfono" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
+           </div>
+           <input type="email" placeholder="Correo" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
+           <button className="w-full bg-accent text-white font-bold py-4 uppercase tracking-widest hover:bg-white hover:text-primary transition-colors">
+             Enviar Solicitud
+           </button>
+         </form>
       </section>
 
       <Footer />
