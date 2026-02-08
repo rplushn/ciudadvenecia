@@ -120,7 +120,7 @@ export default function Design3Page() {
       {/* 1. HERO SECTION */}
       <section className="relative h-screen min-h-[700px] w-full overflow-hidden" id="start">
         <div className="absolute inset-0 z-0">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Residencial Ciudad Venecia" className="h-full w-full object-cover" />
+          <img src="/homepage/outdoor2.jpg.jpeg" alt="Residencial Ciudad Venecia" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-slate-900/40"></div>
         </div>
         <div className="relative z-10 h-full flex items-center">
@@ -150,7 +150,7 @@ export default function Design3Page() {
       </section>
 
       {/* 2. STATS BAR (PARALLAX con overlay slate azulado) */}
-      <section className="relative py-16 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670')" }}>
+      <section className="relative py-16 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}>
         <div className="absolute inset-0 bg-slate-800/85"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
@@ -239,7 +239,7 @@ export default function Design3Page() {
             </div>
             <div className="w-full lg:w-2/3 order-1 lg:order-2">
               <div className="aspect-[16/10] rounded overflow-hidden shadow-2xl relative">
-                <img src="https://images.unsplash.com/photo-1600596542815-e328701102b9?q=80&w=2669" alt="Ciudad Venecia Danlí" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src="/homepage/casa_fachada.jpg.jpeg" alt="Ciudad Venecia Danlí" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded text-xs font-bold text-slate-900 shadow-sm">
                    3ra Etapa en Desarrollo
                 </div>
@@ -250,7 +250,7 @@ export default function Design3Page() {
       </section>
 
       {/* 5. PARALLAX BREAK 1 */}
-      <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2673')" }}>
+      <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/homepage/patio_asador.jpg.jpeg')" }}>
         <div className="absolute inset-0 bg-slate-900/60"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">Tu Patrimonio Seguro</h2>
@@ -264,7 +264,7 @@ export default function Design3Page() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-2/3">
               <div className="aspect-[16/10] rounded overflow-hidden shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2670" alt="Ciudad Venecia Olancho" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src="/amenidades/amenidades_club.jpg.jpeg" alt="Ciudad Venecia Olancho" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
             <div className="w-full lg:w-1/3">
@@ -311,31 +311,31 @@ export default function Design3Page() {
                 title: 'Ciudad Venecia Valle', 
                 loc: 'San Lorenzo, Valle',
                 desc: 'A 10 min de la playa. Lotes urbanizados.',
-                img: 'https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=800' 
+                img: '/homepage/san_lorenzo.jpg.jpeg' 
               },
               { 
                 title: 'CV Raíces Talanga', 
                 loc: 'Talanga, F.M.',
                 desc: 'Nuevo 2026. Cuotas desde L 900.',
-                img: 'https://images.unsplash.com/photo-1626290800844-4861bc99478e?q=80&w=800' 
+                img: '/homepage/casa_patio.jpeg' 
               },
               { 
                 title: "Hills City", 
                 loc: 'Danlí Centro',
                 desc: 'Distrito Comercial. Locales y parqueo.',
-                img: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=800' 
+                img: '/amenidades/amenidades_padel.jpg' 
               },
               { 
                 title: 'Residencial Versalles', 
                 loc: 'Danlí (Salida Panamericana)',
                 desc: 'Exclusivo. Lotes de 12x20m.',
-                img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800' 
+                img: '/homepage/cocina.jpg.jpeg' 
               },
               { 
                 title: 'Residencial Palmanova', 
                 loc: 'Danlí',
                 desc: 'Ubicación privilegiada y topografía.',
-                img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800' 
+                img: '/homepage/sala_comedor.jpg.jpeg' 
               }
             ].map((item, i) => (
               <div key={i} className="group relative aspect-[4/3] rounded overflow-hidden cursor-pointer bg-slate-900">
@@ -401,7 +401,7 @@ export default function Design3Page() {
       </section>
 
       {/* 9. PARALLAX BREAK 2 (VIDA EN ARMONÍA) */}
-      <section className="relative py-40 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670')" }}>
+      <section className="relative py-40 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
         <div className="absolute inset-0 bg-slate-900/50"></div>
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-xs font-bold uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
@@ -495,7 +495,7 @@ export default function Design3Page() {
 
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
             <div className="md:col-span-2 md:row-span-2 relative rounded overflow-hidden group">
-               <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=2669" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+               <img src="/amenidades/amenidades_club2.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-6 left-6 text-white">
                  <h3 className="text-xl font-medium">Casa Club</h3>
@@ -503,22 +503,22 @@ export default function Design3Page() {
                </div>
             </div>
             <div className="relative rounded overflow-hidden group">
-               <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+               <img src="/amenidades/amenidades_piscina001.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Piscinas</h3></div>
             </div>
             <div className="relative rounded overflow-hidden group">
-               <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+               <img src="/homepage/cancha_tennis.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Gimnasio</h3></div>
             </div>
              <div className="relative rounded overflow-hidden group">
-               <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+               <img src="/amenidades/amenidades_padel.jpg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Canchas Deportivas</h3></div>
             </div>
              <div className="relative rounded overflow-hidden group">
-               <img src="https://images.unsplash.com/photo-1543093247-38446b28cb7b?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+               <img src="/amenidades/amenidades_acuatico.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Áreas de Juegos</h3></div>
             </div>
