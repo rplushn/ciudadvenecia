@@ -43,11 +43,11 @@ export default function Design3Page() {
   return (
     <div className="bg-white text-slate-600 antialiased selection:bg-emerald-100 selection:text-emerald-900 relative font-sans" style={{ fontFamily: "'Inter', sans-serif" }}>
       
-      {/* Navigation - ALWAYS VISIBLE */}
-      <nav className={`fixed z-50 transition-all duration-500 w-full border-b ${
+      {/* Navigation - Glassmorphism Effect */}
+      <nav className={`fixed z-50 transition-all duration-500 w-full ${
         scrolled 
-          ? 'bg-white/95 border-slate-100 backdrop-blur-md shadow-sm' 
-          : 'bg-white/90 border-white/20 backdrop-blur-md'
+          ? 'bg-white/70 backdrop-blur-xl border-b border-white/30 shadow-lg shadow-slate-900/5' 
+          : 'bg-white/50 backdrop-blur-lg border-b border-white/20'
       }`} id="navbar">
         <div className="flex h-20 max-w-7xl mx-auto px-6 items-center justify-between">
           <Link href="#start" className="flex items-center gap-3 group relative">
@@ -64,7 +64,7 @@ export default function Design3Page() {
               const href = ['#start', '#nosotros', '#proyectos', '#amenidades', '#kontakt'][i];
               const section = href.substring(1);
               return (
-                <Link key={section} href={href} className={`text-sm transition-all hover:text-slate-900 ${activeSection === section ? 'text-slate-900 font-medium' : 'text-slate-500'}`}>
+                <Link key={section} href={href} className={`text-sm transition-all hover:text-slate-900 ${activeSection === section ? 'text-slate-900 font-medium' : 'text-slate-600'}`}>
                   {item}
                 </Link>
               );
