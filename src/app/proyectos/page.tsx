@@ -217,22 +217,31 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* FINAL FORM */}
+      {/* FINAL CTA POTENTE (Igual a Contacto) */}
       <section className="bg-primary py-24 px-4">
-         <div className="max-w-3xl mx-auto text-center text-white mb-12">
-           <h2 className="font-display text-4xl font-bold mb-4">Empieza a Invertir</h2>
-           <p className="opacity-80">Déjanos tus datos y un asesor te contactará hoy mismo.</p>
-         </div>
-         <form className="max-w-2xl mx-auto space-y-4">
-           <div className="grid md:grid-cols-2 gap-4">
-             <input type="text" placeholder="Nombre" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
-             <input type="tel" placeholder="Teléfono" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
-           </div>
-           <input type="email" placeholder="Correo" className="w-full p-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:bg-white/20" />
-           <button className="w-full bg-accent text-white font-bold py-4 uppercase tracking-widest hover:bg-white hover:text-primary transition-colors">
-             Enviar Solicitud
-           </button>
-         </form>
+        <div className="max-w-4xl mx-auto text-center text-white">
+          <span className="text-accent uppercase tracking-widest text-sm font-bold mb-4 block">
+            Última oportunidad
+          </span>
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-6">
+            Tu próximo paso empieza aquí
+          </h2>
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+            Miles de familias ya confiaron en nosotros. Ahora es tu turno de construir patrimonio
+            con respaldo sólido y procesos claros.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-accent text-white px-10 py-5 uppercase font-bold text-lg hover:bg-white hover:text-primary transition-colors shadow-xl">
+              Agendar visita a proyecto
+            </button>
+            <button className="border-2 border-white text-white px-10 py-5 uppercase font-bold text-lg hover:bg-white hover:text-primary transition-colors">
+              Hablar con asesor
+            </button>
+          </div>
+          <p className="mt-10 text-xs uppercase tracking-widest text-white/60">
+            Consistencia · Claridad · Confianza
+          </p>
+        </div>
       </section>
 
       <Footer />
