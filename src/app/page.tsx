@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import PromoSection from '@/components/PromoSection';
 import FeaturedProjects from '@/components/FeaturedProjects';
+import TopParallax from '@/components/TopParallax';
 import ValueProp from '@/components/ValueProp';
 import Amenities from '@/components/Amenities';
 import CallToAction from '@/components/CallToAction';
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <PromoSection />
       <FeaturedProjects />
+      <TopParallax />
       <ValueProp />
       <Amenities />
       <CallToAction />
