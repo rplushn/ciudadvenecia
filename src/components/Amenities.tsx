@@ -2,6 +2,7 @@
 
 export default function Amenities() {
   const mainAmenities = [
+    // BLOQUE 1: La estrella (Izquierda Arriba)
     { 
       name: "Casa Club Premium", 
       desc: "Eventos y reuniones sociales",
@@ -9,6 +10,7 @@ export default function Amenities() {
       colSpan: "md:col-span-2",
       rowSpan: "md:row-span-2"
     },
+    // BLOQUE 2: Piscinas (Derecha Arriba 1)
     { 
       name: "Piscinas Climatizadas", 
       desc: "Para adultos y niños",
@@ -16,21 +18,24 @@ export default function Amenities() {
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1"
     },
+    // BLOQUE 3: Padel (Derecha Arriba 2)
     { 
       name: "NUEVAS Canchas de Pádel", 
       desc: "Deporte de alto nivel",
-      img: "https://images.unsplash.com/photo-1626248559388-335193910243?q=80&w=2000", // Padel placeholder
+      img: "https://images.unsplash.com/photo-1626248559388-335193910243?q=80&w=2000",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1",
       badge: "¡NUEVO!"
     },
+    // BLOQUE 4: Gimnasio (Derecha Abajo Vertical)
     { 
-      name: "Gimnasio Equipado", 
-      desc: "Wellness center completo",
+      name: "Gimnasio al Aire Libre", 
+      desc: "Ejercítate rodeado de naturaleza",
       img: "/amenidades/amenidades004.jpg.jpeg",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-2"
     },
+    // BLOQUE 5: Juegos (Centro Derecha)
     { 
       name: "Áreas de Juegos", 
       desc: "Diversión segura",
@@ -38,10 +43,19 @@ export default function Amenities() {
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1"
     },
+    // BLOQUE 6: Senderos (Abajo Izquierda 1)
     { 
-      name: "Senderos Ecológicos", 
-      desc: "Conexión con la naturaleza",
-      img: "/amenidades/amenidades008.jpg.jpeg",
+      name: "Parque Acuático", 
+      desc: "Diversión refrescante",
+      img: "/amenidades/amenidades012.jpg.jpeg",
+      colSpan: "md:col-span-1",
+      rowSpan: "md:row-span-1"
+    },
+    // BLOQUE 7: Seguridad (Abajo Izquierda 2)
+    { 
+      name: "Kioscos Familiares", 
+      desc: "Para tus celebraciones",
+      img: "/amenidades/amenidades005.jpg.jpeg",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1"
     }
@@ -66,8 +80,8 @@ export default function Amenities() {
           </p>
         </div>
 
-        {/* Bento Grid Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+        {/* Bento Grid Gallery - Configuración Grid Dense para rellenar huecos */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px] md:auto-rows-[280px] grid-flow-dense">
           {mainAmenities.map((item, index) => (
             <div 
               key={index} 
@@ -90,11 +104,11 @@ export default function Amenities() {
               )}
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="font-display text-white text-2xl font-bold mb-2">
+              <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <h3 className="font-display text-white text-xl md:text-2xl font-bold mb-1 md:mb-2 leading-tight">
                   {item.name}
                 </h3>
-                <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                <p className="text-white/80 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 font-light">
                   {item.desc}
                 </p>
               </div>
