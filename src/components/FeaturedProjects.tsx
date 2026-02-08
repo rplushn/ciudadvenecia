@@ -8,7 +8,7 @@ const projects = [
     title: "Ciudad Venecia Danlí",
     location: "Danlí, El Paraíso",
     description: "Nuestro proyecto insignia con mayor crecimiento en la zona oriental. Más de 3 etapas desarrolladas, a pocos minutos del centro y cerca de UNAH-TEC. Un ambiente fresco y familiar.",
-    image: "https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074", // Placeholder
+    image: "/homepage/casa_fachada.jpg.jpeg", 
     alignment: "left"
   },
   {
@@ -16,15 +16,15 @@ const projects = [
     title: "Ciudad Venecia Olancho",
     location: "Valle de Lepaguare, Olancho",
     description: "El proyecto más exclusivo 'Premium Level'. Casa club con piscina, gimnasio, canchas deportivas y restaurante. Redefiniendo el estilo de vida en Olancho.",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053", // Placeholder Luxury
+    image: "/homepage/outdoor2.jpg.jpeg", 
     alignment: "right"
   }
 ];
 
 const lifestyleImages = [
-  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070", // Family garden
-  "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2080", // Couple home
-  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070", // Real estate handshake/happy
+  "/homepage/sala_comedor.jpg.jpeg", 
+  "/homepage/casa_patio.jpeg", 
+  "/homepage/outdoor_vertical.jpg.jpeg", 
 ];
 
 export default function FeaturedProjects() {
@@ -149,37 +149,43 @@ export default function FeaturedProjects() {
             { 
               title: "Ciudad Venecia Valle", 
               loc: "San Lorenzo / Jícaro Galán",
-              desc: "A 10 min de la playa. Lotes desde L. 1,000/mes."
+              desc: "A 10 min de la playa. Lotes desde L. 1,000/mes.",
+              img: "/homepage/san_lorenzo.jpg.jpeg"
             },
             { 
               title: "CV Raíces Talanga", 
               loc: "Francisco Morazán",
-              desc: "Nuevo Lanzamiento 2026. Primas accesibles."
+              desc: "Nuevo Lanzamiento 2026. Primas accesibles.",
+              img: "/homepage/cocina.jpg.jpeg"
             },
             { 
               title: "Hill's City", 
               loc: "Danlí (Comercial)",
-              desc: "Distrito comercial, locales y parqueos en el centro."
+              desc: "Distrito comercial, locales y parqueos en el centro.",
+              img: "/homepage/cancha_tennis.jpg.jpeg"
             },
             { 
               title: "Residencial Versalles", 
               loc: "Danlí",
-              desc: "Exclusividad a 5km del centro."
+              desc: "Exclusividad a 5km del centro.",
+              img: "/homepage/versalles_outdoor.jpg.jpeg"
             },
             { 
               title: "Ciudad Venecia TGU", 
               loc: "Tegucigalpa",
-              desc: "Próximamente. Pre-venta exclusiva."
+              desc: "Próximamente. Pre-venta exclusiva.",
+              img: "/homepage/baño.jpg.jpeg"
             },
              { 
               title: "Palmanova", 
               loc: "Danlí",
-              desc: "Ubicación privilegiada en carretera Panamericana."
+              desc: "Ubicación privilegiada en carretera Panamericana.",
+              img: "/homepage/patio_asador.jpg.jpeg"
             },
           ].map((item, i) => (
             <div key={i} className="group relative h-80 overflow-hidden cursor-pointer border border-gray-100">
               <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-700 bg-cover bg-center"
-                   style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2067)' }}>
+                   style={{ backgroundImage: `url(${item.img})` }}>
               </div>
               <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors" />
               <div className="absolute bottom-0 left-0 p-8 w-full text-white">
