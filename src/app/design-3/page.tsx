@@ -241,7 +241,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 3. PARALLAX / PATRIMONIO SECTION - New Addition */}
+      {/* 3. PARALLAX / PATRIMONIO SECTION */}
       <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2670')" }}>
         <div className="absolute inset-0 bg-slate-900/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
@@ -321,53 +321,83 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* Projects Section - Maintained structure for now */}
+      {/* 5. PROJECTS SECTION - UPGRADED: Larger images + dramatic hover */}
       <section className="border-y bg-white border-slate-100 pt-24 pb-24" id="proyectos">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
             <div>
-              <h2 className="text-2xl md:text-3xl font-semibold text-slate-900 tracking-tight mb-3">Nuestros Proyectos</h2>
-              <p className="text-slate-500 max-w-xl">Descubre las ubicaciones exclusivas de Ciudad Venecia.</p>
+              <span className="inline-block py-1 px-3 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">
+                Portfolio
+              </span>
+              <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight mb-4">Nuestros Proyectos</h2>
+              <p className="text-slate-500 max-w-xl text-lg font-light">Descubre las ubicaciones estratégicas que definen el futuro de la región oriental.</p>
             </div>
-            <Link href="#kontakt" className="text-sm font-medium text-slate-900 flex items-center gap-1 hover:opacity-70 transition-opacity">
-              Consultar disponibilidad <span>→</span>
+            <Link href="#kontakt" className="text-sm font-bold uppercase tracking-widest text-slate-900 flex items-center gap-2 hover:gap-3 transition-all group">
+              Consultar Disponibilidad <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {[
               { 
-                title: 'Ciudad Venecia Danlí', badge: 'El Paraíso', 
-                desc: 'El proyecto insignia en la zona oriental. Lotes residenciales en un entorno exclusivo.',
+                title: 'Ciudad Venecia Danlí', badge: 'El Paraíso', location: 'El Paraíso, HN',
+                desc: 'Proyecto insignia de la zona oriental. 300+ lotes residenciales en entorno premium con infraestructura completa.',
                 status: 'En Venta', type: 'Residencial',
                 img: 'https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=800'
               },
               { 
-                title: 'Ciudad Venecia Olancho', badge: 'Juticalpa', 
-                desc: 'Expansión estratégica con acceso privilegiado y diseño urbanístico de vanguardia.',
+                title: 'Ciudad Venecia Olancho', badge: 'Juticalpa', location: 'Juticalpa, Olancho',
+                desc: 'Expansión estratégica con acceso privilegiado a la carretera de Olancho. Diseño urbanístico de vanguardia.',
                 status: 'Preventa', type: 'Eco-Residencial',
                 img: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?q=80&w=800'
               },
               { 
-                title: 'Ciudad Venecia Valle', badge: 'Zona Sur', 
-                desc: 'Nuevo desarrollo en el sur del país, capitalizando el crecimiento logístico de la región.',
+                title: 'Ciudad Venecia Valle', badge: 'Zona Sur', location: 'Nacaome, Valle',
+                desc: 'Desarrollo logístico-residencial en la zona sur. Capitalizando el boom comercial del corredor pacífico.',
                 status: 'Próximamente', type: 'Mixto',
                 img: 'https://images.unsplash.com/photo-1626290800844-4861bc99478e?q=80&w=800'
               }
             ].map((project, i) => (
-              <div key={i} className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                <div className="aspect-[3/4] bg-slate-200 relative overflow-hidden">
-                  <img src={project.img} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
-                  <div className="absolute top-4 right-4 z-20">
-                    <span className="text-[10px] uppercase font-semibold text-slate-900 tracking-wider bg-white/90 rounded pt-1 pr-2 pb-1 pl-2 backdrop-blur shadow-sm">{project.badge}</span>
+              <div key={i} className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-200/60 transition-all duration-500 cursor-pointer">
+                <div className="aspect-[4/5] bg-slate-200 relative overflow-hidden">
+                  <img 
+                    src={project.img} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 saturate-0 group-hover:saturate-100" 
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                  
+                  {/* Badge */}
+                  <div className="absolute top-4 left-4 z-20">
+                    <span className="text-[10px] uppercase font-bold text-white tracking-wider bg-slate-900/70 rounded px-3 py-1.5 backdrop-blur shadow-lg">
+                      {project.badge}
+                    </span>
+                  </div>
+
+                  {/* Location Pin - Bottom Right */}
+                  <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-sm">📍</span>
+                    <span className="text-[10px] font-medium text-slate-700">{project.location}</span>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-slate-900 tracking-tight mb-2">{project.title}</h3>
-                  <p className="text-sm text-slate-500 mb-6 line-clamp-2">{project.desc}</p>
-                  <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                    <div><p className="text-xs text-slate-400 mb-1">Estado</p><p className="text-sm font-medium text-slate-900">{project.status}</p></div>
-                    <div><p className="text-xs text-slate-400 mb-1">Tipo</p><p className="text-sm font-medium text-slate-900">{project.type}</p></div>
+                
+                <div className="p-8">
+                  <h3 className="text-xl font-semibold text-slate-900 tracking-tight mb-3 group-hover:text-emerald-900 transition-colors">{project.title}</h3>
+                  <p className="text-sm text-slate-500 mb-6 leading-relaxed">{project.desc}</p>
+                  
+                  <div className="flex items-center justify-between pt-6 border-t border-slate-100">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Estado</p>
+                      <p className="text-sm font-bold text-slate-900">{project.status}</p>
+                    </div>
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest text-slate-400 mb-1">Tipo</p>
+                      <p className="text-sm font-bold text-slate-900">{project.type}</p>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-slate-900 group-hover:text-white transition-all">
+                      <span>→</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -376,7 +406,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* Investment Process */}
+      {/* 6. INVESTMENT PROCESS */}
       <section id="proceso" className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-slate-800 to-transparent opacity-30 pointer-events-none"></div>
 
@@ -434,48 +464,102 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="kontakt" className="py-24 px-6 bg-white border-t border-slate-100">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-semibold text-slate-900 tracking-tight mb-4">¿Listo para invertir?</h2>
-            <p className="text-slate-500">Contáctanos para agendar una visita o recibir más información sobre nuestros planes de financiamiento.</p>
+      {/* 7. CONTACT SECTION - UPGRADED: Visual context */}
+      <section id="kontakt" className="relative py-32 px-6 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670" 
+            alt="Ciudad Moderna" 
+            className="w-full h-full object-cover opacity-5"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-3 bg-slate-100 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">
+              Contáctanos
+            </span>
+            <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tight mb-6">¿Listo para invertir?</h2>
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light">Agenda una visita personalizada o recibe información detallada sobre planes de financiamiento.</p>
           </div>
 
-          <div className="space-y-8">
-            <div className="flex flex-col sm:flex-row justify-center gap-8 text-center text-sm text-slate-600">
-              <div>
-                <p className="font-medium text-slate-900 mb-1">Oficinas</p>
-                <p>Honduras, C.A.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Contact Info + Map Illustration */}
+            <div className="space-y-8">
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h3 className="text-lg font-semibold text-slate-900 mb-6">Información de Contacto</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <span className="text-2xl">🏢</span>
+                    <div>
+                      <p className="font-medium text-slate-900 text-sm">Oficinas Centrales</p>
+                      <p className="text-sm text-slate-500">Tegucigalpa, Honduras C.A.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-2xl">📧</span>
+                    <div>
+                      <p className="font-medium text-slate-900 text-sm">Email</p>
+                      <a href="mailto:info@inmaer.hn" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">info@inmaer.hn</a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <span className="text-2xl">📱</span>
+                    <div>
+                      <p className="font-medium text-slate-900 text-sm">Teléfono</p>
+                      <a href="tel:+50400000000" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">+504 0000 0000</a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="font-medium text-slate-900 mb-1">Contacto</p>
-                <p><a href="mailto:info@inmaer.hn" className="hover:text-slate-900 transition-colors">info@inmaer.hn</a></p>
-                <p><a href="tel:+50400000000" className="hover:text-slate-900 transition-colors">+504 0000 0000</a></p>
+
+              {/* Honduras Map Illustration */}
+              <div className="bg-slate-900 p-8 rounded-2xl text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
+                <div className="relative z-10">
+                  <p className="text-xs uppercase tracking-widest text-emerald-400 mb-2 font-bold">Presencia Nacional</p>
+                  <p className="text-lg font-light mb-4">Proyectos activos en <span className="font-semibold">3 departamentos</span></p>
+                  <div className="flex items-center gap-6 text-sm text-slate-400">
+                    <span>📍 El Paraíso</span>
+                    <span>📍 Olancho</span>
+                    <span>📍 Valle</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <form className="bg-slate-50 p-8 rounded-2xl border border-slate-100 space-y-4">
+            {/* Contact Form */}
+            <form className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <label htmlFor="name" className="text-xs font-medium text-slate-700">Nombre Completo</label>
-                  <input type="text" id="name" className="w-full px-3 py-2 bg-white border border-slate-200 rounded-md focus:outline-none focus:ring-1 focus:ring-slate-400 text-sm" />
+                  <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-slate-700">Nombre Completo</label>
+                  <input type="text" id="name" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 text-sm" />
                 </div>
                 <div className="space-y-1">
-                  <label htmlFor="phone" className="text-xs font-medium text-slate-700">Teléfono</label>
-                  <input type="tel" id="phone" className="w-full px-3 py-2 bg-white border border-slate-200 rounded-md focus:outline-none focus:ring-1 focus:ring-slate-400 text-sm" />
+                  <label htmlFor="phone" className="text-xs font-bold uppercase tracking-widest text-slate-700">Teléfono</label>
+                  <input type="tel" id="phone" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 text-sm" />
                 </div>
               </div>
               <div className="space-y-1">
-                <label htmlFor="email" className="text-xs font-medium text-slate-700">Correo Electrónico</label>
-                <input type="email" id="email" className="w-full px-3 py-2 bg-white border border-slate-200 rounded-md focus:outline-none focus:ring-1 focus:ring-slate-400 text-sm" />
+                <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-slate-700">Correo Electrónico</label>
+                <input type="email" id="email" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 text-sm" />
               </div>
               <div className="space-y-1">
-                <label htmlFor="message" className="text-xs font-medium text-slate-700">Mensaje</label>
-                <textarea id="message" rows={4} className="w-full px-3 py-2 bg-white border border-slate-200 rounded-md focus:outline-none focus:ring-1 focus:ring-slate-400 text-sm"></textarea>
+                <label htmlFor="project" className="text-xs font-bold uppercase tracking-widest text-slate-700">Proyecto de Interés</label>
+                <select id="project" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 text-sm">
+                  <option>Ciudad Venecia Danlí</option>
+                  <option>Ciudad Venecia Olancho</option>
+                  <option>Ciudad Venecia Valle</option>
+                  <option>Información General</option>
+                </select>
+              </div>
+              <div className="space-y-1">
+                <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-slate-700">Mensaje</label>
+                <textarea id="message" rows={4} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-400 text-sm"></textarea>
               </div>
               
-              <button type="button" className="w-full py-3 bg-slate-900 text-white font-medium rounded-md hover:bg-slate-800 transition-colors mt-2 shadow-lg hover:shadow-xl">
+              <button type="button" className="w-full py-4 bg-slate-900 text-white font-bold text-sm uppercase tracking-widest rounded-lg hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                 Enviar Solicitud
               </button>
             </form>
@@ -483,14 +567,51 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 bg-white border-t border-slate-100 text-center">
-        <div className="mb-4">
-           <Link href="/" className="inline-block px-4 py-2 bg-slate-100 rounded-full text-xs font-bold text-slate-500 hover:bg-slate-200 hover:text-slate-800 transition-colors">
-              ← Volver al Home Original
-           </Link>
+      {/* 8. FOOTER - Enhanced */}
+      <footer className="bg-slate-900 text-white py-12 border-t border-slate-800">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+            {/* Brand */}
+            <div>
+              <div className="flex gap-2 items-center mb-4">
+                <span className="uppercase text-sm font-bold tracking-[0.2em]">Ciudad Venecia</span>
+                <span className="text-xs text-slate-500">|</span>
+                <span className="uppercase text-[10px] font-medium tracking-widest text-slate-400">by INMAER</span>
+              </div>
+              <p className="text-sm text-slate-400 leading-relaxed">Desarrollando el futuro inmobiliario de Honduras con calidad, confianza y visión estratégica.</p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-slate-300">Navegación</h4>
+              <div className="space-y-2">
+                {['Inicio', 'Nosotros', 'Proyectos', 'Inversión', 'Contacto'].map((item, i) => (
+                  <Link key={i} href={['#start', '#nosotros', '#proyectos', '#proceso', '#kontakt'][i]} className="block text-sm text-slate-400 hover:text-white transition-colors">
+                    {item}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Social / Legal */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-slate-300">Síguenos</h4>
+              <div className="flex gap-4 text-2xl mb-6">
+                <a href="#" className="text-slate-400 hover:text-white transition-colors">📘</a>
+                <a href="#" className="text-slate-400 hover:text-white transition-colors">📷</a>
+                <a href="#" className="text-slate-400 hover:text-white transition-colors">🐦</a>
+              </div>
+              <Link href="/" className="inline-block px-4 py-2 bg-slate-800 rounded-lg text-xs font-bold text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
+                ← Ver Home Original
+              </Link>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="pt-8 border-t border-slate-800 text-center">
+            <p className="text-xs text-slate-500">© 2024 INMAER Desarrollos Inmobiliarios. Todos los derechos reservados.</p>
+          </div>
         </div>
-        <p className="text-xs text-slate-400">© 2024 INMAER Desarrollos Inmobiliarios. Todos los derechos reservados.</p>
       </footer>
 
     </div>
