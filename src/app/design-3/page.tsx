@@ -116,9 +116,12 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 2. STATS BAR (Construyendo tu futuro) */}
-      <section className="bg-emerald-900 py-16 text-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      {/* 2. STATS BAR (PARALLAX - Construyendo tu futuro) */}
+      <section className="relative py-16 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670')" }}>
+        {/* Semi-transparent Emerald Overlay */}
+        <div className="absolute inset-0 bg-emerald-900/90"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
           <div className="mb-10">
              <div className="w-12 h-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 text-2xl">🏠</div>
              <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">CONSTRUYENDO TU FUTURO</h2>
@@ -181,7 +184,7 @@ export default function Design3Page() {
       </section>
 
       {/* 5. PARALLAX BREAK 1 */}
-      <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670')" }}>
+      <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2673')" }}>
         <div className="absolute inset-0 bg-slate-900/60"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Tu Patrimonio Seguro</h2>
@@ -240,9 +243,9 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 8. PARALLAX BREAK 2 */}
+      {/* 8. PARALLAX BREAK 2 (VIDA EN ARMONÍA) */}
       <section className="relative py-40 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2670')" }}>
-        <div className="absolute inset-0 bg-slate-900/30"></div>
+        <div className="absolute inset-0 bg-slate-900/50"></div>
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-xs font-bold uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
           <h2 className="text-5xl md:text-7xl font-semibold tracking-tight">VIDA EN ARMONÍA</h2>
@@ -276,7 +279,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 10. PARALLAX BREAK 3 */}
+      {/* 10. PARALLAX BREAK 3 (RESPIRA FUTURO) */}
       <section className="relative py-40 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1501854140884-074bf86ee91c?q=80&w=2670')" }}>
         <div className="absolute inset-0 bg-slate-900/40"></div>
         <div className="relative z-10 text-center text-white px-6">
