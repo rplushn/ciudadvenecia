@@ -20,9 +20,8 @@
   --font-sans: var(--font-inter), sans-serif;
 }
 
-/* Global font-size reduction (20% smaller for better visual balance) */
+/* Global scroll behavior only (Font size reset to default) */
 html {
-  font-size: 13px;
   scroll-behavior: smooth;
 }
 
