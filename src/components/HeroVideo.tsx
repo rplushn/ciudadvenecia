@@ -22,7 +22,7 @@ export default function HeroVideo() {
         poster="https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074&auto=format&fit=crop"
       >
         {/* NOTA: Vi que subiste un HERO3.mp4. Si quieres usar ese, cambia abajo HERO2 por HERO3 */}
-        <source src="/HERO2.mp4" type="video/mp4" />
+        <source src="/HERO3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 

@@ -133,7 +133,7 @@ export default function Design3Page() {
               <h1 className="text-4xl md:text-6xl leading-[1.1] font-medium text-white tracking-tight mb-6">
                 Cumpliendo tus sueños de tener vivienda propia.
               </h1>
-              <p className="text-lg md:text-xl leading-relaxed font-light text-slate-100 max-w-2xl mb-10">
+              <p className="text-lg leading-relaxed font-extralight text-slate-100 max-w-2xl mb-10">
                 Desde Danlí hasta Olancho, desarrollamos comunidades planificadas con seguridad, plusvalía y financiamiento directo. Más de 10 años construyendo futuro.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
@@ -253,7 +253,7 @@ export default function Design3Page() {
       <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2673')" }}>
         <div className="absolute inset-0 bg-slate-900/60"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight mb-4">Tu Patrimonio Seguro</h2>
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">Tu Patrimonio Seguro</h2>
           <p className="text-xl text-slate-200 font-light">Escrituración inmediata y respaldo legal garantizado.</p>
         </div>
       </section>
@@ -405,7 +405,7 @@ export default function Design3Page() {
         <div className="absolute inset-0 bg-slate-900/50"></div>
         <div className="relative z-10 text-center text-white px-6">
           <p className="text-xs font-bold uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
-          <h2 className="text-5xl md:text-7xl font-semibold tracking-tight">VIDA EN ARMONÍA</h2>
+          <h2 className="text-5xl md:text-[55px] font-medium tracking-tight">Vida en Armonía</h2>
         </div>
       </section>
 
@@ -414,7 +414,7 @@ export default function Design3Page() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2">
              <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4 block">Financiamiento Accesible</span>
-             <h2 className="text-3xl md:text-4xl font-semibold mb-6">Tu casa, a tu ritmo</h2>
+             <h2 className="text-3xl md:text-4xl font-medium mb-6">Tu casa, a tu ritmo</h2>
              <p className="text-slate-400 font-light mb-8 leading-relaxed">
                Entendemos que cada familia es diferente. Por eso ofrecemos planes flexibles para que dejes de alquilar e inviertas en lo propio.
              </p>
@@ -425,7 +425,7 @@ export default function Design3Page() {
                       <span className="text-emerald-400 font-bold">1</span>
                    </div>
                    <div>
-                      <h4 className="font-bold text-lg text-white">Financiamiento Directo (Terrenos)</h4>
+                      <h4 className="font-medium text-lg text-white">Financiamiento Directo (Terrenos)</h4>
                       <p className="text-slate-400 text-sm mt-1">Sin trámites engorrosos. Aprobación inmediata solo con tu identidad. Primas desde L 2,500.</p>
                    </div>
                 </div>
@@ -450,7 +450,7 @@ export default function Design3Page() {
                <div className="absolute top-0 right-0 p-4 opacity-10">
                   <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5 10 5 10-5-5-2.5-5 2.5z"/></svg>
                </div>
-               <h3 className="text-xl font-bold mb-6">Requisitos Básicos</h3>
+               <h3 className="text-xl font-medium mb-6">Requisitos Básicos</h3>
                <ul className="space-y-4 text-sm text-slate-300">
                   <li className="flex items-center gap-3">
                      <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
@@ -498,29 +498,29 @@ export default function Design3Page() {
                <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=2669" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-6 left-6 text-white">
-                 <h3 className="text-xl font-bold">Casa Club</h3>
+                 <h3 className="text-xl font-medium">Casa Club</h3>
                  <p className="text-xs text-slate-300">Espacios sociales para eventos y reuniones</p>
                </div>
             </div>
             <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Piscinas</h3></div>
+               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Piscinas</h3></div>
             </div>
             <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Gimnasio</h3></div>
+               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Gimnasio</h3></div>
             </div>
              <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Canchas Deportivas</h3></div>
+               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Canchas Deportivas</h3></div>
             </div>
              <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1543093247-38446b28cb7b?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Áreas de Juegos</h3></div>
+               <div className="absolute bottom-4 left-4 text-white"><h3 className="font-medium text-sm">Áreas de Juegos</h3></div>
             </div>
          </div>
       </section>
