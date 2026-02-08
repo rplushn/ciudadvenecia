@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import RevealOnScroll from './RevealOnScroll';
 
 const projects = [
   {
@@ -44,42 +43,35 @@ export default function FeaturedProjects() {
       
       {/* Intro Section */}
       <div className="py-24 text-center px-4 max-w-4xl mx-auto">
-        <RevealOnScroll>
-          <span className="text-accent tracking-widest uppercase text-sm font-bold mb-4 block">
-            Trayectoria INMAER
-          </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-            Desarrollando el Futuro <br/>
-            <span className="italic font-light">de Honduras</span>
-          </h2>
-        </RevealOnScroll>
-        
-        <RevealOnScroll delay={100}>
-          <p className="text-text-secondary text-lg leading-relaxed">
-            Desde Danlí hasta Olancho, creamos comunidades planificadas con todos los servicios,
-            seguridad y plusvalía garantizada. Más de 1,200 familias ya viven su sueño con nosotros.
-          </p>
-        </RevealOnScroll>
+        <span className="text-accent tracking-widest uppercase text-sm font-bold mb-4 block">
+          Trayectoria INMAER
+        </span>
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
+          Desarrollando el Futuro <br/>
+          <span className="italic font-light">de Honduras</span>
+        </h2>
+        <p className="text-text-secondary text-lg leading-relaxed">
+          Desde Danlí hasta Olancho, creamos comunidades planificadas con todos los servicios,
+          seguridad y plusvalía garantizada. Más de 1,200 familias ya viven su sueño con nosotros.
+        </p>
       </div>
 
       {/* Project 1: Danlí (Text Left, Image Right) */}
       <div className="grid md:grid-cols-2 min-h-[600px]">
         {/* TEXTO IZQUIERDA (Orden 1 en Desktop) */}
         <div className="bg-surface p-12 md:p-24 flex flex-col justify-center order-2 md:order-1">
-          <RevealOnScroll>
-            <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
-              {projects[0].location}
-            </span>
-            <h3 className="font-display text-4xl font-bold text-primary mb-6">
-              {projects[0].title}
-            </h3>
-            <p className="text-text-secondary text-lg mb-8 leading-relaxed">
-              {projects[0].description}
-            </p>
-            <button className="bg-primary text-white px-8 py-4 uppercase tracking-wider font-bold hover:bg-accent transition-colors self-start shadow-md hover:shadow-xl">
-              Ver Detalles
-            </button>
-          </RevealOnScroll>
+          <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
+            {projects[0].location}
+          </span>
+          <h3 className="font-display text-4xl font-bold text-primary mb-6">
+            {projects[0].title}
+          </h3>
+          <p className="text-text-secondary text-lg mb-8 leading-relaxed">
+            {projects[0].description}
+          </p>
+          <button className="bg-primary text-white px-8 py-4 uppercase tracking-wider font-bold hover:bg-accent transition-colors self-start">
+            Ver Detalles
+          </button>
         </div>
         
         {/* IMAGEN DERECHA (Orden 2 en Desktop) */}
@@ -107,14 +99,12 @@ export default function FeaturedProjects() {
         ))}
         
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 p-4">
-          <RevealOnScroll>
-            <h3 className="font-display text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
-              Tu Patrimonio Seguro
-            </h3>
-            <p className="text-xl md:text-2xl font-light max-w-2xl drop-shadow-md">
-              Financiamiento propio y bancario disponible
-            </p>
-          </RevealOnScroll>
+          <h3 className="font-display text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+            Tu Patrimonio Seguro
+          </h3>
+          <p className="text-xl md:text-2xl font-light max-w-2xl drop-shadow-md">
+            Financiamiento propio y bancario disponible
+          </p>
         </div>
       </div>
 
@@ -128,34 +118,30 @@ export default function FeaturedProjects() {
         
         {/* TEXTO DERECHA (Orden 2 en Desktop) */}
         <div className="bg-white p-12 md:p-24 flex flex-col justify-center order-2 md:order-2">
-          <RevealOnScroll>
-            <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
-              {projects[1].location}
-            </span>
-            <h3 className="font-display text-4xl font-bold text-primary mb-6">
-              {projects[1].title}
-            </h3>
-            <p className="text-text-secondary text-lg mb-8 leading-relaxed">
-              {projects[1].description}
-            </p>
-            <button className="bg-white border-2 border-primary text-primary px-8 py-4 uppercase tracking-wider font-bold hover:bg-primary hover:text-white transition-colors self-start">
-              Conocer Premium
-            </button>
-          </RevealOnScroll>
+          <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
+            {projects[1].location}
+          </span>
+          <h3 className="font-display text-4xl font-bold text-primary mb-6">
+            {projects[1].title}
+          </h3>
+          <p className="text-text-secondary text-lg mb-8 leading-relaxed">
+            {projects[1].description}
+          </p>
+          <button className="bg-white border-2 border-primary text-primary px-8 py-4 uppercase tracking-wider font-bold hover:bg-primary hover:text-white transition-colors self-start">
+            Conocer Premium
+          </button>
         </div>
       </div>
 
       {/* Remaining Projects Grid */}
       <div className="py-24 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <RevealOnScroll>
-            <h2 className="font-display text-3xl font-bold text-primary mb-4">
-              Portafolio Nacional
-            </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
-              Explora nuestras opciones de inversión en diferentes departamentos.
-            </p>
-          </RevealOnScroll>
+          <h2 className="font-display text-3xl font-bold text-primary mb-4">
+            Portafolio Nacional
+          </h2>
+          <p className="text-text-secondary max-w-2xl mx-auto">
+            Explora nuestras opciones de inversión en diferentes departamentos.
+          </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
@@ -191,21 +177,19 @@ export default function FeaturedProjects() {
               desc: "Ubicación privilegiada en carretera Panamericana."
             },
           ].map((item, i) => (
-            <RevealOnScroll key={i} delay={((i % 3) * 100) as any} width="full">
-              <div className="group relative h-80 overflow-hidden cursor-pointer border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500">
-                <div className="absolute inset-0 bg-gray-200 group-hover:scale-110 transition-transform duration-700 bg-cover bg-center"
-                     style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2067)' }}>
-                </div>
-                <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors" />
-                <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-                  <p className="text-xs uppercase tracking-wider mb-2 font-bold text-accent">{item.loc}</p>
-                  <h4 className="font-display text-2xl font-bold mb-2">{item.title}</h4>
-                  <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    {item.desc}
-                  </p>
-                </div>
+            <div key={i} className="group relative h-80 overflow-hidden cursor-pointer border border-gray-100">
+              <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-700 bg-cover bg-center"
+                   style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2067)' }}>
               </div>
-            </RevealOnScroll>
+              <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors" />
+              <div className="absolute bottom-0 left-0 p-8 w-full text-white">
+                <p className="text-xs uppercase tracking-wider mb-2 font-bold text-accent">{item.loc}</p>
+                <h4 className="font-display text-2xl font-bold mb-2">{item.title}</h4>
+                <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
