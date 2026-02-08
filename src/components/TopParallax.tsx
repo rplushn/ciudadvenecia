@@ -83,7 +83,7 @@ export default function TopParallax() {
       </section>
 
       {/* Parallax Section 2 */}
-      <div className="relative min-h-[500px] overflow-hidden border-t-8 border-white">
+      <div className="relative min-h-[500px] overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
