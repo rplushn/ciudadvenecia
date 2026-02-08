@@ -37,6 +37,9 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+        <span className="text-accent uppercase tracking-widest text-xs md:text-sm font-bold mb-4 block">
+          SOMOS EL PROYECTO LÍDER DE LA ZONA ORIENTAL
+        </span>
         <BlurText
           text="CIUDAD VENECIA"
           delay={150}
@@ -45,7 +48,8 @@ export default function Hero() {
           className="font-display text-5xl md:text-7xl lg:text-9xl font-bold text-white uppercase tracking-tighter mb-4 drop-shadow-2xl justify-center"
         />
         <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-8 font-light">
-          El desarrollo residencial que transforma tu estilo de vida
+          Un desarrollo inmobiliario <span className="text-accent font-semibold">by INMAER</span>,
+          con urbanización completa, seguridad y opciones de financiamiento para avanzar a tu ritmo.
         </p>
         <button className="bg-primary hover:bg-accent text-white font-semibold px-8 py-4 uppercase tracking-wider transition-all duration-200 hover:-translate-y-1">
           Conocer más
