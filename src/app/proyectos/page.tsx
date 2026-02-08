@@ -134,25 +134,26 @@ export default function Proyectos() {
       {/* 4. #3 RESIDENCIAL VERSALLES */}
       <section className="py-24 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          <span className="text-accent uppercase tracking-widest text-sm font-bold mb-2 block">Alta Gama</span>
           <h2 className="font-display text-3xl font-bold text-primary">Exclusividad Garantizada</h2>
         </div>
         
-        <div className="relative bg-surface p-8 md:p-12 border border-gray-200">
+        <div className="relative bg-surface p-8 md:p-12 border border-gray-200 shadow-sm">
            <div className="grid md:grid-cols-2 gap-12 items-center">
              <div className="order-2 md:order-1">
                 <span className="text-accent text-xs font-bold uppercase mb-2 block">Carretera Panamericana</span>
                 <h3 className="font-display text-4xl font-bold text-primary mb-4">Residencial Versalles</h3>
-                <p className="text-text-secondary mb-6">
+                <p className="text-text-secondary mb-6 leading-relaxed">
                   Ubicado a solo 5 km del centro. Un concepto exclusivo con lotes amplios (12x20m), 
-                  piscina y áreas recreativas privadas. Disponibilidad limitada.
+                  piscina y áreas recreativas privadas. Disponibilidad limitada para quienes buscan privacidad.
                 </p>
                 <button className="text-primary font-bold border-b-2 border-primary pb-1 hover:text-accent hover:border-accent transition-colors uppercase text-sm">
                   Ver Disponibilidad
                 </button>
              </div>
-             <div className="order-1 md:order-2 h-64 md:h-full bg-gray-300 relative">
+             <div className="order-1 md:order-2 h-80 md:h-full bg-gray-300 relative overflow-hidden">
                <div 
-                 className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500"
+                 className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
                  style={{ backgroundImage: "url('https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=2070')" }}
                />
              </div>
@@ -160,9 +161,109 @@ export default function Proyectos() {
         </div>
       </section>
 
-      {/* Placeholder for Next Phase (Grid + Form) */}
-      <section className="py-24 bg-surface text-center">
-         <p className="text-text-secondary uppercase tracking-widest text-sm">Próxima Fase: Resto del Portafolio + Formulario</p>
+      {/* 5. REST OF PORTFOLIO (Grid) */}
+      <section className="py-24 bg-gray-50 px-4">
+        <div className="max-w-7xl mx-auto">
+           <div className="text-center mb-16">
+              <h2 className="font-display text-3xl font-bold text-primary mb-4">Más Oportunidades</h2>
+              <p className="text-text-secondary max-w-xl mx-auto">Desde la zona sur hasta Olancho, expandimos nuestra huella de calidad.</p>
+           </div>
+
+           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { 
+                  name: "Ciudad Venecia Valle", 
+                  loc: "San Lorenzo", 
+                  price: "Primas desde L. 6,000",
+                  img: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009"
+                },
+                { 
+                  name: "CV Raíces Talanga", 
+                  loc: "Talanga, FM", 
+                  price: "Lanzamiento 2026",
+                  img: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?q=80&w=2070"
+                },
+                { 
+                  name: "Ciudad Venecia Olancho", 
+                  loc: "Lepaguare", 
+                  price: "Concepto Premium",
+                  img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053"
+                },
+                { 
+                  name: "Residencial Palmanova", 
+                  loc: "Danlí", 
+                  price: "Carretera Panamericana",
+                  img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070"
+                }
+              ].map((item, i) => (
+                <div key={i} className="group bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+                   <div className="h-64 overflow-hidden relative">
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                        style={{ backgroundImage: `url(${item.img})` }} 
+                      />
+                      <div className="absolute bottom-0 left-0 bg-primary/90 text-white px-4 py-1 text-xs font-bold uppercase">
+                        {item.loc}
+                      </div>
+                   </div>
+                   <div className="p-8">
+                      <h3 className="font-display text-xl font-bold text-primary mb-2">{item.name}</h3>
+                      <p className="text-accent font-medium text-sm mb-6">{item.price}</p>
+                      <button className="text-text-secondary text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
+                        Ver Proyecto +
+                      </button>
+                   </div>
+                </div>
+              ))}
+           </div>
+        </div>
+      </section>
+
+      {/* 6. FINAL CONTACT FORM */}
+      <section className="py-24 bg-white px-4">
+        <div className="max-w-4xl mx-auto bg-surface p-8 md:p-16 relative overflow-hidden">
+          {/* Decorative element */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full" />
+          
+          <div className="text-center mb-12 relative z-10">
+            <span className="text-accent uppercase tracking-widest text-xs font-bold mb-4 block">Contacto Directo</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-6">Inicia tu Legado</h2>
+            <p className="text-text-secondary max-w-lg mx-auto">
+              Déjanos tus datos y un asesor especializado te contactará para presentarte el plan de financiamiento ideal.
+            </p>
+          </div>
+
+          <form className="space-y-6 relative z-10 max-w-lg mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-primary uppercase">Nombre</label>
+                <input type="text" className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors" placeholder="Tu nombre completo" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-primary uppercase">Teléfono</label>
+                <input type="tel" className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors" placeholder="+504 0000-0000" />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-primary uppercase">Correo Electrónico</label>
+              <input type="email" className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors" placeholder="tucorreo@ejemplo.com" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-xs font-bold text-primary uppercase">Proyecto de Interés</label>
+              <select className="w-full bg-white border border-gray-200 p-3 focus:border-accent focus:outline-none transition-colors">
+                <option>Seleccionar proyecto...</option>
+                <option>Ciudad Venecia Danlí</option>
+                <option>Hill's City</option>
+                <option>Ciudad Venecia Olancho</option>
+                <option>Residencial Versalles</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <button className="w-full bg-primary text-white py-4 font-bold uppercase tracking-widest hover:bg-accent transition-colors">
+              Solicitar Información
+            </button>
+          </form>
+        </div>
       </section>
 
       <Footer />
