@@ -112,13 +112,21 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* CTA Button - Now points to /design-2 */}
-            <Link 
-              href="/design-2" 
-              className="bg-primary hover:bg-accent text-white text-sm font-bold py-3 px-6 transition-all"
-            >
-              COTIZA YA
-            </Link>
+            {/* CTA Buttons for Development */}
+            <div className="flex gap-2">
+              <Link 
+                href="/design-2" 
+                className="bg-primary hover:bg-accent text-white text-xs font-bold py-3 px-4 transition-all"
+              >
+                V2
+              </Link>
+              <Link 
+                href="/design-3" 
+                className="bg-accent hover:bg-white hover:text-primary text-white text-xs font-bold py-3 px-4 transition-all border border-transparent hover:border-primary"
+              >
+                V3
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -149,13 +157,22 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Link 
-            href="/design-2" 
-            className="bg-primary text-white text-center font-bold py-3 mt-4"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            COTIZA YA
-          </Link>
+          <div className="flex gap-2 mt-4">
+            <Link 
+              href="/design-2" 
+              className="flex-1 bg-primary text-white text-center font-bold py-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Ver Diseño 2
+            </Link>
+            <Link 
+              href="/design-3" 
+              className="flex-1 bg-accent text-white text-center font-bold py-3"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Ver Diseño 3
+            </Link>
+          </div>
         </div>
       )}
     </header>
