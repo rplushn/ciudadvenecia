@@ -56,9 +56,10 @@ export default function FeaturedProjects() {
         </p>
       </div>
 
-      {/* Project 1: Danlí (Flagship) */}
+      {/* Project 1: Danlí (Text Left, Image Right) */}
       <div className="grid md:grid-cols-2 min-h-[600px]">
-        <div className="bg-surface p-12 md:p-24 flex flex-col justify-center">
+        {/* TEXTO IZQUIERDA (Orden 1 en Desktop) */}
+        <div className="bg-surface p-12 md:p-24 flex flex-col justify-center order-2 md:order-1">
           <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
             {projects[0].location}
           </span>
@@ -72,13 +73,15 @@ export default function FeaturedProjects() {
             Ver Detalles
           </button>
         </div>
+        
+        {/* IMAGEN DERECHA (Orden 2 en Desktop) */}
         <div 
-          className="h-[400px] md:h-auto bg-cover bg-center"
+          className="h-[400px] md:h-auto bg-cover bg-center order-1 md:order-2"
           style={{ backgroundImage: `url(${projects[0].image})` }}
         />
       </div>
 
-      {/* LIFESTYLE CAROUSEL */}
+      {/* LIFESTYLE CAROUSEL (Middle) */}
       <div className="relative h-[500px] w-full overflow-hidden group">
         {lifestyleImages.map((img, index) => (
           <div 
@@ -105,13 +108,16 @@ export default function FeaturedProjects() {
         </div>
       </div>
 
-      {/* Project 2: Olancho (Premium) */}
+      {/* Project 2: Olancho (Image Left, Text Right) */}
       <div className="grid md:grid-cols-2 min-h-[600px]">
+        {/* IMAGEN IZQUIERDA (Orden 1 en Desktop) */}
         <div 
-          className="h-[400px] md:h-auto bg-cover bg-center order-2 md:order-1"
+          className="h-[400px] md:h-auto bg-cover bg-center order-1 md:order-1"
           style={{ backgroundImage: `url(${projects[1].image})` }}
         />
-        <div className="bg-white p-12 md:p-24 flex flex-col justify-center order-1 md:order-2">
+        
+        {/* TEXTO DERECHA (Orden 2 en Desktop) */}
+        <div className="bg-white p-12 md:p-24 flex flex-col justify-center order-2 md:order-2">
           <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
             {projects[1].location}
           </span>
