@@ -118,12 +118,19 @@ export default function Design3Page() {
 
       {/* 2. STATS BAR (PARALLAX - Construyendo tu futuro) */}
       <section className="relative py-16 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670')" }}>
-        {/* Semi-transparent Emerald Overlay */}
         <div className="absolute inset-0 bg-emerald-900/90"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
           <div className="mb-10">
-             <div className="w-12 h-12 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4 text-2xl">🏠</div>
+             {/* Minimalist Icon: Square */}
+             <div className="w-12 h-12 mx-auto bg-white/10 rounded-lg flex items-center justify-center mb-4">
+               <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                 <rect x="3" y="3" width="7" height="7" rx="1" />
+                 <rect x="14" y="3" width="7" height="7" rx="1" />
+                 <rect x="14" y="14" width="7" height="7" rx="1" />
+                 <rect x="3" y="14" width="7" height="7" rx="1" />
+               </svg>
+             </div>
              <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">CONSTRUYENDO TU FUTURO</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-10">
@@ -149,7 +156,7 @@ export default function Design3Page() {
       {/* 3. ABOUT TRAJECTORY */}
       <section id="nosotros" className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-500 mb-4">Trayectoria INMAER</p>
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">Trayectoria INMAER</p>
           <h2 className="text-4xl md:text-5xl font-medium text-slate-900 tracking-tight mb-2">
             Desarrollando el Futuro
           </h2>
@@ -165,7 +172,7 @@ export default function Design3Page() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/3 order-2 lg:order-1">
-              <span className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-2 block">Danlí, El Paraíso</span>
+              <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2 block">Danlí, El Paraíso</span>
               <h3 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">Ciudad Venecia Danlí</h3>
               <p className="text-slate-500 font-light mb-8 leading-relaxed">
                 Nuestro proyecto insignia con mayor crecimiento en la zona oriental. Más de 3 etapas desarrolladas, a pocos minutos del centro y cerca de UNAH-TEC. Un ambiente fresco y familiar.
@@ -202,7 +209,7 @@ export default function Design3Page() {
               </div>
             </div>
             <div className="w-full lg:w-1/3">
-              <span className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-2 block">Valle de Lepaguare, Olancho</span>
+              <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-2 block">Valle de Lepaguare, Olancho</span>
               <h3 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">Ciudad Venecia Olancho</h3>
               <p className="text-slate-500 font-light mb-8 leading-relaxed">
                 El proyecto más exclusivo "Premium Level". Casa club con piscina, gimnasio, canchas deportivas y restaurante. Redefiniendo el estilo de vida en Olancho.
@@ -256,7 +263,7 @@ export default function Design3Page() {
       <section className="py-24 px-6 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           <div className="w-full lg:w-1/2">
-             <span className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-4 block">Experiencia Ciudad Venecia</span>
+             <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4 block">Experiencia Ciudad Venecia</span>
              <h2 className="text-3xl md:text-4xl font-semibold mb-6">Vivir, invertir y crecer en un mismo lugar</h2>
              <p className="text-slate-400 font-light mb-10 leading-relaxed">
                Cada proyecto combina ubicación estratégica, servicios básicos completos y opciones de financiamiento para que avances a tu ritmo, sin promesas irreales.
@@ -271,7 +278,7 @@ export default function Design3Page() {
              <div className="relative rounded-xl overflow-hidden aspect-video shadow-2xl border border-slate-700">
                <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?q=80&w=2670" alt="Experiencia" className="w-full h-full object-cover" />
                <div className="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black/80 to-transparent w-full">
-                 <p className="text-xs text-amber-500 font-bold uppercase mb-1">Portafolio INMAER</p>
+                 <p className="text-xs text-slate-400 font-bold uppercase mb-1">Portafolio INMAER</p>
                  <p className="font-medium text-white">Ciudad Venecia Danlí · Olancho · Valle</p>
                </div>
              </div>
@@ -291,19 +298,35 @@ export default function Design3Page() {
       {/* 11. WHY CHOOSE US */}
       <section className="py-24 px-6 bg-white text-center">
         <div className="max-w-7xl mx-auto">
-           <span className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-4 block">Inversión Inteligente</span>
+           <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4 block">Inversión Inteligente</span>
            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-16">¿Por qué elegir Ciudad Venecia?</h2>
            
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
              {[
-               { icon: '📈', title: 'Plusvalía Garantizada', desc: 'Ubicaciones estratégicas en zonas de alto crecimiento económico.' },
-               { icon: '🛡️', title: 'Seguridad Jurídica', desc: 'Todos nuestros proyectos cuentan con escrituración inmediata.' },
-               { icon: '🛣️', title: 'Urbanización Completa', desc: 'Entregamos proyectos con agua, luz, calles pavimentadas.' },
-               { icon: '🤝', title: 'Respaldo INMAER', desc: 'Más de 10 años de experiencia y miles de familias satisfechas.' }
+               { 
+                 icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>,
+                 title: 'Plusvalía Garantizada', 
+                 desc: 'Ubicaciones estratégicas en zonas de alto crecimiento económico.' 
+               },
+               { 
+                 icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>,
+                 title: 'Seguridad Jurídica', 
+                 desc: 'Todos nuestros proyectos cuentan con escrituración inmediata.' 
+               },
+               { 
+                 icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" /></svg>,
+                 title: 'Urbanización Completa', 
+                 desc: 'Entregamos proyectos con agua, luz, calles pavimentadas.' 
+               },
+               { 
+                 icon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"><path strokeLinecap="round" strokeLinejoin="round" d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002" /></svg>,
+                 title: 'Respaldo INMAER', 
+                 desc: 'Más de 10 años de experiencia y miles de familias satisfechas.' 
+               }
              ].map((item, i) => (
                <div key={i} className="group">
-                 <div className="w-16 h-16 mx-auto bg-slate-50 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors border border-slate-100">
-                   {item.icon}
+                 <div className="w-16 h-16 mx-auto bg-slate-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-slate-900 transition-colors border border-slate-100">
+                   <div className="text-slate-900 group-hover:text-white transition-colors">{item.icon}</div>
                  </div>
                  <h3 className="text-lg font-medium text-slate-900 mb-3">{item.title}</h3>
                  <p className="text-sm text-slate-500 font-light leading-relaxed">{item.desc}</p>
@@ -313,16 +336,15 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 12. AMENITIES GRID (Masonry-ish) */}
+      {/* 12. AMENITIES GRID */}
       <section id="amenidades" className="py-24 px-6 bg-slate-50">
          <div className="max-w-7xl mx-auto text-center mb-16">
-            <span className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-4 block">Estilo de Vida Inigualable</span>
+            <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4 block">Estilo de Vida Inigualable</span>
             <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-2">Más que amenidades,</h2>
             <p className="text-3xl md:text-4xl font-serif italic text-slate-400">experiencias diarias</p>
          </div>
 
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
-            {/* Large Item */}
             <div className="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=2669" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -330,7 +352,6 @@ export default function Design3Page() {
                  <h3 className="text-xl font-bold">Casa Club Premium</h3>
                </div>
             </div>
-            {/* Small Items */}
             <div className="relative rounded-xl overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -363,14 +384,14 @@ export default function Design3Page() {
       {/* 13. CTA / CONTACT SECTION */}
       <section id="kontakt" className="py-32 px-6 bg-white text-center">
          <div className="max-w-3xl mx-auto">
-            <span className="text-amber-500 text-xs font-bold uppercase tracking-widest mb-4 block">Último Paso</span>
+            <span className="text-slate-500 text-xs font-bold uppercase tracking-widest mb-4 block">Último Paso</span>
             <h2 className="text-4xl font-semibold text-slate-900 mb-6">¿Listo para hablar con un asesor?</h2>
             <p className="text-slate-500 font-light mb-12">Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento, sin compromisos ni promesas infladas.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✅ Respuesta en menos de 24 horas</p></div>
-               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✅ Información clara sobre cuotas y primas</p></div>
-               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✅ Acompañamiento durante todo el proceso</p></div>
+               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✓ Respuesta en menos de 24 horas</p></div>
+               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✓ Información clara sobre cuotas y primas</p></div>
+               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✓ Acompañamiento durante todo el proceso</p></div>
             </div>
 
             <div className="bg-slate-900 text-white p-8 rounded-xl shadow-2xl text-left flex flex-col md:flex-row gap-8 items-center">
