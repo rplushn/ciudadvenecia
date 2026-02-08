@@ -1,80 +1,60 @@
 "use client";
 
-import { motion } from 'framer-motion';
-
 export default function PromoSection() {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0A1A12]"> {/* Deep Forest Green Background */}
-      
-      {/* 1. Video/Texture Background (Subtle Motion) */}
-      {/* Using a high-quality nature video as texture, very darkened */}
-      <div className="absolute inset-0 opacity-40 mix-blend-overlay">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover grayscale"
-        >
-          {/* Using a placeholder nature video url, replace with local optimized video if needed */}
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-leaves-of-a-tree-moving-in-the-wind-1162-large.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <section className="relative min-h-[60vh] overflow-hidden">
+      {/* Background Image with Parallax */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053')",
+        }}
+      />
 
-      {/* 2. Grainy Texture Overlay for "Film" look */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/stardust.png")' }}></div>
+      {/* Green Overlay */}
+      <div className="absolute inset-0 bg-success/85" />
 
-      {/* Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        
-        {/* Elegant Small Header */}
-        <motion.span 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="block text-accent text-xs md:text-sm uppercase tracking-[0.3em] mb-6 font-bold"
-        >
-          Exclusividad & Naturaleza
-        </motion.span>
+      {/* Content */}
+      <div className="relative z-10 py-20 px-4 text-center text-white">
+        <div className="max-w-6xl mx-auto">
+          {/* Icon/Logo placeholder */}
+          <div className="mb-8">
+            <div className="w-24 h-24 mx-auto bg-white/20 flex items-center justify-center">
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+              </svg>
+            </div>
+          </div>
 
-        {/* Main Title - Refined Size, Serif/Display Mix */}
-        <motion.h2 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="font-display text-4xl md:text-5xl text-white font-medium mb-12 leading-tight"
-        >
-          Donde el diseño moderno <br />
-          abraza el <span className="italic text-white/80 font-serif">entorno natural</span>.
-        </motion.h2>
+          {/* Main Title */}
+          <h2 className="font-display text-4xl md:text-6xl font-bold uppercase mb-6">
+            Construyendo
+            <br />
+            Tu Futuro
+          </h2>
 
-        {/* Minimalist Stats Divider */}
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12" />
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-8">
+            <div className="border-2 border-white/40 p-8">
+              <div className="text-5xl font-bold mb-2">300+</div>
+              <div className="text-lg uppercase tracking-wider">Lotes Disponibles</div>
+            </div>
+            <div className="border-2 border-white/40 p-8">
+              <div className="text-5xl font-bold mb-2">24/7</div>
+              <div className="text-lg uppercase tracking-wider">Seguridad</div>
+            </div>
+            <div className="border-2 border-white/40 p-8">
+              <div className="text-5xl font-bold mb-2">100%</div>
+              <div className="text-lg uppercase tracking-wider">Financiamiento</div>
+            </div>
+          </div>
 
-        {/* Sophisticated Stats Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-24">
-          {[
-            { num: "300+", label: "Lotes Premium" },
-            { num: "24/7", label: "Seguridad Privada" },
-            { num: "100%", label: "Financiamiento Propio" }
-          ].map((item, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + (i * 0.2), duration: 0.8 }}
-              className="flex flex-col items-center group"
-            >
-              <span className="text-3xl md:text-4xl font-display text-white mb-2 group-hover:text-accent transition-colors duration-500">
-                {item.num}
-              </span>
-              <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/60">
-                {item.label}
-              </span>
-            </motion.div>
-          ))}
+          {/* Description */}
+          <p className="text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
+            Ubicado estratégicamente en Tegucigalpa, Ciudad Venecia ofrece
+            un entorno seguro, moderno y accesible para tu familia.
+          </p>
         </div>
-
       </div>
     </section>
   );
