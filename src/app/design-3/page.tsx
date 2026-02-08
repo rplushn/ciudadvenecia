@@ -104,10 +104,10 @@ export default function Design3Page() {
                 Desde Danlí hasta Olancho, desarrollamos comunidades planificadas con seguridad, plusvalía y financiamiento directo. Más de 10 años construyendo futuro.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <Link href="#proyectos" className="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                <Link href="#proyectos" className="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 text-sm font-medium rounded hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
                   Ver Proyectos <span>→</span>
                 </Link>
-                <Link href="#kontakt" className="w-full sm:w-auto px-6 py-3.5 bg-white/5 border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm shadow-sm">
+                <Link href="#kontakt" className="w-full sm:w-auto px-6 py-3.5 bg-white/5 border border-white/20 text-white text-sm font-medium rounded hover:bg-white/10 transition-colors backdrop-blur-sm shadow-sm">
                   Cotizar Terreno
                 </Link>
               </div>
@@ -123,7 +123,7 @@ export default function Design3Page() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
           <div className="mb-10">
              {/* Minimalist Icon: Square */}
-             <div className="w-12 h-12 mx-auto bg-white/10 rounded-lg flex items-center justify-center mb-4">
+             <div className="w-12 h-12 mx-auto bg-white/10 rounded flex items-center justify-center mb-4">
                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                  <rect x="3" y="3" width="7" height="7" rx="1" />
                  <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -165,15 +165,15 @@ export default function Design3Page() {
             Nacimos en Danlí con una visión clara: urbanización accesible y digna. Comenzamos con Residencial El Sauce y Ciudad Venecia, y hoy somos referentes con proyectos en Talanga, San Lorenzo y Olancho.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-             <div className="p-6 bg-slate-50 rounded-lg">
+             <div className="p-6 bg-slate-50 rounded">
                 <h4 className="font-bold text-slate-900 mb-2">Misión</h4>
                 <p className="text-sm text-slate-500">Crear espacios donde las familias hondureñas puedan vivir mejor, en entornos seguros y agradables.</p>
              </div>
-             <div className="p-6 bg-slate-50 rounded-lg">
+             <div className="p-6 bg-slate-50 rounded">
                 <h4 className="font-bold text-slate-900 mb-2">Visión</h4>
                 <p className="text-sm text-slate-500">Ser líderes nacionales expandiendo la marca Ciudad Venecia con proyectos de alta plusvalía.</p>
              </div>
-             <div className="p-6 bg-slate-50 rounded-lg">
+             <div className="p-6 bg-slate-50 rounded">
                 <h4 className="font-bold text-slate-900 mb-2">Valores</h4>
                 <p className="text-sm text-slate-500">Compromiso, Integridad, Calidad constructiva y Trabajo en equipo.</p>
              </div>
@@ -200,12 +200,12 @@ export default function Design3Page() {
                  <li className="flex gap-3"><span className="text-emerald-500">✓</span> Financiamiento bancario disponible para casa</li>
               </ul>
               
-              <Link href="#kontakt" className="inline-block px-8 py-3 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-slate-800 transition-colors">
+              <Link href="#kontakt" className="inline-block px-8 py-3 bg-slate-900 text-white text-xs font-bold uppercase tracking-widest rounded hover:bg-slate-800 transition-colors">
                 Ver Masterplan
               </Link>
             </div>
             <div className="w-full lg:w-2/3 order-1 lg:order-2">
-              <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-2xl relative">
+              <div className="aspect-[16/10] rounded overflow-hidden shadow-2xl relative">
                 <img src="https://images.unsplash.com/photo-1600596542815-e328701102b9?q=80&w=2669" alt="Ciudad Venecia Danlí" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
                 <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded text-xs font-bold text-slate-900 shadow-sm">
                    3ra Etapa en Desarrollo
@@ -230,7 +230,7 @@ export default function Design3Page() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-2/3">
-              <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-2xl">
+              <div className="aspect-[16/10] rounded overflow-hidden shadow-2xl">
                 <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=2670" alt="Ciudad Venecia Olancho" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function Design3Page() {
                  </div>
               </div>
 
-              <Link href="#kontakt" className="inline-block px-8 py-3 border border-slate-900 text-slate-900 text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-slate-50 transition-colors">
+              <Link href="#kontakt" className="inline-block px-8 py-3 border border-slate-900 text-slate-900 text-xs font-bold uppercase tracking-widest rounded hover:bg-slate-50 transition-colors">
                 Ver Amenidades
               </Link>
             </div>
@@ -305,7 +305,7 @@ export default function Design3Page() {
                 img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800' 
               }
             ].map((item, i) => (
-              <div key={i} className="group relative aspect-[4/3] rounded-xl overflow-hidden cursor-pointer bg-slate-900">
+              <div key={i} className="group relative aspect-[4/3] rounded overflow-hidden cursor-pointer bg-slate-900">
                 <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-60" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
@@ -316,7 +316,7 @@ export default function Design3Page() {
               </div>
             ))}
             {/* Call to Action Card */}
-            <div className="flex flex-col items-center justify-center bg-slate-900 rounded-xl p-8 text-center border border-slate-800">
+            <div className="flex flex-col items-center justify-center bg-slate-900 rounded p-8 text-center border border-slate-800">
                <h4 className="text-white font-medium text-lg mb-4">¿Buscas invertir?</h4>
                <p className="text-slate-400 text-sm mb-6">Tenemos opciones desde L 900 mensuales en nuestro nuevo proyecto Raíces.</p>
                <Link href="#kontakt" className="px-6 py-2 bg-white text-slate-900 text-xs font-bold uppercase rounded hover:bg-slate-200 transition-colors">
@@ -336,8 +336,8 @@ export default function Design3Page() {
            </div>
            
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 border border-slate-100 rounded-xl hover:shadow-lg transition-shadow">
-                 <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 text-slate-900">
+              <div className="p-8 border border-slate-100 rounded hover:shadow-lg transition-shadow">
+                 <div className="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-900">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                  </div>
                  <h3 className="font-bold text-lg text-slate-900 mb-3">Venta de Terrenos</h3>
@@ -345,8 +345,8 @@ export default function Design3Page() {
                     Lotes urbanizados con todos los servicios básicos (agua, luz, alcantarillado) listos para construir. Financiamiento directo con aprobación inmediata.
                  </p>
               </div>
-              <div className="p-8 border border-slate-100 rounded-xl hover:shadow-lg transition-shadow">
-                 <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 text-slate-900">
+              <div className="p-8 border border-slate-100 rounded hover:shadow-lg transition-shadow">
+                 <div className="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-900">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
                  </div>
                  <h3 className="font-bold text-lg text-slate-900 mb-3">Construcción de Viviendas</h3>
@@ -354,8 +354,8 @@ export default function Design3Page() {
                     Casas de 2 y 3 habitaciones con finos acabados. Modelos adaptados a tu gusto y presupuesto. Construcción de calidad garantizada (3,500 PSI).
                  </p>
               </div>
-              <div className="p-8 border border-slate-100 rounded-xl hover:shadow-lg transition-shadow">
-                 <div className="w-12 h-12 bg-slate-50 rounded-lg flex items-center justify-center mb-6 text-slate-900">
+              <div className="p-8 border border-slate-100 rounded hover:shadow-lg transition-shadow">
+                 <div className="w-12 h-12 bg-slate-50 rounded flex items-center justify-center mb-6 text-slate-900">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                  </div>
                  <h3 className="font-bold text-lg text-slate-900 mb-3">Gestión Bancaria</h3>
@@ -413,7 +413,7 @@ export default function Design3Page() {
              </div>
           </div>
           <div className="w-full lg:w-1/2">
-             <div className="bg-slate-800 rounded-xl p-8 border border-slate-700 relative overflow-hidden">
+             <div className="bg-slate-800 rounded p-8 border border-slate-700 relative overflow-hidden">
                <div className="absolute top-0 right-0 p-4 opacity-10">
                   <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5 10 5 10-5-5-2.5-5 2.5z"/></svg>
                </div>
@@ -461,7 +461,7 @@ export default function Design3Page() {
          </div>
 
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[800px] md:h-[600px]">
-            <div className="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group">
+            <div className="md:col-span-2 md:row-span-2 relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=2669" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-6 left-6 text-white">
@@ -469,22 +469,22 @@ export default function Design3Page() {
                  <p className="text-xs text-slate-300">Espacios sociales para eventos y reuniones</p>
                </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden group">
+            <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Piscinas</h3></div>
             </div>
-            <div className="relative rounded-xl overflow-hidden group">
+            <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Gimnasio</h3></div>
             </div>
-             <div className="relative rounded-xl overflow-hidden group">
+             <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Canchas Deportivas</h3></div>
             </div>
-             <div className="relative rounded-xl overflow-hidden group">
+             <div className="relative rounded overflow-hidden group">
                <img src="https://images.unsplash.com/photo-1543093247-38446b28cb7b?q=80&w=800" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                <div className="absolute bottom-4 left-4 text-white"><h3 className="font-bold text-sm">Áreas de Juegos</h3></div>
@@ -500,12 +500,12 @@ export default function Design3Page() {
             <p className="text-slate-500 font-light mb-12">Estamos listos para asesorarte en Danlí, Valle, Olancho y Talanga. Sin compromiso.</p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
-               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✓ Atención Personalizada</p></div>
-               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✓ Visitas Guiadas</p></div>
-               <div className="p-6 bg-slate-50 rounded-xl border border-slate-100"><p className="text-xs text-slate-400">✓ Información Clara</p></div>
+               <div className="p-6 bg-slate-50 rounded border border-slate-100"><p className="text-xs text-slate-400">✓ Atención Personalizada</p></div>
+               <div className="p-6 bg-slate-50 rounded border border-slate-100"><p className="text-xs text-slate-400">✓ Visitas Guiadas</p></div>
+               <div className="p-6 bg-slate-50 rounded border border-slate-100"><p className="text-xs text-slate-400">✓ Información Clara</p></div>
             </div>
 
-            <div className="bg-slate-900 text-white p-8 rounded-xl shadow-2xl text-left flex flex-col md:flex-row gap-8 items-center">
+            <div className="bg-slate-900 text-white p-8 rounded shadow-2xl text-left flex flex-col md:flex-row gap-8 items-center">
                <div className="w-full md:w-1/3">
                   <h3 className="font-bold text-lg mb-4">INMAER</h3>
                   <div className="space-y-4 text-sm text-slate-300">
@@ -524,13 +524,13 @@ export default function Design3Page() {
                      </div>
                   </div>
                </div>
-               <div className="w-full md:w-2/3 bg-white rounded-lg p-6 text-slate-900">
+               <div className="w-full md:w-2/3 bg-white rounded p-6 text-slate-900">
                   <form className="space-y-4">
                      <div className="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Nombre Completo" className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-slate-400" />
-                        <input type="tel" placeholder="Teléfono" className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-slate-400" />
+                        <input type="text" placeholder="Nombre Completo" className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded text-sm focus:outline-none focus:ring-1 focus:ring-slate-400" />
+                        <input type="tel" placeholder="Teléfono" className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded text-sm focus:outline-none focus:ring-1 focus:ring-slate-400" />
                      </div>
-                     <select className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-slate-400 text-slate-500">
+                     <select className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded text-sm focus:outline-none focus:ring-1 focus:ring-slate-400 text-slate-500">
                         <option>¿Qué proyecto te interesa?</option>
                         <option>Ciudad Venecia Danlí</option>
                         <option>Ciudad Venecia Valle</option>
@@ -538,7 +538,7 @@ export default function Design3Page() {
                         <option>Ciudad Venecia Raíces (Talanga)</option>
                         <option>Hills City (Comercial)</option>
                      </select>
-                     <button className="w-full py-4 bg-slate-900 text-white font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-slate-800 transition-all">
+                     <button className="w-full py-4 bg-slate-900 text-white font-bold text-xs uppercase tracking-widest rounded hover:bg-slate-800 transition-all">
                         Solicitar Información
                      </button>
                   </form>
