@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import BlurText from './BlurText';
 
 export default function Hero() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -36,9 +37,13 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-        <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-tight mb-6">
-          Ciudad Venecia
-        </h1>
+        <BlurText
+          text="CIUDAD VENECIA"
+          delay={150}
+          animateBy="letters"
+          direction="top"
+          className="font-display text-5xl md:text-7xl lg:text-9xl font-bold text-white uppercase tracking-tighter mb-4 drop-shadow-2xl justify-center"
+        />
         <p className="text-lg md:text-2xl text-white/90 max-w-2xl mb-8 font-light">
           El desarrollo residencial que transforma tu estilo de vida
         </p>
