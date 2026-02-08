@@ -19,15 +19,15 @@ export default function TopParallax() {
       </div>
 
       {/* New Section: Experiencia Ciudad Venecia */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-primary">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <span className="text-accent uppercase tracking-widest text-sm font-bold mb-4 block">
             Experiencia Ciudad Venecia
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
             Vivir, invertir y crecer en un mismo lugar
           </h2>
-          <p className="text-text-secondary text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/90 text-lg max-w-3xl mx-auto leading-relaxed">
             Cada proyecto combina ubicación estratégica, servicios básicos completos y opciones de financiamiento
             para que puedas avanzar a tu ritmo, sin promesas irreales.
           </p>
