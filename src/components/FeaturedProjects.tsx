@@ -156,7 +156,7 @@ export default function FeaturedProjects() {
               title: "CV Raíces Talanga", 
               loc: "Francisco Morazán",
               desc: "Nuevo Lanzamiento 2026. Primas accesibles.",
-              img: "/homepage/cocina.jpg.jpeg"
+              img: "/amenidades/amenidades012.jpg.jpeg"
             },
             { 
               title: "Hill's City", 

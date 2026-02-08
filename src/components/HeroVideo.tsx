@@ -21,6 +21,7 @@ export default function HeroVideo() {
         className="absolute inset-0 w-full h-full object-cover"
         poster="https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074&auto=format&fit=crop"
       >
+        {/* NOTA: Vi que subiste un HERO3.mp4. Si quieres usar ese, cambia abajo HERO2 por HERO3 */}
         <source src="/HERO2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -31,7 +32,7 @@ export default function HeroVideo() {
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
         
-        {/* Mini Header */}
+        {/* Mini Header - NUEVO */}
         <motion.span 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,6 +52,7 @@ export default function HeroVideo() {
           </h1>
         </motion.div>
 
+        {/* Subtítulo - NUEVO */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

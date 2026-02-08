@@ -6,7 +6,7 @@ export default function Amenities() {
     { 
       name: "Casa Club Premium", 
       desc: "Eventos y reuniones sociales",
-      img: "/amenidades/amenidades001.jpg.jpeg",
+      img: "/amenidades/amenidades_club.jpg.jpeg",
       colSpan: "md:col-span-2",
       rowSpan: "md:row-span-2"
     },
@@ -14,7 +14,7 @@ export default function Amenities() {
     { 
       name: "Piscinas Climatizadas", 
       desc: "Para adultos y niños",
-      img: "/amenidades/amenidades002.jpg.jpeg",
+      img: "/amenidades/amenidades008.jpg.jpeg",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1"
     },
@@ -22,7 +22,7 @@ export default function Amenities() {
     { 
       name: "NUEVAS Canchas de Pádel", 
       desc: "Deporte de alto nivel",
-      img: "https://images.unsplash.com/photo-1626248559388-335193910243?q=80&w=2000",
+      img: "/amenidades/amenidades_padel.jpg",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1",
       badge: "¡NUEVO!"
@@ -47,7 +47,7 @@ export default function Amenities() {
     { 
       name: "Parque Acuático", 
       desc: "Diversión refrescante",
-      img: "/amenidades/amenidades012.jpg.jpeg",
+      img: "/amenidades/amenidades007.jpg.jpeg",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1"
     },
@@ -55,7 +55,7 @@ export default function Amenities() {
     { 
       name: "Kioscos Familiares", 
       desc: "Para tus celebraciones",
-      img: "/amenidades/amenidades005.jpg.jpeg",
+      img: "/amenidades/amenidades_club2.jpg.jpeg",
       colSpan: "md:col-span-1",
       rowSpan: "md:row-span-1"
     }
