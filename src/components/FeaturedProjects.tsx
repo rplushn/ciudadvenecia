@@ -5,26 +5,26 @@ import { useState, useEffect } from 'react';
 const projects = [
   {
     id: 1,
-    title: "Ciudad Venecia Tegucigalpa",
-    location: "Tegucigalpa, Francisco Morazán",
-    description: "El proyecto insignia que redefine el concepto de vida urbana en la capital. Seguridad, exclusividad y un entorno natural inigualable.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070", // Placeholder modern house
+    title: "Ciudad Venecia Danlí",
+    location: "Danlí, El Paraíso",
+    description: "Nuestro proyecto insignia con mayor crecimiento en la zona oriental. Más de 3 etapas desarrolladas, a pocos minutos del centro y cerca de UNAH-TEC. Un ambiente fresco y familiar.",
+    image: "https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074", // Placeholder
     alignment: "left"
   },
   {
     id: 2,
-    title: "Ciudad Venecia Danlí",
-    location: "Danlí, El Paraíso",
-    description: "La primera comunidad planificada de la zona oriental. Un éxito rotundo con más de 300 familias viviendo en armonía.",
-    image: "https://images.unsplash.com/photo-1600596542815-e32c21216f53?q=80&w=2074", // Placeholder suburban
+    title: "Ciudad Venecia Olancho",
+    location: "Valle de Lepaguare, Olancho",
+    description: "El proyecto más exclusivo 'Premium Level'. Casa club con piscina, gimnasio, canchas deportivas y restaurante. Redefiniendo el estilo de vida en Olancho.",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053", // Placeholder Luxury
     alignment: "right"
   }
 ];
 
 const lifestyleImages = [
   "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070", // Family garden
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053", // Pool
   "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2080", // Couple home
+  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070", // Real estate handshake/happy
 ];
 
 export default function FeaturedProjects() {
@@ -39,24 +39,24 @@ export default function FeaturedProjects() {
   }, []);
 
   return (
-    <section className="bg-white">
+    <section className="bg-white" id="proyectos">
       
       {/* Intro Section */}
       <div className="py-24 text-center px-4 max-w-4xl mx-auto">
         <span className="text-accent tracking-widest uppercase text-sm font-bold mb-4 block">
-          Nuestra Trayectoria
+          Trayectoria INMAER
         </span>
         <h2 className="font-display text-4xl md:text-5xl font-bold text-primary mb-6">
-          Más que Proyectos, <br/>
-          <span className="italic font-light">Comunidades de Vida</span>
+          Desarrollando el Futuro <br/>
+          <span className="italic font-light">de Honduras</span>
         </h2>
         <p className="text-text-secondary text-lg leading-relaxed">
-          Cada desarrollo de Ciudad Venecia está pensado para ofrecer plusvalía real, 
-          seguridad integral y espacios donde las familias hondureñas pueden crecer y prosperar.
+          Desde Danlí hasta Olancho, creamos comunidades planificadas con todos los servicios,
+          seguridad y plusvalía garantizada. Más de 1,200 familias ya viven su sueño con nosotros.
         </p>
       </div>
 
-      {/* Project 1 (Left Text) */}
+      {/* Project 1: Danlí (Flagship) */}
       <div className="grid md:grid-cols-2 min-h-[600px]">
         <div className="bg-surface p-12 md:p-24 flex flex-col justify-center">
           <span className="text-accent uppercase tracking-wider font-bold mb-4 text-sm">
@@ -78,8 +78,8 @@ export default function FeaturedProjects() {
         />
       </div>
 
-      {/* LIFESTYLE CAROUSEL (Middle Section) */}
-      <div className="relative h-[600px] w-full overflow-hidden group">
+      {/* LIFESTYLE CAROUSEL */}
+      <div className="relative h-[500px] w-full overflow-hidden group">
         {lifestyleImages.map((img, index) => (
           <div 
             key={index}
@@ -91,35 +91,21 @@ export default function FeaturedProjects() {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${img})` }}
             />
-            {/* Overlay Gradient */}
             <div className="absolute inset-0 bg-black/20" />
           </div>
         ))}
         
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10 p-4">
-          <h3 className="font-display text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">
-            Estilo de Vida
+          <h3 className="font-display text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+            Tu Patrimonio Seguro
           </h3>
           <p className="text-xl md:text-2xl font-light max-w-2xl drop-shadow-md">
-            Momentos inolvidables en tu propio hogar
+            Financiamiento propio y bancario disponible
           </p>
-        </div>
-
-        {/* Carousel Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
-          {lifestyleImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                index === currentSlide ? 'bg-white scale-125' : 'bg-white/50 hover:bg-white/80'
-              }`}
-            />
-          ))}
         </div>
       </div>
 
-      {/* Project 2 (Right Text - Checkerboard) */}
+      {/* Project 2: Olancho (Premium) */}
       <div className="grid md:grid-cols-2 min-h-[600px]">
         <div 
           className="h-[400px] md:h-auto bg-cover bg-center order-2 md:order-1"
@@ -136,33 +122,66 @@ export default function FeaturedProjects() {
             {projects[1].description}
           </p>
           <button className="bg-white border-2 border-primary text-primary px-8 py-4 uppercase tracking-wider font-bold hover:bg-primary hover:text-white transition-colors self-start">
-            Ver Detalles
+            Conocer Premium
           </button>
         </div>
       </div>
 
-      {/* Remaining Projects Grid (Compact) */}
+      {/* Remaining Projects Grid */}
       <div className="py-24 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-display text-3xl font-bold text-primary mb-4">
-            Más Oportunidades de Inversión
+            Portafolio Nacional
           </h2>
+          <p className="text-text-secondary max-w-2xl mx-auto">
+            Explora nuestras opciones de inversión en diferentes departamentos.
+          </p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { title: "Ciudad Venecia Olancho", loc: "Olancho" },
-            { title: "Ciudad Venecia Valle", loc: "Valle" },
-            { title: "Hill's City", loc: "Danlí (Comercial)" },
+            { 
+              title: "Ciudad Venecia Valle", 
+              loc: "San Lorenzo / Jícaro Galán",
+              desc: "A 10 min de la playa. Lotes desde L. 1,000/mes."
+            },
+            { 
+              title: "CV Raíces Talanga", 
+              loc: "Francisco Morazán",
+              desc: "Nuevo Lanzamiento 2026. Primas accesibles."
+            },
+            { 
+              title: "Hill's City", 
+              loc: "Danlí (Comercial)",
+              desc: "Distrito comercial, locales y parqueos en el centro."
+            },
+            { 
+              title: "Residencial Versalles", 
+              loc: "Danlí",
+              desc: "Exclusividad a 5km del centro."
+            },
+            { 
+              title: "Ciudad Venecia TGU", 
+              loc: "Tegucigalpa",
+              desc: "Próximamente. Pre-venta exclusiva."
+            },
+             { 
+              title: "Palmanova", 
+              loc: "Danlí",
+              desc: "Ubicación privilegiada en carretera Panamericana."
+            },
           ].map((item, i) => (
-            <div key={i} className="group relative h-80 overflow-hidden cursor-pointer">
+            <div key={i} className="group relative h-80 overflow-hidden cursor-pointer border border-gray-100">
               <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-700 bg-cover bg-center"
                    style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1448630360428-65456885c650?q=80&w=2067)' }}>
               </div>
-              <div className="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-colors" />
+              <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors" />
               <div className="absolute bottom-0 left-0 p-8 w-full text-white">
-                <p className="text-sm uppercase tracking-wider mb-2 opacity-90">{item.loc}</p>
-                <h4 className="font-display text-2xl font-bold">{item.title}</h4>
+                <p className="text-xs uppercase tracking-wider mb-2 font-bold text-accent">{item.loc}</p>
+                <h4 className="font-display text-2xl font-bold mb-2">{item.title}</h4>
+                <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  {item.desc}
+                </p>
               </div>
             </div>
           ))}
