@@ -116,43 +116,38 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 2. STATS BAR (BANDA CLARA) */}
-      <section className="py-20 bg-gradient-to-b from-slate-50 to-slate-100 border-y border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      {/* 2. STATS BAR (PARALLAX con overlay slate azulado) */}
+      <section className="relative py-16 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670')" }}>
+        <div className="absolute inset-0 bg-slate-800/85"></div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
           <div className="mb-10">
-            <div className="w-12 h-12 mx-auto bg-white rounded-lg border border-slate-200 flex items-center justify-center mb-4 shadow-sm">
-              <svg className="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="7" height="7" rx="1" />
-                <rect x="14" y="3" width="7" height="7" rx="1" />
-                <rect x="14" y="14" width="7" height="7" rx="1" />
-                <rect x="3" y="14" width="7" height="7" rx="1" />
-              </svg>
-            </div>
-
-            <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-slate-900 mb-2">
-              CONSTRUYENDO TU FUTURO
-            </h2>
-            <div className="h-px w-24 bg-slate-200 mx-auto mt-6" />
+             {/* Minimalist Icon: Square */}
+             <div className="w-12 h-12 mx-auto bg-white/10 rounded-lg flex items-center justify-center mb-4">
+               <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                 <rect x="3" y="3" width="7" height="7" rx="1" />
+                 <rect x="14" y="3" width="7" height="7" rx="1" />
+                 <rect x="14" y="14" width="7" height="7" rx="1" />
+                 <rect x="3" y="14" width="7" height="7" rx="1" />
+               </svg>
+             </div>
+             <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-2">CONSTRUYENDO TU FUTURO</h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-10">
             <div className="p-4">
-              <p className="text-4xl font-semibold text-slate-900 mb-2">300+</p>
-              <p className="text-xs uppercase tracking-widest text-slate-500">Lotes disponibles</p>
+              <p className="text-4xl font-semibold mb-2">300+</p>
+              <p className="text-xs uppercase tracking-widest text-slate-300">Lotes Disponibles</p>
             </div>
-
-            <div className="p-4 border-t md:border-t-0 md:border-l border-slate-200">
-              <p className="text-4xl font-semibold text-slate-900 mb-2">24/7</p>
-              <p className="text-xs uppercase tracking-widest text-slate-500">Seguridad privada</p>
+            <div className="p-4 border-t md:border-t-0 md:border-l border-white/10">
+              <p className="text-4xl font-semibold mb-2">24/7</p>
+              <p className="text-xs uppercase tracking-widest text-slate-300">Seguridad Privada</p>
             </div>
-
-            <div className="p-4 border-t md:border-t-0 md:border-l border-slate-200">
-              <p className="text-4xl font-semibold text-slate-900 mb-2">100%</p>
-              <p className="text-xs uppercase tracking-widest text-slate-500">Financiamiento propio</p>
+            <div className="p-4 border-t md:border-t-0 md:border-l border-white/10">
+              <p className="text-4xl font-semibold mb-2">100%</p>
+              <p className="text-xs uppercase tracking-widest text-slate-300">Financiamiento Propio</p>
             </div>
           </div>
-
-          <p className="mt-10 text-slate-500 text-sm font-light max-w-2xl mx-auto">
+          <p className="mt-10 text-slate-200/80 text-sm font-light max-w-2xl mx-auto">
             Ubicado estratégicamente en zonas de alta plusvalía, Ciudad Venecia ofrece un entorno seguro, moderno y accesible para tu familia.
           </p>
         </div>
