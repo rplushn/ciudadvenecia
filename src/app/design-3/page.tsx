@@ -104,7 +104,7 @@ export default function Design3Page() {
         </div>
       </nav>
 
-      {/* 1. HERO SECTION - Clean Victoria-style */}
+      {/* 1. HERO SECTION - Refined Typography & Radius */}
       <section className="lg:pt-40 lg:pb-32 pt-32 pr-6 pb-24 pl-6" id="start">
         <div className="relative w-full max-w-7xl mx-auto rounded-3xl overflow-hidden isolate shadow-2xl text-left">
           <img 
@@ -122,13 +122,13 @@ export default function Design3Page() {
               Desarrollo Premium
             </div>
 
-            {/* Title - smaller, matching Victoria */}
-            <h1 className="md:text-6xl leading-[1.1] text-4xl font-semibold text-white tracking-tight drop-shadow-sm">
+            {/* Title - Refined: font-medium instead of semibold */}
+            <h1 className="md:text-6xl leading-[1.1] text-4xl font-medium text-white tracking-tight drop-shadow-sm">
               Tu patrimonio seguro en la zona de mayor crecimiento de Honduras.
             </h1>
 
-            {/* Subtitle - smaller font */}
-            <p className="leading-relaxed md:text-xl text-lg font-normal text-slate-50 max-w-2xl">
+            {/* Subtitle - Refined: font-light instead of normal */}
+            <p className="leading-relaxed md:text-xl text-lg font-light text-slate-50 max-w-2xl">
               Espacios residenciales de calidad, infraestructura moderna y seguridad 24/7. Ciudad Venecia combina ubicación estratégica con visión de futuro.
             </p>
 
@@ -190,9 +190,9 @@ export default function Design3Page() {
               </div>
             </div>
 
-            {/* Image Content */}
+            {/* Image Content - rounded-xl */}
             <div className="w-full lg:w-1/2 relative">
-              <div className="relative z-10 aspect-[4/5] overflow-hidden bg-slate-100">
+              <div className="relative z-10 aspect-[4/5] overflow-hidden bg-slate-100 rounded-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1600596542815-e328701102b9?q=80&w=2669" 
                   alt="Arquitectura Moderna" 
@@ -200,11 +200,11 @@ export default function Design3Page() {
                 />
               </div>
               {/* Decorative Elements */}
-              <div className="absolute -bottom-8 -left-8 w-2/3 h-2/3 border border-slate-200 -z-0"></div>
-              <div className="absolute top-10 -right-8 w-24 h-24 bg-slate-100 -z-0 pattern-dots"></div>
+              <div className="absolute -bottom-8 -left-8 w-2/3 h-2/3 border border-slate-200 rounded-xl -z-0"></div>
+              <div className="absolute top-10 -right-8 w-24 h-24 bg-slate-100 rounded-xl -z-0 pattern-dots"></div>
               
               {/* Floating Quote */}
-              <div className="absolute bottom-10 -left-10 bg-white p-8 shadow-xl max-w-xs border-l-4 border-slate-900 hidden md:block">
+              <div className="absolute bottom-10 -left-10 bg-white p-8 shadow-xl max-w-xs border-l-4 border-slate-900 rounded-xl hidden md:block">
                  <p className="font-serif italic text-slate-600">"La inversión más segura es la tierra, y el mejor momento es ahora."</p>
                  <p className="text-xs font-bold uppercase tracking-widest mt-4 text-slate-400">— INMAER</p>
               </div>
@@ -243,7 +243,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 4. VISION SECTION - Enhanced Cards */}
+      {/* 4. VISION SECTION - rounded-xl */}
       <section id="vision" className="py-24 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -274,7 +274,7 @@ export default function Design3Page() {
                 img: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=800'
               }
             ].map((item, i) => (
-              <div key={i} className="group relative h-80 rounded-2xl overflow-hidden shadow-sm cursor-pointer">
+              <div key={i} className="group relative h-80 rounded-xl overflow-hidden shadow-sm cursor-pointer">
                 <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent transition-opacity group-hover:opacity-90"></div>
                 
@@ -293,7 +293,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 5. PROJECTS SECTION - Enhanced */}
+      {/* 5. PROJECTS SECTION - rounded-xl */}
       <section className="border-y bg-white border-slate-100 pt-24 pb-24" id="proyectos">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
@@ -330,7 +330,7 @@ export default function Design3Page() {
                 img: 'https://images.unsplash.com/photo-1626290800844-4861bc99478e?q=80&w=800'
               }
             ].map((project, i) => (
-              <div key={i} className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-200/60 transition-all duration-500 cursor-pointer">
+              <div key={i} className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-slate-300 hover:shadow-2xl hover:shadow-slate-200/60 transition-all duration-500 cursor-pointer">
                 <div className="aspect-[4/5] bg-slate-200 relative overflow-hidden">
                   <img 
                     src={project.img} 
@@ -378,7 +378,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 6. INVESTMENT PROCESS */}
+      {/* 6. INVESTMENT PROCESS - rounded-xl */}
       <section id="proceso" className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-slate-800 to-transparent opacity-30 pointer-events-none"></div>
 
@@ -409,7 +409,7 @@ export default function Design3Page() {
             </div>
 
             {/* Process Steps */}
-            <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700 shadow-2xl">
+            <div className="bg-slate-800 rounded-xl p-8 border border-slate-700 shadow-2xl">
               <h3 className="text-xl font-medium mb-6">Proceso de Compra</h3>
               <div className="space-y-6 relative before:absolute before:left-[15px] before:top-2 before:h-[calc(100%-20px)] before:w-[1px] before:bg-slate-600">
                 {[
@@ -436,7 +436,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 7. CONTACT SECTION */}
+      {/* 7. CONTACT SECTION - rounded-xl */}
       <section id="kontakt" className="relative py-32 px-6 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
@@ -457,9 +457,9 @@ export default function Design3Page() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Info + Map Illustration */}
+            {/* Contact Info + Map Illustration - rounded-xl */}
             <div className="space-y-8">
-              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+              <div className="bg-slate-50 p-8 rounded-xl border border-slate-100">
                 <h3 className="text-lg font-semibold text-slate-900 mb-6">Información de Contacto</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
@@ -486,8 +486,8 @@ export default function Design3Page() {
                 </div>
               </div>
 
-              {/* Honduras Map Illustration */}
-              <div className="bg-slate-900 p-8 rounded-2xl text-white relative overflow-hidden">
+              {/* Honduras Map Illustration - rounded-xl */}
+              <div className="bg-slate-900 p-8 rounded-xl text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
                 <div className="relative z-10">
                   <p className="text-xs uppercase tracking-widest text-emerald-400 mb-2 font-bold">Presencia Nacional</p>
@@ -501,8 +501,8 @@ export default function Design3Page() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <form className="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg space-y-4">
+            {/* Contact Form - rounded-xl */}
+            <form className="bg-white p-8 rounded-xl border border-slate-200 shadow-lg space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-slate-700">Nombre Completo</label>
