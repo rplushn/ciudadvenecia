@@ -30,6 +30,17 @@ export default function HeroVideo() {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+        
+        {/* Mini Header */}
+        <motion.span 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-amber-400 uppercase tracking-widest text-xs md:text-sm font-bold mb-4 block"
+        >
+          SOMOS EL PROYECTO LÍDER DE LA ZONA ORIENTAL
+        </motion.span>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,9 +55,9 @@ export default function HeroVideo() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="text-xl md:text-3xl text-white/90 font-light tracking-wide mb-10"
+          className="text-lg md:text-2xl text-white/90 max-w-2xl mb-8 font-light"
         >
-          Tu hogar en Tegucigalpa
+          Un desarrollo inmobiliario <span className="text-amber-400 font-semibold">by INMAER</span>, con urbanización completa, seguridad y opciones de financiamiento para avanzar a tu ritmo.
         </motion.p>
 
         <motion.button
