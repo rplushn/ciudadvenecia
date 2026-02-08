@@ -43,22 +43,26 @@ export default function Design3Page() {
   return (
     <div className="bg-white text-slate-600 antialiased selection:bg-emerald-100 selection:text-emerald-900 relative font-sans" style={{ fontFamily: "'Inter', sans-serif" }}>
       
-      {/* Navigation - Transparent to White on Scroll */}
-      <nav className={`fixed z-50 transition-all duration-500 w-full border-b ${scrolled ? 'bg-white/95 border-slate-100 backdrop-blur-md py-2 shadow-sm' : 'bg-transparent border-transparent py-6'}`} id="navbar">
-        <div className="flex h-16 max-w-7xl mx-auto px-6 items-center justify-between">
+      {/* Navigation - ALWAYS VISIBLE with backdrop */}
+      <nav className={`fixed z-50 transition-all duration-500 w-full border-b ${
+        scrolled 
+          ? 'bg-white/95 border-slate-100 backdrop-blur-md shadow-sm' 
+          : 'bg-white/90 border-white/20 backdrop-blur-md'
+      }`} id="navbar">
+        <div className="flex h-20 max-w-7xl mx-auto px-6 items-center justify-between">
           
-          {/* Logo */}
+          {/* Logo - ALWAYS dark for visibility */}
           <Link href="#start" className="flex items-center gap-3 group relative">
             <div className="flex items-center">
               <div className="flex gap-2 items-center">
-                <span className={`uppercase text-sm font-medium tracking-widest transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>Ciudad Venecia</span>
-                <span className={`text-xs transition-colors ${scrolled ? 'text-slate-400' : 'text-white/60'}`}>|</span>
-                <span className={`uppercase text-xs font-medium tracking-widest transition-colors ${scrolled ? 'text-slate-500' : 'text-white/80'}`}>by INMAER</span>
+                <span className="uppercase text-sm font-medium tracking-widest text-slate-900">Ciudad Venecia</span>
+                <span className="text-xs text-slate-400">|</span>
+                <span className="uppercase text-xs font-medium tracking-widest text-slate-500">by INMAER</span>
               </div>
             </div>
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu - ALWAYS dark */}
           <div className="hidden lg:flex items-center gap-8">
             {['Inicio', 'Nosotros', 'Visión', 'Proyectos', 'Inversión', 'Contacto'].map((item, i) => {
               const href = ['#start', '#nosotros', '#vision', '#proyectos', '#proceso', '#kontakt'][i];
@@ -67,10 +71,8 @@ export default function Design3Page() {
                 <Link 
                   key={section}
                   href={href} 
-                  className={`text-sm transition-all hover:opacity-100 ${
-                    activeSection === section 
-                      ? (scrolled ? 'text-slate-900 opacity-100' : 'text-white opacity-100') 
-                      : (scrolled ? 'text-slate-500 opacity-70' : 'text-white opacity-80')
+                  className={`text-sm transition-all hover:text-slate-900 ${
+                    activeSection === section ? 'text-slate-900 font-medium' : 'text-slate-500'
                   }`}
                 >
                   {item}
@@ -79,8 +81,8 @@ export default function Design3Page() {
             })}
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button onClick={toggleMenu} className={`lg:hidden p-2 relative focus:outline-none transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>
+          {/* Mobile Hamburger Button - ALWAYS dark */}
+          <button onClick={toggleMenu} className="lg:hidden p-2 relative focus:outline-none text-slate-900">
             <span className="sr-only">Abrir menú</span>
             <span className="text-2xl">{isMobileMenuOpen ? '✕' : '☰'}</span>
           </button>
@@ -104,55 +106,61 @@ export default function Design3Page() {
         </div>
       </nav>
 
-      {/* 1. HERO SECTION - Refined Typography & Radius */}
-      <section className="lg:pt-40 lg:pb-32 pt-32 pr-6 pb-24 pl-6" id="start">
-        <div className="relative w-full max-w-7xl mx-auto rounded-3xl overflow-hidden isolate shadow-2xl text-left">
+      {/* 1. HERO SECTION - FULL WIDTH */}
+      <section className="relative h-screen min-h-[700px] w-full overflow-hidden" id="start">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" 
             alt="Residencial Ciudad Venecia" 
-            className="absolute inset-0 -z-20 h-full w-full object-cover"
+            className="h-full w-full object-cover"
           />
-          {/* Overlay - match Victoria subtle gradient */}
-          <div className="-z-10 bg-slate-900/40 absolute top-0 right-0 bottom-0 left-0"></div>
-          
-          <div className="md:px-16 md:py-28 flex flex-col max-w-3xl pt-20 pr-8 pb-20 pl-8 relative gap-y-8 items-start">
-            {/* Badge - smaller, cleaner */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium text-white backdrop-blur-md shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]"></span>
-              Desarrollo Premium
-            </div>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-slate-900/40"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-6">
+            <div className="max-w-3xl">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium text-white backdrop-blur-md shadow-sm mb-8">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]"></span>
+                Desarrollo Premium
+              </div>
 
-            {/* Title - Refined: font-medium instead of semibold */}
-            <h1 className="md:text-6xl leading-[1.1] text-4xl font-medium text-white tracking-tight drop-shadow-sm">
-              Tu patrimonio seguro en la zona de mayor crecimiento de Honduras.
-            </h1>
+              {/* Title - font-medium for elegance */}
+              <h1 className="text-4xl md:text-6xl leading-[1.1] font-medium text-white tracking-tight mb-6">
+                Tu patrimonio seguro en la zona de mayor crecimiento de Honduras.
+              </h1>
 
-            {/* Subtitle - Refined: font-light instead of normal */}
-            <p className="leading-relaxed md:text-xl text-lg font-light text-slate-50 max-w-2xl">
-              Espacios residenciales de calidad, infraestructura moderna y seguridad 24/7. Ciudad Venecia combina ubicación estratégica con visión de futuro.
-            </p>
+              {/* Subtitle - font-light for elegance */}
+              <p className="text-lg md:text-xl leading-relaxed font-light text-slate-100 max-w-2xl mb-10">
+                Espacios residenciales de calidad, infraestructura moderna y seguridad 24/7. Ciudad Venecia combina ubicación estratégica con visión de futuro.
+              </p>
 
-            {/* CTA Buttons - glassmorphism style */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
-              <Link 
-                href="#proyectos" 
-                className="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
-              >
-                Ver Masterplan
-                <span>→</span>
-              </Link>
-              <Link 
-                href="#kontakt" 
-                className="w-full sm:w-auto px-6 py-3.5 bg-white/5 border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm shadow-sm"
-              >
-                Agendar Visita
-              </Link>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <Link 
+                  href="#proyectos" 
+                  className="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                >
+                  Ver Masterplan
+                  <span>→</span>
+                </Link>
+                <Link 
+                  href="#kontakt" 
+                  className="w-full sm:w-auto px-6 py-3.5 bg-white/5 border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm shadow-sm"
+                >
+                  Agendar Visita
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. ABOUT SECTION - Robust Split Layout */}
+      {/* 2. ABOUT SECTION */}
       <section id="nosotros" className="py-24 px-6 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-20">
@@ -190,7 +198,7 @@ export default function Design3Page() {
               </div>
             </div>
 
-            {/* Image Content - rounded-xl */}
+            {/* Image Content */}
             <div className="w-full lg:w-1/2 relative">
               <div className="relative z-10 aspect-[4/5] overflow-hidden bg-slate-100 rounded-xl">
                 <img 
@@ -201,7 +209,7 @@ export default function Design3Page() {
               </div>
               {/* Decorative Elements */}
               <div className="absolute -bottom-8 -left-8 w-2/3 h-2/3 border border-slate-200 rounded-xl -z-0"></div>
-              <div className="absolute top-10 -right-8 w-24 h-24 bg-slate-100 rounded-xl -z-0 pattern-dots"></div>
+              <div className="absolute top-10 -right-8 w-24 h-24 bg-slate-100 rounded-xl -z-0"></div>
               
               {/* Floating Quote */}
               <div className="absolute bottom-10 -left-10 bg-white p-8 shadow-xl max-w-xs border-l-4 border-slate-900 rounded-xl hidden md:block">
@@ -213,7 +221,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 3. PARALLAX / PATRIMONIO SECTION */}
+      {/* 3. PARALLAX SECTION */}
       <section className="relative py-32 bg-fixed bg-center bg-cover" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2670')" }}>
         <div className="absolute inset-0 bg-slate-900/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
@@ -243,7 +251,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 4. VISION SECTION - rounded-xl */}
+      {/* 4. VISION SECTION */}
       <section id="vision" className="py-24 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -293,7 +301,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 5. PROJECTS SECTION - rounded-xl */}
+      {/* 5. PROJECTS SECTION */}
       <section className="border-y bg-white border-slate-100 pt-24 pb-24" id="proyectos">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
@@ -337,17 +345,14 @@ export default function Design3Page() {
                     alt={project.title} 
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 saturate-0 group-hover:saturate-100" 
                   />
-                  {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                   
-                  {/* Badge */}
                   <div className="absolute top-4 left-4 z-20">
                     <span className="text-[10px] uppercase font-bold text-white tracking-wider bg-slate-900/70 rounded px-3 py-1.5 backdrop-blur shadow-lg">
                       {project.badge}
                     </span>
                   </div>
 
-                  {/* Location Pin - Bottom Right */}
                   <div className="absolute bottom-4 right-4 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
                     <span className="text-sm">📍</span>
                     <span className="text-[10px] font-medium text-slate-700">{project.location}</span>
@@ -378,7 +383,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 6. INVESTMENT PROCESS - rounded-xl */}
+      {/* 6. INVESTMENT PROCESS */}
       <section id="proceso" className="py-24 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-slate-800 to-transparent opacity-30 pointer-events-none"></div>
 
@@ -408,7 +413,6 @@ export default function Design3Page() {
               </div>
             </div>
 
-            {/* Process Steps */}
             <div className="bg-slate-800 rounded-xl p-8 border border-slate-700 shadow-2xl">
               <h3 className="text-xl font-medium mb-6">Proceso de Compra</h3>
               <div className="space-y-6 relative before:absolute before:left-[15px] before:top-2 before:h-[calc(100%-20px)] before:w-[1px] before:bg-slate-600">
@@ -436,9 +440,8 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 7. CONTACT SECTION - rounded-xl */}
+      {/* 7. CONTACT SECTION */}
       <section id="kontakt" className="relative py-32 px-6 overflow-hidden">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670" 
@@ -457,7 +460,6 @@ export default function Design3Page() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Info + Map Illustration - rounded-xl */}
             <div className="space-y-8">
               <div className="bg-slate-50 p-8 rounded-xl border border-slate-100">
                 <h3 className="text-lg font-semibold text-slate-900 mb-6">Información de Contacto</h3>
@@ -486,7 +488,6 @@ export default function Design3Page() {
                 </div>
               </div>
 
-              {/* Honduras Map Illustration - rounded-xl */}
               <div className="bg-slate-900 p-8 rounded-xl text-white relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl"></div>
                 <div className="relative z-10">
@@ -501,7 +502,6 @@ export default function Design3Page() {
               </div>
             </div>
 
-            {/* Contact Form - rounded-xl */}
             <form className="bg-white p-8 rounded-xl border border-slate-200 shadow-lg space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
@@ -539,11 +539,10 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 8. FOOTER - Enhanced */}
+      {/* 8. FOOTER */}
       <footer className="bg-slate-900 text-white py-12 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
-            {/* Brand */}
             <div>
               <div className="flex gap-2 items-center mb-4">
                 <span className="uppercase text-sm font-bold tracking-[0.2em]">Ciudad Venecia</span>
@@ -553,7 +552,6 @@ export default function Design3Page() {
               <p className="text-sm text-slate-400 leading-relaxed">Desarrollando el futuro inmobiliario de Honduras con calidad, confianza y visión estratégica.</p>
             </div>
 
-            {/* Quick Links */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-slate-300">Navegación</h4>
               <div className="space-y-2">
@@ -565,7 +563,6 @@ export default function Design3Page() {
               </div>
             </div>
 
-            {/* Social / Legal */}
             <div>
               <h4 className="text-xs font-bold uppercase tracking-widest mb-4 text-slate-300">Síguenos</h4>
               <div className="flex gap-4 text-2xl mb-6">
@@ -579,7 +576,6 @@ export default function Design3Page() {
             </div>
           </div>
 
-          {/* Bottom Bar */}
           <div className="pt-8 border-t border-slate-800 text-center">
             <p className="text-xs text-slate-500">© 2024 INMAER Desarrollos Inmobiliarios. Todos los derechos reservados.</p>
           </div>
