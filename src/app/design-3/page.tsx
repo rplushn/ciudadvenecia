@@ -51,9 +51,9 @@ export default function Design3Page() {
           <Link href="#start" className="flex items-center gap-3 group relative">
             <div className="flex items-center">
               <div className="flex gap-2 items-center">
-                <span className={`uppercase text-sm font-bold tracking-[0.2em] transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>Ciudad Venecia</span>
+                <span className={`uppercase text-sm font-medium tracking-widest transition-colors ${scrolled ? 'text-slate-900' : 'text-white'}`}>Ciudad Venecia</span>
                 <span className={`text-xs transition-colors ${scrolled ? 'text-slate-400' : 'text-white/60'}`}>|</span>
-                <span className={`uppercase text-[10px] font-medium tracking-widest transition-colors ${scrolled ? 'text-slate-500' : 'text-white/80'}`}>by INMAER</span>
+                <span className={`uppercase text-xs font-medium tracking-widest transition-colors ${scrolled ? 'text-slate-500' : 'text-white/80'}`}>by INMAER</span>
               </div>
             </div>
           </Link>
@@ -67,7 +67,7 @@ export default function Design3Page() {
                 <Link 
                   key={section}
                   href={href} 
-                  className={`text-xs font-medium uppercase tracking-widest transition-all hover:opacity-100 ${
+                  className={`text-sm transition-all hover:opacity-100 ${
                     activeSection === section 
                       ? (scrolled ? 'text-slate-900 opacity-100' : 'text-white opacity-100') 
                       : (scrolled ? 'text-slate-500 opacity-70' : 'text-white opacity-80')
@@ -104,77 +104,49 @@ export default function Design3Page() {
         </div>
       </nav>
 
-      {/* 1. HERO SECTION - Full Screen WOW */}
-      <section className="relative h-screen min-h-[800px] w-full overflow-hidden flex items-center" id="start">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+      {/* 1. HERO SECTION - Clean Victoria-style */}
+      <section className="lg:pt-40 lg:pb-32 pt-32 pr-6 pb-24 pl-6" id="start">
+        <div className="relative w-full max-w-7xl mx-auto rounded-3xl overflow-hidden isolate shadow-2xl text-left">
           <img 
             src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" 
             alt="Residencial Ciudad Venecia" 
-            className="h-full w-full object-cover animate-fade-in-slow"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
           />
-          {/* Enhanced Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/40 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-20">
-          <div className="max-w-4xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-md mb-8">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          {/* Overlay - match Victoria subtle gradient */}
+          <div className="-z-10 bg-slate-900/40 absolute top-0 right-0 bottom-0 left-0"></div>
+          
+          <div className="md:px-16 md:py-28 flex flex-col max-w-3xl pt-20 pr-8 pb-20 pl-8 relative gap-y-8 items-start">
+            {/* Badge - smaller, cleaner */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs font-medium text-white backdrop-blur-md shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]"></span>
               Desarrollo Premium
             </div>
 
-            {/* Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium text-white tracking-tight leading-[1.1] mb-6">
-              CIUDAD <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-300">VENECIA</span>
+            {/* Title - smaller, matching Victoria */}
+            <h1 className="md:text-6xl leading-[1.1] text-4xl font-semibold text-white tracking-tight drop-shadow-sm">
+              Tu patrimonio seguro en la zona de mayor crecimiento de Honduras.
             </h1>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-2xl font-light text-slate-200 max-w-2xl leading-relaxed mb-10 border-l-2 border-emerald-500 pl-6">
-              Tu Patrimonio Seguro by INMAER. <br/>
-              Espacios diseñados para el futuro de tu familia.
+            {/* Subtitle - smaller font */}
+            <p className="leading-relaxed md:text-xl text-lg font-normal text-slate-50 max-w-2xl">
+              Espacios residenciales de calidad, infraestructura moderna y seguridad 24/7. Ciudad Venecia combina ubicación estratégica con visión de futuro.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#proyectos" className="px-8 py-4 bg-white text-slate-900 text-sm font-bold uppercase tracking-widest hover:bg-emerald-50 transition-all transform hover:-translate-y-1 shadow-lg shadow-white/10">
+            {/* CTA Buttons - glassmorphism style */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+              <Link 
+                href="#proyectos" 
+                className="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 text-sm font-medium rounded-lg hover:bg-slate-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+              >
                 Ver Masterplan
+                <span>→</span>
               </Link>
-              <Link href="#kontakt" className="px-8 py-4 bg-transparent border border-white/30 text-white text-sm font-bold uppercase tracking-widest hover:bg-white/10 transition-all backdrop-blur-sm">
+              <Link 
+                href="#kontakt" 
+                className="w-full sm:w-auto px-6 py-3.5 bg-white/5 border border-white/20 text-white text-sm font-medium rounded-lg hover:bg-white/10 transition-colors backdrop-blur-sm shadow-sm"
+              >
                 Agendar Visita
               </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Stats Bar - Glassmorphism */}
-        <div className="absolute bottom-0 left-0 w-full border-t border-white/10 bg-slate-900/60 backdrop-blur-md hidden md:block">
-          <div className="max-w-7xl mx-auto px-6 py-8">
-            <div className="grid grid-cols-3 gap-12">
-              <div className="flex items-center gap-4">
-                <span className="text-4xl">🏙️</span>
-                <div>
-                  <p className="text-3xl font-light text-white">300+</p>
-                  <p className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Lotes Disponibles</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 border-l border-white/10 pl-12">
-                <span className="text-4xl">🛡️</span>
-                <div>
-                  <p className="text-3xl font-light text-white">24/7</p>
-                  <p className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Seguridad Privada</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4 border-l border-white/10 pl-12">
-                <span className="text-4xl">💰</span>
-                <div>
-                  <p className="text-3xl font-light text-white">100%</p>
-                  <p className="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Financiamiento</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -321,7 +293,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 5. PROJECTS SECTION - UPGRADED: Larger images + dramatic hover */}
+      {/* 5. PROJECTS SECTION - Enhanced */}
       <section className="border-y bg-white border-slate-100 pt-24 pb-24" id="proyectos">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
@@ -464,7 +436,7 @@ export default function Design3Page() {
         </div>
       </section>
 
-      {/* 7. CONTACT SECTION - UPGRADED: Visual context */}
+      {/* 7. CONTACT SECTION */}
       <section id="kontakt" className="relative py-32 px-6 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
