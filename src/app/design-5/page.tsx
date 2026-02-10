@@ -31,7 +31,7 @@ export default function Design5Page() {
   // Load Fonts
   useEffect(() => {
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap';
+    link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
     return () => { document.head.removeChild(link); };
@@ -92,15 +92,37 @@ export default function Design5Page() {
             isVisible ? 'translate-y-0' : '-translate-y-full'
         } ${
             isAtTop 
-            ? 'bg-gradient-to-b from-black/60 to-transparent py-8 border-none' 
+            ? 'bg-gradient-to-b from-black/60 to-transparent py-6 border-none' 
             : 'bg-[#2C2C2C]/95 backdrop-blur-md py-4 shadow-md'
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 flex items-center justify-between">
-          <Link href="#start" className="flex flex-col group">
-             <span className="text-white font-serif-display text-2xl tracking-widest leading-none">INMAER</span>
-             <span className="text-white/60 text-[9px] uppercase tracking-[0.4em] mt-1">Real Estate</span>
+          <Link href="#start" className="flex items-center gap-3 group">
+             <div className={`transition-colors duration-300 ${isAtTop ? 'text-white' : 'text-white'}`}>
+                {/* LOGO SVG RECREATION */}
+                <svg height="45" viewBox="0 0 320 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+                    {/* Sunburst Icon */}
+                    <g transform="translate(40, 40)">
+                         {/* Rays */}
+                         {Array.from({ length: 24 }).map((_, i) => (
+                            <line 
+                                key={i} 
+                                x1="0" y1="-14" x2="0" y2="-32" 
+                                transform={`rotate(${i * 15})`} 
+                                stroke="currentColor" 
+                                strokeWidth="1.5"
+                            />
+                         ))}
+                         {/* Hollow Center - implicitly created by start of rays */}
+                    </g>
+                    
+                    {/* Text: CIUDAD VENECIA */}
+                    <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
+                    <text x="195" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
+                </svg>
+             </div>
           </Link>
+
           <div className="hidden lg:flex items-center gap-10">
             {['Inicio', 'Master Plan', 'Lotes', 'Amenidades', 'Ubicación'].map((item, i) => (
                 <Link key={i} href={['#start', '#nosotros', '#proyectos', '#amenidades', '#kontakt'][i]} className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
