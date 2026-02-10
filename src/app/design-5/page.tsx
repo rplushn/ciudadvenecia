@@ -168,9 +168,12 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 4. AMENITIES CAROUSEL (WHITE BG) - REFINED TERRASOLES STYLE */}
-      <section className="bg-white py-16 overflow-hidden relative group" ref={carouselRef}>
-          <div className="max-w-[1400px] mx-auto px-6 mb-12">
+      {/* 4. AMENITIES CAROUSEL - DARKER BG WITH GRADIENT */}
+      <section className="bg-[#F0EEE9] py-16 overflow-hidden relative group" ref={carouselRef}>
+          {/* Subtle Top Gradient for Depth */}
+          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
+
+          <div className="max-w-[1400px] mx-auto px-6 mb-12 relative z-10">
                {/* Carousel Slides */}
                <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                    {Array.from({ length: totalPages }).map((_, pageIndex) => {
@@ -178,10 +181,10 @@ export default function Design5Page() {
                        return (
                            <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
                                {carouselData.slice(startIndex, startIndex + itemsPerPage).map((item, idx) => (
-                                   <div key={idx} className="relative aspect-[4/3] overflow-hidden group/item cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500">
+                                   <div key={idx} className="relative aspect-[4/3] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                                        <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
                                        <div className="absolute inset-0 bg-black/10 group-hover/item:bg-black/0 transition-colors"></div>
-                                       <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4 text-center transform translate-y-0 transition-transform">
+                                       <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 text-center transform translate-y-0 transition-transform border-t border-gray-100">
                                            <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2C2C2C]">{item.title}</h4>
                                        </div>
                                    </div>
@@ -193,7 +196,7 @@ export default function Design5Page() {
           </div>
           
           {/* Controls - CENTERED BELOW with margin */}
-          <div className="flex justify-center items-center gap-8 mt-4">
+          <div className="flex justify-center items-center gap-8 mt-4 relative z-10">
               <button onClick={prevSlide} className="w-10 h-10 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
                   <span className="text-lg">‹</span>
               </button>
@@ -206,7 +209,7 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 5. NEW: VIDEO SHOWCASE SECTION (SOFT GRAY PASTEL #F0EEE9) */}
+      {/* 5. VIDEO SHOWCASE SECTION (MATCHING BG TONE #F0EEE9) */}
       <section className="bg-[#F0EEE9] py-20 px-6">
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left: Text Content */}
