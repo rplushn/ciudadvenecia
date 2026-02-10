@@ -650,40 +650,40 @@ export default function Home() {
                         <div className="bg-[#EAE8E4] p-8 h-full flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
                             {/* House Icon (SVG) */}
                             <div className="w-8 h-8 mb-6 text-[#4A403A]">
-                               <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"1\">
-                                  <path d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\" />
+                               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                                  <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                                </svg>
                             </div>
-                            <h3 className=\"font-serif-display text-3xl text-[#2C2C2C] mb-4 leading-tight\">Urbanismo y diseño <br/> inigualable</h3>
-                            <p className=\"text-[#6B665F] font-light text-sm leading-relaxed mb-8\">
+                            <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4 leading-tight">Urbanismo y diseño <br/> inigualable</h3>
+                            <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-8">
                                 Ciudad Venecia cuenta con calles y espacios públicos seguros, accesibles y agradables de usar, que se integran armónicamente a las características naturales de la zona.
                             </p>
                             
                             {/* Carousel Dots Mock */}
-                            <div className=\"flex gap-2 mt-auto\">
-                                <span className=\"w-2 h-2 rounded-full bg-[#8C857E]\"></span>
-                                <span className=\"w-2 h-2 rounded-full border border-[#8C857E]\"></span>
-                                <span className=\"w-2 h-2 rounded-full border border-[#8C857E]\"></span>
-                                <span className=\"w-2 h-2 rounded-full border border-[#8C857E]\"></span>
+                            <div className="flex gap-2 mt-auto">
+                                <span className="w-2 h-2 rounded-full bg-[#8C857E]"></span>
+                                <span className="w-2 h-2 rounded-full border border-[#8C857E]"></span>
+                                <span className="w-2 h-2 rounded-full border border-[#8C857E]"></span>
+                                <span className="w-2 h-2 rounded-full border border-[#8C857E]"></span>
                             </div>
 
                             {/* Arrows Mock */}
-                            <div className=\"absolute left-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]\">‹</div>
-                            <div className=\"absolute right-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]\">›</div>
+                            <div className="absolute left-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]">‹</div>
+                            <div className="absolute right-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]">›</div>
                         </div>
                       </Reveal>
 
                       {/* Bottom Block: White - Reduced Padding */}
-                      <Reveal delay={0.3} className=\"flex-1\">
-                        <div className=\"bg-[#FAFAF9] p-8 h-full flex flex-col justify-center items-center text-center shadow-sm border border-gray-100\">
+                      <Reveal delay={0.3} className="flex-1">
+                        <div className="bg-[#FAFAF9] p-8 h-full flex flex-col justify-center items-center text-center shadow-sm border border-gray-100">
                             {/* INMAER Logo Mock */}
-                            <div className=\"mb-6 flex flex-col items-center\">
-                                <span className=\"font-serif-display text-3xl text-[#005F7F] tracking-widest font-bold\">INMAER</span>
-                                <span className=\"text-[8px] uppercase tracking-[0.4em] text-[#005F7F] mt-1\">REAL ESTATE</span>
+                            <div className="mb-6 flex flex-col items-center">
+                                <span className="font-serif-display text-3xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
+                                <span className="text-[8px] uppercase tracking-[0.4em] text-[#005F7F] mt-1">REAL ESTATE</span>
                             </div>
                             
-                            <h4 className=\"font-bold text-[#2C2C2C] text-sm mb-2\">Con el respaldo y la <br/> solidez de INMAER</h4>
-                            <p className=\"text-[#6B665F] font-light text-xs max-w-xs mx-auto leading-relaxed\">
+                            <h4 className="font-bold text-[#2C2C2C] text-sm mb-2">Con el respaldo y la <br/> solidez de INMAER</h4>
+                            <p className="text-[#6B665F] font-light text-xs max-w-xs mx-auto leading-relaxed">
                                 Más de 10 años en el mercado nos permiten otorgar la Garantía de Calidad y Plusvalía que nuestros clientes buscan.
                             </p>
                         </div>
@@ -694,57 +694,58 @@ export default function Home() {
       </section>
 
       {/* 12. INMAER CORPORATE SHOWCASE (Blue #003B5C) */}
-      <section className=\"bg-[#003B5C] py-24 px-6 md:px-12 text-white relative overflow-hidden\">
-         <div className=\"max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center\">
+      <section className="bg-[#003B5C] py-24 px-6 md:px-12 text-white relative overflow-hidden">
+         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              
              {/* LEFT: INFO & STATS */}
              <div>
                 <Reveal>
-                  <div className=\"flex items-center gap-4 mb-6\">
-                       <span className=\"text-white/60 text-[10px] font-bold uppercase tracking-[0.25em]\">UNA CREACIÓN DE</span>
-                       <div className=\"h-[1px] w-12 bg-[#C5A065]\"></div>
+                  <div className="flex items-center gap-4 mb-6">
+                       <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.25em]">UNA CREACIÓN DE</span>
+                       <div className="h-[1px] w-12 bg-[#C5A065]"></div>
                   </div>
                   
                   {/* LOGO INMAER (Text based as placeholder or SVG if available) */}
-                  <h2 className=\"font-serif-display text-5xl md:text-6xl mb-2 tracking-wide text-white\">INMAER</h2>\n                  <p className=\"text-[#C5A065] text-xs uppercase tracking-[0.4em] mb-8 font-bold\">REAL ESTATE</p>
+                  <h2 className="font-serif-display text-5xl md:text-6xl mb-2 tracking-wide text-white">INMAER</h2>
+                  <p className="text-[#C5A065] text-xs uppercase tracking-[0.4em] mb-8 font-bold">REAL ESTATE</p>
 
-                  <h3 className=\"font-serif-display text-3xl md:text-4xl leading-tight mb-6 text-white/90\">
+                  <h3 className="font-serif-display text-3xl md:text-4xl leading-tight mb-6 text-white/90">
                       Nuestras creaciones impactan positivamente el futuro de miles de personas.
                   </h3>
                   
-                  <p className=\"text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-xl\">
+                  <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-xl">
                       INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
                   </p>
                 </Reveal>
 
                 {/* ANIMATED STATS GRID - Updated to use CountUp */}
-                <div className=\"grid grid-cols-3 gap-8 border-t border-white/10 pt-10\">
+                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
                      <Reveal delay={0.2}>
-                       <div className=\"text-center\">
-                            <div className=\"font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2\">
-                                <CountUp to={10} suffix=\"+\" />
+                       <div className="text-center">
+                            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
+                                <CountUp to={10} suffix="+" />
                             </div>
-                            <div className=\"text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90\">
+                            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 AÑOS DE EXPERIENCIA
                             </div>
                        </div>
                      </Reveal>
                      <Reveal delay={0.3}>
-                       <div className=\"text-center\">
-                            <div className=\"font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2\">
-                                <CountUp to={7500} prefix=\"+\" />
+                       <div className="text-center">
+                            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
+                                <CountUp to={7500} prefix="+" />
                             </div>
-                            <div className=\"text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90\">
+                            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 CLIENTES SATISFECHOS
                             </div>
                        </div>
                      </Reveal>
                      <Reveal delay={0.4}>
-                       <div className=\"text-center\">
-                            <div className=\"font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2\">
+                       <div className="text-center">
+                            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
                                 <CountUp to={4} />
                             </div>
-                            <div className=\"text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90\">
+                            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 CIUDADES CON PRESENCIA
                             </div>
                        </div>
@@ -752,8 +753,8 @@ export default function Home() {
                 </div>
                 
                 <Reveal delay={0.5}>
-                  <div className=\"mt-12\">
-                       <Link href=\"#proyectos\" className=\"inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300\">
+                  <div className="mt-12">
+                       <Link href="#proyectos" className="inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300">
                           Conoce INMAER
                        </Link>
                   </div>
@@ -761,50 +762,51 @@ export default function Home() {
              </div>
 
              {/* RIGHT: PROJECT SHOWCASE GRID */}
-             <div className=\"grid grid-cols-2 gap-4\">
+             <div className="grid grid-cols-2 gap-4">
                  {/* Project 1 */}
                  <Reveal delay={0.2}>
-                   <div className=\"relative aspect-[4/3] group overflow-hidden cursor-pointer\">
-                       <img src=\"/homepage/casa_fachada.jpg.jpeg\" className=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110\" />
-                       <div className=\"absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90\"></div>
-                       <div className=\"absolute bottom-6 left-6\">
-                           <h4 className=\"text-white font-bold text-sm\">Ciudad Venecia</h4>\n                           <p className=\"text-white/60 text-[10px] uppercase tracking-wider\">Danlí · Valle · Olancho</p>
+                   <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
+                       <img src="/homepage/casa_fachada.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                       <div className="absolute bottom-6 left-6">
+                           <h4 className="text-white font-bold text-sm">Ciudad Venecia</h4>
+                           <p className="text-white/60 text-[10px] uppercase tracking-wider">Danlí · Valle · Olancho</p>
                        </div>
                    </div>
                  </Reveal>
                  
                  {/* Project 2 */}
                  <Reveal delay={0.3}>
-                   <div className=\"relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8\">
-                       <img src=\"/homepage/versalles_outdoor.jpg.jpeg\" className=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110\" />
-                       <div className=\"absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90\"></div>
-                       <div className=\"absolute bottom-6 left-6\">
-                           <h4 className=\"text-white font-bold text-sm\">Residencial Versalles</h4>
-                           <p className=\"text-white/60 text-[10px] uppercase tracking-wider\">San Lorenzo</p>
+                   <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
+                       <img src="/homepage/versalles_outdoor.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                       <div className="absolute bottom-6 left-6">
+                           <h4 className="text-white font-bold text-sm">Residencial Versalles</h4>
+                           <p className="text-white/60 text-[10px] uppercase tracking-wider">San Lorenzo</p>
                        </div>
                    </div>
                  </Reveal>
 
                  {/* Project 3 */}
                  <Reveal delay={0.4}>
-                   <div className=\"relative aspect-[4/3] group overflow-hidden cursor-pointer\">
-                       <img src=\"/amenidades/amenidades_club.jpg.jpeg\" className=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110\" />
-                       <div className=\"absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90\"></div>
-                       <div className=\"absolute bottom-6 left-6\">
-                           <h4 className=\"text-white font-bold text-sm\">Residencial Palmanova</h4>
-                           <p className=\"text-white/60 text-[10px] uppercase tracking-wider\">Próximamente</p>
+                   <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
+                       <img src="/amenidades/amenidades_club.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                       <div className="absolute bottom-6 left-6">
+                           <h4 className="text-white font-bold text-sm">Residencial Palmanova</h4>
+                           <p className="text-white/60 text-[10px] uppercase tracking-wider">Próximamente</p>
                        </div>
                    </div>
                  </Reveal>
 
                  {/* Project 4 */}
                  <Reveal delay={0.5}>
-                   <div className=\"relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8\">
-                       <img src=\"/homepage/portal_ai-ciudad_venecia.jpeg\" className=\"w-full h-full object-cover transition-transform duration-700 group-hover:scale-110\" />
-                        <div className=\"absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90\"></div>
-                       <div className=\"absolute bottom-6 left-6\">
-                           <h4 className=\"text-white font-bold text-sm\">Hills City</h4>
-                           <p className=\"text-white/60 text-[10px] uppercase tracking-wider\">Comercial</p>
+                   <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
+                       <img src="/homepage/portal_ai-ciudad_venecia.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                       <div className="absolute bottom-6 left-6">
+                           <h4 className="text-white font-bold text-sm">Hills City</h4>
+                           <p className="text-white/60 text-[10px] uppercase tracking-wider">Comercial</p>
                        </div>
                    </div>
                  </Reveal>
@@ -814,87 +816,128 @@ export default function Home() {
       </section>
 
        {/* 13. NEW COMPLEX CONTACT CTA - ELEGANT BEIGE REDESIGN (NO BLUE) */}
-       <section id=\"kontakt\" className=\"py-24 px-6 bg-[#F3F0EB]\">
-           <div className=\"max-w-[1200px] mx-auto\">
+       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB]">
+           <div className="max-w-[1200px] mx-auto">
                
                {/* Header Centered */}
-               <div className=\"text-center mb-16\">
+               <div className="text-center mb-16">
                   <Reveal>
-                   <span className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4\">ÚLTIMO PASO</span>
-                   <h2 className=\"font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6\">
+                   <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">ÚLTIMO PASO</span>
+                   <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
                        ¿Listo para hablar con un asesor?
                    </h2>
-                   <p className=\"text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed\">
+                   <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">
                        Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento, sin compromisos ni promesas infladas.
                    </p>
                   </Reveal>
                </div>
 
                {/* Benefits Row */}
-               <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center\">
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
                    {[
-                       \"Respuesta en menos de 24 horas hábiles.\",
-                       \"Información clara sobre cuotas y primas según proyecto.\",\n                       \"Acompañamiento durante todo el proceso de compra.\"
+                       "Respuesta en menos de 24 horas hábiles.",
+                       "Información clara sobre cuotas y primas según proyecto.",
+                       "Acompañamiento durante todo el proceso de compra."
                    ].map((text, i) => (
                        <Reveal key={i} delay={i * 0.1}>
-                         <div className=\"flex flex-col items-center\">
-                             <div className=\"text-[#C5A065] text-xl mb-4\">✓</div>
-                             <p className=\"text-[#5C554F] text-xs leading-relaxed max-w-[250px]\">{text}</p>
+                         <div className="flex flex-col items-center">
+                             <div className="text-[#C5A065] text-xl mb-4">✓</div>
+                             <p className="text-[#5C554F] text-xs leading-relaxed max-w-[250px]">{text}</p>
                          </div>
                        </Reveal>
                    ))}
                </div>
 
                {/* Split Container - RE-DESIGNED FOR ELEGANCE (No Blue Box) */}
-               <div className=\"grid grid-cols-1 lg:grid-cols-12 shadow-2xl rounded-sm overflow-hidden bg-white\">
+               <div className="grid grid-cols-1 lg:grid-cols-12 shadow-2xl rounded-sm overflow-hidden bg-white">
                    
                    {/* LEFT: Info Column (Now Elegant Beige/Gray instead of Blue) */}
-                   <div className=\"lg:col-span-4 bg-[#EBE7DF] p-10 md:p-12 text-[#484848] flex flex-col justify-center relative overflow-hidden\">
+                   <div className="lg:col-span-4 bg-[#EBE7DF] p-10 md:p-12 text-[#484848] flex flex-col justify-center relative overflow-hidden">
                        {/* Subtle Texture Overlay */}
-                       <div className=\"absolute top-0 right-0 p-12 opacity-10 pointer-events-none\">
-                            <svg width=\"200\" height=\"200\" viewBox=\"0 0 100 100\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">
-                                <circle cx=\"50\" cy=\"50\" r=\"40\" stroke=\"#C5A065\" strokeWidth=\"1\" />\n                                <circle cx=\"50\" cy=\"50\" r=\"30\" stroke=\"#C5A065\" strokeWidth=\"0.5\" />\n                            </svg>\n                       </div>\n\n                       <Reveal>\n                         <h3 className=\"font-serif-display text-2xl md:text-3xl mb-6 text-[#2C2C2C]\">¿Prefieres hablar directo?</h3>\n                         <p className=\"text-[#6B665F] text-xs leading-relaxed mb-8\">\n                             También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver dudas puntuales sobre financiamiento.\n                         </p>\n                         \n                         <div className=\"h-[1px] w-12 bg-[#C5A065] mb-8\"></div>\n\n                         <div className=\"space-y-8\">\n                             <div>\n                                 <p className=\"text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1\">TELÉFONO</p>\n                                 <p className=\"text-sm font-medium text-[#2C2C2C]\">(504) 9890-4449 / 2763-3699</p>\n                             </div>\n                             <div>\n                                 <p className=\"text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1\">WHATSAPP VENTAS</p>\n                                 <p className=\"text-sm font-medium text-[#2C2C2C]\">+504 9549-8925</p>\n                             </div>\n                             <div>\n                                 <p className=\"text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1\">OFICINA DANLÍ</p>\n                                 <p className=\"text-xs text-[#6B665F] leading-relaxed\">\n                                     Col. El Zarzal, Edificio INMAER, contiguo a Pizza Hut, Danlí.\n                                 </p>\n                             </div>\n                         </div>\n                       </Reveal>\n                   </div>\n\n                   {/* RIGHT: Form (8 cols) - Clean White with Gold Accents */}
-                   <div className=\"lg:col-span-8 bg-white p-10 md:p-12\">
-                       <form className=\"grid grid-cols-1 md:grid-cols-2 gap-8\">
+                       <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+                            <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="40" stroke="#C5A065" strokeWidth="1" />
+                                <circle cx="50" cy="50" r="30" stroke="#C5A065" strokeWidth="0.5" />
+                            </svg>
+                       </div>
+
+                       <Reveal>
+                         <h3 className="font-serif-display text-2xl md:text-3xl mb-6 text-[#2C2C2C]">¿Prefieres hablar directo?</h3>
+                         <p className="text-[#6B665F] text-xs leading-relaxed mb-8">
+                             También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver dudas puntuales sobre financiamiento.
+                         </p>
+                         
+                         <div className="h-[1px] w-12 bg-[#C5A065] mb-8"></div>
+
+                         <div className="space-y-8">
+                             <div>
+                                 <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">TELÉFONO</p>
+                                 <p className="text-sm font-medium text-[#2C2C2C]">(504) 9890-4449 / 2763-3699</p>
+                             </div>
+                             <div>
+                                 <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">WHATSAPP VENTAS</p>
+                                 <p className="text-sm font-medium text-[#2C2C2C]">+504 9549-8925</p>
+                             </div>
+                             <div>
+                                 <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">OFICINA DANLÍ</p>
+                                 <p className="text-xs text-[#6B665F] leading-relaxed">
+                                     Col. El Zarzal, Edificio INMAER, contiguo a Pizza Hut, Danlí.
+                                 </p>
+                             </div>
+                         </div>
+                       </Reveal>
+                   </div>
+
+                   {/* RIGHT: Form (8 cols) - Clean White with Gold Accents */}
+                   <div className="lg:col-span-8 bg-white p-10 md:p-12">
+                       <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
                            {/* Name */}
-                           <div className=\"md:col-span-1 group\">
-                               <label className=\"block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors\">NOMBRE COMPLETO</label>
-                               <input type=\"text\" placeholder=\"Ej. Juan Pérez\" className=\"w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]\" />
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">NOMBRE COMPLETO</label>
+                               <input type="text" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
                            
                            {/* Phone */}
-                           <div className=\"md:col-span-1 group\">
-                               <label className=\"block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors\">TELÉFONO / WHATSAPP</label>
-                               <input type=\"text\" placeholder=\"+504 0000-0000\" className=\"w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]\" />
-                           </div>\n\n                           {/* Email */}
-                           <div className=\"md:col-span-1 group\">
-                               <label className=\"block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors\">CORREO ELECTRÓNICO</label>
-                               <input type=\"email\" placeholder=\"tucorreo@ejemplo.com\" className=\"w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]\" />
-                           </div>\n\n                           {/* Project Dropdown */}
-                           <div className=\"md:col-span-1 group\">
-                               <label className=\"block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors\">PROYECTO DE INTERÉS</label>
-                               <div className=\"relative\">
-                                   <select className=\"w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer\">
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">TELÉFONO / WHATSAPP</label>
+                               <input type="text" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                           </div>
+
+                           {/* Email */}
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">CORREO ELECTRÓNICO</label>
+                               <input type="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                           </div>
+
+                           {/* Project Dropdown */}
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
+                               <div className="relative">
+                                   <select className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
                                        <option>Seleccionar...</option>
                                        <option>Ciudad Venecia Danlí</option>
                                        <option>Ciudad Venecia Olancho</option>
                                        <option>Ciudad Venecia Valle</option>
                                        <option>Residencial Versalles</option>
                                    </select>
-                                   <div className=\"absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400\">
-                                       <span className=\"text-xs\">▼</span>
+                                   <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                       <span className="text-xs">▼</span>
                                    </div>
                                </div>
-                           </div>\n\n                           {/* Message */}
-                           <div className=\"md:col-span-2 group\">
-                               <label className=\"block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors\">¿QUÉ TIENES EN MENTE?</label>
-                               <textarea rows={3} placeholder=\"Cuéntanos si buscas lote, casa, información de financiamiento, etc.\" className=\"w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none\"></textarea>
-                           </div>\n\n                           {/* Submit Button */}
-                           <div className=\"md:col-span-2 mt-6 flex flex-col items-center\">
-                               <button type=\"submit\" className=\"px-12 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] transition-all duration-500 shadow-md hover:shadow-lg w-full md:w-auto\">
+                           </div>
+
+                           {/* Message */}
+                           <div className="md:col-span-2 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">¿QUÉ TIENES EN MENTE?</label>
+                               <textarea rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea>
+                           </div>
+
+                           {/* Submit Button */}
+                           <div className="md:col-span-2 mt-6 flex flex-col items-center">
+                               <button type="submit" className="px-12 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] transition-all duration-500 shadow-md hover:shadow-lg w-full md:w-auto">
                                    ENVIAR Y HABLAR CON UN ASESOR
                                </button>
-                               <p className=\"text-center text-[9px] text-gray-400 mt-6 leading-relaxed max-w-md\">
+                               <p className="text-center text-[9px] text-gray-400 mt-6 leading-relaxed max-w-md">
                                    Al enviar este formulario aceptas ser contactado por INMAER para recibir información sobre el proyecto seleccionado.
                                </p>
                            </div>
@@ -902,67 +945,80 @@ export default function Home() {
                    </div>
                </div>
            </div>
-       </section>\n\n      {/* Footer - CORPORATE & ROBUST STYLE (Reverted to #1A3A52) */}
-      <footer className=\"bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden\">
+       </section>
+
+      {/* Footer - CORPORATE & ROBUST STYLE (Reverted to #1A3A52) */}
+      <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
         {/* Background Pattern - subtle logo watermark */}
-        <div className=\"absolute top-0 right-0 opacity-[0.03] pointer-events-none transform translate-x-1/3 -translate-y-1/3\">
-             <svg height=\"800\" viewBox=\"0 0 330 80\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
-                <g transform=\"translate(40, 40)\">
+        <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none transform translate-x-1/3 -translate-y-1/3">
+             <svg height="800" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(40, 40)">
                      {Array.from({ length: 24 }).map((_, i) => (
-                        <line key={i} x1=\"0\" y1=\"-14\" x2=\"0\" y2=\"-32\" transform={`rotate(${i * 15})`} stroke=\"currentColor\" strokeWidth=\"1.5\" />
+                        <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
                      ))}
                 </g>
              </svg>
-        </div>\n\n        <div className=\"max-w-[1400px] mx-auto px-6 md:px-12 relative z-10\">
-            <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20\">
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
                 {/* Brand Column */}
-                <div className=\"space-y-6\">
+                <div className="space-y-6">
                      {/* Logo Component */}
-                     <div className=\"text-white mb-6\">
-                        <svg height=\"40\" viewBox=\"0 0 330 80\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" className=\"block\">
-                            <g transform=\"translate(40, 40)\">
+                     <div className="text-white mb-6">
+                        <svg height="40" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+                            <g transform="translate(40, 40)">
                                  {Array.from({ length: 24 }).map((_, i) => (
-                                    <line key={i} x1=\"0\" y1=\"-14\" x2=\"0\" y2=\"-32\" transform={`rotate(${i * 15})`} stroke=\"currentColor\" strokeWidth=\"1.5\" />
+                                    <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
                                  ))}
                             </g>
-                            <text x=\"85\" y=\"50\" fontFamily=\"Montserrat\" fontSize=\"24\" fontWeight=\"300\" letterSpacing=\"0.1em\">CIUDAD</text>
-                            <text x=\"200\" y=\"50\" fontFamily=\"Montserrat\" fontSize=\"24\" fontWeight=\"700\" letterSpacing=\"0.1em\">VENECIA</text>
+                            <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
+                            <text x="200" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
                         </svg>
                      </div>
-                     <p className=\"text-white/60 text-xs font-light leading-relaxed max-w-xs\">
+                     <p className="text-white/60 text-xs font-light leading-relaxed max-w-xs">
                         Desarrollos inmobiliarios pensados para la eternidad. Un proyecto respaldado por la solidez y visión de INMAER.
                      </p>
-                </div>\n\n                {/* Navigation Column */}
+                </div>
+
+                {/* Navigation Column */}
                 <div>
-                    <h4 className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8\">Proyectos</h4>
-                    <ul className=\"space-y-4\">
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Ciudad Venecia Danlí</Link></li>
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Ciudad Venecia Olancho</Link></li>
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Ciudad Venecia Valle</Link></li>
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Residencial Versalles</Link></li>\n                    </ul>
-                </div>\n\n                {/* Contact Column */}
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
+                    <ul className="space-y-4">
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                    </ul>
+                </div>
+
+                {/* Contact Column */}
                 <div>
-                     <h4 className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8\">Oficina Corporativa</h4>
-                     <p className=\"text-sm font-medium mb-1\">Col. El Zarzal, Edificio INMAER</p>
-                     <p className=\"text-white/60 text-xs mb-6\">Danlí, El Paraíso, Honduras</p>
+                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Oficina Corporativa</h4>
+                     <p className="text-sm font-medium mb-1">Col. El Zarzal, Edificio INMAER</p>
+                     <p className="text-white/60 text-xs mb-6">Danlí, El Paraíso, Honduras</p>
                      
-                     <p className=\"text-white/60 text-[10px] uppercase tracking-wider mb-1\">Llámanos</p>
-                     <p className=\"text-lg font-serif-display text-white\">(504) 9890-4449</p>
-                </div>\n\n                 {/* Newsletter/Action Column */}
+                     <p className="text-white/60 text-[10px] uppercase tracking-wider mb-1">Llámanos</p>
+                     <p className="text-lg font-serif-display text-white">(504) 9890-4449</p>
+                </div>
+
+                 {/* Newsletter/Action Column */}
                 <div>
-                    <h4 className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8\">Mantente Informado</h4>
-                    <p className=\"text-white/60 text-xs mb-6\">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
-                    <div className=\"flex border-b border-white/20 pb-2\">
-                        <input type=\"email\" placeholder=\"Tu correo electrónico\" className=\"bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30\"/>
-                        <button className=\"text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors\">Suscribir</button>
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
+                    <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
+                    <div className="flex border-b border-white/20 pb-2">
+                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
                     </div>
                 </div>
-            </div>\n\n            {/* Bottom Bar */}
-            <div className=\"pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4\">
-                <p className=\"text-[10px] text-white/40 uppercase tracking-widest\">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-                <div className=\"flex gap-8\">
-                     <Link href=\"#\" className=\"text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors\">Privacidad</Link>
-                     <Link href=\"#\" className=\"text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors\">Términos</Link>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
+                <div className="flex gap-8">
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>
