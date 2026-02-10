@@ -41,7 +41,7 @@ export default function Design5Page() {
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
-    <div className="bg-[#F9F8F6] text-[#484848] antialiased relative font-sans selection:bg-[#C5A065] selection:text-white">
+    <div className="bg-[#F3F0EB] text-[#484848] antialiased relative font-sans selection:bg-[#C5A065] selection:text-white">
       <style jsx global>{`
         body { font-family: 'Montserrat', sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-serif-display { font-family: 'Cormorant Garamond', serif; }
@@ -95,7 +95,7 @@ export default function Design5Page() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/homepage/san_lorenzo.jpg.jpeg" 
+            src="/homepage/portal_ai-ciudad_venecia.jpeg" 
             alt="Ciudad Venecia Portal"
             className="h-full w-full object-cover transform scale-105 animate-slowZoom" 
           />
@@ -106,7 +106,7 @@ export default function Design5Page() {
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-[1400px] px-6 text-center text-white mt-16">
-          <h1 className="font-serif-display font-normal text-5xl md:text-[65px] lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg animate-fadeInUp">
+          <h1 className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg animate-fadeInUp">
             Terrenos residenciales dentro <br className="hidden md:block" /> del nuevo Oriente
           </h1>
           
@@ -133,7 +133,7 @@ export default function Design5Page() {
       </section>
 
       {/* 2. INTRO / WELCOME (Terrasoles Style: Clean, Serif Headings) */}
-      <section className="py-28 px-6 bg-[#F9F8F6] text-center">
+      <section className="py-28 px-6 bg-[#F3F0EB] text-center">
          <div className="max-w-4xl mx-auto">
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
                Un estilo de vida <span className="italic">extraordinario</span>
@@ -146,7 +146,7 @@ export default function Design5Page() {
       </section>
 
       {/* 3. PROYECTOS (Elegant Cards) */}
-      <section id="proyectos" className="py-16 px-6 bg-white">
+      <section id="proyectos" className="py-16 px-6 bg-[#F9F8F6]">
          <div className="max-w-[1600px] mx-auto">
             <div className="text-center mb-16">
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-3">Nuestra Colección</span>
@@ -179,18 +179,18 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 4. DETAILS / AMENITIES */}
-      <section className="py-24 bg-[#2C2520] text-white">
+      {/* 4. DETAILS / AMENITIES (NEW BEIGE COLOR) */}
+      <section className="py-24 bg-[#EBE7DF] text-[#4A403A]">
          <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Amenidades</span>
-               <h2 className="font-serif-display text-4xl md:text-5xl mb-6 leading-tight">Espacios que <br/>inspiran tranquilidad</h2>
-               <p className="text-white/70 font-light mb-8 leading-relaxed">
+               <h2 className="font-serif-display text-4xl md:text-5xl mb-6 leading-tight text-[#2C2C2C]">Espacios que <br/>inspiran tranquilidad</h2>
+               <p className="text-[#6B665F] font-light mb-8 leading-relaxed">
                   Cada rincón de Ciudad Venecia ha sido planeado para ofrecerte la máxima calidad de vida. Disfruta de nuestras casas club, piscinas y áreas verdes protegidas.
                </p>
                <ul className="space-y-4">
                   {['Seguridad Privada 24/7', 'Áreas Verdes Exclusivas', 'Diseño Urbano Integral', 'Alta Plusvalía'].map((item, i) => (
-                     <li key={i} className="flex items-center gap-4 text-sm font-light tracking-wide text-[#E5D5B0]">
+                     <li key={i} className="flex items-center gap-4 text-sm font-medium tracking-wide text-[#5C554F]">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#C5A065]"></span>
                         {item}
                      </li>
@@ -198,10 +198,10 @@ export default function Design5Page() {
                </ul>
             </div>
             <div className="relative h-[600px]">
-               <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden">
+               <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl">
                   <img src="/homepage/patio_asador.jpg.jpeg" className="w-full h-full object-cover" />
                </div>
-               <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#2C2520]">
+               <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl">
                   <img src="/amenidades/amenidades_piscina002.jpeg" className="w-full h-full object-cover" />
                </div>
             </div>
@@ -209,7 +209,7 @@ export default function Design5Page() {
       </section>
 
        {/* 5. CONTACT CTA */}
-       <section id="kontakt" className="py-24 px-6 bg-[#F9F8F6] text-center">
+       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB] text-center">
           <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Comienza tu legado hoy</h2>
           <Link href="#kontakt" className="inline-block px-12 py-4 bg-[#2C2C2C] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-colors shadow-lg">
              Agendar Visita
