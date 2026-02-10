@@ -152,8 +152,8 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 3. "CREADO POR INMAER" STRIP (PASTEL BEIGE #EBE7DF) */}
-      <section className="bg-[#EBE7DF] py-16 text-center border-t border-b border-[#DCD6CC]">
+      {/* 3. "CREADO POR INMAER" STRIP (SLIGHTLY DARKER BEIGE #E5E1D8) */}
+      <section className="bg-[#E5E1D8] py-16 text-center border-t border-b border-[#DCD6CC]">
          <div className="max-w-[1200px] mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-6">
                <span className="font-serif-display text-2xl tracking-[0.1em] text-[#4A403A]">CREADO POR:</span>
