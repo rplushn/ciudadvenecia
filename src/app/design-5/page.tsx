@@ -404,14 +404,30 @@ export default function Design5Page() {
                  </div>
              </div>
 
-             {/* PART 3: BOTTOM SPLIT (Infrasctructure) - Matching the uploaded image exactly */}
+             {/* PART 3: BOTTOM SPLIT (Infrastructure) */}
              <div className="mt-24 pt-12 border-t border-gray-100">
-                 <div className="max-w-2xl">
-                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">EN PROYECTOS COMO CIUDAD VENECIA DANLÍ</span>
-                    <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-4">Infraestructura que se siente</h2>
-                    <p className="text-[#6B665F] font-light text-sm">
-                       No vendemos &quot;ideas&quot;: entregamos urbanización y procesos claros para tu inversión.
-                    </p>
+                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                     {/* Left: Text */}
+                     <div>
+                        <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">EN PROYECTOS COMO CIUDAD VENECIA DANLÍ</span>
+                        <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-4">Infraestructura que se siente</h2>
+                        <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-6">
+                           No vendemos &quot;ideas&quot;: entregamos urbanización y procesos claros para tu inversión. Calles balastadas, acceso a servicios básicos y delimitación predial desde el primer día.
+                        </p>
+                        <ul className="space-y-3">
+                            {['Calles amplias y balastadas', 'Red eléctrica instalada', 'Acceso a agua potable', 'Drenaje pluvial eficiente'].map((item, i) => (
+                                <li key={i} className="flex items-center gap-3 text-xs font-medium text-[#5C554F]">
+                                    <span className="w-1 h-1 rounded-full bg-[#C5A065]"></span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                     </div>
+
+                     {/* Right: Image */}
+                     <div className="h-[400px] w-full bg-gray-100 overflow-hidden relative shadow-lg rounded-sm">
+                        <img src="/amenidades/amenidades_parque_central.jpg.jpeg" alt="Infraestructura Ciudad Venecia" className="w-full h-full object-cover" />
+                     </div>
                  </div>
              </div>
 
