@@ -170,7 +170,7 @@ export default function Design2Page() {
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
             {[
               { img: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=2670', title: 'Casa Club', span: 'md:col-span-2 md:row-span-2' },
-              { img: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2670', title: 'Piscina Climatizada', span: 'md:col-span-2' },
+              { img: 'images/amenidades/amenidades_acuatico.jpg.jpeg', title: 'Piscina Climatizada', span: 'md:col-span-2' },
               { img: 'https://images.unsplash.com/photo-1626245347629-873646696b99?q=80&w=2670', title: 'Canchas', span: 'md:col-span-1' },
               { img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560', title: 'Senderos', span: 'md:col-span-1' }
             ].map((item, i) => (
