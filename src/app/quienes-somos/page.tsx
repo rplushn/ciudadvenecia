@@ -5,11 +5,15 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function QuienesSomos() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Navbar Scroll Logic States (Copied from Home)
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAtTop, setIsAtTop] = useState(true);
 
   // Load Fonts
   useEffect(() => {
@@ -19,6 +23,27 @@ export default function QuienesSomos() {
     document.head.appendChild(link);
     return () => { document.head.removeChild(link); };
   }, []);
+
+  // Navbar Scroll Handler
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 100) {
+        setIsAtTop(true);
+        setIsVisible(true);
+      } else {
+        setIsAtTop(false);
+        if (currentScrollY > 300) {
+           setIsVisible(currentScrollY <= lastScrollY);
+        } else {
+           setIsVisible(true);
+        }
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
@@ -45,70 +70,138 @@ export default function QuienesSomos() {
         .parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
       `}</style>
       
-      {/* ------------------- HEADER / NAVBAR ------------------- */}
-      <nav className="fixed left-0 right-0 z-50 bg-[#F3F0EB]/90 backdrop-blur-md py-4 border-b border-[#C5A065]/10 transition-all duration-300">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-             <div className="text-[#2C2C2C]">
-                {/* SVG Logo in Dark Mode for this page */}
-                <svg height="40" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+      {/* ------------------- HEADER / NAVBAR (UNIFIED) ------------------- */}
+      <nav 
+        className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] transform ${
+            isVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${
+            isAtTop 
+            ? 'bg-gradient-to-b from-black/60 to-transparent py-6 border-none' 
+            : 'bg-[#5D737E]/85 backdrop-blur-lg py-4 shadow-sm' 
+        }`}
+      >
+        <div className="max-w-[1600px] mx-auto px-8 md:px-12 flex items-center justify-between">
+          <Link href="/#start" className="flex items-center gap-3 group">
+             <div className={`transition-colors duration-300 ${isAtTop ? 'text-white' : 'text-white'}`}>
+                {/* LOGO SVG RECREATION */}
+                <svg height="45" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+                    {/* Sunburst Icon */}
                     <g transform="translate(40, 40)">
+                         {/* Rays */}
                          {Array.from({ length: 24 }).map((_, i) => (
-                            <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5"/>
-                         ))}\n                    </g>
+                            <line 
+                                key={i} 
+                                x1="0" y1="-14" x2="0" y2="-32" 
+                                transform={`rotate(${i * 15})`} 
+                                stroke="currentColor" 
+                                strokeWidth="1.5"
+                            />
+                         ))}
+                    </g>
+                    
+                    {/* Text: CIUDAD VENECIA - Separated slightly */}
                     <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
                     <text x="200" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
                 </svg>
              </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-10">
-            {['Inicio', 'Master Plan', 'Lotes', 'Amenidades', 'Ubicación'].map((item, i) => (
-                <Link key={i} href={['/', '/quienes-somos', '/proyectos', '/amenidades', '/contacto'][i]} className="text-[#2C2C2C] text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
-                  {item}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
+            {/* Main Navigation Links */}
+            <div className="flex items-center gap-8">
+                <Link href="/#start" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                  Inicio
                 </Link>
-            ))}
+                <Link href="/quienes-somos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                  Quiénes Somos
+                </Link>
+                <Link href="/#proyectos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                  Proyectos
+                </Link>
+                <Link href="#" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                  Noticias
+                </Link>
+                <Link href="#" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                  Portal Clientes
+                </Link>
+            </div>
+
+            {/* Separator Line */}
+            <div className="h-4 w-[1px] bg-white/30"></div>
+
+            {/* Social Icons Section */}
+            <div className="flex items-center gap-4">
+                <span className="text-white/80 text-[10px] font-medium uppercase tracking-wider hidden xl:block">Síguenos</span>
+                <div className="flex gap-3">
+                    {/* Facebook Icon */}
+                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    {/* Instagram Icon */}
+                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.585-.011-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </a>
+                    {/* TikTok Icon */}
+                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.46-.54 2.94-1.34 4.14-1.8 2.73-5.7 4.01-8.85 2.48-2.69-1.31-4.25-4.17-4.11-7.14.05-3.08 2.08-5.71 4.97-6.55.75-.22 1.54-.31 2.32-.3v4.2c-.41-.03-.84.03-1.24.18-1.31.52-2.14 1.83-2.02 3.24.08 1.48 1.15 2.75 2.63 2.93 1.69.21 3.23-.97 3.51-2.65.07-.63.07-1.27.06-1.91V.02h-.01z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
           </div>
+
           <div className="hidden lg:flex items-center">
-             <Link href="/contacto" className="bg-[#2C2C2C] text-white px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all duration-300 shadow-lg">
-                Agenda tu Cita
+             <Link href="/#kontakt" className="border border-white/80 text-white px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
+                Contáctanos
              </Link>
           </div>
-          <button onClick={toggleMenu} className="lg:hidden text-[#2C2C2C] p-2"><span className="text-2xl">{isMobileMenuOpen ? '✕' : '☰'}</span></button>
+          <button onClick={toggleMenu} className="lg:hidden text-white p-2"><span className="text-2xl">{isMobileMenuOpen ? '✕' : '☰'}</span></button>
         </div>
       </nav>
 
-      {/* ------------------- 1. CINEMATIC HERO ------------------- */}
+      {/* ------------------- 1. HERO SECTION (REDESIGNED) ------------------- */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center parallax-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070')" }}>
-            <div className="absolute inset-0 bg-[#F3F0EB]/30 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#F3F0EB] via-transparent to-transparent"></div>
+        {/* Background Image - Local Asset for better brand alignment */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/homepage/versalles_outdoor.jpg.jpeg" 
+            alt="Ciudad Venecia Lifestyle" 
+            className="w-full h-full object-cover transform scale-105 animate-slowZoom"
+          />
+          {/* Heavy Overlay for Elegance */}
+          <div className="absolute inset-0 bg-black/50 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C] via-transparent to-black/20"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[#C5A065] font-bold uppercase tracking-[0.4em] text-xs mb-6 block"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-[#C5A065] font-bold uppercase tracking-[0.4em] text-xs mb-8 block"
             >
                 INMAER Real Estate
             </motion.span>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif-display text-6xl md:text-9xl text-[#2C2C2C] leading-[0.9] mb-8"
+              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+              className="font-serif-display text-5xl md:text-8xl text-white leading-[0.9] mb-8"
             >
-                Construimos <br/> <span className="italic font-light">Legado</span>
+                Más que tierra, <br/> <span className="italic font-light text-[#EBE7DF]">creamos futuro.</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[#484848] text-lg md:text-2xl font-light max-w-2xl mx-auto leading-relaxed"
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-white/80 text-base md:text-xl font-light max-w-xl mx-auto leading-relaxed"
             >
-                Más que desarrolladores, somos arquitectos de comunidades. <br/> Transformamos la tierra en el escenario de tu vida.
+                Somos los arquitectos detrás de Ciudad Venecia. Desarrollamos comunidades planeadas para que tu inversión crezca tan fuerte como tu familia.
             </motion.p>
         </div>
         
@@ -116,9 +209,10 @@ export default function QuienesSomos() {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-[#C5A065]"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50"
         >
-            <span className="text-2xl">↓</span>
+            <span className="text-xs uppercase tracking-widest">Descubre Nuestra Historia</span>
+            <div className="text-xl mt-1 text-center">↓</div>
         </motion.div>
       </section>
 
@@ -135,13 +229,13 @@ export default function QuienesSomos() {
 
       {/* ------------------- 3. STATISTICS (Visual Break) ------------------- */}
       <section className="py-20 bg-white border-y border-[#C5A065]/20">
-          <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+          <div className=\"max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center\">
               {stats.map((stat, i) => (
-                  <div key={i} className="space-y-2">
-                      <span className="font-serif-display text-5xl md:text-7xl text-[#C5A065] block">
+                  <div key={i} className=\"space-y-2\">
+                      <span className=\"font-serif-display text-5xl md:text-7xl text-[#C5A065] block\">
                         <CountUp to={stat.number} prefix={stat.prefix} suffix={stat.suffix} />
                       </span>
-                      <span className="text-[#2C2C2C] uppercase tracking-widest text-xs font-bold">{stat.label}</span>
+                      <span className=\"text-[#2C2C2C] uppercase tracking-widest text-xs font-bold\">{stat.label}</span>
                   </div>
               ))}
           </div>
@@ -152,7 +246,8 @@ export default function QuienesSomos() {
           <div className="order-2 md:order-1 relative">
             <Reveal delay={0.2}>
               <div className="aspect-[3/4] bg-[#E5E0D8] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071')" }}></div>
+                  {/* Changed to local asset for consistency */}
+                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/homepage/portal_ai-ciudad_venecia.jpeg')" }}></div>
               </div>
               <div className="absolute -bottom-10 -right-10 bg-[#C5A065] text-white p-8 max-w-xs hidden md:block shadow-2xl">
                   <p className="font-serif-display text-2xl italic">"Todo comenzó con un sueño en Danlí."</p>
@@ -174,8 +269,8 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 5. PARALLAX BREAK 1 (Landscape) ------------------- */}
-      <section className="py-32 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832')" }}>
-          <div className="absolute inset-0 bg-black/20"></div>
+      <section className="py-32 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
+          <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 text-center text-white px-6">
             <Reveal>
               <h2 className="font-serif-display text-5xl md:text-7xl mb-4">Naturaleza & Urbanismo</h2>
@@ -230,15 +325,16 @@ export default function QuienesSomos() {
               </div>
               <div className="bg-gray-200 h-full min-h-[500px] relative">
                 <Reveal className="h-full" delay={0.2}>
+                   {/* Changed to local asset for consistency */}
                    <div className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" 
-                        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053')" }}></div>
+                        style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}></div>
                 </Reveal>
               </div>
           </div>
       </section>
 
       {/* ------------------- 8. PARALLAX BREAK 2 (Lifestyle) ------------------- */}
-      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070')" }}>
+      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/homepage/familia_jugando.jpg.jpeg')" }}>
           <Reveal>
             <div className="bg-white/90 p-12 max-w-2xl text-center shadow-2xl backdrop-blur-sm mx-4">
                 <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4">"No vendemos tierra, vendemos el futuro de tu familia."</h3>
@@ -255,12 +351,13 @@ export default function QuienesSomos() {
               <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Liderazgo con Visión</h2>
             </Reveal>
           </div>
-          {/* Placeholder for Team Grid - Abstract representation for now */}\n          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {/* Placeholder for Team Grid - Abstract representation for now */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {[1, 2, 3].map((_, i) => (
                   <Reveal key={i} delay={i * 0.1}>
                     <div className="group cursor-pointer">
                         <div className="aspect-[3/4] bg-[#F3F0EB] mb-6 overflow-hidden relative">
-                             {/* Placeholder images */}
+                             {/* Placeholder images - keeping unsplash as placeholders but darkened/styled */}
                              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                                   style={{ backgroundImage: `url('https://images.unsplash.com/photo-${i === 0 ? '1560250097-0b93528c311a' : i === 1 ? '1573496359142-b8d87734a5a2' : '1519085360753-af0119f7cbe7'}?q=80&w=1000')` }}></div>
                         </div>
@@ -313,7 +410,8 @@ export default function QuienesSomos() {
                 </Reveal>
               </div>
               <div className="aspect-square bg-white border p-4 shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070')" }}></div>
+                  {/* Changed to local asset */}
+                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}></div>
               </div>
           </div>
       </section>
@@ -327,10 +425,10 @@ export default function QuienesSomos() {
                   No esperes a que te lo cuenten. Agenda una visita privada a nuestros desarrollos y siente la diferencia INMAER.
               </p>
               <div className="flex flex-col md:flex-row justify-center gap-6">
-                  <Link href="/contacto" className="bg-[#2C2C2C] text-white px-12 py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all shadow-xl">
+                  <Link href="/#kontakt" className="bg-[#2C2C2C] text-white px-12 py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all shadow-xl">
                       Agendar Visita
                   </Link>
-                  <Link href="/proyectos" className="border border-[#2C2C2C] text-[#2C2C2C] px-12 py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
+                  <Link href="/#proyectos" className="border border-[#2C2C2C] text-[#2C2C2C] px-12 py-5 font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
                       Ver Portafolio
                   </Link>
               </div>
