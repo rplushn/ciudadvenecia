@@ -226,90 +226,6 @@ export default function Design5Page() {
          </div>
       </section>
 
-
-      {/* 3. INMAER CORPORATE SHOWCASE (NEW "WOW" SECTION - DEEP BLUE/GRAY) */}
-      <section className="bg-[#1A2C38] py-24 px-6 md:px-12 text-white relative overflow-hidden">
-         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-             
-             {/* LEFT: INFO & STATS */}
-             <div>
-                <div className="flex items-center gap-4 mb-6">
-                     <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.25em]">UNA CREACIÓN DE</span>
-                     <div className="h-[1px] w-12 bg-[#C5A065]"></div>
-                </div>
-                
-                {/* LOGO INMAER (Text based as placeholder or SVG if available) */}
-                <h2 className="font-serif-display text-5xl md:text-6xl mb-2 tracking-wide text-white">INMAER</h2>
-                <p className="text-[#C5A065] text-xs uppercase tracking-[0.4em] mb-8 font-bold">REAL ESTATE</p>
-
-                <h3 className="font-serif-display text-3xl md:text-4xl leading-tight mb-6 text-white/90">
-                    Nuestras creaciones impactan positivamente el futuro de miles de personas.
-                </h3>
-                
-                <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-xl">
-                    INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
-                </p>
-
-                {/* ANIMATED STATS GRID */}
-                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
-                     <AnimatedStat end={10} label="AÑOS DE EXPERIENCIA" suffix="+" />
-                     <AnimatedStat end={7500} label="CLIENTES SATISFECHOS" prefix="+" />
-                     <AnimatedStat end={4} label="CIUDADES CON PRESENCIA" />
-                </div>
-                
-                <div className="mt-12">
-                     <Link href="#proyectos" className="inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300">
-                        Conoce INMAER
-                     </Link>
-                </div>
-             </div>
-
-             {/* RIGHT: PROJECT SHOWCASE GRID */}
-             <div className="grid grid-cols-2 gap-4">
-                 {/* Project 1 */}
-                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
-                     <img src="/homepage/casa_fachada.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                     <div className="absolute bottom-6 left-6">
-                         <h4 className="text-white font-bold text-sm">Ciudad Venecia</h4>
-                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Danlí · Valle · Olancho</p>
-                     </div>
-                 </div>
-                 
-                 {/* Project 2 */}
-                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
-                     <img src="/homepage/versalles_outdoor.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                     <div className="absolute bottom-6 left-6">
-                         <h4 className="text-white font-bold text-sm">Residencial Versalles</h4>
-                         <p className="text-white/60 text-[10px] uppercase tracking-wider">San Lorenzo</p>
-                     </div>
-                 </div>
-
-                 {/* Project 3 */}
-                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
-                     <img src="/amenidades/amenidades_club.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                     <div className="absolute bottom-6 left-6">
-                         <h4 className="text-white font-bold text-sm">Residencial Palmanova</h4>
-                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Próximamente</p>
-                     </div>
-                 </div>
-
-                 {/* Project 4 */}
-                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
-                     <img src="/homepage/portal_ai-ciudad_venecia.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
-                     <div className="absolute bottom-6 left-6">
-                         <h4 className="text-white font-bold text-sm">Hills City</h4>
-                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Comercial</p>
-                     </div>
-                 </div>
-             </div>
-
-         </div>
-      </section>
-
       {/* 4. AMENITIES CAROUSEL - DARKER BG WITH GRADIENT */}
       <section className="bg-[#F0EEE9] py-16 overflow-hidden relative group" ref={carouselRef}>
           {/* Subtle Top Gradient for Depth */}
@@ -606,6 +522,89 @@ export default function Design5Page() {
                   </div>
               </div>
           </div>
+      </section>
+
+      {/* 10.6 INMAER CORPORATE SHOWCASE (MOVED TO BOTTOM) */}
+      <section className="bg-[#1A2C38] py-24 px-6 md:px-12 text-white relative overflow-hidden">
+         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             
+             {/* LEFT: INFO & STATS */}
+             <div>
+                <div className="flex items-center gap-4 mb-6">
+                     <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.25em]">UNA CREACIÓN DE</span>
+                     <div className="h-[1px] w-12 bg-[#C5A065]"></div>
+                </div>
+                
+                {/* LOGO INMAER (Text based as placeholder or SVG if available) */}
+                <h2 className="font-serif-display text-5xl md:text-6xl mb-2 tracking-wide text-white">INMAER</h2>
+                <p className="text-[#C5A065] text-xs uppercase tracking-[0.4em] mb-8 font-bold">REAL ESTATE</p>
+
+                <h3 className="font-serif-display text-3xl md:text-4xl leading-tight mb-6 text-white/90">
+                    Nuestras creaciones impactan positivamente el futuro de miles de personas.
+                </h3>
+                
+                <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-xl">
+                    INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
+                </p>
+
+                {/* ANIMATED STATS GRID */}
+                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
+                     <AnimatedStat end={10} label="AÑOS DE EXPERIENCIA" suffix="+" />
+                     <AnimatedStat end={7500} label="CLIENTES SATISFECHOS" prefix="+" />
+                     <AnimatedStat end={4} label="CIUDADES CON PRESENCIA" />
+                </div>
+                
+                <div className="mt-12">
+                     <Link href="#proyectos" className="inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300">
+                        Conoce INMAER
+                     </Link>
+                </div>
+             </div>
+
+             {/* RIGHT: PROJECT SHOWCASE GRID */}
+             <div className="grid grid-cols-2 gap-4">
+                 {/* Project 1 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
+                     <img src="/homepage/casa_fachada.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Ciudad Venecia</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Danlí · Valle · Olancho</p>
+                     </div>
+                 </div>
+                 
+                 {/* Project 2 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
+                     <img src="/homepage/versalles_outdoor.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Residencial Versalles</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">San Lorenzo</p>
+                     </div>
+                 </div>
+
+                 {/* Project 3 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
+                     <img src="/amenidades/amenidades_club.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Residencial Palmanova</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Próximamente</p>
+                     </div>
+                 </div>
+
+                 {/* Project 4 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
+                     <img src="/homepage/portal_ai-ciudad_venecia.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Hills City</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Comercial</p>
+                     </div>
+                 </div>
+             </div>
+
+         </div>
       </section>
 
        {/* 11. CONTACT CTA (LIGHT OFF-WHITE #F5F4F1) */}
