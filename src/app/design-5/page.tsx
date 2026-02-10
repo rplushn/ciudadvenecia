@@ -459,8 +459,8 @@ export default function Design5Page() {
       </section>
 
       {/* 9. MIDDLE STATIC SECTION (BEIGE PASTEL) */}
-      <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
-         <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="bg-[#EBE7DF] py-16 px-6 md:px-12 flex items-center">
+         <div className="max-w-[1000px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div>
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Experiencia Ciudad Venecia</span>
