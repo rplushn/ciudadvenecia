@@ -525,7 +525,7 @@ export default function Design5Page() {
       </section>
 
       {/* 10.6 INMAER CORPORATE SHOWCASE (MOVED TO BOTTOM) */}
-      <section className="bg-[#1A2C38] py-24 px-6 md:px-12 text-white relative overflow-hidden">
+      <section className="bg-[#003B5C] py-24 px-6 md:px-12 text-white relative overflow-hidden">
          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              
              {/* LEFT: INFO & STATS */}
