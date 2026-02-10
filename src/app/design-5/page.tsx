@@ -690,12 +690,117 @@ export default function Design5Page() {
          </div>
       </section>
 
-       {/* 13. CONTACT CTA (LIGHT OFF-WHITE #F5F4F1) */}
-       <section id="kontakt" className="py-24 px-6 bg-[#F5F4F1] text-center">
-          <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Comienza tu legado hoy</h2>
-          <Link href="#kontakt" className="inline-block px-12 py-4 bg-[#2C2C2C] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-colors shadow-lg">
-             Agendar Visita
-          </Link>
+       {/* 13. NEW COMPLEX CONTACT CTA */}
+       <section id="kontakt" className="py-24 px-6 bg-[#FAFAF9]">
+           <div className="max-w-[1200px] mx-auto">
+               
+               {/* Header Centered */}
+               <div className="text-center mb-16">
+                   <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">ÚLTIMO PASO</span>
+                   <h2 className="font-serif-display text-4xl md:text-5xl text-[#1A3A52] mb-6">
+                       ¿Listo para hablar con un asesor?
+                   </h2>
+                   <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">
+                       Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento, sin compromisos ni promesas infladas.
+                   </p>
+               </div>
+
+               {/* Benefits Row */}
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
+                   {[
+                       "Respuesta en menos de 24 horas hábiles.",
+                       "Información clara sobre cuotas y primas según proyecto.",
+                       "Acompañamiento durante todo el proceso de compra."
+                   ].map((text, i) => (
+                       <div key={i} className="flex flex-col items-center">
+                           <div className="text-[#C5A065] text-xl mb-4">✓</div>
+                           <p className="text-[#5C554F] text-xs leading-relaxed max-w-[250px]">{text}</p>
+                       </div>
+                   ))}
+               </div>
+
+               {/* Split Container */}
+               <div className="grid grid-cols-1 lg:grid-cols-12 shadow-2xl rounded-sm overflow-hidden">
+                   
+                   {/* LEFT: Dark Blue Box (4 cols) */}
+                   <div className="lg:col-span-4 bg-[#1A3A52] p-10 md:p-12 text-white flex flex-col justify-center">
+                       <h3 className="font-serif-display text-2xl md:text-3xl mb-6">¿Prefieres hablar directo?</h3>
+                       <p className="text-white/80 text-xs leading-relaxed mb-8">
+                           También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver dudas puntuales sobre financiamiento.
+                       </p>
+                       
+                       <div className="h-[1px] w-full bg-white/10 mb-8"></div>
+
+                       <div className="space-y-6">
+                           <div>
+                               <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">TELÉFONO</p>
+                               <p className="text-sm font-medium">(504) 9890-4449 / 2763-3699</p>
+                           </div>
+                           <div>
+                               <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">WHATSAPP VENTAS</p>
+                               <p className="text-sm font-medium">+504 9549-8925</p>
+                           </div>
+                           <div>
+                               <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">OFICINA DANLÍ</p>
+                               <p className="text-xs text-white/80 leading-relaxed">
+                                   Col. El Zarzal, Edificio INMAER, contiguo a Pizza Hut, Danlí.
+                               </p>
+                           </div>
+                       </div>
+                   </div>
+
+                   {/* RIGHT: Form (8 cols) */}
+                   <div className="lg:col-span-8 bg-white p-10 md:p-12">
+                       <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                           {/* Name */}
+                           <div className="md:col-span-1">
+                               <label className="block text-[#2C2C2C] text-[9px] font-bold uppercase tracking-widest mb-2">NOMBRE COMPLETO</label>
+                               <input type="text" placeholder="Ej. Juan Pérez" className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#1A3A52] transition-colors bg-[#FAFAF9]" />
+                           </div>
+                           
+                           {/* Phone */}
+                           <div className="md:col-span-1">
+                               <label className="block text-[#2C2C2C] text-[9px] font-bold uppercase tracking-widest mb-2">TELÉFONO / WHATSAPP</label>
+                               <input type="text" placeholder="+504 0000-0000" className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#1A3A52] transition-colors bg-[#FAFAF9]" />
+                           </div>
+
+                           {/* Email */}
+                           <div className="md:col-span-1">
+                               <label className="block text-[#2C2C2C] text-[9px] font-bold uppercase tracking-widest mb-2">CORREO ELECTRÓNICO</label>
+                               <input type="email" placeholder="tucorreo@ejemplo.com" className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#1A3A52] transition-colors bg-[#FAFAF9]" />
+                           </div>
+
+                           {/* Project Dropdown */}
+                           <div className="md:col-span-1">
+                               <label className="block text-[#2C2C2C] text-[9px] font-bold uppercase tracking-widest mb-2">PROYECTO DE INTERÉS</label>
+                               <select className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#1A3A52] transition-colors bg-[#FAFAF9] text-[#5C554F]">
+                                   <option>Seleccionar...</option>
+                                   <option>Ciudad Venecia Danlí</option>
+                                   <option>Ciudad Venecia Olancho</option>
+                                   <option>Ciudad Venecia Valle</option>
+                                   <option>Residencial Versalles</option>
+                               </select>
+                           </div>
+
+                           {/* Message */}
+                           <div className="md:col-span-2">
+                               <label className="block text-[#2C2C2C] text-[9px] font-bold uppercase tracking-widest mb-2">¿QUÉ TIENES EN MENTE?</label>
+                               <textarea rows={4} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#1A3A52] transition-colors bg-[#FAFAF9] resize-none"></textarea>
+                           </div>
+
+                           {/* Submit Button */}
+                           <div className="md:col-span-2 mt-4">
+                               <button type="submit" className="w-full bg-[#1A3A52] text-white py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all duration-300 shadow-lg">
+                                   ENVIAR Y HABLAR CON UN ASESOR
+                               </button>
+                               <p className="text-center text-[9px] text-gray-400 mt-6 leading-relaxed">
+                                   Tus datos serán utilizados únicamente para contactarte sobre proyectos de INMAER. No compartimos tu información con terceros.
+                               </p>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
        </section>
 
       {/* Footer */}
