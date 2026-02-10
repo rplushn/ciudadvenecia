@@ -425,7 +425,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 10.5 NUESTROS PILARES (Terrasoles Style Replication - ZOOM OUT VERSION) */}
+      {/* 10.5 NUESTROS PILARES (Terrasoles Style Replication - ZOOM OUT VERSION v2) */}
       <section className="relative py-24 px-6 overflow-hidden bg-white">
           {/* Subtle Sunburst/Logo Pattern */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
@@ -439,8 +439,8 @@ export default function Design5Page() {
           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#EBE7DF]/40 blur-3xl -z-10"></div>
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[#EBE7DF]/40 blur-3xl -z-10"></div>
 
-          {/* ZOOM OUT: max-w Reduced from 1400px to 1080px (~20-25% smaller) */}
-          <div className="max-w-[1080px] mx-auto relative z-10">
+          {/* ZOOM OUT: max-w Reduced FURTHER from 1080px to 850px (~20% more) */}
+          <div className="max-w-[850px] mx-auto relative z-10">
               {/* Header */}
               <div className="text-center mb-16">
                   <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-4 tracking-wide">NUESTROS PILARES</h2>
@@ -450,7 +450,7 @@ export default function Design5Page() {
               </div>
 
               {/* Split Content with GAP */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Left: Image (Vertical Aspect Ratio Forced) */}
                   <div className="aspect-[3/4] w-full relative overflow-hidden shadow-xl group bg-gray-200">
                       <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -459,7 +459,7 @@ export default function Design5Page() {
                   {/* Right: Info Blocks (Stacked & Separated) */}
                   <div className="flex flex-col gap-6 h-full">
                       {/* Top Block: Gray - Reduced Padding */}
-                      <div className="bg-[#EAE8E4] p-8 lg:p-10 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
+                      <div className="bg-[#EAE8E4] p-8 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
                           {/* House Icon (SVG) */}
                           <div className="w-8 h-8 mb-6 text-[#4A403A]">
                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
@@ -485,7 +485,7 @@ export default function Design5Page() {
                       </div>
 
                       {/* Bottom Block: White - Reduced Padding */}
-                      <div className="bg-[#FAFAF9] p-8 lg:p-10 flex-1 flex flex-col justify-center items-center text-center shadow-sm border border-gray-100">
+                      <div className="bg-[#FAFAF9] p-8 flex-1 flex flex-col justify-center items-center text-center shadow-sm border border-gray-100">
                           {/* INMAER Logo Mock */}
                           <div className="mb-6 flex flex-col items-center">
                               <span className="font-serif-display text-3xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
