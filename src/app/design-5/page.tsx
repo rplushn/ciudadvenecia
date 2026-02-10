@@ -99,9 +99,9 @@ export default function Design5Page() {
             alt="Ciudad Venecia Portal"
             className="h-full w-full object-cover transform scale-105 animate-slowZoom" 
           />
-          {/* Dark Overlay - Heavily tinted to match reference */}
-          <div className="absolute inset-0 bg-[#2C2520]/40 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-black/30"></div> 
+          {/* Dark Overlay - Lighter for visibility */}
+          <div className="absolute inset-0 bg-[#2C2520]/20 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-black/10"></div> 
         </div>
 
         {/* Hero Content */}
