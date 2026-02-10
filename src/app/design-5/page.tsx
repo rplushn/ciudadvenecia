@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 export default function Design5Page() {
@@ -9,7 +9,22 @@ export default function Design5Page() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
 
-  // Load Cormorant Garamond & Montserrat
+  // Carousel State
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const carouselData = [
+    { title: "Parque Central", img: "/amenidades/amenidades_parque_central.jpg.jpeg" }, // Placeholder, using available images
+    { title: "Club Social", img: "/amenidades/amenidades_club.jpg.jpeg" },
+    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg.jpeg" }, // Placeholder
+    { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
+    { title: "Canchas Basquetbol", img: "/amenidades/amenidades_cancha.jpg.jpeg" }, // Placeholder
+    { title: "Áreas Verdes", img: "/homepage/versalles_outdoor.jpg.jpeg" },
+    { title: "Senderos", img: "/homepage/outdoor2.jpg.jpeg" },
+    { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" }, // Placeholder
+    { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
+  ];
+
+  // Load Fonts
   useEffect(() => {
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap';
@@ -18,6 +33,7 @@ export default function Design5Page() {
     return () => { document.head.removeChild(link); };
   }, []);
 
+  // Navbar Scroll Logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -38,6 +54,23 @@ export default function Design5Page() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Carousel Logic (Auto-scroll 5s)
+  useEffect(() => {
+    const interval = setInterval(() => {
+        if (carouselRef.current && !carouselRef.current.matches(':hover')) {
+             nextSlide();
+        }
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+      setCurrentSlide((prev) => (prev + 1) % Math.ceil(carouselData.length / 2)); // Showing 2 per view on desktop roughly
+  };
+  const prevSlide = () => {
+      setCurrentSlide((prev) => (prev - 1 + Math.ceil(carouselData.length / 2)) % Math.ceil(carouselData.length / 2));
+  };
+
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
@@ -45,6 +78,8 @@ export default function Design5Page() {
       <style jsx global>{`
         body { font-family: 'Montserrat', sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-serif-display { font-family: 'Cormorant Garamond', serif; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
       
       {/* Smart Navbar */}
@@ -78,7 +113,7 @@ export default function Design5Page() {
         </div>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* 1. HERO SECTION */}
       <section className="relative h-screen w-full overflow-hidden flex items-center justify-center" id="start">
         <div className="absolute inset-0 z-0">
           <img src="/homepage/portal_ai-ciudad_venecia.jpeg" alt="Ciudad Venecia Portal" className="h-full w-full object-cover transform scale-105 animate-slowZoom" />
@@ -98,15 +133,10 @@ export default function Design5Page() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-80">
-           <div className="w-[30px] h-[50px] border-2 border-white/50 rounded-full flex justify-center p-2">
-              <div className="w-1 h-2 bg-white rounded-full animate-scrollDown"></div>
-           </div>
-        </div>
       </section>
 
-      {/* 2. INTRO / WELCOME (RESTORED) */}
-      <section className="py-28 px-6 bg-[#F3F0EB] text-center">
+      {/* 2. INTRO / WELCOME */}
+      <section className="py-24 px-6 bg-[#F3F0EB] text-center">
          <div className="max-w-4xl mx-auto">
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
                Un estilo de vida <span className="italic">extraordinario</span>
@@ -118,9 +148,57 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* --- WOW SPLIT PARALLAX SECTION START --- */}
+      {/* 3. NEW: "CREADO POR INMAER" STRIP */}
+      <section className="bg-[#EBE7DF] py-16 text-center border-t border-b border-[#DCD6CC]">
+         <div className="max-w-[1200px] mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-6">
+               <span className="font-serif-display text-2xl tracking-[0.1em] text-[#4A403A]">CREADO POR:</span>
+               <div className="flex flex-col items-center">
+                   {/* Logo Placeholder - replacing text with styled text for now if no logo file */}
+                   <h3 className="font-serif-display text-4xl font-bold tracking-widest text-[#2C2C2C]">INMAER</h3>
+                   <span className="text-[9px] uppercase tracking-[0.4em] text-[#C5A065]">Real Estate</span>
+               </div>
+            </div>
+            <p className="text-[#6B665F] text-sm md:text-base font-medium tracking-wide uppercase max-w-3xl mx-auto leading-relaxed">
+               INMAER lleva construyendo proyectos de vivienda más de <span className="font-bold text-[#2C2C2C]">10 años</span>, creando comunidades que perduran.
+            </p>
+         </div>
+      </section>
 
-      {/* 3. TOP PARALLAX ("VIDA EN ARMONÍA") */}
+      {/* 4. NEW: AMENITIES CAROUSEL */}
+      <section className="bg-white py-12 overflow-hidden relative group" ref={carouselRef}>
+          <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+              {/* Duplicate array for infinite scroll illusion if needed, but simple slide logic for now */}
+              {[0, 2, 4, 6].map((startIndex, pageIndex) => (
+                  <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-1 px-1">
+                      {carouselData.slice(startIndex, startIndex + 2).map((item, idx) => (
+                          <div key={idx} className="relative h-[400px] overflow-hidden group/item cursor-pointer">
+                              <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90"></div>
+                              <div className="absolute bottom-8 left-8 text-white">
+                                  <h4 className="text-xl font-bold uppercase tracking-widest">{item.title}</h4>
+                              </div>
+                          </div>
+                      ))}
+                  </div>
+              ))}
+          </div>
+          
+          {/* Controls */}
+          <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 flex gap-4 z-10">
+              <button onClick={prevSlide} className="w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white transition-all shadow-lg">
+                  ←
+              </button>
+              <div className="flex items-center gap-2 text-[10px] tracking-widest font-bold text-gray-400 bg-white/80 px-3 py-1 rounded-full">
+                 {currentSlide + 1} / 4
+              </div>
+              <button onClick={nextSlide} className="w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white transition-all shadow-lg">
+                  →
+              </button>
+          </div>
+      </section>
+
+      {/* 5. TOP PARALLAX */}
       <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
          <div className="absolute inset-0 bg-black/40"></div>
          <div className="relative z-10 text-center">
@@ -129,7 +207,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 4. MIDDLE STATIC SECTION (BEIGE PASTEL) */}
+      {/* 6. MIDDLE STATIC SECTION */}
       <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
          <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -171,7 +249,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 5. BOTTOM PARALLAX ("RESPIRA FUTURO") */}
+      {/* 7. BOTTOM PARALLAX */}
       <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
          <div className="absolute inset-0 bg-black/50"></div>
          <div className="relative z-10 text-center">
@@ -180,16 +258,13 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* --- WOW SPLIT PARALLAX SECTION END --- */}
-
-      {/* 6. PROYECTOS (Elegant Cards) */}
+      {/* 8. PROYECTOS */}
       <section id="proyectos" className="py-16 px-6 bg-[#F9F8F6]">
          <div className="max-w-[1600px] mx-auto">
             <div className="text-center mb-16">
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-3">Nuestra Colección</span>
                <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Proyectos Destacados</h2>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                <div className="group relative h-[500px] overflow-hidden cursor-pointer">
                   <img src="/homepage/casa_fachada.jpg.jpeg" alt="Danli" className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
@@ -200,7 +275,6 @@ export default function Design5Page() {
                      <span className="px-6 py-3 border border-white/50 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
                   </div>
                </div>
-               
                <div className="group relative h-[500px] overflow-hidden cursor-pointer">
                   <img src="/amenidades/amenidades_club.jpg.jpeg" alt="Olancho" className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
@@ -214,7 +288,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 7. DETAILS / AMENITIES (RESTORED WITH BEIGE COLOR) */}
+      {/* 9. AMENIDADES */}
       <section id="amenidades" className="py-24 bg-[#EBE7DF] text-[#4A403A]">
          <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
@@ -243,7 +317,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-       {/* 8. CONTACT CTA */}
+       {/* 10. CONTACT CTA */}
        <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB] text-center">
           <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Comienza tu legado hoy</h2>
           <Link href="#kontakt" className="inline-block px-12 py-4 bg-[#2C2C2C] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-colors shadow-lg">
