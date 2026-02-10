@@ -183,9 +183,17 @@ export default function Design5Page() {
                                {carouselData.slice(startIndex, startIndex + itemsPerPage).map((item, idx) => (
                                    <div key={idx} className="relative aspect-[4/3] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                                        <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
-                                       <div className="absolute inset-0 bg-black/10 group-hover/item:bg-black/0 transition-colors"></div>
-                                       <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 text-center transform translate-y-0 transition-transform border-t border-gray-100">
-                                           <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2C2C2C]">{item.title}</h4>
+                                       
+                                       {/* Dark fade for readability */}
+                                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+                                       {/* Title inside image */}
+                                       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4">
+                                         <div className="bg-black/35 backdrop-blur-sm px-8 py-3">
+                                           <h4 className="text-white text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-center">
+                                             {item.title}
+                                           </h4>
+                                         </div>
                                        </div>
                                    </div>
                                ))}
