@@ -13,14 +13,14 @@ export default function Design5Page() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const carouselData = [
-    { title: "Parque Central", img: "/amenidades/amenidades_parque_central.jpg.jpeg" }, // Placeholder, using available images
+    { title: "Parque Central", img: "/amenidades/amenidades_parque_central.jpg.jpeg" },
     { title: "Club Social", img: "/amenidades/amenidades_club.jpg.jpeg" },
-    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg.jpeg" }, // Placeholder
+    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg.jpeg" },
     { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
-    { title: "Canchas Basquetbol", img: "/amenidades/amenidades_cancha.jpg.jpeg" }, // Placeholder
+    { title: "Canchas Basquetbol", img: "/amenidades/amenidades_cancha.jpg.jpeg" },
     { title: "Áreas Verdes", img: "/homepage/versalles_outdoor.jpg.jpeg" },
     { title: "Senderos", img: "/homepage/outdoor2.jpg.jpeg" },
-    { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" }, // Placeholder
+    { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" },
     { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
   ];
 
@@ -65,7 +65,7 @@ export default function Design5Page() {
   }, [currentSlide]);
 
   const nextSlide = () => {
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(carouselData.length / 2)); // Showing 2 per view on desktop roughly
+      setCurrentSlide((prev) => (prev + 1) % Math.ceil(carouselData.length / 2));
   };
   const prevSlide = () => {
       setCurrentSlide((prev) => (prev - 1 + Math.ceil(carouselData.length / 2)) % Math.ceil(carouselData.length / 2));
@@ -135,8 +135,8 @@ export default function Design5Page() {
         </div>
       </section>
 
-      {/* 2. INTRO / WELCOME */}
-      <section className="py-24 px-6 bg-[#F3F0EB] text-center">
+      {/* 2. INTRO / WELCOME (PASTEL TONE #F7F6F4) */}
+      <section className="py-24 px-6 bg-[#F7F6F4] text-center">
          <div className="max-w-4xl mx-auto">
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
                Un estilo de vida <span className="italic">extraordinario</span>
@@ -148,13 +148,12 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 3. NEW: "CREADO POR INMAER" STRIP */}
+      {/* 3. "CREADO POR INMAER" STRIP (PASTEL BEIGE #EBE7DF) */}
       <section className="bg-[#EBE7DF] py-16 text-center border-t border-b border-[#DCD6CC]">
          <div className="max-w-[1200px] mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-6">
                <span className="font-serif-display text-2xl tracking-[0.1em] text-[#4A403A]">CREADO POR:</span>
                <div className="flex flex-col items-center">
-                   {/* Logo Placeholder - replacing text with styled text for now if no logo file */}
                    <h3 className="font-serif-display text-4xl font-bold tracking-widest text-[#2C2C2C]">INMAER</h3>
                    <span className="text-[9px] uppercase tracking-[0.4em] text-[#C5A065]">Real Estate</span>
                </div>
@@ -165,10 +164,9 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 4. NEW: AMENITIES CAROUSEL */}
+      {/* 4. AMENITIES CAROUSEL (WHITE BG) */}
       <section className="bg-white py-12 overflow-hidden relative group" ref={carouselRef}>
           <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-              {/* Duplicate array for infinite scroll illusion if needed, but simple slide logic for now */}
               {[0, 2, 4, 6].map((startIndex, pageIndex) => (
                   <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-1 px-1">
                       {carouselData.slice(startIndex, startIndex + 2).map((item, idx) => (
@@ -198,7 +196,38 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 5. TOP PARALLAX */}
+      {/* 5. NEW: VIDEO SHOWCASE SECTION (SOFT GRAY PASTEL #F0EEE9) */}
+      <section className="bg-[#F0EEE9] py-20 px-6">
+          <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left: Text Content */}
+              <div>
+                  <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">Espacios que cautivan</span>
+                  <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6 leading-tight">
+                      Un punto de encuentro <br className="hidden md:block" /> vibrante, seguro y armonioso
+                  </h2>
+                  <p className="text-[#6B665F] text-base font-light leading-relaxed mb-8">
+                      Cada rincón de Ciudad Venecia ha sido planeado con atención al detalle, fusionando diseño arquitectónico innovador con la calidez de una comunidad auténtica.
+                  </p>
+                  <Link href="#proyectos" className="inline-block px-8 py-3 border-2 border-[#2C2C2C] text-[#2C2C2C] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
+                      Ver Recorrido Virtual
+                  </Link>
+              </div>
+
+              {/* Right: Compact Video */}
+              <div className="relative w-full max-w-[500px] mx-auto aspect-video bg-[#2C2C2C] rounded-sm overflow-hidden shadow-2xl">
+                  <video 
+                      src="/HERO3.mp4" 
+                      className="w-full h-full object-cover"
+                      autoPlay 
+                      muted 
+                      loop 
+                      playsInline
+                  />
+              </div>
+          </div>
+      </section>
+
+      {/* 6. TOP PARALLAX */}
       <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
          <div className="absolute inset-0 bg-black/40"></div>
          <div className="relative z-10 text-center">
@@ -207,7 +236,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 6. MIDDLE STATIC SECTION */}
+      {/* 7. MIDDLE STATIC SECTION (BEIGE PASTEL #EBE7DF) */}
       <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
          <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -249,7 +278,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 7. BOTTOM PARALLAX */}
+      {/* 8. BOTTOM PARALLAX */}
       <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
          <div className="absolute inset-0 bg-black/50"></div>
          <div className="relative z-10 text-center">
@@ -258,8 +287,8 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 8. PROYECTOS */}
-      <section id="proyectos" className="py-16 px-6 bg-[#F9F8F6]">
+      {/* 9. PROYECTOS (LIGHT PASTEL #FAFAF8) */}
+      <section id="proyectos" className="py-16 px-6 bg-[#FAFAF8]">
          <div className="max-w-[1600px] mx-auto">
             <div className="text-center mb-16">
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-3">Nuestra Colección</span>
@@ -288,7 +317,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 9. AMENIDADES */}
+      {/* 10. AMENIDADES (BEIGE PASTEL #EBE7DF) */}
       <section id="amenidades" className="py-24 bg-[#EBE7DF] text-[#4A403A]">
          <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
@@ -317,8 +346,8 @@ export default function Design5Page() {
          </div>
       </section>
 
-       {/* 10. CONTACT CTA */}
-       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB] text-center">
+       {/* 11. CONTACT CTA (LIGHT OFF-WHITE #F5F4F1) */}
+       <section id="kontakt" className="py-24 px-6 bg-[#F5F4F1] text-center">
           <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Comienza tu legado hoy</h2>
           <Link href="#kontakt" className="inline-block px-12 py-4 bg-[#2C2C2C] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-colors shadow-lg">
              Agendar Visita
