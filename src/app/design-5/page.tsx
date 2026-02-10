@@ -105,9 +105,22 @@ export default function Design5Page() {
         </div>
       </section>
 
+      {/* 2. INTRO / WELCOME (RESTORED) */}
+      <section className="py-28 px-6 bg-[#F3F0EB] text-center">
+         <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
+               Un estilo de vida <span className="italic">extraordinario</span>
+            </h2>
+            <div className="w-16 h-[1px] bg-[#C5A065] mx-auto mb-8"></div>
+            <p className="text-[#666] font-light text-lg leading-relaxed max-w-2xl mx-auto">
+               Descubre Ciudad Venecia, donde la naturaleza y la arquitectura moderna convergen para crear el escenario perfecto para tu familia. Espacios diseñados para perdurar.
+            </p>
+         </div>
+      </section>
+
       {/* --- WOW SPLIT PARALLAX SECTION START --- */}
 
-      {/* 1. TOP PARALLAX ("VIDA EN ARMONÍA") */}
+      {/* 3. TOP PARALLAX ("VIDA EN ARMONÍA") */}
       <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
          <div className="absolute inset-0 bg-black/40"></div>
          <div className="relative z-10 text-center">
@@ -116,10 +129,9 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 2. MIDDLE STATIC SECTION (BEIGE PASTEL) */}
+      {/* 4. MIDDLE STATIC SECTION (BEIGE PASTEL) */}
       <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
          <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
             <div>
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Experiencia Ciudad Venecia</span>
                <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] leading-[1.1] mb-6">
@@ -149,7 +161,6 @@ export default function Design5Page() {
                </Link>
             </div>
 
-            {/* Right Image/Slider */}
             <div className="relative h-[500px] rounded-sm overflow-hidden shadow-2xl group">
                <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Ciudad Venecia Lifestyle" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
@@ -160,7 +171,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 3. BOTTOM PARALLAX ("RESPIRA FUTURO") */}
+      {/* 5. BOTTOM PARALLAX ("RESPIRA FUTURO") */}
       <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
          <div className="absolute inset-0 bg-black/50"></div>
          <div className="relative z-10 text-center">
@@ -171,13 +182,14 @@ export default function Design5Page() {
 
       {/* --- WOW SPLIT PARALLAX SECTION END --- */}
 
-      {/* 4. PROYECTOS (Elegant Cards) */}
-      <section id="proyectos" className="py-24 px-6 bg-white">
+      {/* 6. PROYECTOS (Elegant Cards) */}
+      <section id="proyectos" className="py-16 px-6 bg-[#F9F8F6]">
          <div className="max-w-[1600px] mx-auto">
             <div className="text-center mb-16">
                <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-3">Nuestra Colección</span>
                <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Proyectos Destacados</h2>
             </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                <div className="group relative h-[500px] overflow-hidden cursor-pointer">
                   <img src="/homepage/casa_fachada.jpg.jpeg" alt="Danli" className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
@@ -188,6 +200,7 @@ export default function Design5Page() {
                      <span className="px-6 py-3 border border-white/50 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
                   </div>
                </div>
+               
                <div className="group relative h-[500px] overflow-hidden cursor-pointer">
                   <img src="/amenidades/amenidades_club.jpg.jpeg" alt="Olancho" className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
@@ -201,7 +214,36 @@ export default function Design5Page() {
          </div>
       </section>
 
-       {/* 5. CONTACT CTA */}
+      {/* 7. DETAILS / AMENITIES (RESTORED WITH BEIGE COLOR) */}
+      <section id="amenidades" className="py-24 bg-[#EBE7DF] text-[#4A403A]">
+         <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Amenidades</span>
+               <h2 className="font-serif-display text-4xl md:text-5xl mb-6 leading-tight text-[#2C2C2C]">Espacios que <br/>inspiran tranquilidad</h2>
+               <p className="text-[#6B665F] font-light mb-8 leading-relaxed">
+                  Cada rincón de Ciudad Venecia ha sido planeado para ofrecerte la máxima calidad de vida. Disfruta de nuestras casas club, piscinas y áreas verdes protegidas.
+               </p>
+               <ul className="space-y-4">
+                  {['Seguridad Privada 24/7', 'Áreas Verdes Exclusivas', 'Diseño Urbano Integral', 'Alta Plusvalía'].map((item, i) => (
+                     <li key={i} className="flex items-center gap-4 text-sm font-medium tracking-wide text-[#5C554F]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#C5A065]"></span>
+                        {item}
+                     </li>
+                  ))}
+               </ul>
+            </div>
+            <div className="relative h-[600px]">
+               <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl">
+                  <img src="/homepage/patio_asador.jpg.jpeg" className="w-full h-full object-cover" />
+               </div>
+               <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl">
+                  <img src="/amenidades/amenidades_piscina002.jpeg" className="w-full h-full object-cover" />
+               </div>
+            </div>
+         </div>
+      </section>
+
+       {/* 8. CONTACT CTA */}
        <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB] text-center">
           <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Comienza tu legado hoy</h2>
           <Link href="#kontakt" className="inline-block px-12 py-4 bg-[#2C2C2C] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-colors shadow-lg">
