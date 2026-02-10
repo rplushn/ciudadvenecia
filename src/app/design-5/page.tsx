@@ -561,8 +561,7 @@ export default function Design5Page() {
                       <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
 
-                  {/* Right: Info Blocks (Stacked & Separated) */}
-                  <div className="flex flex-col gap-6 h-full">
+                  {/* Right: Info Blocks (Stacked & Separated) */}\n                  <div className="flex flex-col gap-6 h-full">
                       {/* Top Block: Gray - Reduced Padding */}
                       <div className="bg-[#EAE8E4] p-8 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
                           {/* House Icon (SVG) */}
@@ -690,8 +689,8 @@ export default function Design5Page() {
          </div>
       </section>
 
-       {/* 13. NEW COMPLEX CONTACT CTA */}
-       <section id="kontakt" className="py-24 px-6 bg-[#FAFAF9]">
+       {/* 13. NEW COMPLEX CONTACT CTA - COLOR UPDATED TO #F3F0EB */}
+       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB]">
            <div className="max-w-[1200px] mx-auto">
                
                {/* Header Centered */}
@@ -722,7 +721,7 @@ export default function Design5Page() {
                {/* Split Container */}
                <div className="grid grid-cols-1 lg:grid-cols-12 shadow-2xl rounded-sm overflow-hidden">
                    
-                   {/* LEFT: Dark Blue Box (4 cols) */}
+                   {/* LEFT: Dark Blue Box (4 cols) - KEPT DARK */}
                    <div className="lg:col-span-4 bg-[#1A3A52] p-10 md:p-12 text-white flex flex-col justify-center">
                        <h3 className="font-serif-display text-2xl md:text-3xl mb-6">¿Prefieres hablar directo?</h3>
                        <p className="text-white/80 text-xs leading-relaxed mb-8">
@@ -749,7 +748,7 @@ export default function Design5Page() {
                        </div>
                    </div>
 
-                   {/* RIGHT: Form (8 cols) */}
+                   {/* RIGHT: Form (8 cols) - Background also updated to light tone for consistency or kept white? Keeping white for form readability usually better, but let's check user request. User said "PASES AL COLOR QUE TIENE EL DESIGN SYSTEM". Usually form inputs on white look cleaner. Let's keep the form container white but the SECTION bg changed. */}
                    <div className="lg:col-span-8 bg-white p-10 md:p-12">
                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                            {/* Name */}
