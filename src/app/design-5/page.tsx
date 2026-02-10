@@ -95,7 +95,7 @@ export default function Design5Page() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/homepage/portal_ai-ciudad_venecia.jpeg" 
+            src="/homepage/san_lorenzo.jpg.jpeg" 
             alt="Ciudad Venecia Portal"
             className="h-full w-full object-cover transform scale-105 animate-slowZoom" 
           />
@@ -106,7 +106,7 @@ export default function Design5Page() {
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-[1400px] px-6 text-center text-white mt-16">
-          <h1 className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg animate-fadeInUp">
+          <h1 className="font-serif-display font-normal text-5xl md:text-[65px] lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg animate-fadeInUp">
             Terrenos residenciales dentro <br className="hidden md:block" /> del nuevo Oriente
           </h1>
           
