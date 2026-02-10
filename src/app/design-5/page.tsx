@@ -93,7 +93,7 @@ export default function Design5Page() {
         } ${
             isAtTop 
             ? 'bg-gradient-to-b from-black/60 to-transparent py-6 border-none' 
-            : 'bg-[#2C2C2C]/95 backdrop-blur-md py-4 shadow-md'
+            : 'bg-[#5D737E]/85 backdrop-blur-lg py-4 shadow-sm' 
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 flex items-center justify-between">
