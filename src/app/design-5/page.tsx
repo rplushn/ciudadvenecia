@@ -333,157 +333,67 @@ export default function Design5Page() {
                          <p className="text-[#6B665F] text-xs leading-relaxed">Asesoría de principio a fin.</p>
                       </div>
                    </div>
-                   <div className="border-t border-gray-200 pt-6">
-                      <p className="text-[#8C857E] text-[10px] uppercase tracking-[0.2em] font-medium">TRANSPARENTE · PROFESIONAL · ATERRIZADO</p>
+                   <div className=\"border-t border-gray-200 pt-6\">
+                      <p className=\"text-[#8C857E] text-[10px] uppercase tracking-[0.2em] font-medium\">TRANSPARENTE · PROFESIONAL · ATERRIZADO</p>
                    </div>
                 </div>
              </div>
 
              {/* PART 2: BOTTOM SPLIT (Image Left + Grid Right) */}
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-16 items-center\">
                  {/* Left Image */}
-                 <div className="h-[500px] w-full bg-gray-100 overflow-hidden relative shadow-lg">
-                    <img src="/homepage/casa_fachada.jpg.jpeg" alt="Interior Showroom" className="w-full h-full object-cover" />
+                 <div className=\"h-[500px] w-full bg-gray-100 overflow-hidden relative shadow-lg\">
+                    <img src=\"/homepage/casa_fachada.jpg.jpeg\" alt=\"Interior Showroom\" className=\"w-full h-full object-cover\" />
                  </div>
 
                  {/* Right Content Grid */}
                  <div>
-                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">BASE TÉCNICA</span>
-                    <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-10">
+                    <span className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4\">BASE TÉCNICA</span>
+                    <h2 className=\"font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-10\">
                        Servicios y orden urbano
                     </h2>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-6 mb-10\">
                        {/* Box 1 */}
-                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">TERRENOS</h4>
-                          <p className="text-[#6B665F] text-xs leading-relaxed">Lotes (por ejemplo, 10x15 en Danlí).</p>
+                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
+                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">TERRENOS</h4>
+                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Lotes (por ejemplo, 10x15 en Danlí).</p>
                        </div>
                        {/* Box 2 */}
-                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">SERVICIOS</h4>
-                          <p className="text-[#6B665F] text-xs leading-relaxed">Agua potable, energía y aguas negras.</p>
+                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
+                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">SERVICIOS</h4>
+                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Agua potable, energía y aguas negras.</p>
                        </div>
                        {/* Box 3 */}
-                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">DISPONIBILIDAD</h4>
-                          <p className="text-[#6B665F] text-xs leading-relaxed">Agua 24 horas (según proyecto).</p>
+                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
+                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">DISPONIBILIDAD</h4>
+                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Agua 24 horas (según proyecto).</p>
                        </div>
                        {/* Box 4 */}
-                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
-                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">SEGURIDAD</h4>
-                          <p className="text-[#6B665F] text-xs leading-relaxed">Vigilancia 24 horas (según proyecto).</p>
+                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
+                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">SEGURIDAD</h4>
+                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Vigilancia 24 horas (según proyecto).</p>
                        </div>
                     </div>
 
-                    <button className="bg-[#2C2C2C] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-colors shadow-lg">
+                    <button className=\"bg-[#2C2C2C] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-colors shadow-lg\">
                        VER PROYECTOS
                     </button>
                  </div>
              </div>
 
              {/* PART 3: BOTTOM SPLIT (Infrasctructure) - Matching the uploaded image exactly */}
-             <div className="mt-24 pt-12 border-t border-gray-100">
-                 <div className="max-w-2xl">
-                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">EN PROYECTOS COMO CIUDAD VENECIA DANLÍ</span>
-                    <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-4">Infraestructura que se siente</h2>
-                    <p className="text-[#6B665F] font-light text-sm">
-                       No vendemos "ideas": entregamos urbanización y procesos claros para tu inversión.
+             <div className=\"mt-24 pt-12 border-t border-gray-100\">
+                 <div className=\"max-w-2xl\">
+                    <span className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4\">EN PROYECTOS COMO CIUDAD VENECIA DANLÍ</span>
+                    <h2 className=\"font-serif-display text-4xl text-[#2C2C2C] mb-4\">Infraestructura que se siente</h2>
+                    <p className=\"text-[#6B665F] font-light text-sm\">
+                       No vendemos \"ideas\": entregamos urbanización y procesos claros para tu inversión.
                     </p>
                  </div>
              </div>
 
           </div>
-      </section>
-
-      {/* 6. TOP PARALLAX */}
-      <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
-         <div className="absolute inset-0 bg-black/40"></div>
-         <div className="relative z-10 text-center">
-            <p className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
-            <h2 className="text-white font-serif-display text-6xl md:text-7xl">VIDA EN ARMONÍA</h2>
-         </div>
-      </section>
-
-      {/* 7. MIDDLE STATIC SECTION (BEIGE PASTEL #EBE7DF) */}
-      <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
-         <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Experiencia Ciudad Venecia</span>
-               <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] leading-[1.1] mb-6">
-                  Vivir, invertir y crecer <br/> en un mismo lugar
-               </h2>
-               <p className="text-[#6B665F] text-lg font-light leading-relaxed mb-10 max-w-xl">
-                  Cada proyecto combina ubicación estratégica, servicios básicos completos y opciones de financiamiento para que avances a tu ritmo, sin promesas irreales.
-               </p>
-               
-               <div className="grid grid-cols-3 gap-8 mb-10">
-                  <div>
-                     <p className="text-[#2C2C2C] font-bold text-2xl">+1,200</p>
-                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Familias</p>
-                  </div>
-                  <div>
-                     <p className="text-[#2C2C2C] font-bold text-2xl">7</p>
-                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Proyectos</p>
-                  </div>
-                  <div>
-                     <p className="text-[#2C2C2C] font-bold text-2xl">4</p>
-                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Departamentos</p>
-                  </div>
-               </div>
-
-               <Link href="#proyectos" className="inline-block px-8 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#A88650] transition-colors shadow-lg">
-                  Ver Proyectos
-               </Link>
-            </div>
-
-            <div className="relative h-[500px] rounded-sm overflow-hidden shadow-2xl group">
-               <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Ciudad Venecia Lifestyle" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
-               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                  <p className="text-[#C5A065] text-[9px] uppercase tracking-widest mb-1">Portafolio INMAER</p>
-                  <p className="text-white text-lg font-medium">Ciudad Venecia Danlí • Olancho • Valle</p>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      {/* 8. BOTTOM PARALLAX */}
-      <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
-         <div className="absolute inset-0 bg-black/50"></div>
-         <div className="relative z-10 text-center">
-            <p className="text-[#C5A065] text-[10px] uppercase tracking-[0.3em] mb-4">Naturaleza y Confort</p>
-            <h2 className="text-white font-serif-display text-6xl md:text-7xl">RESPIRA FUTURO</h2>
-         </div>
-      </section>
-
-      {/* 9. PROYECTOS (LIGHT PASTEL #FAFAF8) */}
-      <section id="proyectos" className="py-16 px-6 bg-[#FAFAF8]">
-         <div className="max-w-[1600px] mx-auto">
-            <div className="text-center mb-16">
-               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-3">Nuestra Colección</span>
-               <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Proyectos Destacados</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-               <div className="group relative h-[500px] overflow-hidden cursor-pointer">
-                  <img src="/homepage/casa_fachada.jpg.jpeg" alt="Danli" className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8 opacity-100 transition-opacity duration-500">
-                     <h3 className="font-serif-display text-5xl mb-2">Danlí</h3>
-                     <p className="text-xs uppercase tracking-[0.2em] mb-8">Proyecto Insignia</p>
-                     <span className="px-6 py-3 border border-white/50 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-                  </div>
-               </div>
-               <div className="group relative h-[500px] overflow-hidden cursor-pointer">
-                  <img src="/amenidades/amenidades_club.jpg.jpeg" alt="Olancho" className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-8">
-                     <h3 className="font-serif-display text-5xl mb-2">Olancho</h3>
-                     <p className="text-xs uppercase tracking-[0.2em] mb-8">Premium Living</p>
-                     <span className="px-6 py-3 border border-white/50 text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-colors">Ver Detalles</span>
-                  </div>
-               </div>
-            </div>
-         </div>
       </section>
 
       {/* 10. AMENIDADES (BEIGE PASTEL #EBE7DF) */}
@@ -513,6 +423,79 @@ export default function Design5Page() {
                </div>
             </div>
          </div>
+      </section>
+
+      {/* 10.5 NUESTROS PILARES (Terrasoles Style Replication) */}
+      <section className="relative py-24 px-6 overflow-hidden bg-white">
+          {/* Subtle Sunburst Background */}
+          <div className="absolute inset-0 pointer-events-none opacity-20" 
+             style={{ 
+                 backgroundImage: `radial-gradient(circle at 50% 50%, #EBE7DF 2px, transparent 2.5px)`, 
+                 backgroundSize: '40px 40px' 
+             }}>
+          </div>
+          <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#EBE7DF]/30 blur-3xl"></div>
+          <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#EBE7DF]/30 blur-3xl"></div>
+
+          <div className="max-w-[1400px] mx-auto relative z-10">
+              {/* Header */}
+              <div className="text-center mb-16">
+                  <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4">NUESTROS PILARES</h2>
+                  <p className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.3em]">
+                      EL ESPACIO IDEAL PARA CREAR LA VIDA QUE SOÑASTE
+                  </p>
+              </div>
+
+              {/* Split Content */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl">
+                  {/* Left: Image */}
+                  <div className="h-[500px] lg:h-auto bg-gray-200 relative overflow-hidden">
+                      <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover" />
+                  </div>
+
+                  {/* Right: Info Blocks */}
+                  <div className="flex flex-col">
+                      {/* Top Block: Gray */}
+                      <div className="bg-[#EAE8E4] p-12 lg:p-16 flex-1 flex flex-col justify-center relative">
+                          {/* House Icon (SVG) */}
+                          <div className="w-12 h-12 mb-6 text-[#2C2C2C]">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                             </svg>
+                          </div>
+                          <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4 leading-tight">Urbanismo y diseño <br/> inigualable</h3>
+                          <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-8">
+                              Ciudad Venecia cuenta con calles y espacios públicos seguros, accesibles y agradables de usar, que se integran armónicamente a las características naturales de la zona.
+                          </p>
+                          
+                          {/* Carousel Dots Mock */}
+                          <div className="flex gap-3">
+                              <span className="w-3 h-3 rounded-full bg-white border border-gray-400"></span>
+                              <span className="w-3 h-3 rounded-full bg-transparent border border-gray-400"></span>
+                              <span className="w-3 h-3 rounded-full bg-transparent border border-gray-400"></span>
+                          </div>
+
+                          {/* Arrows Mock */}
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-2xl">‹</div>
+                          <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-2xl">›</div>
+                      </div>
+
+                      {/* Bottom Block: White */}
+                      <div className="bg-[#FAFAF9] p-12 lg:p-16 flex-1 flex flex-col justify-center items-center text-center">
+                          {/* INMAER Logo Mock */}
+                          <div className="mb-6 flex flex-col items-center">
+                              <span className="font-serif-display text-3xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
+                              <span className="text-[8px] uppercase tracking-[0.3em] text-[#005F7F]">REAL ESTATE</span>
+                          </div>
+                          
+                          <h4 className="font-bold text-[#2C2C2C] text-sm mb-2">Con el respaldo y la <br/> solidez de INMAER</h4>
+                          <p className="text-[#6B665F] font-light text-xs max-w-sm mx-auto">
+                              Más de 10 años en el mercado nos permiten otorgar la Garantía de Calidad y Plusvalía que nuestros clientes buscan.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </section>
 
        {/* 11. CONTACT CTA (LIGHT OFF-WHITE #F5F4F1) */}
