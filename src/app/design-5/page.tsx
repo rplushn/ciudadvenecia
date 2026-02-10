@@ -90,17 +90,14 @@ export default function Design5Page() {
         </div>
       </nav>
 
-      {/* HERO SECTION (Video Background + Overlay + Centered Text) */}
+      {/* HERO SECTION (Image Background + Overlay + Centered Text) */}
       <section className="relative h-screen w-full overflow-hidden flex items-center justify-center" id="start">
-        {/* Background Video */}
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <video 
-            src="/HERO3.mp4" 
-            className="h-full w-full object-cover transform scale-105" // Slight scale to avoid borders
-            autoPlay 
-            muted 
-            loop 
-            playsInline
+          <img 
+            src="/homepage/portal_ai-ciudad_venecia.jpeg" 
+            alt="Ciudad Venecia Portal"
+            className="h-full w-full object-cover transform scale-105 animate-slowZoom" 
           />
           {/* Dark Overlay - Heavily tinted to match reference */}
           <div className="absolute inset-0 bg-[#2C2520]/40 mix-blend-multiply"></div>
@@ -109,15 +106,15 @@ export default function Design5Page() {
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-[1400px] px-6 text-center text-white mt-16">
-          <h1 className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg">
+          <h1 className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg animate-fadeInUp">
             Terrenos residenciales dentro <br className="hidden md:block" /> del nuevo Oriente
           </h1>
           
-          <p className="text-[#E5D5B0] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-12 drop-shadow-sm">
+          <p className="text-[#E5D5B0] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-12 drop-shadow-sm animate-fadeInUp delay-100">
             CON VÍAS DE ACCESO QUE TE CONECTARÁN CON TODO LO QUE NECESITAS
           </p>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-fadeInUp delay-200">
             <Link 
               href="#proyectos" 
               className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300"
