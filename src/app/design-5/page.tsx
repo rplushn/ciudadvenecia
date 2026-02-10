@@ -3,6 +3,58 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
+// Hook for Animated Counters
+function useCounter(end, duration = 2000) {
+  const [count, setCount] = useState(0);
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          let start = 0;
+          const increment = end / (duration / 16);
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= end) {
+              setCount(end);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, 16);
+          observer.disconnect(); // Run once
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return { count, elementRef };
+}
+
+// Counter Component
+const AnimatedStat = ({ end, label, prefix = "", suffix = "" }) => {
+    const { count, elementRef } = useCounter(end);
+    return (
+        <div ref={elementRef} className="text-center">
+            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
+                {prefix}{count.toLocaleString()}{suffix}
+            </div>
+            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
+                {label}
+            </div>
+        </div>
+    );
+};
+
+
 export default function Design5Page() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -174,19 +226,87 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 3. "CREADO POR INMAER" STRIP (SLIGHTLY DARKER BEIGE #E5E1D8) */}
-      <section className="bg-[#E5E1D8] py-16 text-center border-t border-b border-[#DCD6CC]">
-         <div className="max-w-[1200px] mx-auto px-6">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 mb-6">
-               <span className="font-serif-display text-2xl tracking-[0.1em] text-[#4A403A]">CREADO POR:</span>
-               <div className="flex flex-col items-center">
-                   <h3 className="font-serif-display text-4xl font-bold tracking-widest text-[#2C2C2C]">INMAER</h3>
-                   <span className="text-[9px] uppercase tracking-[0.4em] text-[#C5A065]">Real Estate</span>
-               </div>
-            </div>
-            <p className="text-[#6B665F] text-sm md:text-base font-medium tracking-wide uppercase max-w-3xl mx-auto leading-relaxed">
-               INMAER lleva construyendo proyectos de vivienda más de <span className="font-bold text-[#2C2C2C]">10 años</span>, creando comunidades que perduran.
-            </p>
+
+      {/* 3. INMAER CORPORATE SHOWCASE (NEW "WOW" SECTION - DEEP BLUE/GRAY) */}
+      <section className="bg-[#1A2C38] py-24 px-6 md:px-12 text-white relative overflow-hidden">
+         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+             
+             {/* LEFT: INFO & STATS */}
+             <div>
+                <div className="flex items-center gap-4 mb-6">
+                     <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.25em]">UNA CREACIÓN DE</span>
+                     <div className="h-[1px] w-12 bg-[#C5A065]"></div>
+                </div>
+                
+                {/* LOGO INMAER (Text based as placeholder or SVG if available) */}
+                <h2 className="font-serif-display text-5xl md:text-6xl mb-2 tracking-wide text-white">INMAER</h2>
+                <p className="text-[#C5A065] text-xs uppercase tracking-[0.4em] mb-8 font-bold">REAL ESTATE</p>
+
+                <h3 className="font-serif-display text-3xl md:text-4xl leading-tight mb-6 text-white/90">
+                    Nuestras creaciones impactan positivamente el futuro de miles de personas.
+                </h3>
+                
+                <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-xl">
+                    INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
+                </p>
+
+                {/* ANIMATED STATS GRID */}
+                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10">
+                     <AnimatedStat end={10} label="AÑOS DE EXPERIENCIA" suffix="+" />
+                     <AnimatedStat end={7500} label="CLIENTES SATISFECHOS" prefix="+" />
+                     <AnimatedStat end={4} label="CIUDADES CON PRESENCIA" />
+                </div>
+                
+                <div className="mt-12">
+                     <Link href="#proyectos" className="inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300">
+                        Conoce INMAER
+                     </Link>
+                </div>
+             </div>
+
+             {/* RIGHT: PROJECT SHOWCASE GRID */}
+             <div className="grid grid-cols-2 gap-4">
+                 {/* Project 1 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
+                     <img src="/homepage/casa_fachada.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Ciudad Venecia</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Danlí · Valle · Olancho</p>
+                     </div>
+                 </div>
+                 
+                 {/* Project 2 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
+                     <img src="/homepage/versalles_outdoor.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Residencial Versalles</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">San Lorenzo</p>
+                     </div>
+                 </div>
+
+                 {/* Project 3 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer">
+                     <img src="/amenidades/amenidades_club.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Residencial Palmanova</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Próximamente</p>
+                     </div>
+                 </div>
+
+                 {/* Project 4 */}
+                 <div className="relative aspect-[4/3] group overflow-hidden cursor-pointer mt-8">
+                     <img src="/homepage/portal_ai-ciudad_venecia.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90"></div>
+                     <div className="absolute bottom-6 left-6">
+                         <h4 className="text-white font-bold text-sm">Hills City</h4>
+                         <p className="text-white/60 text-[10px] uppercase tracking-wider">Comercial</p>
+                     </div>
+                 </div>
+             </div>
+
          </div>
       </section>
 
@@ -325,42 +445,6 @@ export default function Design5Page() {
       <section className="bg-white py-24 px-6 md:px-12 border-b border-[#F0EEE9]">
           <div className="max-w-[1400px] mx-auto">
              
-             {/* PART 1: TOP SPLIT (Text Left + Box Right) */}
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
-                {/* Left Text */}
-                <div>
-                   <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">RESPALDO CORPORATIVO</span>
-                   <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6 leading-[1.1]">
-                      Una desarrolladora. <br/> Una visión clara.
-                   </h2>
-                   <p className="text-[#6B665F] font-light text-base leading-relaxed max-w-lg">
-                      Ciudad Venecia es la marca insignia; INMAER es el respaldo que sostiene la ejecución, el orden y la continuidad de cada proyecto.
-                   </p>
-                </div>
-
-                {/* Right Box (Gray Bg) */}
-                <div className="bg-[#F7F7F7] p-10 md:p-12 border border-gray-100">
-                   <h3 className="text-[#2C2C2C] font-bold text-lg uppercase tracking-wider mb-8">NUESTRO ENFOQUE</h3>
-                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                      <div className="md:border-r border-gray-200 pr-4">
-                         <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-2">URBANIZACIÓN</h4>
-                         <p className="text-[#6B665F] text-xs leading-relaxed">Servicios y planificación.</p>
-                      </div>
-                      <div className="md:border-r border-gray-200 pr-4">
-                         <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-2">FINANCIAMIENTO</h4>
-                         <p className="text-[#6B665F] text-xs leading-relaxed">Opciones según proyecto.</p>
-                      </div>
-                      <div>
-                         <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-2">ACOMPAÑAMIENTO</h4>
-                         <p className="text-[#6B665F] text-xs leading-relaxed">Asesoría de principio a fin.</p>
-                      </div>
-                   </div>
-                   <div className="border-t border-gray-200 pt-6">
-                      <p className="text-[#8C857E] text-[10px] uppercase tracking-[0.2em] font-medium">TRANSPARENTE · PROFESIONAL · ATERRIZADO</p>
-                   </div>
-                </div>
-             </div>
-
              {/* PART 2: BOTTOM SPLIT (Image Left + Grid Right) */}
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                  {/* Left Image */}
