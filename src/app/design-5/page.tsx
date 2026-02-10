@@ -427,69 +427,72 @@ export default function Design5Page() {
 
       {/* 10.5 NUESTROS PILARES (Terrasoles Style Replication) */}
       <section className="relative py-24 px-6 overflow-hidden bg-white">
-          {/* Subtle Sunburst Background */}
-          <div className="absolute inset-0 pointer-events-none opacity-20" 
+          {/* Subtle Sunburst/Logo Pattern */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
              style={{ 
-                 backgroundImage: `radial-gradient(circle at 50% 50%, #EBE7DF 2px, transparent 2.5px)`, 
-                 backgroundSize: '40px 40px' 
+                 backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5 25 25 5-25 5-5 25-5-25-25-5 25-5z' fill='%23C5A065' fill-rule='evenodd'/%3E%3C/svg%3E")`, 
+                 backgroundSize: '80px 80px' 
              }}>
           </div>
-          <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#EBE7DF]/30 blur-3xl"></div>
-          <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#EBE7DF]/30 blur-3xl"></div>
+          
+          {/* Light Blobs */}
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#EBE7DF]/40 blur-3xl -z-10"></div>
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[#EBE7DF]/40 blur-3xl -z-10"></div>
 
           <div className="max-w-[1400px] mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-16">
-                  <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4">NUESTROS PILARES</h2>
+              <div className="text-center mb-20">
+                  <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4 tracking-wide">NUESTROS PILARES</h2>
                   <p className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.3em]">
                       EL ESPACIO IDEAL PARA CREAR LA VIDA QUE SOÑASTE
                   </p>
               </div>
 
-              {/* Split Content */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl">
-                  {/* Left: Image */}
-                  <div className="h-[500px] lg:h-auto bg-gray-200 relative overflow-hidden">
-                      <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover" />
+              {/* Split Content with GAP */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                  {/* Left: Image (Vertical & Separated) */}
+                  <div className="h-[600px] lg:h-[700px] w-full relative overflow-hidden shadow-xl group">
+                      <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
 
-                  {/* Right: Info Blocks */}
-                  <div className="flex flex-col">
+                  {/* Right: Info Blocks (Stacked & Separated) */}
+                  <div className="flex flex-col gap-8 h-full">
                       {/* Top Block: Gray */}
-                      <div className="bg-[#EAE8E4] p-12 lg:p-16 flex-1 flex flex-col justify-center relative">
+                      <div className="bg-[#EAE8E4] p-12 lg:p-16 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
                           {/* House Icon (SVG) */}
-                          <div className="w-12 h-12 mb-6 text-[#2C2C2C]">
+                          <div className="w-10 h-10 mb-8 text-[#4A403A]">
                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                                 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                              </svg>
                           </div>
-                          <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4 leading-tight">Urbanismo y diseño <br/> inigualable</h3>
-                          <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-8">
+                          <h3 className="font-serif-display text-3xl md:text-4xl text-[#2C2C2C] mb-6 leading-tight">Urbanismo y diseño <br/> inigualable</h3>
+                          <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-10 max-w-sm">
                               Ciudad Venecia cuenta con calles y espacios públicos seguros, accesibles y agradables de usar, que se integran armónicamente a las características naturales de la zona.
                           </p>
                           
                           {/* Carousel Dots Mock */}
-                          <div className="flex gap-3">
-                              <span className="w-3 h-3 rounded-full bg-white border border-gray-400"></span>
-                              <span className="w-3 h-3 rounded-full bg-transparent border border-gray-400"></span>
-                              <span className="w-3 h-3 rounded-full bg-transparent border border-gray-400"></span>
+                          <div className="flex gap-3 mt-auto">
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#8C857E]"></span>
+                              <span className="w-2.5 h-2.5 rounded-full border border-[#8C857E]"></span>
+                              <span className="w-2.5 h-2.5 rounded-full border border-[#8C857E]"></span>
+                              <span className="w-2.5 h-2.5 rounded-full border border-[#8C857E]"></span>
                           </div>
 
                           {/* Arrows Mock */}
-                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-2xl">‹</div>
-                          <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-2xl">›</div>
+                          <div className="absolute left-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]">‹</div>
+                          <div className="absolute right-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]">›</div>
                       </div>
 
                       {/* Bottom Block: White */}
-                      <div className="bg-[#FAFAF9] p-12 lg:p-16 flex-1 flex flex-col justify-center items-center text-center">
+                      <div className="bg-[#FAFAF9] p-12 lg:p-16 flex-1 flex flex-col justify-center items-center text-center shadow-sm border border-gray-100">
                           {/* INMAER Logo Mock */}
-                          <div className="mb-6 flex flex-col items-center">
-                              <span className="font-serif-display text-3xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
-                              <span className="text-[8px] uppercase tracking-[0.3em] text-[#005F7F]">REAL ESTATE</span>
+                          <div className="mb-8 flex flex-col items-center">
+                              <span className="font-serif-display text-4xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
+                              <span className="text-[9px] uppercase tracking-[0.4em] text-[#005F7F] mt-1">REAL ESTATE</span>
                           </div>
                           
-                          <h4 className="font-bold text-[#2C2C2C] text-sm mb-2">Con el respaldo y la <br/> solidez de INMAER</h4>
-                          <p className="text-[#6B665F] font-light text-xs max-w-sm mx-auto">
+                          <h4 className="font-bold text-[#2C2C2C] text-sm mb-3">Con el respaldo y la <br/> solidez de INMAER</h4>
+                          <p className="text-[#6B665F] font-light text-xs max-w-xs mx-auto leading-relaxed">
                               Más de 10 años en el mercado nos permiten otorgar la Garantía de Calidad y Plusvalía que nuestros clientes buscan.
                           </p>
                       </div>
