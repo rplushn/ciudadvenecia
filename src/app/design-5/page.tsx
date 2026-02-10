@@ -248,51 +248,52 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 5.5. PRICES / PROMO SECTION (Terrasoles Style) */}
-      <section className="relative py-24 px-6 flex items-center justify-center bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}>
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#2C2520]/80 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* 5.5. PRICES / PROMO SECTION (Terrasoles Style - Adjusted Tone & Static) */}
+      <section className="relative py-24 px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}>
+        {/* Adjusted Overlay: Warm Beige/Brown Tone (#8C8276/90) */}
+        <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
+        {/* Additional light layer for Terrasoles look */}
+        <div className="absolute inset-0 bg-[#A69C91]/30"></div>
 
         <div className="relative z-10 max-w-[1200px] mx-auto text-center text-white">
-           <h2 className="font-serif-display text-4xl md:text-5xl tracking-widest mb-6">PRECIOS EXCLUSIVOS</h2>
-           <p className="font-light text-sm md:text-base max-w-3xl mx-auto mb-16 text-gray-200">
+           <h2 className="font-serif-display text-4xl md:text-5xl tracking-widest mb-6 drop-shadow-md">PRECIOS EXCLUSIVOS</h2>
+           <p className="font-light text-sm md:text-base max-w-3xl mx-auto mb-16 text-gray-100 drop-shadow-sm">
               Adquiere tu terreno en Ciudad Venecia con exclusivos precios de lanzamiento, descubre los planes de financiamiento y las tasas preferenciales que mejor se adapten a ti.
            </p>
 
            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-0 mb-16">
               {/* Row 1 */}
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#C5A065]">
-                 <span className="text-3xl md:text-4xl font-serif-display mb-2">HASTA 60 MESES</span>
-                 <span className="text-[10px] uppercase tracking-widest">SIN INTERESES</span>
+              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
+                 <span className="text-3xl md:text-4xl font-serif-display mb-2 drop-shadow-sm">HASTA 60 MESES</span>
+                 <span className="text-[10px] uppercase tracking-widest font-medium">SIN INTERESES</span>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#C5A065]">
-                  <span className="text-3xl md:text-4xl font-serif-display mb-2">15% DE DESCUENTO</span>
-                  <span className="text-[10px] uppercase tracking-widest">EN PAGO DE CONTADO</span>
+              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
+                  <span className="text-3xl md:text-4xl font-serif-display mb-2 drop-shadow-sm">15% DE DESCUENTO</span>
+                  <span className="text-[10px] uppercase tracking-widest font-medium">EN PAGO DE CONTADO</span>
               </div>
               <div className="px-6 flex flex-col items-center justify-center">
-                  <span className="text-sm md:text-base uppercase tracking-widest mb-1">TERRENOS DESDE</span>
-                  <span className="text-3xl md:text-4xl font-serif-display">99m² <span className="text-lg">HASTA</span> 250m²</span>
+                  <span className="text-sm md:text-base uppercase tracking-widest mb-1 font-medium">TERRENOS DESDE</span>
+                  <span className="text-3xl md:text-4xl font-serif-display drop-shadow-sm">99m² <span className="text-lg">HASTA</span> 250m²</span>
               </div>
 
               {/* Row 2 */}
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#C5A065] md:mt-12 pt-12 md:pt-0 border-t md:border-t-0 border-[#C5A065]/30">
-                  <span className="text-sm md:text-base uppercase tracking-widest mb-1">ENGANCHE DESDE</span>
-                  <span className="text-4xl font-serif-display">10%</span>
+              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-12 pt-12 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
+                  <span className="text-sm md:text-base uppercase tracking-widest mb-1 font-medium">ENGANCHE DESDE</span>
+                  <span className="text-4xl font-serif-display drop-shadow-sm">10%</span>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#C5A065] md:mt-12 pt-12 md:pt-0 border-t md:border-t-0 border-[#C5A065]/30">
-                   <span className="text-sm uppercase tracking-widest max-w-[180px]">DESCUENTO ESPECIAL POR</span>
-                   <span className="text-xl font-serif-display mt-2">PRONTA CONSTRUCCIÓN</span>
+              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-12 pt-12 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
+                   <span className="text-sm uppercase tracking-widest max-w-[180px] font-medium">DESCUENTO ESPECIAL POR</span>
+                   <span className="text-xl font-serif-display mt-2 drop-shadow-sm">PRONTA CONSTRUCCIÓN</span>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center md:mt-12 pt-12 md:pt-0 border-t md:border-t-0 border-[#C5A065]/30">
-                   <span className="text-sm uppercase tracking-widest max-w-[200px]">PLANES ESPECIALES</span>
-                   <span className="text-[10px] mt-2">PARA INVERSIONISTAS Y PEQUEÑOS CONSTRUCTORES</span>
+              <div className="px-6 flex flex-col items-center justify-center md:mt-12 pt-12 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
+                   <span className="text-sm uppercase tracking-widest max-w-[200px] font-medium">PLANES ESPECIALES</span>
+                   <span className="text-[10px] mt-2 text-gray-100">PARA INVERSIONISTAS Y PEQUEÑOS CONSTRUCTORES</span>
               </div>
            </div>
 
-           <p className="text-[10px] italic text-gray-400 mb-8">*Aplican restricciones.</p>
+           <p className="text-[10px] italic text-gray-200 mb-8">*Aplican restricciones.</p>
 
-           <button className="px-10 py-4 border border-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] hover:text-white transition-all duration-300">
+           <button className="px-10 py-4 bg-transparent border border-[#EBE7DF] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#EBE7DF] hover:text-[#5C554F] transition-all duration-300">
               SOLICITA MÁS INFORMACIÓN
            </button>
         </div>
