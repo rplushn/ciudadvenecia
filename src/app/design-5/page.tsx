@@ -816,8 +816,8 @@ export default function Design5Page() {
            </div>
        </section>
 
-      {/* Footer - CORPORATE & ROBUST STYLE */}
-      <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
+      {/* Footer - COLOR UPDATED TO #5D737E (HEADER COLOR) */}
+      <footer className="bg-[#5D737E] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
         {/* Background Pattern - subtle logo watermark */}
         <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none transform translate-x-1/3 -translate-y-1/3">
              <svg height="800" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
