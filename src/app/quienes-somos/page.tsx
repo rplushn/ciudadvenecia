@@ -229,13 +229,13 @@ export default function QuienesSomos() {
 
       {/* ------------------- 3. STATISTICS (Visual Break) ------------------- */}
       <section className="py-20 bg-white border-y border-[#C5A065]/20">
-          <div className=\"max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center\">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
               {stats.map((stat, i) => (
-                  <div key={i} className=\"space-y-2\">
-                      <span className=\"font-serif-display text-5xl md:text-7xl text-[#C5A065] block\">
+                  <div key={i} className="space-y-2">
+                      <span className="font-serif-display text-5xl md:text-7xl text-[#C5A065] block">
                         <CountUp to={stat.number} prefix={stat.prefix} suffix={stat.suffix} />
                       </span>
-                      <span className=\"text-[#2C2C2C] uppercase tracking-widest text-xs font-bold\">{stat.label}</span>
+                      <span className="text-[#2C2C2C] uppercase tracking-widest text-xs font-bold">{stat.label}</span>
                   </div>
               ))}
           </div>
