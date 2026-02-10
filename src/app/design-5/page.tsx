@@ -425,7 +425,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 10.5 NUESTROS PILARES (Terrasoles Style Replication) */}
+      {/* 10.5 NUESTROS PILARES (Terrasoles Style Replication - ZOOM OUT VERSION) */}
       <section className="relative py-24 px-6 overflow-hidden bg-white">
           {/* Subtle Sunburst/Logo Pattern */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
@@ -439,43 +439,44 @@ export default function Design5Page() {
           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[#EBE7DF]/40 blur-3xl -z-10"></div>
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-[#EBE7DF]/40 blur-3xl -z-10"></div>
 
-          <div className="max-w-[1400px] mx-auto relative z-10">
+          {/* ZOOM OUT: max-w Reduced from 1400px to 1080px (~20-25% smaller) */}
+          <div className="max-w-[1080px] mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-20">
-                  <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4 tracking-wide">NUESTROS PILARES</h2>
+              <div className="text-center mb-16">
+                  <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-4 tracking-wide">NUESTROS PILARES</h2>
                   <p className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.3em]">
                       EL ESPACIO IDEAL PARA CREAR LA VIDA QUE SOÑASTE
                   </p>
               </div>
 
               {/* Split Content with GAP */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-                  {/* Left: Image (Vertical & Separated) */}
-                  <div className="h-[600px] lg:h-[700px] w-full relative overflow-hidden shadow-xl group">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                  {/* Left: Image (Vertical Aspect Ratio Forced) */}
+                  <div className="aspect-[3/4] w-full relative overflow-hidden shadow-xl group bg-gray-200">
                       <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
 
                   {/* Right: Info Blocks (Stacked & Separated) */}
-                  <div className="flex flex-col gap-8 h-full">
-                      {/* Top Block: Gray */}
-                      <div className="bg-[#EAE8E4] p-12 lg:p-16 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex flex-col gap-6 h-full">
+                      {/* Top Block: Gray - Reduced Padding */}
+                      <div className="bg-[#EAE8E4] p-8 lg:p-10 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
                           {/* House Icon (SVG) */}
-                          <div className="w-10 h-10 mb-8 text-[#4A403A]">
+                          <div className="w-8 h-8 mb-6 text-[#4A403A]">
                              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
                                 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                              </svg>
                           </div>
-                          <h3 className="font-serif-display text-3xl md:text-4xl text-[#2C2C2C] mb-6 leading-tight">Urbanismo y diseño <br/> inigualable</h3>
-                          <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-10 max-w-sm">
+                          <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4 leading-tight">Urbanismo y diseño <br/> inigualable</h3>
+                          <p className="text-[#6B665F] font-light text-sm leading-relaxed mb-8">
                               Ciudad Venecia cuenta con calles y espacios públicos seguros, accesibles y agradables de usar, que se integran armónicamente a las características naturales de la zona.
                           </p>
                           
                           {/* Carousel Dots Mock */}
-                          <div className="flex gap-3 mt-auto">
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#8C857E]"></span>
-                              <span className="w-2.5 h-2.5 rounded-full border border-[#8C857E]"></span>
-                              <span className="w-2.5 h-2.5 rounded-full border border-[#8C857E]"></span>
-                              <span className="w-2.5 h-2.5 rounded-full border border-[#8C857E]"></span>
+                          <div className="flex gap-2 mt-auto">
+                              <span className="w-2 h-2 rounded-full bg-[#8C857E]"></span>
+                              <span className="w-2 h-2 rounded-full border border-[#8C857E]"></span>
+                              <span className="w-2 h-2 rounded-full border border-[#8C857E]"></span>
+                              <span className="w-2 h-2 rounded-full border border-[#8C857E]"></span>
                           </div>
 
                           {/* Arrows Mock */}
@@ -483,15 +484,15 @@ export default function Design5Page() {
                           <div className="absolute right-6 top-1/2 -translate-y-1/2 text-[#8C857E] text-2xl cursor-pointer hover:text-[#2C2C2C]">›</div>
                       </div>
 
-                      {/* Bottom Block: White */}
-                      <div className="bg-[#FAFAF9] p-12 lg:p-16 flex-1 flex flex-col justify-center items-center text-center shadow-sm border border-gray-100">
+                      {/* Bottom Block: White - Reduced Padding */}
+                      <div className="bg-[#FAFAF9] p-8 lg:p-10 flex-1 flex flex-col justify-center items-center text-center shadow-sm border border-gray-100">
                           {/* INMAER Logo Mock */}
-                          <div className="mb-8 flex flex-col items-center">
-                              <span className="font-serif-display text-4xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
-                              <span className="text-[9px] uppercase tracking-[0.4em] text-[#005F7F] mt-1">REAL ESTATE</span>
+                          <div className="mb-6 flex flex-col items-center">
+                              <span className="font-serif-display text-3xl text-[#005F7F] tracking-widest font-bold">INMAER</span>
+                              <span className="text-[8px] uppercase tracking-[0.4em] text-[#005F7F] mt-1">REAL ESTATE</span>
                           </div>
                           
-                          <h4 className="font-bold text-[#2C2C2C] text-sm mb-3">Con el respaldo y la <br/> solidez de INMAER</h4>
+                          <h4 className="font-bold text-[#2C2C2C] text-sm mb-2">Con el respaldo y la <br/> solidez de INMAER</h4>
                           <p className="text-[#6B665F] font-light text-xs max-w-xs mx-auto leading-relaxed">
                               Más de 10 años en el mercado nos permiten otorgar la Garantía de Calidad y Plusvalía que nuestros clientes buscan.
                           </p>
