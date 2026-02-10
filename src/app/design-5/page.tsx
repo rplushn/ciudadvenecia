@@ -561,7 +561,8 @@ export default function Design5Page() {
                       <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Nuestros Pilares" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   </div>
 
-                  {/* Right: Info Blocks (Stacked & Separated) */}\n                  <div className="flex flex-col gap-6 h-full">
+                  {/* Right: Info Blocks (Stacked & Separated) */}
+                  <div className="flex flex-col gap-6 h-full">
                       {/* Top Block: Gray - Reduced Padding */}
                       <div className="bg-[#EAE8E4] p-8 flex-1 flex flex-col justify-center relative shadow-sm hover:shadow-md transition-shadow">
                           {/* House Icon (SVG) */}
@@ -748,7 +749,7 @@ export default function Design5Page() {
                        </div>
                    </div>
 
-                   {/* RIGHT: Form (8 cols) - Background also updated to light tone for consistency or kept white? Keeping white for form readability usually better, but let's check user request. User said "PASES AL COLOR QUE TIENE EL DESIGN SYSTEM". Usually form inputs on white look cleaner. Let's keep the form container white but the SECTION bg changed. */}
+                   {/* RIGHT: Form (8 cols) */}
                    <div className="lg:col-span-8 bg-white p-10 md:p-12">
                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
                            {/* Name */}
@@ -802,10 +803,81 @@ export default function Design5Page() {
            </div>
        </section>
 
-      {/* Footer */}
-      <footer className="bg-white py-12 border-t border-gray-100 text-center">
-         <span className="font-serif-display text-2xl text-[#2C2C2C] tracking-widest block mb-4">INMAER</span>
-         <p className="text-[10px] uppercase tracking-[0.2em] text-gray-400">© 2026 Ciudad Venecia. Todos los derechos reservados.</p>
+      {/* Footer - CORPORATE & ROBUST STYLE */}
+      <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
+        {/* Background Pattern - subtle logo watermark */}
+        <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none transform translate-x-1/3 -translate-y-1/3">
+             <svg height="800" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(40, 40)">
+                     {Array.from({ length: 24 }).map((_, i) => (
+                        <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
+                     ))}
+                </g>
+             </svg>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                {/* Brand Column */}
+                <div className="space-y-6">
+                     {/* Logo Component */}
+                     <div className="text-white mb-6">
+                        <svg height="40" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+                            <g transform="translate(40, 40)">
+                                 {Array.from({ length: 24 }).map((_, i) => (
+                                    <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
+                                 ))}
+                            </g>
+                            <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
+                            <text x="200" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
+                        </svg>
+                     </div>
+                     <p className="text-white/60 text-xs font-light leading-relaxed max-w-xs">
+                        Desarrollos inmobiliarios pensados para la eternidad. Un proyecto respaldado por la solidez y visión de INMAER.
+                     </p>
+                </div>
+
+                {/* Navigation Column */}
+                <div>
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
+                    <ul className="space-y-4">
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                    </ul>
+                </div>
+
+                {/* Contact Column */}
+                <div>
+                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Oficina Corporativa</h4>
+                     <p className="text-sm font-medium mb-1">Col. El Zarzal, Edificio INMAER</p>
+                     <p className="text-white/60 text-xs mb-6">Danlí, El Paraíso, Honduras</p>
+                     
+                     <p className="text-white/60 text-[10px] uppercase tracking-wider mb-1">Llámanos</p>
+                     <p className="text-lg font-serif-display text-white">(504) 9890-4449</p>
+                </div>
+
+                 {/* Newsletter/Action Column */}
+                <div>
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
+                    <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
+                    <div className="flex border-b border-white/20 pb-2">
+                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
+                <div className="flex gap-8">
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
+                </div>
+            </div>
+        </div>
       </footer>
     </div>
   );
