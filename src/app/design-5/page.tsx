@@ -23,6 +23,10 @@ export default function Design5Page() {
     { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" },
     { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
   ];
+  
+  // Show 3 items per page on desktop for "smaller" look
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(carouselData.length / itemsPerPage);
 
   // Load Fonts
   useEffect(() => {
@@ -65,10 +69,10 @@ export default function Design5Page() {
   }, [currentSlide]);
 
   const nextSlide = () => {
-      setCurrentSlide((prev) => (prev + 1) % Math.ceil(carouselData.length / 2));
+      setCurrentSlide((prev) => (prev + 1) % totalPages);
   };
   const prevSlide = () => {
-      setCurrentSlide((prev) => (prev - 1 + Math.ceil(carouselData.length / 2)) % Math.ceil(carouselData.length / 2));
+      setCurrentSlide((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -164,34 +168,40 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 4. AMENITIES CAROUSEL (WHITE BG) */}
-      <section className="bg-white py-12 overflow-hidden relative group" ref={carouselRef}>
-          <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-              {[0, 2, 4, 6].map((startIndex, pageIndex) => (
-                  <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-1 px-1">
-                      {carouselData.slice(startIndex, startIndex + 2).map((item, idx) => (
-                          <div key={idx} className="relative h-[400px] overflow-hidden group/item cursor-pointer">
-                              <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110" />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-90"></div>
-                              <div className="absolute bottom-8 left-8 text-white">
-                                  <h4 className="text-xl font-bold uppercase tracking-widest">{item.title}</h4>
-                              </div>
-                          </div>
-                      ))}
-                  </div>
-              ))}
+      {/* 4. AMENITIES CAROUSEL (WHITE BG) - REFINED TERRASOLES STYLE */}
+      <section className="bg-white py-16 overflow-hidden relative group" ref={carouselRef}>
+          <div className="max-w-[1400px] mx-auto px-6 mb-12">
+               {/* Carousel Slides */}
+               <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                   {Array.from({ length: totalPages }).map((_, pageIndex) => {
+                       const startIndex = pageIndex * itemsPerPage;
+                       return (
+                           <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+                               {carouselData.slice(startIndex, startIndex + itemsPerPage).map((item, idx) => (
+                                   <div key={idx} className="relative aspect-[4/3] overflow-hidden group/item cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500">
+                                       <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
+                                       <div className="absolute inset-0 bg-black/10 group-hover/item:bg-black/0 transition-colors"></div>
+                                       <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm p-4 text-center transform translate-y-0 transition-transform">
+                                           <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-[#2C2C2C]">{item.title}</h4>
+                                       </div>
+                                   </div>
+                               ))}
+                           </div>
+                       );
+                   })}
+               </div>
           </div>
           
-          {/* Controls */}
-          <div className="absolute bottom-6 right-6 md:bottom-10 md:right-10 flex gap-4 z-10">
-              <button onClick={prevSlide} className="w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white transition-all shadow-lg">
-                  ←
+          {/* Controls - CENTERED BELOW with margin */}
+          <div className="flex justify-center items-center gap-8 mt-4">
+              <button onClick={prevSlide} className="w-10 h-10 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
+                  <span className="text-lg">‹</span>
               </button>
-              <div className="flex items-center gap-2 text-[10px] tracking-widest font-bold text-gray-400 bg-white/80 px-3 py-1 rounded-full">
-                 {currentSlide + 1} / 4
+              <div className="text-[10px] tracking-widest font-medium text-gray-400">
+                 {currentSlide + 1} / {totalPages}
               </div>
-              <button onClick={nextSlide} className="w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white transition-all shadow-lg">
-                  →
+              <button onClick={nextSlide} className="w-10 h-10 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
+                  <span className="text-lg">›</span>
               </button>
           </div>
       </section>
