@@ -333,62 +333,62 @@ export default function Design5Page() {
                          <p className="text-[#6B665F] text-xs leading-relaxed">Asesoría de principio a fin.</p>
                       </div>
                    </div>
-                   <div className=\"border-t border-gray-200 pt-6\">
-                      <p className=\"text-[#8C857E] text-[10px] uppercase tracking-[0.2em] font-medium\">TRANSPARENTE · PROFESIONAL · ATERRIZADO</p>
+                   <div className="border-t border-gray-200 pt-6">
+                      <p className="text-[#8C857E] text-[10px] uppercase tracking-[0.2em] font-medium">TRANSPARENTE · PROFESIONAL · ATERRIZADO</p>
                    </div>
                 </div>
              </div>
 
              {/* PART 2: BOTTOM SPLIT (Image Left + Grid Right) */}
-             <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-16 items-center\">
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                  {/* Left Image */}
-                 <div className=\"h-[500px] w-full bg-gray-100 overflow-hidden relative shadow-lg\">
-                    <img src=\"/homepage/casa_fachada.jpg.jpeg\" alt=\"Interior Showroom\" className=\"w-full h-full object-cover\" />
+                 <div className="h-[500px] w-full bg-gray-100 overflow-hidden relative shadow-lg">
+                    <img src="/homepage/casa_fachada.jpg.jpeg" alt="Interior Showroom" className="w-full h-full object-cover" />
                  </div>
 
                  {/* Right Content Grid */}
                  <div>
-                    <span className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4\">BASE TÉCNICA</span>
-                    <h2 className=\"font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-10\">
+                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">BASE TÉCNICA</span>
+                    <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-10">
                        Servicios y orden urbano
                     </h2>
                     
-                    <div className=\"grid grid-cols-1 md:grid-cols-2 gap-6 mb-10\">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                        {/* Box 1 */}
-                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
-                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">TERRENOS</h4>
-                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Lotes (por ejemplo, 10x15 en Danlí).</p>
+                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
+                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">TERRENOS</h4>
+                          <p className="text-[#6B665F] text-xs leading-relaxed">Lotes (por ejemplo, 10x15 en Danlí).</p>
                        </div>
                        {/* Box 2 */}
-                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
-                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">SERVICIOS</h4>
-                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Agua potable, energía y aguas negras.</p>
+                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
+                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">SERVICIOS</h4>
+                          <p className="text-[#6B665F] text-xs leading-relaxed">Agua potable, energía y aguas negras.</p>
                        </div>
                        {/* Box 3 */}
-                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
-                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">DISPONIBILIDAD</h4>
-                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Agua 24 horas (según proyecto).</p>
+                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
+                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">DISPONIBILIDAD</h4>
+                          <p className="text-[#6B665F] text-xs leading-relaxed">Agua 24 horas (según proyecto).</p>
                        </div>
                        {/* Box 4 */}
-                       <div className=\"bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow\">
-                          <h4 className=\"text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3\">SEGURIDAD</h4>
-                          <p className=\"text-[#6B665F] text-xs leading-relaxed\">Vigilancia 24 horas (según proyecto).</p>
+                       <div className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
+                          <h4 className="text-[#2C2C2C] text-xs font-bold uppercase tracking-wider mb-3">SEGURIDAD</h4>
+                          <p className="text-[#6B665F] text-xs leading-relaxed">Vigilancia 24 horas (según proyecto).</p>
                        </div>
                     </div>
 
-                    <button className=\"bg-[#2C2C2C] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-colors shadow-lg\">
+                    <button className="bg-[#2C2C2C] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-colors shadow-lg">
                        VER PROYECTOS
                     </button>
                  </div>
              </div>
 
              {/* PART 3: BOTTOM SPLIT (Infrasctructure) - Matching the uploaded image exactly */}
-             <div className=\"mt-24 pt-12 border-t border-gray-100\">
-                 <div className=\"max-w-2xl\">
-                    <span className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4\">EN PROYECTOS COMO CIUDAD VENECIA DANLÍ</span>
-                    <h2 className=\"font-serif-display text-4xl text-[#2C2C2C] mb-4\">Infraestructura que se siente</h2>
-                    <p className=\"text-[#6B665F] font-light text-sm\">
-                       No vendemos \"ideas\": entregamos urbanización y procesos claros para tu inversión.
+             <div className="mt-24 pt-12 border-t border-gray-100">
+                 <div className="max-w-2xl">
+                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">EN PROYECTOS COMO CIUDAD VENECIA DANLÍ</span>
+                    <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-4">Infraestructura que se siente</h2>
+                    <p className="text-[#6B665F] font-light text-sm">
+                       No vendemos &quot;ideas&quot;: entregamos urbanización y procesos claros para tu inversión.
                     </p>
                  </div>
              </div>
