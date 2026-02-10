@@ -100,7 +100,7 @@ export default function Design5Page() {
           <Link href="#start" className="flex items-center gap-3 group">
              <div className={`transition-colors duration-300 ${isAtTop ? 'text-white' : 'text-white'}`}>
                 {/* LOGO SVG RECREATION */}
-                <svg height="45" viewBox="0 0 320 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+                <svg height="45" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
                     {/* Sunburst Icon */}
                     <g transform="translate(40, 40)">
                          {/* Rays */}
@@ -116,9 +116,9 @@ export default function Design5Page() {
                          {/* Hollow Center - implicitly created by start of rays */}
                     </g>
                     
-                    {/* Text: CIUDAD VENECIA */}
+                    {/* Text: CIUDAD VENECIA - Separated slightly */}
                     <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
-                    <text x="195" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
+                    <text x="200" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
                 </svg>
              </div>
           </Link>
