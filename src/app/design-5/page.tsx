@@ -213,73 +213,20 @@ export default function Design5Page() {
         </div>
       </section>
 
-      {/* --- WOW SPLIT PARALLAX SECTION (RESTORED) --- */}
-
-      {/* 2. TOP PARALLAX ("VIDA EN ARMONÍA") */}
-      <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
-         <div className="absolute inset-0 bg-black/40"></div>
-         <div className="relative z-10 text-center">
-            <p className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
-            <h2 className="text-white font-serif-display text-6xl md:text-7xl">VIDA EN ARMONÍA</h2>
+      {/* 2. INTRO / WELCOME (PASTEL TONE #F7F6F4) */}
+      <section className="py-24 px-6 bg-[#F7F6F4] text-center">
+         <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
+               Un estilo de vida <span className="italic">extraordinario</span>
+            </h2>
+            <div className="w-16 h-[1px] bg-[#C5A065] mx-auto mb-8"></div>
+            <p className="text-[#666] font-light text-lg leading-relaxed max-w-2xl mx-auto">
+               Descubre Ciudad Venecia, donde la naturaleza y la arquitectura moderna convergen para crear el escenario perfecto para tu familia. Espacios diseñados para perdurar.
+            </p>
          </div>
       </section>
 
-      {/* 3. MIDDLE STATIC SECTION (BEIGE PASTEL) */}
-      <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
-         <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
-            <div>
-               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Experiencia Ciudad Venecia</span>
-               <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] leading-[1.1] mb-6">
-                  Vivir, invertir y crecer <br/> en un mismo lugar
-               </h2>
-               <p className="text-[#6B665F] text-lg font-light leading-relaxed mb-10 max-w-xl">
-                  Cada proyecto combina ubicación estratégica, servicios básicos completos y opciones de financiamiento para que avances a tu ritmo, sin promesas irreales.
-               </p>
-               
-               <div className="grid grid-cols-3 gap-8 mb-10">
-                  <div>
-                     <p className="text-[#2C2C2C] font-bold text-2xl">325+</p>
-                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Viviendas</p>
-                  </div>
-                  <div>
-                     <p className="text-[#2C2C2C] font-bold text-2xl">7</p>
-                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Proyectos</p>
-                  </div>
-                  <div>
-                     <p className="text-[#2C2C2C] font-bold text-2xl">4</p>
-                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Ciudades</p>
-                  </div>
-               </div>
-
-               <Link href="#proyectos" className="inline-block px-8 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#A88650] transition-colors shadow-lg">
-                  Ver Proyectos
-               </Link>
-            </div>
-
-            {/* Right Image/Slider */}
-            <div className="relative h-[500px] rounded-sm overflow-hidden shadow-2xl group">
-               <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Ciudad Venecia Lifestyle" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
-               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                  <p className="text-[#C5A065] text-[9px] uppercase tracking-widest mb-1">Portafolio INMAER</p>
-                  <p className="text-white text-lg font-medium">Ciudad Venecia Danlí • Olancho • Valle</p>
-               </div>
-            </div>
-         </div>
-      </section>
-
-      {/* 4. BOTTOM PARALLAX ("RESPIRA FUTURO") */}
-      <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
-         <div className="absolute inset-0 bg-black/50"></div>
-         <div className="relative z-10 text-center">
-            <p className="text-[#C5A065] text-[10px] uppercase tracking-[0.3em] mb-4">Naturaleza y Confort</p>
-            <h2 className="text-white font-serif-display text-6xl md:text-7xl">RESPIRA FUTURO</h2>
-         </div>
-      </section>
-
-      {/* --- WOW SPLIT PARALLAX SECTION END --- */}
-
-      {/* 5. AMENITIES CAROUSEL - DARKER BG WITH GRADIENT */}
+      {/* 3. AMENITIES CAROUSEL - DARKER BG WITH GRADIENT */}
       <section className="bg-[#F0EEE9] py-16 overflow-hidden relative group" ref={carouselRef}>
           {/* Subtle Top Gradient for Depth */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
@@ -328,7 +275,7 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 6. VIDEO SHOWCASE SECTION (MATCHING BG TONE #F0EEE9) */}
+      {/* 4. VIDEO SHOWCASE SECTION (MATCHING BG TONE #F0EEE9) */}
       <section className="bg-[#F0EEE9] py-20 px-6">
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left: Text Content */}
@@ -359,7 +306,7 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 7. PRICES / PROMO SECTION (Terrasoles Style - Adjusted Tone & Static) */}
+      {/* 5. PRICES / PROMO SECTION (Terrasoles Style - Adjusted Tone & Static) */}
       <section className="relative py-24 px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}>
         {/* Adjusted Overlay: Warm Beige/Brown Tone (#8C8276/90) */}
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
@@ -410,7 +357,7 @@ export default function Design5Page() {
         </div>
       </section>
 
-      {/* 8. SERVICES (Split 2-Part Section) */}
+      {/* 6. SERVICES (Split 2-Part Section) */}
       <section className="bg-white py-24 px-6 md:px-12 border-b border-[#F0EEE9]">
           <div className="max-w-[1400px] mx-auto">
              
@@ -471,7 +418,7 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 9. AMENIDADES (BEIGE PASTEL #EBE7DF) */}
+      {/* 7. AMENIDADES ("ESPACIOS QUE INSPIRAN TRANQUILIDAD") */}
       <section id="amenidades" className="py-24 bg-[#EBE7DF] text-[#4A403A]">
          <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
@@ -500,7 +447,73 @@ export default function Design5Page() {
          </div>
       </section>
 
-      {/* 10. NUESTROS PILARES (Terrasoles Style Replication - ZOOM OUT VERSION v2) */}
+      {/* --- WOW SPLIT PARALLAX SECTION (MOVED HERE) --- */}
+
+      {/* 8. TOP PARALLAX ("VIDA EN ARMONÍA") */}
+      <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
+         <div className="absolute inset-0 bg-black/40"></div>
+         <div className="relative z-10 text-center">
+            <p className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
+            <h2 className="text-white font-serif-display text-6xl md:text-7xl">VIDA EN ARMONÍA</h2>
+         </div>
+      </section>
+
+      {/* 9. MIDDLE STATIC SECTION (BEIGE PASTEL) */}
+      <section className="bg-[#EBE7DF] py-24 px-6 md:px-12 flex items-center">
+         <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <div>
+               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Experiencia Ciudad Venecia</span>
+               <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] leading-[1.1] mb-6">
+                  Vivir, invertir y crecer <br/> en un mismo lugar
+               </h2>
+               <p className="text-[#6B665F] text-lg font-light leading-relaxed mb-10 max-w-xl">
+                  Cada proyecto combina ubicación estratégica, servicios básicos completos y opciones de financiamiento para que avances a tu ritmo, sin promesas irreales.
+               </p>
+               
+               <div className="grid grid-cols-3 gap-8 mb-10">
+                  <div>
+                     <p className="text-[#2C2C2C] font-bold text-2xl">325+</p>
+                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Viviendas</p>
+                  </div>
+                  <div>
+                     <p className="text-[#2C2C2C] font-bold text-2xl">7</p>
+                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Proyectos</p>
+                  </div>
+                  <div>
+                     <p className="text-[#2C2C2C] font-bold text-2xl">4</p>
+                     <p className="text-[#8C857E] text-[10px] uppercase tracking-widest mt-1">Ciudades</p>
+                  </div>
+               </div>
+
+               <Link href="#proyectos" className="inline-block px-8 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#A88650] transition-colors shadow-lg">
+                  Ver Proyectos
+               </Link>
+            </div>
+
+            {/* Right Image/Slider */}
+            <div className="relative h-[500px] rounded-sm overflow-hidden shadow-2xl group">
+               <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Ciudad Venecia Lifestyle" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" />
+               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+                  <p className="text-[#C5A065] text-[9px] uppercase tracking-widest mb-1">Portafolio INMAER</p>
+                  <p className="text-white text-lg font-medium">Ciudad Venecia Danlí • Olancho • Valle</p>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      {/* 10. BOTTOM PARALLAX ("RESPIRA FUTURO") */}
+      <section className="relative h-[60vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
+         <div className="absolute inset-0 bg-black/50"></div>
+         <div className="relative z-10 text-center">
+            <p className="text-[#C5A065] text-[10px] uppercase tracking-[0.3em] mb-4">Naturaleza y Confort</p>
+            <h2 className="text-white font-serif-display text-6xl md:text-7xl">RESPIRA FUTURO</h2>
+         </div>
+      </section>
+
+      {/* --- WOW SPLIT PARALLAX SECTION END --- */}
+
+      {/* 11. NUESTROS PILARES (Terrasoles Style Replication - ZOOM OUT VERSION v2) */}
       <section className="relative py-24 px-6 overflow-hidden bg-white">
           {/* Subtle Sunburst/Logo Pattern */}
           <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
@@ -577,7 +590,7 @@ export default function Design5Page() {
           </div>
       </section>
 
-      {/* 11. INMAER CORPORATE SHOWCASE (Blue #003B5C) */}
+      {/* 12. INMAER CORPORATE SHOWCASE (Blue #003B5C) */}
       <section className="bg-[#003B5C] py-24 px-6 md:px-12 text-white relative overflow-hidden">
          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
              
@@ -660,7 +673,7 @@ export default function Design5Page() {
          </div>
       </section>
 
-       {/* 12. CONTACT CTA (LIGHT OFF-WHITE #F5F4F1) */}
+       {/* 13. CONTACT CTA (LIGHT OFF-WHITE #F5F4F1) */}
        <section id="kontakt" className="py-24 px-6 bg-[#F5F4F1] text-center">
           <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Comienza tu legado hoy</h2>
           <Link href="#kontakt" className="inline-block px-12 py-4 bg-[#2C2C2C] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-colors shadow-lg">
