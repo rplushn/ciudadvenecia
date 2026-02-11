@@ -67,7 +67,7 @@ export default function Design5Page() {
   const carouselData = [
     { title: "Parque Central", img: "/amenidades/amenidades_parque_central.jpg.jpeg" },
     { title: "Club Social", img: "/amenidades/amenidades_club.jpg.jpeg" },
-    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg.jpeg" },
+    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg" },
     { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
     { title: "Canchas Basquetbol", img: "/amenidades/amenidades_cancha.jpg.jpeg" },
     { title: "Áreas Verdes", img: "/homepage/versalles_outdoor.jpg.jpeg" },
