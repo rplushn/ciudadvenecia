@@ -190,8 +190,8 @@ export default function Home() {
                 <Link href="/proyectos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
                   Proyectos
                 </Link>
-                <Link href="#" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
-                  Noticias
+                <Link href="/contacto" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                  Contacto
                 </Link>
                 <Link href="#" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
                   Portal Clientes
@@ -228,7 +228,7 @@ export default function Home() {
           </div>
 
           <div className="hidden lg:flex items-center">
-             <Link href="#kontakt" className="border border-white/80 text-white px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
+             <Link href="/contacto" className="border border-white/80 text-white px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
                 Contáctanos
              </Link>
           </div>
@@ -550,7 +550,8 @@ export default function Home() {
                           <span className="w-1.5 h-1.5 rounded-full bg-[#C5A065]"></span>
                           {item}
                        </li>
-                    ))}\n                 </ul>
+                    ))}
+                 </ul>
                </Reveal>
             </div>
             <div className="relative h-[600px]">
