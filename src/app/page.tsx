@@ -79,8 +79,8 @@ export default function Home() {
     { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
   ];
   
-  // Show 3 items per page on desktop for "smaller" look
-  const itemsPerPage = 3;
+  // Show 2 items per page on desktop for "larger" look (Terrasoles style)
+  const itemsPerPage = 2;
   const totalPages = Math.ceil(carouselData.length / itemsPerPage);
 
   // Load Fonts
@@ -310,32 +310,30 @@ export default function Home() {
           </div>
       </section>
 
-      {/* 3. AMENITIES CAROUSEL - DARKER BG WITH GRADIENT */}
-      <section className="bg-[#F0EEE9] py-16 overflow-hidden relative group" ref={carouselRef}>
+      {/* 3. AMENITIES CAROUSEL - TERRASOLES STYLE (2 ITEMS PER ROW) */}
+      <section className="bg-[#F0EEE9] pt-8 pb-16 overflow-hidden relative group" ref={carouselRef}>
           {/* Subtle Top Gradient for Depth */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
 
-          <div className="max-w-[1400px] mx-auto px-6 mb-12 relative z-10">
-               {/* Carousel Slides */}
+          <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10">
+               {/* Carousel Slides - 2 ITEMS per slide for Desktop */}
                <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                    {Array.from({ length: totalPages }).map((_, pageIndex) => {
                        const startIndex = pageIndex * itemsPerPage;
                        return (
-                           <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+                           <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
                                {carouselData.slice(startIndex, startIndex + itemsPerPage).map((item, idx) => (
-                                   <div key={idx} className="relative aspect-[4/3] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                                   <div key={idx} className="relative aspect-[16/10] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                                        <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
                                        
                                        {/* Dark fade for readability */}
-                                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                                       {/* Title inside image */}
-                                       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-4">
-                                         <div className="bg-black/35 backdrop-blur-sm px-8 py-3">
-                                           <h4 className="text-white text-xs md:text-sm font-semibold uppercase tracking-[0.35em] text-center">
+                                       {/* Title inside image - CENTERED & LARGE */}
+                                       <div className="absolute bottom-8 left-0 right-0 text-center px-4">
+                                           <h4 className="text-white text-sm md:text-lg font-bold uppercase tracking-[0.25em] drop-shadow-md">
                                              {item.title}
                                            </h4>
-                                         </div>
                                        </div>
                                    </div>
                                ))}
@@ -347,14 +345,14 @@ export default function Home() {
           
           {/* Controls - CENTERED BELOW with margin */}
           <div className="flex justify-center items-center gap-8 mt-4 relative z-10">
-              <button onClick={prevSlide} className="w-10 h-10 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
-                  <span className="text-lg">‹</span>
+              <button onClick={prevSlide} className="w-12 h-12 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
+                  <span className="text-xl">‹</span>
               </button>
-              <div className="text-[10px] tracking-widest font-medium text-gray-400">
+              <div className="text-[11px] tracking-widest font-medium text-gray-400">
                  {currentSlide + 1} / {totalPages}
               </div>
-              <button onClick={nextSlide} className="w-10 h-10 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
-                  <span className="text-lg">›</span>
+              <button onClick={nextSlide} className="w-12 h-12 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
+                  <span className="text-xl">›</span>
               </button>
           </div>
       </section>
