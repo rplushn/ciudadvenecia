@@ -90,7 +90,6 @@ export default function Proyectos() {
             <div className="flex items-center gap-4">
                 <span className="text-white/80 text-[10px] font-medium uppercase tracking-wider hidden xl:block">Síguenos</span>
                 <div className="flex gap-3">
-                     {/* Icons kept simple for brevity */}
                     <a href="#" className="text-white hover:text-[#C5A065] transition-colors">FB</a>
                     <a href="#" className="text-white hover:text-[#C5A065] transition-colors">IG</a>
                     <a href="#" className="text-white hover:text-[#C5A065] transition-colors">TK</a>
@@ -107,11 +106,9 @@ export default function Proyectos() {
       {/* ------------------- 1. HERO: PORTFOLIO INTRO ------------------- */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#1A3A52]">
          <div className="absolute inset-0 opacity-40">
-            {/* Background Image Placeholder - Abstract Architecture */}
             <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/casa_fachada.jpg.jpeg')" }}></div>
          </div>
          <div className="absolute inset-0 bg-gradient-to-b from-[#1A3A52]/80 to-[#1A3A52]"></div>
-         
          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
             <Reveal>
               <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.4em] mb-6 block">Portafolio Inmobiliario</span>
@@ -128,7 +125,6 @@ export default function Proyectos() {
       {/* ------------------- 2. FLAGSHIP: CIUDAD VENECIA ------------------- */}
       <section className="py-32 px-6">
          <div className="max-w-[1500px] mx-auto grid lg:grid-cols-2 gap-20 items-center">
-             {/* Left: Image Stack */}
              <div className="relative">
                  <Reveal>
                    <div className="aspect-[4/3] bg-gray-200 shadow-2xl relative z-10 overflow-hidden">
@@ -138,8 +134,6 @@ export default function Proyectos() {
                  </Reveal>
                  <div className="absolute -bottom-10 -right-10 w-2/3 aspect-video bg-[#C5A065] z-0 hidden md:block"></div>
              </div>
-
-             {/* Right: Content */}
              <div>
                  <Reveal delay={0.2}>
                    <div className="flex items-center gap-4 mb-4">
@@ -150,7 +144,6 @@ export default function Proyectos() {
                    <p className="text-[#6B665F] text-lg leading-relaxed mb-8 font-light">
                       El referente inmobiliario de la zona oriental. Un complejo consolidado con más de 3 etapas, diseñado para familias que buscan seguridad, estatus y un entorno natural inigualable.
                    </p>
-                   
                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                       {['Seguridad 24/7', 'Áreas Verdes', 'Canchas Padel', 'Agua Propia'].map((feat, i) => (
                           <div key={i} className="bg-white border border-gray-100 p-4 text-center hover:border-[#C5A065] transition-colors">
@@ -159,7 +152,6 @@ export default function Proyectos() {
                           </div>
                       ))}
                    </div>
-
                    <Link href="#" className="bg-[#1A3A52] text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all">
                        Cotizar Lote o Casa
                    </Link>
@@ -168,11 +160,9 @@ export default function Proyectos() {
          </div>
       </section>
 
-      {/* ------------------- 3. COMMERCIAL: HILL'S CITY (Dark Mode) ------------------- */}
+      {/* ------------------- 3. COMMERCIAL: HILL'S CITY ------------------- */}
       <section className="py-32 px-6 bg-[#1A1A1A] text-white relative overflow-hidden">
-          {/* Background Elements */}
           <div className="absolute top-0 right-0 w-1/2 h-full bg-[#252525] skew-x-12 transform translate-x-20"></div>
-
           <div className="max-w-[1500px] mx-auto relative z-10 grid lg:grid-cols-2 gap-20 items-center">
               <div className="order-2 lg:order-1">
                   <Reveal>
@@ -181,28 +171,16 @@ export default function Proyectos() {
                     <p className="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-lg">
                        La solución definitiva para el comercio y estacionamiento. 7 manzanas de desarrollo mixto que albergan bancos, franquicias, hospital y el centro de negocios más moderno de la ciudad.
                     </p>
-                    
                     <div className="flex gap-8 mb-12 border-t border-white/10 pt-8">
-                        <div>
-                            <span className="block text-3xl font-serif-display text-white mb-1">Locales</span>
-                            <span className="text-[10px] uppercase text-gray-500 tracking-widest">Comerciales</span>
-                        </div>
-                        <div>
-                            <span className="block text-3xl font-serif-display text-white mb-1">Parqueos</span>
-                            <span className="text-[10px] uppercase text-gray-500 tracking-widest">Seguros</span>
-                        </div>
-                        <div>
-                            <span className="block text-3xl font-serif-display text-white mb-1">Hospital</span>
-                            <span className="text-[10px] uppercase text-gray-500 tracking-widest">Zona Médica</span>
-                        </div>
+                        <div><span className="block text-3xl font-serif-display text-white mb-1">Locales</span><span className="text-[10px] uppercase text-gray-500 tracking-widest">Comerciales</span></div>
+                        <div><span className="block text-3xl font-serif-display text-white mb-1">Parqueos</span><span className="text-[10px] uppercase text-gray-500 tracking-widest">Seguros</span></div>
+                        <div><span className="block text-3xl font-serif-display text-white mb-1">Hospital</span><span className="text-[10px] uppercase text-gray-500 tracking-widest">Zona Médica</span></div>
                     </div>
-
                     <Link href="#" className="border border-white/30 text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
                         Inversión Comercial
                     </Link>
                   </Reveal>
               </div>
-              
               <div className="order-1 lg:order-2">
                   <Reveal delay={0.2}>
                     <div className="relative aspect-video bg-black overflow-hidden shadow-2xl border border-white/10 group">
@@ -217,10 +195,9 @@ export default function Proyectos() {
           </div>
       </section>
 
-      {/* ------------------- 4. PREMIUM: OLANCHO (New & Learned) ------------------- */}
+      {/* ------------------- 4. PREMIUM: OLANCHO ------------------- */}
       <section className="py-32 px-6 bg-white">
           <div className="max-w-[1600px] mx-auto">
-             {/* Full Width Visual Header */}
              <div className="relative h-[60vh] overflow-hidden mb-20 group">
                  <img src="/amenidades/amenidades_club.jpg.jpeg" alt="Olancho Premium Interior" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"/>
                  <div className="absolute inset-0 bg-black/20"></div>
@@ -232,7 +209,6 @@ export default function Proyectos() {
                      </Reveal>
                  </div>
              </div>
-
              <div className="grid lg:grid-cols-12 gap-12">
                  <div className="lg:col-span-5">
                       <Reveal>
@@ -266,7 +242,7 @@ export default function Proyectos() {
           </div>
       </section>
 
-      {/* ------------------- 5. TEGUCIGALPA (Coming Soon) ------------------- */}
+      {/* ------------------- 5. TEGUCIGALPA & MORE ------------------- */}
       <section className="py-24 px-6 bg-[#F3F0EB] text-center">
           <div className="max-w-4xl mx-auto">
              <Reveal>
@@ -277,15 +253,6 @@ export default function Proyectos() {
                <p className="text-[#6B665F] text-lg mb-10 max-w-2xl mx-auto">
                    La capital está por recibir el estándar de calidad INMAER. Regístrate en la lista de espera para precios de Pre-Venta exclusiva.
                </p>
-               
-               <div className="relative max-w-2xl mx-auto h-[300px] overflow-hidden rounded-sm shadow-2xl group cursor-pointer">
-                    <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Tegucigalpa Teaser" className="w-full h-full object-cover blur-[2px] group-hover:blur-0 transition-all duration-700"/>
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                         <button className="bg-white text-[#2C2C2C] px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] hover:text-white transition-all shadow-xl">
-                             Unirse a Lista de Espera
-                         </button>
-                    </div>
-               </div>
              </Reveal>
           </div>
       </section>
@@ -328,52 +295,39 @@ export default function Proyectos() {
            </div>
       </section>
 
-      {/* ------------------- 7. CTA & CONTACT (EXACT CLONE) ------------------- */}
-       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB]">
-           <div className="max-w-[1200px] mx-auto">
-               <div className="text-center mb-16">
-                  <Reveal>
-                   <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">ÚLTIMO PASO</span>
-                   <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">¿Listo para hablar con un asesor?</h2>
-                   <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento, sin compromisos ni promesas infladas.</p>
-                  </Reveal>
-               </div>
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
-                   {["Respuesta en menos de 24 horas hábiles.", "Información clara sobre cuotas y primas según proyecto.", "Acompañamiento durante todo el proceso de compra."].map((text, i) => (
-                       <Reveal key={i} delay={i * 0.1}>
-                         <div className="flex flex-col items-center">
-                             <div className="text-[#C5A065] text-xl mb-4">✓</div>
-                             <p className="text-[#5C554F] text-xs leading-relaxed max-w-[250px]">{text}</p>
-                         </div>
-                       </Reveal>
-                   ))}
-               </div>
-               <div className="grid grid-cols-1 lg:grid-cols-12 shadow-2xl rounded-sm overflow-hidden bg-white">
-                   <div className="lg:col-span-4 bg-[#1A3A52] p-10 md:p-12 text-white flex flex-col justify-center relative overflow-hidden">
-                       <Reveal>
-                         <h3 className="font-serif-display text-2xl md:text-3xl mb-6">¿Prefieres hablar directo?</h3>
-                         <p className="text-white/70 text-xs leading-relaxed mb-8">También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver dudas puntuales sobre financiamiento.</p>
-                         <div className="h-[1px] w-12 bg-[#C5A065] mb-8"></div>
-                         <div className="space-y-8">
-                             <div><p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">TELÉFONO</p><p className="text-sm font-medium">(504) 9890-4449 / 2763-3699</p></div>
-                             <div><p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">WHATSAPP VENTAS</p><p className="text-sm font-medium">+504 9549-8925</p></div>
-                             <div><p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">OFICINA DANLÍ</p><p className="text-xs text-white/70 leading-relaxed">Col. El Zarzal, Edificio INMAER, contiguo a Pizza Hut, Danlí.</p></div>
-                         </div>
-                       </Reveal>
-                   </div>
-                   <div className="lg:col-span-8 bg-white p-10 md:p-12">
-                       <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                           <div className="md:col-span-1 group"><label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">NOMBRE COMPLETO</label><input type="text" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" /></div>
-                           <div className="md:col-span-1 group"><label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">TELÉFONO / WHATSAPP</label><input type="text" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" /></div>
-                           <div className="md:col-span-1 group"><label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">CORREO ELECTRÓNICO</label><input type="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" /></div>
-                           <div className="md:col-span-1 group"><label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label><div className="relative"><select className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer"><option>Seleccionar...</option><option>Ciudad Venecia Danlí</option><option>Ciudad Venecia Olancho</option><option>Ciudad Venecia Valle</option><option>Residencial Versalles</option></select></div></div>
-                           <div className="md:col-span-2 group"><label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">¿QUÉ TIENES EN MENTE?</label><textarea rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea></div>
-                           <div className="md:col-span-2 mt-6 flex flex-col items-center"><button type="submit" className="px-12 py-4 bg-[#1A3A52] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all duration-500 shadow-md hover:shadow-lg w-full md:w-auto">ENVIAR Y HABLAR CON UN ASESOR</button><p className="text-center text-[9px] text-gray-400 mt-6 leading-relaxed max-w-md">Al enviar este formulario aceptas ser contactado por INMAER para recibir información sobre el proyecto seleccionado.</p></div>
-                       </form>
-                   </div>
-               </div>
-           </div>
-       </section>
+      {/* ------------------- 7. NEW UNIQUE CTA: CONCIERGE (No Duplicate Form) ------------------- */}
+      <section className="py-24 px-6 bg-[#2C2C2C] text-white border-t border-white/10">
+          <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-16 items-center">
+             <div className="order-2 md:order-1">
+                <Reveal>
+                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">SERVICIO EXCLUSIVO</span>
+                    <h2 className="font-serif-display text-4xl md:text-5xl mb-6">Concierge Inmobiliario</h2>
+                    <p className="text-white/60 text-lg leading-relaxed mb-8 font-light">
+                        Sabemos que invertir es una decisión importante. Por eso, no te enviamos un PDF genérico. Te asignamos un asesor senior para un recorrido privado y una proyección financiera personalizada.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                        <Link href="#kontakt" className="bg-[#C5A065] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all text-center">
+                            Agendar Cita Privada
+                        </Link>
+                        <Link href="#" className="border border-white/30 text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all text-center">
+                            Descargar Brochure
+                        </Link>
+                    </div>
+                </Reveal>
+             </div>
+             <div className="order-1 md:order-2">
+                <Reveal delay={0.2}>
+                    <div className="aspect-[4/5] bg-[#1A1A1A] relative overflow-hidden p-2 border border-white/5 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
+                        <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Concierge Service" className="w-full h-full object-cover opacity-80"/>
+                        <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-6 border border-white/10">
+                             <h4 className="font-serif-display text-2xl mb-1">Experiencia VIP</h4>
+                             <p className="text-[10px] uppercase tracking-widest">Solo con cita previa</p>
+                        </div>
+                    </div>
+                </Reveal>
+             </div>
+          </div>
+      </section>
 
       {/* Footer - CORPORATE & ROBUST STYLE (Exact Clone) */}
       <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
