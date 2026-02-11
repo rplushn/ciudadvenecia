@@ -69,21 +69,22 @@ export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   // DATA: Augmented to 13 items as requested (9 original + 4 added)
+  // FIXED: Validated paths against existing files in public/amenidades and public/homepage
   const carouselData = [
-    { title: "Parque Central", img: "/amenidades/amenidades_parque_central.jpg.jpeg" },
+    { title: "Parque Central", img: "/amenidades/amenidades002.jpg.jpeg" }, // Replaced missing file with existing amenidades002
     { title: "Club Social", img: "/amenidades/amenidades_club.jpg.jpeg" },
-    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg.jpeg" },
+    { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg" }, // Fixed extension from .jpg.jpeg to .jpg
     { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
-    { title: "Canchas Basquetbol", img: "/amenidades/amenidades_cancha.jpg.jpeg" },
+    { title: "Canchas Deportivas", img: "/homepage/cancha_tennis.jpg.jpeg" }, // Replaced missing amenidades_cancha with existing tennis court
     { title: "Áreas Verdes", img: "/homepage/versalles_outdoor.jpg.jpeg" },
     { title: "Senderos", img: "/homepage/outdoor2.jpg.jpeg" },
-    { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" },
+    { title: "Juegos Infantiles", img: "/amenidades/amenidades015.jpg.jpeg" }, // Replaced missing familia_jugando with amenidades015
     { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
     // 4 New Added Items reusing available assets to ensure loop feel
     { title: "Entrada Principal", img: "/homepage/portal_ai-ciudad_venecia.jpeg" },
     { title: "Vistas Panorámicas", img: "/homepage/casa_fachada.jpg.jpeg" }, 
     { title: "Seguridad 24/7", img: "/amenidades/amenidades_club.jpg.jpeg" }, // Reusing for demo
-    { title: "Comunidad", img: "/homepage/familia_jugando.jpg.jpeg" }, // Reusing for demo
+    { title: "Comunidad", img: "/homepage/casa_patio.jpeg" }, // Replaced missing familia_jugando with casa_patio
   ];
   
   // Logic: Show 2 items at a time.
@@ -1027,8 +1028,7 @@ export default function Home() {
                 <g transform="translate(40, 40)">
                      {Array.from({ length: 24 }).map((_, i) => (
                         <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
-                     ))}
-                </g>
+                     ))}\n                </g>
              </svg>
         </div>
 
