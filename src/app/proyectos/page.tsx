@@ -43,10 +43,6 @@ export default function Proyectos() {
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  // Parallax Hook
-  const { scrollYProgress } = useScroll();
-  const yRange = useTransform(scrollYProgress, [0, 1], [0, 200]);
-
   return (
     <div className="bg-[#F3F0EB] text-[#2C2C2C] antialiased min-h-screen flex flex-col font-sans selection:bg-[#C5A065] selection:text-white overflow-x-hidden">
       <style jsx global>{`
@@ -103,7 +99,7 @@ export default function Proyectos() {
         </div>
       </nav>
 
-      {/* ------------------- 1. HERO: PORTFOLIO INTRO ------------------- */}
+      {/* ------------------- HERO ------------------- */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#1A3A52]">
          <div className="absolute inset-0 opacity-40">
             <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/casa_fachada.jpg.jpeg')" }}></div>
@@ -116,187 +112,321 @@ export default function Proyectos() {
                 Construyendo <br/><span className="italic font-light text-white/50">Legado</span>
               </h1>
               <p className="text-white/70 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                Más que terrenos y casas, desarrollamos ecosistemas de vida con plusvalía garantizada. Desde complejos residenciales hasta centros comerciales de alto nivel.
+                Más que terrenos y casas, desarrollamos ecosistemas de vida con plusvalía garantizada.
               </p>
             </Reveal>
          </div>
       </section>
 
-      {/* ------------------- 2. FLAGSHIP: CIUDAD VENECIA ------------------- */}
-      <section className="py-32 px-6">
-         <div className="max-w-[1500px] mx-auto grid lg:grid-cols-2 gap-20 items-center">
-             <div className="relative">
-                 <Reveal>
-                   <div className="aspect-[4/3] bg-gray-200 shadow-2xl relative z-10 overflow-hidden">
-                       <img src="/amenidades/amenidades_parque_central.jpg.jpeg" alt="Ciudad Venecia" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"/>
-                       <div className="absolute top-6 left-6 bg-[#1A3A52] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Proyecto Insignia</div>
-                   </div>
-                 </Reveal>
-                 <div className="absolute -bottom-10 -right-10 w-2/3 aspect-video bg-[#C5A065] z-0 hidden md:block"></div>
-             </div>
+      {/* =========================================================================================
+          SECCIÓN 3: CIUDAD VENECIA (MARCA PRINCIPAL)
+      ========================================================================================= */}
+
+      {/* --- 3.1 CIUDAD VENECIA DANLÍ --- */}
+      <section className="py-24 px-6 max-w-[1500px] mx-auto border-b border-[#C5A065]/20">
+         <div className="grid lg:grid-cols-2 gap-16 items-start">
              <div>
+                <Reveal>
+                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">MARCA PRINCIPAL</span>
+                    <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Ciudad Venecia Danlí</h2>
+                    <p className="text-lg font-medium text-[#2C2C2C] mb-4">El proyecto insignia de INMAER y uno de los de mayor crecimiento en la zona oriental del país.</p>
+                    
+                    <div className="space-y-6 text-[#6B665F] text-sm leading-relaxed mb-8">
+                        <div>
+                            <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-1">Ubicación</strong>
+                            A pocos kilómetros del centro de Danlí, muy cerca de la sede de la UNAH-TEC y del Hospital Regional Gabriela Alvarado. Salida hacia la ciudad de El Paraíso.
+                        </div>
+                        <div>
+                            <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-1">Descripción</strong>
+                            Ambiente muy agradable, lleno de frescura y vegetación. Hermosas áreas verdes, espacios recreativos para toda la familia y un paisaje realmente hermoso.
+                        </div>
+                    </div>
+
+                    {/* Características Grid */}
+                    <div className="grid md:grid-cols-2 gap-8 mb-8 bg-[#F9F7F4] p-6">
+                        <div>
+                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Características de Terrenos</h4>
+                            <ul className="space-y-2 text-xs text-[#484848]">
+                                <li>• Terrenos de 10×15 metros</li>
+                                <li>• Topografía plana</li>
+                                <li>• Agua potable, energía eléctrica, aguas negras</li>
+                                <li>• Agua las 24 horas</li>
+                                <li>• Vigilancia las 24 horas</li>
+                                <li>• Financiamiento directo con aprobación inmediata</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Construcción de Casas</h4>
+                            <ul className="space-y-2 text-xs text-[#484848]">
+                                <li>• Casas de 2 y 3 habitaciones</li>
+                                <li>• Garaje para 2 vehículos</li>
+                                <li>• Finos acabados</li>
+                                <li>• Financiamiento a través de Banco Atlántida</li>
+                                <li>• Asesoría completa con trámite bancario</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="bg-white border border-gray-200 p-6 shadow-sm mb-6">
+                        <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-2">Datos Adicionales</strong>
+                        <ul className="space-y-2 text-xs text-[#6B665F]">
+                            <li><strong>Etapas:</strong> El proyecto ya cuenta con su 3ra Etapa en desarrollo.</li>
+                            <li><strong>Modelo destacado:</strong> Casa de 62 m² de construcción, acabados modernos, precio L.1,400,000.00, terreno de 150 m², 2 dormitorios, 1 baño, garaje para 2 vehículos.</li>
+                            <li><strong>Especificaciones técnicas:</strong> dosificación de concreto 1:2:2 con resistencia de 3,500 PSI, bloques de 700 PSI, cerámica en interiores, ventanas tipo francesa, puertas termofadas de metal, instalaciones sanitarias y eléctricas completas.</li>
+                        </ul>
+                    </div>
+                </Reveal>
+             </div>
+             <div className="h-full">
+                <Reveal delay={0.2}>
+                    <div className="aspect-[4/5] bg-gray-200 relative overflow-hidden mb-6">
+                        <img src="/amenidades/amenidades_parque_central.jpg.jpeg" alt="Ciudad Venecia Danlí" className="w-full h-full object-cover"/>
+                    </div>
+                </Reveal>
+             </div>
+         </div>
+      </section>
+
+      {/* --- 3.2 CIUDAD VENECIA VALLE --- */}
+      <section className="py-24 px-6 bg-[#F9F7F4]">
+         <div className="max-w-[1500px] mx-auto grid lg:grid-cols-12 gap-12 items-center">
+             <div className="lg:col-span-7 order-2 lg:order-1">
+                 <Reveal>
+                    <div className="aspect-video bg-gray-200 relative overflow-hidden shadow-xl">
+                        <img src="/homepage/portal_ai-ciudad_venecia.jpeg" alt="Ciudad Venecia Valle" className="w-full h-full object-cover"/>
+                         <div className="absolute bottom-0 left-0 bg-[#1A3A52] text-white px-6 py-3">
+                            <p className="text-[10px] font-bold uppercase tracking-widest">A 10 min de la playa</p>
+                        </div>
+                    </div>
+                 </Reveal>
+             </div>
+             <div className="lg:col-span-5 order-1 lg:order-2">
                  <Reveal delay={0.2}>
-                   <div className="flex items-center gap-4 mb-4">
-                      <span className="h-[1px] w-12 bg-[#C5A065]"></span>
-                      <span className="text-[#C5A065] text-xs font-bold uppercase tracking-widest">Danlí, El Paraíso</span>
-                   </div>
-                   <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] mb-6">Ciudad Venecia</h2>
-                   <p className="text-[#6B665F] text-lg leading-relaxed mb-8 font-light">
-                      El referente inmobiliario de la zona oriental. Un complejo consolidado con más de 3 etapas, diseñado para familias que buscan seguridad, estatus y un entorno natural inigualable.
-                   </p>
-                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-                      {['Seguridad 24/7', 'Áreas Verdes', 'Canchas Padel', 'Agua Propia'].map((feat, i) => (
-                          <div key={i} className="bg-white border border-gray-100 p-4 text-center hover:border-[#C5A065] transition-colors">
-                              <div className="text-[#C5A065] text-xl mb-2">✦</div>
-                              <span className="text-[#2C2C2C] text-[10px] font-bold uppercase tracking-wide">{feat}</span>
-                          </div>
-                      ))}
-                   </div>
-                   <Link href="#" className="bg-[#1A3A52] text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all">
-                       Cotizar Lote o Casa
-                   </Link>
+                    <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Ciudad Venecia Valle</h2>
+                    
+                    <div className="space-y-6 text-[#6B665F] text-sm leading-relaxed mb-8">
+                        <div>
+                            <strong className="block text-[#C5A065] uppercase text-[10px] tracking-widest mb-1">Ubicación</strong>
+                            Comunidad de El Guayabo, carretera que de Jícaro Galán conduce hacia San Lorenzo. A orilla de la Carretera Panamericana, 3 km al sur de Jícaro Galán, Departamento de Valle.
+                        </div>
+                        <div>
+                            <strong className="block text-[#C5A065] uppercase text-[10px] tracking-widest mb-1">Descripción</strong>
+                            Ubicación inmejorable en la zona, brindando espacios bien definidos para calles, áreas verdes y zonas recreativas. El objetivo es que sus habitantes puedan vivir mejor en un lugar seguro y agradable.
+                        </div>
+                    </div>
+
+                    <div className="bg-white p-6 shadow-sm mb-6 border-l-2 border-[#C5A065]">
+                        <h4 className="font-serif-display text-xl text-[#2C2C2C] mb-3">Características</h4>
+                        <ul className="space-y-2 text-xs text-[#484848]">
+                             <li>• Lotes de terreno de 10×15 m², totalmente urbanizados</li>
+                             <li>• Financiamiento directo con prima de L 6,000 y cuotas accesibles</li>
+                             <li>• Áreas verdes y espacios recreativos</li>
+                             <li>• A 10 minutos de la playa (zona costera del Golfo de Fonseca)</li>
+                        </ul>
+                    </div>
+
+                    <div className="text-xs text-[#6B665F]">
+                        <p><strong>Contacto específico:</strong> (504) 3255-1991 / (504) 2763-3699</p>
+                        <p><strong>Redes:</strong> Página de Facebook "Ciudad Venecia Valle" con sede en Nacaome</p>
+                    </div>
                  </Reveal>
              </div>
          </div>
       </section>
 
-      {/* ------------------- 3. COMMERCIAL: HILL'S CITY ------------------- */}
-      <section className="py-32 px-6 bg-[#1A1A1A] text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-[#252525] skew-x-12 transform translate-x-20"></div>
-          <div className="max-w-[1500px] mx-auto relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+      {/* --- 3.3 CIUDAD VENECIA OLANCHO (PREMIUM) --- */}
+      <section className="py-24 px-6 bg-white border-y border-gray-100">
+          <div className="max-w-[1500px] mx-auto text-center mb-16">
+              <Reveal>
+                  <span className="bg-[#1A3A52] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest inline-block mb-4">PREMIUM LEVEL</span>
+                  <h2 className="font-serif-display text-4xl md:text-6xl text-[#2C2C2C]">Ciudad Venecia Olancho</h2>
+                  <p className="text-lg text-[#6B665F] max-w-2xl mx-auto mt-4">El proyecto más ambicioso y exclusivo de INMAER. Redefine el desarrollo residencial en Olancho.</p>
+                  <p className="text-sm text-[#C5A065] font-bold uppercase tracking-widest mt-2">Valle de Lepaguare, Olancho (entre Juticalpa y Campamento)</p>
+              </Reveal>
+          </div>
+
+          <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12">
+              <Reveal>
+                  <div className="grid grid-cols-2 gap-4 h-full">
+                      <img src="/amenidades/amenidades_club.jpg.jpeg" className="w-full h-full object-cover rounded-sm"/>
+                      <img src="/amenidades/amenidades_piscina002.jpeg" className="w-full h-full object-cover rounded-sm"/>
+                  </div>
+              </Reveal>
+              <Reveal delay={0.2}>
+                  <div className="bg-[#F3F0EB] p-10 h-full">
+                      <h3 className="font-serif-display text-2xl text-[#2C2C2C] mb-6">Amenidades de la Casa Club</h3>
+                      <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-xs text-[#484848]">
+                          <ul className="space-y-3">
+                              <li>• Piscina para adultos y piscina para niños</li>
+                              <li>• Canchas con grama sintética (fútbol)</li>
+                              <li>• Canchas polideportivas</li>
+                              <li>• Salón de eventos y quioscos</li>
+                              <li>• Casa Club completa</li>
+                              <li>• Gimnasio (GYM)</li>
+                              <li>• Mini salón Arcade para niños</li>
+                          </ul>
+                          <ul className="space-y-3">
+                              <li>• Cafetería y restaurante</li>
+                              <li>• Áreas comerciales</li>
+                              <li>• Parqueos amplios</li>
+                              <li>• Calles pavimentadas</li>
+                              <li>• Bulevar privado de acceso</li>
+                              <li>• Juegos infantiles</li>
+                          </ul>
+                      </div>
+                      <div className="mt-8 pt-8 border-t border-[#C5A065]/30">
+                          <p className="text-xs text-[#6B665F] mb-1"><strong>Conceptos disponibles:</strong> Ciudad Venecia Estándar y Ciudad Venecia Premium</p>
+                          <p className="text-xs text-[#6B665F]"><strong>Contacto:</strong> Se maneja a través de Tu Casa Honduras y las redes de Ciudad Venecia</p>
+                      </div>
+                  </div>
+              </Reveal>
+          </div>
+      </section>
+
+      {/* --- 3.4 CIUDAD VENECIA RAÍCES – TALANGA (NUEVO 2026) --- */}
+      <section className="py-24 px-6 bg-[#2C2C2C] text-white">
+          <div className="max-w-[1200px] mx-auto">
+              <Reveal>
+                  <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-white/20 pb-8">
+                      <div>
+                          <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">NUEVO LANZAMIENTO 2026</span>
+                          <h2 className="font-serif-display text-4xl md:text-5xl">Ciudad Venecia Raíces</h2>
+                          <p className="text-white/60 mt-2 text-sm">Talanga, Francisco Morazán. El proyecto más nuevo de la marca.</p>
+                      </div>
+                      <div className="text-right mt-6 md:mt-0">
+                          <p className="text-2xl font-serif-display text-[#C5A065]">L 2,500</p>
+                          <p className="text-[10px] uppercase tracking-widest">Prima desde</p>
+                      </div>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-6 mb-12">
+                      <div className="bg-white/5 p-6 border border-white/10">
+                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Raíces</h4>
+                          <p className="text-2xl font-bold mb-1">L 900</p>
+                          <p className="text-[10px] uppercase opacity-60 mb-4">Mensuales</p>
+                          <p className="text-xs opacity-80">Perfil: Nuevos inversionistas, primera propiedad.</p>
+                      </div>
+                      <div className="bg-white/5 p-6 border border-white/10">
+                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Estándar</h4>
+                          <p className="text-lg font-bold mb-1">Mayor a Raíces</p>
+                          <p className="text-[10px] uppercase opacity-60 mb-4">Cuota</p>
+                          <p className="text-xs opacity-80">Perfil: Familias en crecimiento.</p>
+                      </div>
+                      <div className="bg-white/5 p-6 border border-white/10">
+                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Premium</h4>
+                          <p className="text-lg font-bold mb-1">Precio Premium</p>
+                          <p className="text-[10px] uppercase opacity-60 mb-4">Valor</p>
+                          <p className="text-xs opacity-80">Perfil: Nivel exclusivo.</p>
+                      </div>
+                  </div>
+
+                  <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/70 bg-black/20 p-6 rounded-lg">
+                      <p><strong>Concepto:</strong> Pensado para quienes desean iniciar su patrimonio, invertir con visión y vivir en un entorno planificado.</p>
+                      <p className="text-right"><strong>Contacto:</strong> 9630-2106 / 9484-0346 / +504 3194-6163</p>
+                  </div>
+              </Reveal>
+          </div>
+      </section>
+
+      {/* =========================================================================================
+          SECCIÓN 4: OTROS PROYECTOS RESIDENCIALES
+      ========================================================================================= */}
+      
+      <section className="py-24 px-6 bg-[#F3F0EB]">
+          <div className="max-w-[1200px] mx-auto">
+              <div className="text-center mb-16">
+                  <h2 className="font-serif-display text-3xl text-[#2C2C2C] uppercase tracking-widest">Otros Proyectos Residenciales</h2>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                  {/* 4.1 RESIDENCIAL VERSALLES */}
+                  <Reveal>
+                      <div className="bg-white p-8 shadow-md h-full">
+                          <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4">Residencial Versalles</h3>
+                          <div className="space-y-4 text-xs text-[#6B665F]">
+                              <p><strong>Ubicación:</strong> A 5 km del centro de Danlí, a orilla de Carretera Panamericana.</p>
+                              <p><strong>Descripción:</strong> Lugar exclusivo con disponibilidad muy limitada.</p>
+                              <ul className="bg-[#F9F7F4] p-4 space-y-2">
+                                  <li>• Lotes de: 12×20 metros</li>
+                                  <li>• Amenidades: Piscina, áreas recreativas</li>
+                                  <li>• Seguridad: Máxima seguridad</li>
+                              </ul>
+                              <p className="text-[#C5A065] font-bold">Contacto: +504 9549-8925</p>
+                          </div>
+                      </div>
+                  </Reveal>
+
+                  {/* 4.2 RESIDENCIAL PALMANOVA */}
+                  <Reveal delay={0.2}>
+                      <div className="bg-white p-8 shadow-md h-full border border-gray-100">
+                          <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4">Residencial Palmanova</h3>
+                          <div className="space-y-4 text-xs text-[#6B665F]">
+                              <p><strong>Ubicación:</strong> A 100 metros de Carretera Panamericana.</p>
+                              <p><strong>Descripción:</strong> Privilegiado por su ubicación y su topografía.</p>
+                              <p className="italic opacity-60">(Información adicional limitada en fuentes públicas)</p>
+                          </div>
+                      </div>
+                  </Reveal>
+              </div>
+          </div>
+      </section>
+
+      {/* =========================================================================================
+          SECCIÓN 5: PROYECTO COMERCIAL — HILLS CITY
+      ========================================================================================= */}
+      
+      <section className="py-24 px-6 bg-white border-t border-gray-200">
+          <div className="max-w-[1500px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
                   <Reveal>
-                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-widest mb-2 block">Centro de Danlí</span>
-                    <h2 className="font-serif-display text-5xl md:text-7xl mb-6">Hill's City</h2>
-                    <p className="text-gray-400 text-lg leading-relaxed mb-10 font-light max-w-lg">
-                       La solución definitiva para el comercio y estacionamiento. 7 manzanas de desarrollo mixto que albergan bancos, franquicias, hospital y el centro de negocios más moderno de la ciudad.
-                    </p>
-                    <div className="flex gap-8 mb-12 border-t border-white/10 pt-8">
-                        <div><span className="block text-3xl font-serif-display text-white mb-1">Locales</span><span className="text-[10px] uppercase text-gray-500 tracking-widest">Comerciales</span></div>
-                        <div><span className="block text-3xl font-serif-display text-white mb-1">Parqueos</span><span className="text-[10px] uppercase text-gray-500 tracking-widest">Seguros</span></div>
-                        <div><span className="block text-3xl font-serif-display text-white mb-1">Hospital</span><span className="text-[10px] uppercase text-gray-500 tracking-widest">Zona Médica</span></div>
-                    </div>
-                    <Link href="#" className="border border-white/30 text-white px-10 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all">
-                        Inversión Comercial
-                    </Link>
+                      <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">DISTRITO COMERCIAL</span>
+                      <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] mb-6">Hills City</h2>
+                      
+                      <p className="text-lg text-[#2C2C2C] mb-6 font-medium">
+                          La solución al problema de estacionamiento en Danlí.
+                      </p>
+                      <p className="text-sm text-[#6B665F] mb-8 leading-relaxed">
+                          Con amplios espacios para parqueos, lotes para construcción de locales, y opciones de venta y renta de locales comerciales. 7 manzanas de desarrollo mixto en construcción en el Centro de Danlí.
+                      </p>
+
+                      <div className="bg-[#1A3A52] text-white p-8 mb-8">
+                          <h4 className="font-serif-display text-2xl mb-4">Oferta & Negocios</h4>
+                          <div className="grid grid-cols-2 gap-4 text-xs font-light">
+                              <ul className="space-y-2">
+                                  <li>• Parqueos amplios</li>
+                                  <li>• Locales comerciales (venta/alquiler)</li>
+                                  <li>• Plazas comerciales</li>
+                                  <li>• Gasolinera</li>
+                              </ul>
+                              <ul className="space-y-2">
+                                  <li>• Hospital</li>
+                                  <li>• Farmacias</li>
+                                  <li>• Bancos</li>
+                                  <li>• Restaurantes</li>
+                              </ul>
+                          </div>
+                          <p className="mt-4 text-[10px] uppercase tracking-widest opacity-70 border-t border-white/20 pt-4">
+                              Negocios ya operando: Bancos, restaurantes y otras empresas
+                          </p>
+                      </div>
                   </Reveal>
               </div>
-              <div className="order-1 lg:order-2">
+              <div className="order-1 lg:order-2 h-full">
                   <Reveal delay={0.2}>
-                    <div className="relative aspect-video bg-black overflow-hidden shadow-2xl border border-white/10 group">
-                        <img src="/homepage/portal_ai-ciudad_venecia.jpeg" alt="Hill's City Render" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0"/>
-                        <div className="absolute bottom-0 right-0 bg-[#C5A065] text-black px-6 py-4">
-                            <span className="block text-3xl font-bold">7</span>
-                            <span className="text-[10px] uppercase font-bold tracking-widest">Manzanas</span>
-                        </div>
-                    </div>
+                       <div className="aspect-[4/5] bg-gray-200 relative overflow-hidden shadow-2xl">
+                           <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Hills City Danlí" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+                           <div className="absolute top-6 right-6 bg-[#C5A065] text-black px-4 py-3 text-center">
+                               <span className="block text-2xl font-bold">7</span>
+                               <span className="text-[10px] font-bold uppercase">Manzanas</span>
+                           </div>
+                       </div>
                   </Reveal>
               </div>
           </div>
-      </section>
-
-      {/* ------------------- 4. PREMIUM: OLANCHO ------------------- */}
-      <section className="py-32 px-6 bg-white">
-          <div className="max-w-[1600px] mx-auto">
-             <div className="relative h-[60vh] overflow-hidden mb-20 group">
-                 <img src="/amenidades/amenidades_club.jpg.jpeg" alt="Olancho Premium Interior" className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"/>
-                 <div className="absolute inset-0 bg-black/20"></div>
-                 <div className="absolute inset-0 flex items-center justify-center">
-                     <Reveal>
-                        <h2 className="font-serif-display text-6xl md:text-9xl text-white drop-shadow-lg text-center">
-                            ESTILO DE VIDA<br/><span className="italic font-light">PREMIUM</span>
-                        </h2>
-                     </Reveal>
-                 </div>
-             </div>
-             <div className="grid lg:grid-cols-12 gap-12">
-                 <div className="lg:col-span-5">
-                      <Reveal>
-                        <div className="bg-[#F9F7F4] p-12 h-full flex flex-col justify-center">
-                             <img src="/amenidades/amenidades_piscina002.jpeg" alt="Pool Area" className="w-full aspect-square object-cover mb-6 shadow-lg grayscale hover:grayscale-0 transition-all duration-500"/>
-                             <span className="text-[10px] font-bold uppercase tracking-widest text-[#C5A065]">Casa Club</span>
-                             <h4 className="font-serif-display text-2xl text-[#2C2C2C] mt-2">Piscina, Gym & Arcade incluidos</h4>
-                        </div>
-                      </Reveal>
-                 </div>
-                 <div className="lg:col-span-7 flex flex-col justify-center pl-0 lg:pl-12">
-                      <Reveal delay={0.2}>
-                         <span className="text-[#C5A065] text-xs font-bold uppercase tracking-widest mb-4 block">Valle de Lepaguare</span>
-                         <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] mb-6">Olancho Premium</h2>
-                         <p className="text-[#6B665F] text-lg leading-relaxed mb-8">
-                             El primer desarrollo "Resort Living" de la región. No solo compras un terreno, accedes a un estilo de vida con amenidades nunca antes vistas en Olancho. Aplicando años de experiencia para crear el proyecto más ambicioso hasta la fecha.
-                         </p>
-                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                             {['Casa Club completa con Restaurante', 'Piscina semi-olímpica y de niños', 'Gimnasio equipado y Salón Arcade', 'Canchas Polideportivas'].map((item, i) => (
-                                 <li key={i} className="flex items-center gap-3 text-sm text-[#484848]">
-                                     <span className="w-2 h-2 bg-[#C5A065] rounded-full"></span> {item}
-                                 </li>
-                             ))}
-                         </ul>
-                         <button className="border-b-2 border-[#2C2C2C] text-[#2C2C2C] pb-1 font-bold uppercase tracking-[0.2em] hover:text-[#C5A065] hover:border-[#C5A065] transition-colors w-max">
-                             Ver Master Plan
-                         </button>
-                      </Reveal>
-                 </div>
-             </div>
-          </div>
-      </section>
-
-      {/* ------------------- 5. TEGUCIGALPA & MORE ------------------- */}
-      <section className="py-24 px-6 bg-[#F3F0EB] text-center">
-          <div className="max-w-4xl mx-auto">
-             <Reveal>
-               <span className="bg-[#C5A065] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full mb-6 inline-block">Próximamente</span>
-               <h2 className="font-serif-display text-5xl md:text-7xl text-[#2C2C2C] mb-6">
-                   Ciudad Valencia <span className="italic text-[#C5A065]">Tegucigalpa</span>
-               </h2>
-               <p className="text-[#6B665F] text-lg mb-10 max-w-2xl mx-auto">
-                   La capital está por recibir el estándar de calidad INMAER. Regístrate en la lista de espera para precios de Pre-Venta exclusiva.
-               </p>
-             </Reveal>
-          </div>
-      </section>
-
-      {/* ------------------- 6. MORE PROJECTS (Grid) ------------------- */}
-      <section className="py-24 px-6 bg-white">
-           <div className="max-w-[1400px] mx-auto">
-               <div className="text-center mb-16">
-                   <h2 className="font-serif-display text-3xl text-[#2C2C2C] uppercase tracking-widest">Más Desarrollos</h2>
-               </div>
-               <div className="grid md:grid-cols-3 gap-8">
-                   <Reveal>
-                       <div className="group relative aspect-video overflow-hidden cursor-pointer">
-                           <img src="/homepage/casa_fachada.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
-                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
-                               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-widest mb-1">Danlí, El Paraíso</span>
-                               <h3 className="text-white font-serif-display text-2xl">Residencial Versalles</h3>
-                           </div>
-                       </div>
-                   </Reveal>
-                   <Reveal delay={0.1}>
-                       <div className="group relative aspect-video overflow-hidden cursor-pointer">
-                           <img src="/homepage/portal_ai-ciudad_venecia.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
-                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
-                               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-widest mb-1">San Lorenzo (Playa)</span>
-                               <h3 className="text-white font-serif-display text-2xl">Ciudad Venecia Valle</h3>
-                           </div>
-                       </div>
-                   </Reveal>
-                   <Reveal delay={0.2}>
-                       <div className="group relative aspect-video overflow-hidden cursor-pointer">
-                           <img src="/homepage/outdoor2.jpg.jpeg" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
-                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
-                               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-widest mb-1">Talanga (Nuevo)</span>
-                               <h3 className="text-white font-serif-display text-2xl">CV Raíces</h3>
-                           </div>
-                       </div>
-                   </Reveal>
-               </div>
-           </div>
       </section>
 
       {/* ------------------- 7. CONTACT CTA (Standardized) ------------------- */}
-       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB]">
+       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB] border-t border-[#C5A065]/10">
            <div className="max-w-[1200px] mx-auto">
                
                {/* Header Centered */}
@@ -398,6 +528,8 @@ export default function Proyectos() {
                                        <option>Ciudad Venecia Olancho</option>
                                        <option>Ciudad Venecia Valle</option>
                                        <option>Residencial Versalles</option>
+                                       <option>Ciudad Venecia Raíces</option>
+                                       <option>Hills City</option>
                                    </select>
                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
                                        <span className="text-xs">▼</span>
