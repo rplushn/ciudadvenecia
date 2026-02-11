@@ -64,9 +64,11 @@ export default function Home() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
 
-  // Carousel State
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // Carousel State - Using INDEX based logic for infinite scroll one-by-one
+  const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
+  
+  // DATA: Augmented to 13 items as requested (9 original + 4 added)
   const carouselData = [
     { title: "Parque Central", img: "/amenidades/amenidades_parque_central.jpg.jpeg" },
     { title: "Club Social", img: "/amenidades/amenidades_club.jpg.jpeg" },
@@ -77,11 +79,16 @@ export default function Home() {
     { title: "Senderos", img: "/homepage/outdoor2.jpg.jpeg" },
     { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" },
     { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
+    // 4 New Added Items reusing available assets to ensure loop feel
+    { title: "Entrada Principal", img: "/homepage/portal_ai-ciudad_venecia.jpeg" },
+    { title: "Vistas Panorámicas", img: "/homepage/casa_fachada.jpg.jpeg" }, 
+    { title: "Seguridad 24/7", img: "/amenidades/amenidades_club.jpg.jpeg" }, // Reusing for demo
+    { title: "Comunidad", img: "/homepage/familia_jugando.jpg.jpeg" }, // Reusing for demo
   ];
   
-  // Show 2 items per page on desktop for "larger" look (Terrasoles style)
-  const itemsPerPage = 2;
-  const totalPages = Math.ceil(carouselData.length / itemsPerPage);
+  // Logic: Show 2 items at a time.
+  const itemsPerView = 2;
+  const totalItems = carouselData.length;
 
   // Load Fonts
   useEffect(() => {
@@ -113,21 +120,21 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Carousel Logic (Auto-scroll 5s)
+  // Carousel Logic (Auto-scroll 5s - Increment by 1)
   useEffect(() => {
     const interval = setInterval(() => {
         if (carouselRef.current && !carouselRef.current.matches(':hover')) {
              nextSlide();
         }
-    }, 5000);
+    }, 5000); // 5 Seconds Exact Pause
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [currentIndex]);
 
   const nextSlide = () => {
-      setCurrentSlide((prev) => (prev + 1) % totalPages);
+      setCurrentIndex((prev) => (prev + 1) % totalItems);
   };
   const prevSlide = () => {
-      setCurrentSlide((prev) => (prev - 1 + totalPages) % totalPages);
+      setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
   };
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -217,12 +224,6 @@ export default function Home() {
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.069-4.85.069-3.204 0-3.585-.011-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                         </svg>
                     </a>
-                    {/* TikTok Icon */}
-                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.46-.54 2.94-1.34 4.14-1.8 2.73-5.7 4.01-8.85 2.48-2.69-1.31-4.25-4.17-4.11-7.14.05-3.08 2.08-5.71 4.97-6.55.75-.22 1.54-.31 2.32-.3v4.2c-.41-.03-.84.03-1.24.18-1.31.52-2.14 1.83-2.02 3.24.08 1.48 1.15 2.75 2.63 2.93 1.69.21 3.23-.97 3.51-2.65.07-.63.07-1.27.06-1.91V.02h-.01z"/>
-                        </svg>
-                    </a>
                 </div>
             </div>
           </div>
@@ -310,36 +311,38 @@ export default function Home() {
           </div>
       </section>
 
-      {/* 3. AMENITIES CAROUSEL - TERRASOLES STYLE (2 ITEMS PER ROW) */}
+      {/* 3. AMENITIES CAROUSEL - TERRASOLES INFINITE LOOP STYLE */}
       <section className="bg-[#F0EEE9] pt-8 pb-16 overflow-hidden relative group" ref={carouselRef}>
           {/* Subtle Top Gradient for Depth */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
 
-          <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10">
-               {/* Carousel Slides - 2 ITEMS per slide for Desktop */}
-               <div className="flex transition-transform duration-[1500ms] ease-in-out" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-                   {Array.from({ length: totalPages }).map((_, pageIndex) => {
-                       const startIndex = pageIndex * itemsPerPage;
-                       return (
-                           <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-                               {carouselData.slice(startIndex, startIndex + itemsPerPage).map((item, idx) => (
-                                   <div key={idx} className="relative aspect-[16/10] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
-                                       <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
-                                       
-                                       {/* Dark fade for readability */}
-                                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
+               {/* Carousel Slides - Show 2 items, move by 1 item width at a time */}
+               {/* Calculation: 2 items per view = 50% width each.  */}
+               <div className="flex transition-transform duration-[800ms] ease-in-out" 
+                    style={{ transform: `translateX(-${currentIndex * 50}%)` }}>
+                   
+                   {/* We render ALL items in a single row. */}
+                   {carouselData.map((item, idx) => (
+                       <div key={idx} className="min-w-[50%] px-3 box-border">
+                           <div className="relative aspect-[16/10] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                               <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
+                               
+                               {/* Dark fade for readability */}
+                               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
-                                       {/* Title inside image - CENTERED & LARGE */}
-                                       <div className="absolute bottom-8 left-0 right-0 text-center px-4">
-                                           <h4 className="text-white text-sm md:text-lg font-bold uppercase tracking-[0.25em] drop-shadow-md">
-                                             {item.title}
-                                           </h4>
-                                       </div>
-                                   </div>
-                               ))}
+                               {/* Title inside image - CENTERED & LARGE */}
+                               <div className="absolute bottom-8 left-0 right-0 text-center px-4">
+                                   <h4 className="text-white text-sm md:text-lg font-bold uppercase tracking-[0.25em] drop-shadow-md">
+                                     {item.title}
+                                   </h4>
+                               </div>
                            </div>
-                       );
-                   })}
+                       </div>
+                   ))}
+                   
+                   {/* Render duplicates at end for infinite loop simulation (optional basic implementation or just loop back) */}
+                   {/* Current implementation loops back to start when reaching end via modulo math in logic */}
                </div>
           </div>
           
@@ -348,8 +351,9 @@ export default function Home() {
               <button onClick={prevSlide} className="w-12 h-12 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
                   <span className="text-xl">‹</span>
               </button>
+              {/* Counter based on PAIR index or Current Item Index? Terrasoles usually shows Current Start Index */}
               <div className="text-[11px] tracking-widest font-medium text-gray-400">
-                 {currentSlide + 1} / {totalPages}
+                 {currentIndex + 1} / {totalItems}
               </div>
               <button onClick={nextSlide} className="w-12 h-12 bg-white border border-gray-200 text-[#2C2C2C] flex items-center justify-center hover:bg-[#C5A065] hover:text-white hover:border-[#C5A065] transition-all shadow-sm rounded-sm">
                   <span className="text-xl">›</span>
