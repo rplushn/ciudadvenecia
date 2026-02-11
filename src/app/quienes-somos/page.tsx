@@ -346,7 +346,8 @@ export default function QuienesSomos() {
       <section className="py-24 px-6 bg-white">
           <div className="max-w-7xl mx-auto text-center mb-16">
             <Reveal>
-              <span className="text-[#C5A065] uppercase tracking-widest text-xs font-bold mb-4 block">Mentes Maestras</span>\n              <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Liderazgo con Visión</h2>
+              <span className="text-[#C5A065] uppercase tracking-widest text-xs font-bold mb-4 block">Mentes Maestras</span>
+              <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Liderazgo con Visión</h2>
             </Reveal>
           </div>
           {/* Placeholder for Team Grid - Abstract representation for now */}
@@ -550,10 +551,10 @@ export default function QuienesSomos() {
       <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
         {/* Background Pattern - subtle logo watermark */}
         <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none transform translate-x-1/3 -translate-y-1/3">
-             <svg height=\"800\" viewBox=\"0 0 330 80\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">
-                <g transform=\"translate(40, 40)\">
+             <svg height="800" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(40, 40)">
                      {Array.from({ length: 24 }).map((_, i) => (
-                        <line key={i} x1=\"0\" y1=\"-14\" x2=\"0\" y2=\"-32\" transform={`rotate(${i * 15})`} stroke=\"currentColor\" strokeWidth=\"1.5\" />
+                        <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
                      ))}
                 </g>
              </svg>
@@ -565,54 +566,59 @@ export default function QuienesSomos() {
                 <div className="space-y-6">
                      {/* Logo Component */}
                      <div className="text-white mb-6">
-                        <svg height=\"40\" viewBox=\"0 0 330 80\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\" className=\"block\">
-                            <g transform=\"translate(40, 40)\">
+                        <svg height="40" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
+                            <g transform="translate(40, 40)">
                                  {Array.from({ length: 24 }).map((_, i) => (
-                                    <line key={i} x1=\"0\" y1=\"-14\" x2=\"0\" y2=\"-32\" transform={`rotate(${i * 15})`} stroke=\"currentColor\" strokeWidth=\"1.5\" />
+                                    <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
                                  ))}
                             </g>
-                            <text x=\"85\" y=\"50\" fontFamily=\"Montserrat\" fontSize=\"24\" fontWeight=\"300\" letterSpacing=\"0.1em\">CIUDAD</text>
-                            <text x=\"200\" y=\"50\" fontFamily=\"Montserrat\" fontSize=\"24\" fontWeight=\"700\" letterSpacing=\"0.1em\">VENECIA</text>
+                            <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
+                            <text x="200" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
                         </svg>
                      </div>
-                     <p className=\"text-white/60 text-xs font-light leading-relaxed max-w-xs\">
+                     <p className="text-white/60 text-xs font-light leading-relaxed max-w-xs">
                         Desarrollos inmobiliarios pensados para la eternidad. Un proyecto respaldado por la solidez y visión de INMAER.
                      </p>
                 </div>
 
                 {/* Navigation Column */}
                 <div>
-                    <h4 className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8\">Proyectos</h4>\n                    <ul className=\"space-y-4\">
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Ciudad Venecia Danlí</Link></li>
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Ciudad Venecia Olancho</Link></li>
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Ciudad Venecia Valle</Link></li>
-                        <li><Link href=\"#\" className=\"text-sm font-medium hover:text-[#C5A065] transition-colors\">Residencial Versalles</Link></li>
-                    </ul>\n                </div>
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
+                    <ul className="space-y-4">
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                    </ul>
+                </div>
 
                 {/* Contact Column */}
                 <div>
-                     <h4 className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8\">Oficina Corporativa</h4>
-                     <p className=\"text-sm font-medium mb-1\">Col. El Zarzal, Edificio INMAER</p>
-                     <p className=\"text-white/60 text-xs mb-6\">Danlí, El Paraíso, Honduras</p>
-                     \n                     <p className=\"text-white/60 text-[10px] uppercase tracking-wider mb-1\">Llámanos</p>
-                     <p className=\"text-lg font-serif-display text-white\">(504) 9890-4449</p>
-                </div>\n\n                 {/* Newsletter/Action Column */}
+                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Oficina Corporativa</h4>
+                     <p className="text-sm font-medium mb-1">Col. El Zarzal, Edificio INMAER</p>
+                     <p className="text-white/60 text-xs mb-6">Danlí, El Paraíso, Honduras</p>
+                     
+                     <p className="text-white/60 text-[10px] uppercase tracking-wider mb-1">Llámanos</p>
+                     <p className="text-lg font-serif-display text-white">(504) 9890-4449</p>
+                </div>
+
+                 {/* Newsletter/Action Column */}
                 <div>
-                    <h4 className=\"text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8\">Mantente Informado</h4>
-                    <p className=\"text-white/60 text-xs mb-6\">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
-                    <div className=\"flex border-b border-white/20 pb-2\">
-                        <input type=\"email\" placeholder=\"Tu correo electrónico\" className=\"bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30\"/>
-                        <button className=\"text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors\">Suscribir</button>
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
+                    <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
+                    <div className="flex border-b border-white/20 pb-2">
+                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
                     </div>
                 </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className=\"pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4\">
-                <p className=\"text[10px] text-white/40 uppercase tracking-widest\">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-                <div className=\"flex gap-8\">
-                     <Link href=\"#\" className=\"text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors\">Privacidad</Link>
-                     <Link href=\"#\" className=\"text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors\">Términos</Link>
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
+                <div className="flex gap-8">
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>
