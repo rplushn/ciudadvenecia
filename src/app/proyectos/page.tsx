@@ -118,6 +118,63 @@ export default function Proyectos() {
          </div>
       </section>
 
+      {/* ------------------- NEW SECTION 1: MANIFESTO (TEXTO ELEGANTE) ------------------- */}
+      <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
+        <Reveal>
+          <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] mb-6 block">NUESTRA VISIÓN</span>
+          <h2 className="font-serif-display text-4xl md:text-6xl text-[#2C2C2C] mb-8 leading-tight">
+             "Cada proyecto es una promesa cumplida de <br/><span className="italic text-[#C5A065]">orden, seguridad y valor.</span>"
+          </h2>
+          <div className="w-24 h-[1px] bg-[#C5A065] mx-auto mb-8"></div>
+          <p className="text-lg md:text-xl text-[#6B665F] font-light leading-relaxed max-w-3xl mx-auto">
+              No solo urbanizamos tierra; transformamos el paisaje para crear comunidades donde el bienestar es la norma, no la excepción.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* ------------------- NEW SECTION 2: IMPACTO WOW (ESTADÍSTICAS MODERNAS) ------------------- */}
+      <section className="py-20 bg-[#2C2C2C] text-white relative overflow-hidden">
+          {/* Decorative Big Number Background */}
+          <div className="absolute -left-20 top-1/2 -translate-y-1/2 text-white/[0.03] font-serif-display text-[400px] leading-none pointer-events-none">
+              12
+          </div>
+          
+          <div className="max-w-[1400px] mx-auto px-6 relative z-10 grid lg:grid-cols-3 gap-12 items-center">
+             {/* Left: Description */}
+             <div className="lg:col-span-1 border-l border-[#C5A065] pl-8">
+                 <Reveal>
+                     <h3 className="font-serif-display text-3xl mb-4">Crecimiento Sostenido</h3>
+                     <p className="text-white/60 text-sm leading-relaxed">
+                        Desde nuestro inicio en Danlí, hemos expandido nuestra huella de calidad a nuevas regiones, siempre manteniendo el estándar INMAER.
+                     </p>
+                 </Reveal>
+             </div>
+
+             {/* Right: Big Stats Row */}
+             <div className="lg:col-span-2 flex flex-col md:flex-row justify-around items-center gap-12">
+                 <Reveal delay={0.1}>
+                    <div className="text-center group">
+                        <span className="block text-6xl md:text-8xl font-serif-display text-white mb-2 group-hover:text-[#C5A065] transition-colors duration-500">
+                           +850
+                        </span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Familias Residentes</span>
+                    </div>
+                 </Reveal>
+                 
+                 <div className="w-full h-[1px] md:w-[1px] md:h-24 bg-white/10"></div>
+
+                 <Reveal delay={0.2}>
+                    <div className="text-center group">
+                        <span className="block text-6xl md:text-8xl font-serif-display text-white mb-2 group-hover:text-[#C5A065] transition-colors duration-500">
+                           100%
+                        </span>
+                        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Plusvalía Histórica</span>
+                    </div>
+                 </Reveal>
+             </div>
+          </div>
+      </section>
+
       {/* =========================================================================================
           SECCIÓN 3: CIUDAD VENECIA (MARCA PRINCIPAL)
       ========================================================================================= */}
