@@ -322,11 +322,7 @@ export default function Home() {
           {/* Subtle Top Gradient for Depth */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
           
-          {/* MASKING LAYERS TO HIDE SIDE PEEKING */}
-          {/* Left Mask */}
-          <div className="absolute top-0 left-0 bottom-0 w-8 md:w-32 bg-gradient-to-r from-[#F0EEE9] via-[#F0EEE9] to-transparent z-20 pointer-events-none"></div>
-          {/* Right Mask */}
-          <div className="absolute top-0 right-0 bottom-0 w-8 md:w-32 bg-gradient-to-l from-[#F0EEE9] via-[#F0EEE9] to-transparent z-20 pointer-events-none"></div>
+          {/* REMOVED: Gradient Masks as requested by user ("NO ME GUSTA, REVERSA ESO") */}
 
           {/* OVERFLOW HIDDEN to hide side peeking */}
           <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
