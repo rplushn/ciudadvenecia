@@ -224,7 +224,7 @@ export default function Proyectos() {
                          <span className="text-[#C5A065] text-xs font-bold uppercase tracking-widest mb-4 block">Valle de Lepaguare</span>
                          <h2 className="font-serif-display text-5xl md:text-6xl text-[#2C2C2C] mb-6">Olancho Premium</h2>
                          <p className="text-[#6B665F] text-lg leading-relaxed mb-8">
-                             El primer desarrollo \"Resort Living\" de la región. No solo compras un terreno, accedes a un estilo de vida con amenidades nunca antes vistas en Olancho. Aplicando años de experiencia para crear el proyecto más ambicioso hasta la fecha.
+                             El primer desarrollo "Resort Living" de la región. No solo compras un terreno, accedes a un estilo de vida con amenidades nunca antes vistas en Olancho. Aplicando años de experiencia para crear el proyecto más ambicioso hasta la fecha.
                          </p>
                          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
                              {['Casa Club completa con Restaurante', 'Piscina semi-olímpica y de niños', 'Gimnasio equipado y Salón Arcade', 'Canchas Polideportivas'].map((item, i) => (
