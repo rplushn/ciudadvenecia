@@ -295,39 +295,136 @@ export default function Proyectos() {
            </div>
       </section>
 
-      {/* ------------------- 7. NEW UNIQUE CTA: CONCIERGE (No Duplicate Form) ------------------- */}
-      <section className="py-24 px-6 bg-[#2C2C2C] text-white border-t border-white/10">
-          <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-16 items-center">
-             <div className="order-2 md:order-1">
-                <Reveal>
-                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">SERVICIO EXCLUSIVO</span>
-                    <h2 className="font-serif-display text-4xl md:text-5xl mb-6">Concierge Inmobiliario</h2>
-                    <p className="text-white/60 text-lg leading-relaxed mb-8 font-light">
-                        Sabemos que invertir es una decisión importante. Por eso, no te enviamos un PDF genérico. Te asignamos un asesor senior para un recorrido privado y una proyección financiera personalizada.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <Link href="#kontakt" className="bg-[#C5A065] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all text-center">
-                            Agendar Cita Privada
-                        </Link>
-                        <Link href="#" className="border border-white/30 text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all text-center">
-                            Descargar Brochure
-                        </Link>
-                    </div>
-                </Reveal>
-             </div>
-             <div className="order-1 md:order-2">
-                <Reveal delay={0.2}>
-                    <div className="aspect-[4/5] bg-[#1A1A1A] relative overflow-hidden p-2 border border-white/5 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-700">
-                        <img src="/homepage/versalles_outdoor.jpg.jpeg" alt="Concierge Service" className="w-full h-full object-cover opacity-80"/>
-                        <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-6 border border-white/10">
-                             <h4 className="font-serif-display text-2xl mb-1">Experiencia VIP</h4>
-                             <p className="text-[10px] uppercase tracking-widest">Solo con cita previa</p>
-                        </div>
-                    </div>
-                </Reveal>
-             </div>
-          </div>
-      </section>
+      {/* ------------------- 7. CONTACT CTA (Standardized) ------------------- */}
+       <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB]">
+           <div className="max-w-[1200px] mx-auto">
+               
+               {/* Header Centered */}
+               <div className="text-center mb-16">
+                  <Reveal>
+                   <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">ÚLTIMO PASO</span>
+                   <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
+                       ¿Listo para hablar con un asesor?
+                   </h2>
+                   <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">
+                       Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento, sin compromisos ni promesas infladas.
+                   </p>
+                  </Reveal>
+               </div>
+
+               {/* Benefits Row */}
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
+                   {[
+                       "Respuesta en menos de 24 horas hábiles.",
+                       "Información clara sobre cuotas y primas según proyecto.",
+                       "Acompañamiento durante todo el proceso de compra."
+                   ].map((text, i) => (
+                       <Reveal key={i} delay={i * 0.1}>
+                         <div className="flex flex-col items-center">
+                             <div className="text-[#C5A065] text-xl mb-4">✓</div>
+                             <p className="text-[#5C554F] text-xs leading-relaxed max-w-[250px]">{text}</p>
+                         </div>
+                       </Reveal>
+                   ))}
+               </div>
+
+               {/* Split Container */}
+               <div className="grid grid-cols-1 lg:grid-cols-12 shadow-2xl rounded-sm overflow-hidden bg-white">
+                   
+                   {/* LEFT: Info Column */}
+                   <div className="lg:col-span-4 bg-[#EBE7DF] p-10 md:p-12 text-[#484848] flex flex-col justify-center relative overflow-hidden">
+                       <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+                            <svg width="200" height="200" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="40" stroke="#C5A065" strokeWidth="1" />
+                                <circle cx="50" cy="50" r="30" stroke="#C5A065" strokeWidth="0.5" />
+                            </svg>
+                       </div>
+
+                       <Reveal>
+                         <h3 className="font-serif-display text-2xl md:text-3xl mb-6 text-[#2C2C2C]">¿Prefieres hablar directo?</h3>
+                         <p className="text-[#6B665F] text-xs leading-relaxed mb-8">
+                             También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver dudas puntuales sobre financiamiento.
+                         </p>
+                         
+                         <div className="h-[1px] w-12 bg-[#C5A065] mb-8"></div>
+
+                         <div className="space-y-8">
+                             <div>
+                                 <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">TELÉFONO</p>
+                                 <p className="text-sm font-medium text-[#2C2C2C]">(504) 9890-4449 / 2763-3699</p>
+                             </div>
+                             <div>
+                                 <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">WHATSAPP VENTAS</p>
+                                 <p className="text-sm font-medium text-[#2C2C2C]">+504 9549-8925</p>
+                             </div>
+                             <div>
+                                 <p className="text-[#C5A065] text-[9px] uppercase tracking-widest font-bold mb-1">OFICINA DANLÍ</p>
+                                 <p className="text-xs text-[#6B665F] leading-relaxed">
+                                     Col. El Zarzal, Edificio INMAER, contiguo a Pizza Hut, Danlí.
+                                 </p>
+                             </div>
+                         </div>
+                       </Reveal>
+                   </div>
+
+                   {/* RIGHT: Form */}
+                   <div className="lg:col-span-8 bg-white p-10 md:p-12">
+                       <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                           {/* Name */}
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">NOMBRE COMPLETO</label>
+                               <input type="text" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                           </div>
+                           
+                           {/* Phone */}
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">TELÉFONO / WHATSAPP</label>
+                               <input type="text" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                           </div>
+
+                           {/* Email */}
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">CORREO ELECTRÓNICO</label>
+                               <input type="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                           </div>
+
+                           {/* Project Dropdown */}
+                           <div className="md:col-span-1 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
+                               <div className="relative">
+                                   <select className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
+                                       <option>Seleccionar...</option>
+                                       <option>Ciudad Venecia Danlí</option>
+                                       <option>Ciudad Venecia Olancho</option>
+                                       <option>Ciudad Venecia Valle</option>
+                                       <option>Residencial Versalles</option>
+                                   </select>
+                                   <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                       <span className="text-xs">▼</span>
+                                   </div>
+                               </div>
+                           </div>
+
+                           {/* Message */}
+                           <div className="md:col-span-2 group">
+                               <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">¿QUÉ TIENES EN MENTE?</label>
+                               <textarea rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea>
+                           </div>
+
+                           {/* Submit Button */}
+                           <div className="md:col-span-2 mt-6 flex flex-col items-center">
+                               <button type="submit" className="px-12 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] transition-all duration-500 shadow-md hover:shadow-lg w-full md:w-auto">
+                                   ENVIAR Y HABLAR CON UN ASESOR
+                               </button>
+                               <p className="text-center text-[9px] text-gray-400 mt-6 leading-relaxed max-w-md">
+                                   Al enviar este formulario aceptas ser contactado por INMAER para recibir información sobre el proyecto seleccionado.
+                               </p>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </section>
 
       {/* Footer - CORPORATE & ROBUST STYLE (Exact Clone) */}
       <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
