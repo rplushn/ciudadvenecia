@@ -152,7 +152,7 @@ export default function Home() {
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 flex items-center justify-between">
-          <Link href="#start" className="flex items-center gap-3 group">
+          <Link href="/#start" className="flex items-center gap-3 group">
              <div className={`transition-colors duration-300 ${isAtTop ? 'text-white' : 'text-white'}`}>
                 {/* LOGO SVG RECREATION */}
                 <svg height="45" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
@@ -181,13 +181,13 @@ export default function Home() {
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             {/* Main Navigation Links */}
             <div className="flex items-center gap-8">
-                <Link href="#start" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                <Link href="/#start" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
                   Inicio
                 </Link>
                 <Link href="/quienes-somos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
                   Quiénes Somos
                 </Link>
-                <Link href="#proyectos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                <Link href="/proyectos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
                   Proyectos
                 </Link>
                 <Link href="#" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
@@ -266,7 +266,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             className="flex justify-center"
           >
-            <Link href="#proyectos" className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
+            <Link href="/proyectos" className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
               Conoce Más
             </Link>
           </motion.div>
@@ -350,7 +350,7 @@ export default function Home() {
                     <p className="text-[#6B665F] text-base font-light leading-relaxed mb-8">
                         Cada rincón de Ciudad Venecia ha sido planeado con atención al detalle, fusionando diseño arquitectónico innovador con la calidez de una comunidad auténtica.
                     </p>
-                    <Link href="#proyectos" className="inline-block px-8 py-3 border-2 border-[#2C2C2C] text-[#2C2C2C] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
+                    <Link href="/proyectos" className="inline-block px-8 py-3 border-2 border-[#2C2C2C] text-[#2C2C2C] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
                         Ver Recorrido Virtual
                     </Link>
                   </Reveal>
@@ -493,9 +493,9 @@ export default function Home() {
                     </div>
 
                     <Reveal delay={0.7}>
-                      <button className="bg-[#2C2C2C] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-colors shadow-lg">
+                      <Link href="/proyectos" className="bg-[#2C2C2C] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-colors shadow-lg">
                          VER PROYECTOS
-                      </button>
+                      </Link>
                     </Reveal>
                  </div>
              </div>
@@ -550,8 +550,7 @@ export default function Home() {
                           <span className="w-1.5 h-1.5 rounded-full bg-[#C5A065]"></span>
                           {item}
                        </li>
-                    ))}
-                 </ul>
+                    ))}\n                 </ul>
                </Reveal>
             </div>
             <div className="relative h-[600px]">
@@ -618,7 +617,7 @@ export default function Home() {
                </div>
 
                <Reveal delay={0.5}>
-                 <Link href="#proyectos" className="inline-block px-8 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#A88650] transition-colors shadow-lg">
+                 <Link href="/proyectos" className="inline-block px-8 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#A88650] transition-colors shadow-lg">
                     Ver Proyectos
                  </Link>
                </Reveal>
@@ -796,7 +795,7 @@ export default function Home() {
                 
                 <Reveal delay={0.5}>
                   <div className="mt-12">
-                       <Link href="#proyectos" className="inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300">
+                       <Link href="/proyectos" className="inline-block px-10 py-4 border border-white/30 text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#1A2C38] transition-all duration-300">
                           Conoce INMAER
                        </Link>
                   </div>
@@ -989,7 +988,7 @@ export default function Home() {
            </div>
        </section>
 
-      {/* Footer - CORPORATE & ROBUST STYLE (Reverted to #1A3A52) */}
+      {/* Footer - CORPORATE & ROBUST STYLE (Exact Clone from Home) */}
       <footer className="bg-[#1A3A52] text-white pt-24 pb-12 border-t border-[#C5A065]/20 relative overflow-hidden">
         {/* Background Pattern - subtle logo watermark */}
         <div className="absolute top-0 right-0 opacity-[0.03] pointer-events-none transform translate-x-1/3 -translate-y-1/3">
