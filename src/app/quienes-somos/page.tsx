@@ -163,56 +163,25 @@ export default function QuienesSomos() {
         </div>
       </nav>
 
-      {/* ------------------- 1. HERO SECTION (REDESIGNED) ------------------- */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image - Local Asset for better brand alignment */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/homepage/versalles_outdoor.jpg.jpeg" 
-            alt="Ciudad Venecia Lifestyle" 
-            className="w-full h-full object-cover transform scale-105 animate-slowZoom"
-          />
-          {/* Heavy Overlay for Elegance */}
-          <div className="absolute inset-0 bg-black/50 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C] via-transparent to-black/20"></div>
-        </div>
-        
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-20">
-            <motion.span 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-[#C5A065] font-bold uppercase tracking-[0.4em] text-xs mb-8 block"
-            >
-                INMAER Real Estate
-            </motion.span>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="font-serif-display text-5xl md:text-8xl text-white leading-[0.9] mb-8"
-            >
-                Más que tierra, <br/> <span className="italic font-light text-[#EBE7DF]">creamos futuro.</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-white/80 text-base md:text-xl font-light max-w-xl mx-auto leading-relaxed"
-            >
+      {/* ------------------- 1. HERO SECTION (REDESIGNED TO MATCH PROYECTOS) ------------------- */}
+      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#1A3A52]">
+         <div className="absolute inset-0 opacity-40">
+            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}></div>
+         </div>
+         <div className="absolute inset-0 bg-gradient-to-b from-[#1A3A52]/80 to-[#1A3A52]"></div>
+         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
+            <Reveal>
+              <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.4em] mb-6 block">
+                  INMAER Real Estate
+              </span>
+              <h1 className="font-serif-display text-5xl md:text-8xl text-white mb-8 leading-none">
+                Más que tierra, <br/><span className="italic font-light text-white/50">creamos futuro.</span>
+              </h1>
+              <p className="text-white/70 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
                 Somos los arquitectos detrás de Ciudad Venecia. Desarrollamos comunidades planeadas para que tu inversión crezca tan fuerte como tu familia.
-            </motion.p>
-        </div>
-        
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50"
-        >
-            <span className="text-xs uppercase tracking-widest">Descubre Nuestra Historia</span>
-            <div className="text-xl mt-1 text-center">↓</div>
-        </motion.div>
+              </p>
+            </Reveal>
+         </div>
       </section>
 
       {/* ------------------- 2. THE MANIFESTO (Text Heavy / Elegant) ------------------- */}
