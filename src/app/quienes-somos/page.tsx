@@ -552,7 +552,8 @@ export default function QuienesSomos() {
 
                 {/* Navigation Column */}
                 <div>
-                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>\n                    <ul className="space-y-4">
+                    <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
+                    <ul className="space-y-4">
                         <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
                         <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
                         <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
@@ -563,8 +564,10 @@ export default function QuienesSomos() {
                 {/* Contact Column */}
                 <div>
                      <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Oficina Corporativa</h4>
-                     <p className="text-sm font-medium mb-1">Col. El Zarzal, Edificio INMAER</p>\n                     <p className="text-white/60 text-xs mb-6">Danlí, El Paraíso, Honduras</p>
-                     \n                     <p className="text-white/60 text-[10px] uppercase tracking-wider mb-1">Llámanos</p>
+                     <p className="text-sm font-medium mb-1">Col. El Zarzal, Edificio INMAER</p>
+                     <p className="text-white/60 text-xs mb-6">Danlí, El Paraíso, Honduras</p>
+                     
+                     <p className="text-white/60 text-[10px] uppercase tracking-wider mb-1">Llámanos</p>
                      <p className="text-lg font-serif-display text-white">(504) 9890-4449</p>
                 </div>
 
@@ -573,18 +576,18 @@ export default function QuienesSomos() {
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
                     <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
                     <div className="flex border-b border-white/20 pb-2">
-                        <input type=\"email\" placeholder=\"Tu correo electrónico\" className=\"bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30\"/>
-                        <button className=\"text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors\">Suscribir</button>
+                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
                     </div>
                 </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className=\"pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4\">
-                <p className=\"text[10px] text-white/40 uppercase tracking-widest\">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-                <div className=\"flex gap-8\">
-                     <Link href=\"#\" className=\"text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors\">Privacidad</Link>
-                     <Link href=\"#\" className=\"text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors\">Términos</Link>
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
+                <div className="flex gap-8">
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>
