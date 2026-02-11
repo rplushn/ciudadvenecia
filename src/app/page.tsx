@@ -273,7 +273,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 1.5. CREATED BY INMAER (NEW SECTION) */}
+      {/* 2. INTRO / WELCOME (PASTEL TONE #F7F6F4) */}
+      <section className="py-24 px-6 bg-[#F7F6F4] text-center">
+         <div className="max-w-4xl mx-auto">
+            <Reveal>
+              <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
+                 Un estilo de vida <span className="italic">extraordinario</span>
+              </h2>
+              <div className="w-16 h-[1px] bg-[#C5A065] mx-auto mb-8"></div>
+              <p className="text-[#666] font-light text-lg leading-relaxed max-w-2xl mx-auto">
+                 Descubre Ciudad Venecia, donde la naturaleza y la arquitectura moderna convergen para crear el escenario perfecto para tu familia. Espacios diseñados para perdurar.
+              </p>
+            </Reveal>
+         </div>
+      </section>
+
+      {/* 2.5. CREATED BY INMAER (NEW LOCATION) */}
       <section className="bg-[#F0EEE9] pt-12 pb-12 text-center border-b border-[#EBE7DF]">
           <div className="max-w-[1000px] mx-auto px-6">
               <Reveal>
@@ -293,21 +308,6 @@ export default function Home() {
                   </div>
               </Reveal>
           </div>
-      </section>
-
-      {/* 2. INTRO / WELCOME (PASTEL TONE #F7F6F4) */}
-      <section className="py-24 px-6 bg-[#F7F6F4] text-center">
-         <div className="max-w-4xl mx-auto">
-            <Reveal>
-              <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
-                 Un estilo de vida <span className="italic">extraordinario</span>
-              </h2>
-              <div className="w-16 h-[1px] bg-[#C5A065] mx-auto mb-8"></div>
-              <p className="text-[#666] font-light text-lg leading-relaxed max-w-2xl mx-auto">
-                 Descubre Ciudad Venecia, donde la naturaleza y la arquitectura moderna convergen para crear el escenario perfecto para tu familia. Espacios diseñados para perdurar.
-              </p>
-            </Reveal>
-         </div>
       </section>
 
       {/* 3. AMENITIES CAROUSEL - DARKER BG WITH GRADIENT */}
