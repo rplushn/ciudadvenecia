@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';
-// import Footer from '@/components/Footer'; // Footer component removed in favor of inline clone for strict unification
 
 export default function QuienesSomos() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -608,8 +607,8 @@ export default function QuienesSomos() {
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
                     <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
                     <div className="flex border-b border-white/20 pb-2">
-                        <input type=\"email\" placeholder=\"Tu correo electrónico\" className=\"bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30\"/>
-                        <button className=\"text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors\">Suscribir</button>
+                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
                     </div>
                 </div>
             </div>
