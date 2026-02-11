@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* 2.5. CREATED BY INMAER (NEW LOCATION) */}
-      <section className="bg-[#F0EEE9] pt-12 pb-12 text-center border-b border-[#EBE7DF]">
+      <section className="bg-[#EBE9E3] pt-12 pb-12 text-center border-b border-[#EBE7DF]">
           <div className="max-w-[1000px] mx-auto px-6">
               <Reveal>
                   <div className="flex flex-col items-center justify-center gap-6">
@@ -318,7 +318,7 @@ export default function Home() {
       </section>
 
       {/* 3. AMENITIES CAROUSEL - TERRASOLES INFINITE LOOP STYLE */}
-      <section className="bg-[#F0EEE9] pt-8 pb-16 relative group" ref={carouselRef}>
+      <section className="bg-[#F0EEE9] pt-8 pb-16 relative group mt-10" ref={carouselRef}>
           {/* Subtle Top Gradient for Depth */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
           
