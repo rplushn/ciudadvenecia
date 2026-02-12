@@ -296,8 +296,8 @@ export default function Home() {
          </div>
       </section>
 
-      {/* 2.5. CREATED BY INMAER (UNIFIED BACKGROUND) */}
-      <section className="bg-[#F5F3EE] pt-12 pb-12 text-center">
+      {/* 2.5. CREATED BY INMAER (DARKER SEPARATED SECTION) */}
+      <section className="bg-[#E8E4DA] pt-12 pb-12 text-center border-b border-[#D5CFC1]">
           <div className="max-w-[1000px] mx-auto px-6">
               <Reveal>
                   <div className="flex flex-col items-center justify-center gap-6">
@@ -318,10 +318,8 @@ export default function Home() {
           </div>
       </section>
 
-      {/* 3. AMENITIES CAROUSEL - TERRASOLES STYLE WITH UNIFIED BACKGROUND */}
+      {/* 3. AMENITIES CAROUSEL - TERRASOLES STYLE WITH LIGHTER BACKGROUND */}
       <section className="bg-[#F5F3EE] pt-8 pb-16 relative group" ref={carouselRef}>
-          {/* REMOVED: Gradient overlay that was causing the color break */}
-          
           {/* OVERFLOW HIDDEN to hide side peeking */}
           <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
                {/* Carousel Slides - Show 2 items, move by 1 item width at a time */}
