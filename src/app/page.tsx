@@ -323,18 +323,16 @@ export default function Home() {
           {/* Subtle Top Gradient for Depth */}
           <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
           
-          {/* REMOVED: Gradient Masks as requested by user ("NO ME GUSTA, REVERSA ESO") */}
-
-          {/* OVERFLOW HIDDEN to hide side peeking */}
-          <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
+          {/* OVERFLOW HIDDEN to hide side peeking - ADDED max-width constraint */}
+          <div className="max-w-[1040px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
                {/* Carousel Slides - Show 2 items, move by 1 item width at a time */}
-               {/* Calculation: 2 items per view = 50% width each.  */}
-               <div className="flex transition-transform duration-[800ms] ease-in-out" 
-                    style={{ transform: `translateX(-${currentIndex * 50}%)` }}>
+               {/* ADJUSTED: Changed from min-w-[50%] to min-w-[40%] for 20% size reduction + gap */}
+               <div className="flex transition-transform duration-[800ms] ease-in-out gap-6" 
+                    style={{ transform: `translateX(-${currentIndex * (40 + 2.4)}%)` }}>
                    
                    {/* We render ALL items in a single row. */}
                    {carouselData.map((item, idx) => (
-                       <div key={idx} className="min-w-[50%] px-3 box-border">
+                       <div key={idx} className="min-w-[40%] flex-shrink-0">
                            <div className="relative aspect-[16/10] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
                                
@@ -1028,7 +1026,8 @@ export default function Home() {
                 <g transform="translate(40, 40)">
                      {Array.from({ length: 24 }).map((_, i) => (
                         <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5" />
-                     ))}\n                </g>
+                     ))}
+                </g>
              </svg>
         </div>
 
