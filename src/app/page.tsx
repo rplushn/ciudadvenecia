@@ -288,7 +288,9 @@ export default function Home() {
               <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
                  Un estilo de vida <span className="italic">extraordinario</span>
               </h2>
-              <div className="w-16 h-[1px] bg-[#C5A065] mx-auto mb-8"></div>
+              <span className="flex justify-center mb-8">
+                <div className="w-16 h-[1px] bg-[#C5A065]"></div>
+              </span>
               <p className="text-[#666] font-light text-lg leading-relaxed max-w-2xl mx-auto">
                  Descubre Ciudad Venecia, donde la naturaleza y la arquitectura moderna convergen para crear el escenario perfecto para tu familia. Espacios diseñados para perdurar.
               </p>
@@ -527,7 +529,7 @@ export default function Home() {
              </div>
 
              {/* PART 3: BOTTOM SPLIT (Infrastructure) */}
-             <div className="mt-24 pt-12 border-t border-gray-100">
+             <div className="mt-24 pt-12 border-t border-gray-100 pl-5">
                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                      {/* Left: Text */}
                      <div>
