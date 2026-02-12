@@ -296,8 +296,8 @@ export default function Home() {
          </div>
       </section>
 
-      {/* 2.5. CREATED BY INMAER (NEW LOCATION) */}
-      <section className="bg-[#EBE9E3] pt-12 pb-12 text-center border-b border-[#EBE7DF]">
+      {/* 2.5. CREATED BY INMAER (UNIFIED BACKGROUND) */}
+      <section className="bg-[#F5F3EE] pt-12 pb-12 text-center">
           <div className="max-w-[1000px] mx-auto px-6">
               <Reveal>
                   <div className="flex flex-col items-center justify-center gap-6">
@@ -318,10 +318,9 @@ export default function Home() {
           </div>
       </section>
 
-      {/* 3. AMENITIES CAROUSEL - TERRASOLES INFINITE LOOP STYLE */}
-      <section className="bg-[#F0EEE9] pt-8 pb-16 relative group mt-10" ref={carouselRef}>
-          {/* Subtle Top Gradient for Depth */}
-          <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBE7DF] to-transparent z-0 pointer-events-none"></div>
+      {/* 3. AMENITIES CAROUSEL - TERRASOLES STYLE WITH UNIFIED BACKGROUND */}
+      <section className="bg-[#F5F3EE] pt-8 pb-16 relative group" ref={carouselRef}>
+          {/* REMOVED: Gradient overlay that was causing the color break */}
           
           {/* OVERFLOW HIDDEN to hide side peeking */}
           <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
@@ -366,8 +365,8 @@ export default function Home() {
           </div>
       </section>
 
-      {/* 4. VIDEO SHOWCASE SECTION (MATCHING BG TONE #F0EEE9) */}
-      <section className="bg-[#F0EEE9] py-20 px-6">
+      {/* 4. VIDEO SHOWCASE SECTION (UNIFIED BACKGROUND) */}
+      <section className="bg-[#F5F3EE] py-20 px-6">
           <div className="max-w-[1300px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left: Text Content */}
               <div className="order-2 lg:order-1">
