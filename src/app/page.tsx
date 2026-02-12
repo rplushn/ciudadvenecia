@@ -319,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* 3. AMENITIES CAROUSEL - TERRASOLES INFINITE LOOP STYLE */}
-      <section className="bg-[#F5F3EE] pt-8 pb-16 relative group" ref={carouselRef}>
+      <section className="bg-[#F5F3EE] pt-[74px] pb-16 relative group" ref={carouselRef}>
           {/* OVERFLOW HIDDEN to hide side peeking */}
           <div className="max-w-[1300px] mx-auto px-6 mb-12 relative z-10 overflow-hidden">
                {/* Carousel Slides - Show 2 items, move by 1 item width at a time */}
@@ -403,9 +403,9 @@ export default function Home() {
         {/* Adjusted Overlay: Warm Beige/Brown Tone (#8C8276/90) */}
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
         {/* Additional light layer for Terrasoles look */}
-        <div className="absolute inset-0 bg-[#A69C91]/30"></div>
+        <div className="absolute inset-0 bg-[#A69C91]/30 pb-[30px]"></div>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto text-center text-white">
+        <div className="relative z-10 max-w-[1200px] mx-auto text-center text-white mt-[30px] mb-[30px]">
            <Reveal>
              <h2 className="font-serif-display text-4xl md:text-5xl tracking-widest mb-6 drop-shadow-md">PRECIOS EXCLUSIVOS</h2>
              <p className="font-light text-sm md:text-base max-w-3xl mx-auto mb-16 text-gray-100 drop-shadow-sm">
@@ -563,7 +563,7 @@ export default function Home() {
       {/* 7. AMENIDADES ("ESPACIOS QUE INSPIRAN TRANQUILIDAD") */}
       <section id="amenidades" className="py-24 bg-[#EBE7DF] text-[#4A403A]">
          <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="ml-[30px]">
                <Reveal>
                  <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Amenidades</span>
                  <h2 className="font-serif-display text-4xl md:text-5xl mb-6 leading-tight text-[#2C2C2C]">Espacios que <br/>inspiran tranquilidad</h2>
