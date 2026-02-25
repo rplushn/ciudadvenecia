@@ -18,19 +18,18 @@ export default function Hero() {
         }}
       />
 
-      {/* Video Background (uncomment when you have the drone video) */}
-      {/*
+      {/* Video Background (using Clip 1.mp4 from public folder) */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+        style={{ opacity: isVideoLoaded ? 1 : 0 }}
         onLoadedData={() => setIsVideoLoaded(true)}
       >
-        <source src="/videos/drone-video.mp4" type="video/mp4" />
+        <source src="/Clip 1.mp4" type="video/mp4" />
       </video>
-      */}
 
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
