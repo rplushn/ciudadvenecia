@@ -71,18 +71,18 @@ export default function Home() {
   // DATA: Augmented to 13 items as requested (9 original + 4 added)
   // FIXED: Validated paths against existing files in public/amenidades and public/homepage
   const carouselData = [
-    { title: "Parque Central", img: "/amenidades/amenidades002.jpg.jpeg" }, // Replaced missing file with existing amenidades002
-    { title: "Club Social", img: "/amenidades/amenidades_club.jpg.jpeg" },
+    { title: "Parque Central", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE002.png" }, // Replaced missing file with existing amenidades002
+    { title: "Club Social", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES005.png" },
     { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg" }, // Fixed extension from .jpg.jpeg to .jpg
     { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
     { title: "Canchas Deportivas", img: "/homepage/cancha_tennis.jpg.jpeg" }, // Replaced missing amenidades_cancha with existing tennis court
-    { title: "Áreas Verdes", img: "/homepage/versalles_outdoor.jpg.jpeg" },
-    { title: "Senderos", img: "/homepage/outdoor2.jpg.jpeg" },
-    { title: "Juegos Infantiles", img: "/amenidades/amenidades005.jpg.jpeg" }, // Replaced missing familia_jugando with amenidades015
-    { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
+    { title: "Áreas Verdes", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE.png" },
+    { title: "Senderos", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.png" },
+    { title: "Juegos Infantiles", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.png" }, // Replaced missing familia_jugando with amenidades015
+    { title: "Zona BBQ", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/ASADOR.png" },
     // 4 New Added Items reusing available assets to ensure loop feel
     { title: "Entrada Principal", img: "/homepage/portal_ai-ciudad_venecia.jpeg" },
-    { title: "Vistas Panorámicas", img: "/homepage/casa_fachada.jpg.jpeg" }, 
+    { title: "Vistas Panorámicas", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.png" }, 
     { title: "Seguridad 24/7", img: "/amenidades/amenidades_club.jpg.jpeg" }, // Reusing for demo
     { title: "Comunidad", img: "/homepage/casa_patio.jpeg" }, // Replaced missing familia_jugando with casa_patio
   ];
@@ -244,23 +244,25 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION — Background image (no video) */}
       <section className="relative h-screen w-full overflow-hidden flex items-center justify-center" id="start">
         <div className="absolute inset-0 z-0">
-          <img src="/homepage/portal_ai-ciudad_venecia.jpeg" alt="Ciudad Venecia Portal" className="h-full w-full object-cover transform scale-105 animate-slowZoom" />
-          <div className="absolute inset-0 bg-[#2C2520]/20 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-black/10"></div> 
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.png')" }}
+          />
+          <div className="absolute inset-0 bg-[#1A1A1A]/30 pointer-events-none" />
         </div>
-        <div className="relative z-10 w-full max-w-[1400px] px-6 text-center text-white mt-16">
-          <motion.h1 
+        <div className="relative z-10 w-full max-w-[1400px] px-6 text-center text-white mt-16 flex flex-col items-center justify-center">
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-lg"
+            className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-md"
           >
             Terrenos residenciales dentro <br className="hidden md:block" /> del nuevo Oriente
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
@@ -268,7 +270,7 @@ export default function Home() {
           >
             CON VÍAS DE ACCESO QUE TE CONECTARÁN CON TODO LO QUE NECESITAS
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
@@ -332,14 +334,14 @@ export default function Home() {
                    {/* We render ALL items in a single row. */}
                    {carouselData.map((item, idx) => (
                        <div key={idx} className="min-w-[50%] px-8 box-border">
-                           <div className="relative aspect-[16/10] overflow-hidden group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
+                           <div className="relative aspect-[16/10] overflow-hidden group group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
-                               
-                               {/* Dark fade for readability */}
-                               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                               {/* Overlay café oscuro corporativo */}
+                               <div className="absolute inset-0 bg-[#2C231A]/30 mix-blend-multiply transition-opacity duration-500 group-hover:bg-[#2C231A]/10 pointer-events-none z-10" />
+                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none z-10" />
 
                                {/* Title inside image - CENTERED & LARGE */}
-                               <div className="absolute bottom-8 left-0 right-0 text-center px-4">
+                               <div className="absolute bottom-8 left-0 right-0 text-center px-4 z-20">
                                    <h4 className="text-white text-sm md:text-lg font-bold uppercase tracking-[0.25em] drop-shadow-md">
                                      {item.title}
                                    </h4>

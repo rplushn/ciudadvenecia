@@ -1,35 +1,17 @@
 "use client";
 
-import { useState } from 'react';
 import BlurText from './BlurText';
 
 export default function Hero() {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
   return (
     <section className="relative w-full h-screen overflow-hidden">
-      {/* Temporary Background Image (replace with your image) */}
-      <div 
+      {/* Background Image */}
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070')",
-          filter: isVideoLoaded ? 'opacity(0)' : 'opacity(1)',
-          transition: 'opacity 1s ease-in-out'
+          backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')",
         }}
       />
-
-      {/* Video Background (using Clip 1.mp4 from public folder) */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-        style={{ opacity: isVideoLoaded ? 1 : 0 }}
-        onLoadedData={() => setIsVideoLoaded(true)}
-      >
-        <source src="/Clip 1.mp4" type="video/mp4" />
-      </video>
 
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
