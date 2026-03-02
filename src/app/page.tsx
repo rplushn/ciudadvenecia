@@ -2,9 +2,12 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
-import CountUp from '@/components/motion/CountUp';
+import CountUp from '@/components/motion/CountUp';   
+import GridRevealHero from '@/components/motion/GridRevealHero';
+import TextReveal from '@/components/motion/TextReveal';
 
 // Hook for Animated Counters (Kept for reference, but superseded by CountUp component)
 function useCounter(end, duration = 2000) {
@@ -69,17 +72,17 @@ export default function Home() {
   const carouselRef = useRef<HTMLDivElement>(null);
   
   const carouselData = [
-    { title: "Parque Central", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE002.png" },
-    { title: "Club Social", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES005.png" },
+    { title: "Parque Central", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE002.jpg" },
+    { title: "Club Social", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES005.jpg" },
     { title: "Canchas de Padel", img: "/amenidades/amenidades_padel.jpg" },
     { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
     { title: "Canchas Deportivas", img: "/homepage/cancha_tennis.jpg.jpeg" },
-    { title: "Áreas Verdes", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE.png" },
-    { title: "Senderos", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.png" },
-    { title: "Juegos Infantiles", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.png" },
-    { title: "Zona BBQ", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/ASADOR.png" },
+    { title: "Áreas Verdes", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE.jpg" },
+    { title: "Senderos", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg" },
+    { title: "Juegos Infantiles", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.jpg" },
+    { title: "Zona BBQ", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/ASADOR.jpg" },
     { title: "Entrada Principal", img: "/homepage/portal_ai-ciudad_venecia.jpeg" },
-    { title: "Vistas Panorámicas", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.png" }, 
+    { title: "Vistas Panorámicas", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.jpg" }, 
     { title: "Seguridad 24/7", img: "/amenidades/amenidades_club.jpg.jpeg" },
     { title: "Comunidad", img: "/homepage/casa_patio.jpeg" },
   ];
@@ -120,9 +123,7 @@ export default function Home() {
   // Carousel Auto-scroll
   useEffect(() => {
     const interval = setInterval(() => {
-        if (carouselRef.current && !carouselRef.current.matches(':hover')) {
-             nextSlide();
-        }
+        nextSlide();
     }, 5000);
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -138,13 +139,13 @@ export default function Home() {
 
   // Projects data for the grid
   const proyectos = [
-    { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/homepage/casa_fachada.jpg.jpeg", slug: "/proyectos/danli" },
-    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", badge: "PREMIUM", img: "/homepage/versalles_outdoor.jpg.jpeg", slug: "/proyectos/olancho" },
-    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", badge: "NUEVO 2026", img: "/homepage/casa_patio.jpeg", slug: "/proyectos/talanga" },
-    { name: "Ciudad Venecia San Lorenzo", location: "Valle", badge: null, img: "/amenidades/amenidades_club.jpg.jpeg", slug: "/proyectos/san-lorenzo" },
-    { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES005.png", slug: "/proyectos/versalles" },
-    { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/homepage/portal_ai-ciudad_venecia.jpeg", slug: "#" },
-    { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", badge: "PRÓXIMAMENTE", img: "/amenidades/amenidades_piscina002.jpeg", slug: "#" },
+    { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg", slug: "/proyectos/danli" },
+    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", badge: "PREMIUM", img: "/amenidades/CV_OLANCHO.jpg.jpeg", slug: "/proyectos/olancho" },
+    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", badge: "NUEVO 2026", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", slug: "/proyectos/talanga" },
+    { name: "Ciudad Venecia San Lorenzo", location: "Valle", badge: null, img: "/amenidades/san_lorenzo.jpeg", slug: "/proyectos/san-lorenzo" },
+    { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg", slug: "/proyectos/versalles" },
+    { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", slug: "#" },
+    { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", badge: "PRÓXIMAMENTE", img: "/homepage/portal_ai-ciudad_venecia.jpeg", slug: "#" },
   ];
 
   return (
@@ -244,46 +245,32 @@ export default function Home() {
       {/* ============================================ */}
       {/* SECCIÓN 1: HERO — SIN CAMBIOS */}
       {/* ============================================ */}
-      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center" id="start">
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.png')" }}
-          />
-          <div className="absolute inset-0 bg-[#1A1A1A]/30 pointer-events-none" />
-        </div>
-        <div className="relative z-10 w-full max-w-[1400px] px-6 text-center text-white mt-16 flex flex-col items-center justify-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-md"
-          >
-            Terrenos residenciales dentro <br className="hidden md:block" /> del nuevo Oriente
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-            className="text-[#E5D5B0] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-12 drop-shadow-sm"
-          >
-            CON VÍAS DE ACCESO QUE TE CONECTARÁN CON TODO LO QUE NECESITAS
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-            className="flex justify-center gap-4 flex-wrap"
-          >
-            <Link href="/proyectos" className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
-              Ver Proyectos
-            </Link>
-            <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="group relative inline-block px-10 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#A88650] transition-all duration-300">
-              WhatsApp Ventas
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      <GridRevealHero
+  imageSrc="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg"
+  cols={8}
+  rows={5}
+  direction="bottomRight" 
+  staggerDelay={0.14}
+  tileDuration={1.4}
+>
+  <div className="w-full max-w-[1400px] px-6 text-center text-white mt-16 flex flex-col items-center justify-center">
+    <h1 className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-md">
+      CIUDAD VENECIA<br />
+      <span className="italic">Tu vida aquí.</span>
+    </h1>
+    <p className="text-[#E5D5B0] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-12 drop-shadow-sm">
+      TERRENOS RESIDENCIALES DESDE L. 2,500 DE PRIMA · DANLÍ · OLANCHO · VALLE
+    </p>
+    <div className="flex justify-center gap-4 flex-wrap">
+      <a href="/proyectos" className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
+        Ver Proyectos
+      </a>
+      <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="group relative inline-block px-10 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#A88650] transition-all duration-300">
+        WhatsApp Ventas
+      </a>
+    </div>
+  </div>
+</GridRevealHero>
 
       {/* ============================================ */}
       {/* SECCIÓN 2: PROPUESTA DE VALOR */}
@@ -294,9 +281,7 @@ export default function Home() {
       <section className="py-24 px-6 bg-[#F7F6F4] text-center">
          <div className="max-w-4xl mx-auto">
             <Reveal>
-              <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">
-                 Un estilo de vida <span className="italic">extraordinario</span>
-              </h2>
+              <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Un estilo de vida extraordinario</TextReveal>
               <span className="flex justify-center mb-8">
                 <div className="w-16 h-[1px] bg-[#C5A065]"></div>
               </span>
@@ -336,8 +321,8 @@ export default function Home() {
                        <div key={idx} className="min-w-[50%] px-8 box-border">
                            <div className="relative aspect-[16/10] overflow-hidden group group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
                                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
-                               <div className="absolute inset-0 bg-[#2C231A]/30 mix-blend-multiply transition-opacity duration-500 group-hover:bg-[#2C231A]/10 pointer-events-none z-10" />
-                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none z-10" />
+                               <div className="absolute inset-0 bg-[#2C231A]/10 mix-blend-multiply pointer-events-none z-10" />
+                               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none z-10" />
                                <div className="absolute bottom-8 left-0 right-0 text-center px-4 z-20">
                                    <h4 className="text-white text-sm md:text-lg font-bold uppercase tracking-[0.25em] drop-shadow-md">
                                      {item.title}
@@ -371,7 +356,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-[1200px] mx-auto text-center text-white mt-[30px] mb-[30px]">
            <Reveal>
-             <h2 className="font-serif-display text-4xl md:text-5xl tracking-widest mb-6 drop-shadow-md">PRECIOS EXCLUSIVOS</h2>
+             <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl tracking-widest mb-6 drop-shadow-md">PRECIOS EXCLUSIVOS</TextReveal>
              <p className="font-light text-sm md:text-base max-w-3xl mx-auto mb-16 text-gray-100 drop-shadow-sm">
                 Adquiere tu terreno en Ciudad Venecia con exclusivos precios de lanzamiento, descubre los planes de financiamiento y las tasas preferenciales que mejor se adapten a ti.
              </p>
@@ -435,7 +420,7 @@ export default function Home() {
               <div className="text-center mb-16">
                   <Reveal>
                     <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">Portafolio</span>
-                    <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4">Nuestros Proyectos</h2>
+                    <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4">Nuestros Proyectos</TextReveal>
                     <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">
                         Presencia en 4 ciudades de Honduras con desarrollos residenciales que combinan ubicación estratégica, servicios completos y alta plusvalía.
                     </p>
@@ -447,10 +432,11 @@ export default function Home() {
                   {proyectos.map((proyecto, i) => (
                       <Reveal key={i} delay={i * 0.1}>
                         <Link href={proyecto.slug} className="relative aspect-[4/3] group overflow-hidden cursor-pointer block shadow-lg">
-                            <img 
+                            <Image 
                                 src={proyecto.img} 
                                 alt={proyecto.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
                             
@@ -511,7 +497,7 @@ export default function Home() {
             <div className="ml-[30px]">
                <Reveal>
                  <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] block mb-4">Amenidades</span>
-                 <h2 className="font-serif-display text-4xl md:text-5xl mb-6 leading-tight text-[#2C2C2C]">Espacios que <br/>inspiran tranquilidad</h2>
+                 <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl mb-6 leading-tight text-[#2C2C2C]">Espacios que inspiran tranquilidad</TextReveal>
                  <p className="text-[#6B665F] font-light mb-8 leading-relaxed">
                     Cada rincón de Ciudad Venecia ha sido planeado para ofrecerte la máxima calidad de vida. Disfruta de nuestras casas club, piscinas y áreas verdes protegidas.
                  </p>
@@ -527,11 +513,11 @@ export default function Home() {
             </div>
             <div className="relative h-[600px]">
                <Reveal delay={0.2} className="h-full">
-                 <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl">
-                    <img src="/homepage/patio_asador.jpg.jpeg" className="w-full h-full object-cover" />
+                 <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl relative">
+                    <Image src="/homepage/patio_asador.jpg.jpeg" alt="Amenidades" fill className="object-cover" />
                  </div>
-                 <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl">
-                    <img src="/amenidades/amenidades_piscina002.jpeg" className="w-full h-full object-cover" />
+                 <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl relative">
+                    <Image src="/amenidades/amenidades_piscina002.jpeg" alt="Piscina" fill className="object-cover" />
                  </div>
                </Reveal>
             </div>

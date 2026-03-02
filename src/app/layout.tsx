@@ -22,15 +22,18 @@ export const metadata: Metadata = {
   description: "Desarrollos inmobiliarios premium en Honduras. Plusvalía, seguridad y naturaleza.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+import SmoothScroll from '@/components/motion/SmoothScroll';
+
+export default function RootLayout({ children }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body className={`${inter.variable} ${lato.variable} font-body antialiased`}>
-        {children}
+    <html lang="es">
+      <head>
+        <link rel="preload" href="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg" as="image" />
+      </head>
+      <body>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
