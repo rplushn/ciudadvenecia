@@ -8,6 +8,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';   
 import GridRevealHero from '@/components/motion/GridRevealHero';
 import TextReveal from '@/components/motion/TextReveal';
+import CursorSpotlight from '@/components/motion/CursorSpotlight';
 
 // Hook for Animated Counters (Kept for reference, but superseded by CountUp component)
 function useCounter(end, duration = 2000) {
@@ -347,56 +348,89 @@ export default function Home() {
           </div>
       </section>
 
+      {/* SECCIÓN: VIDEO SHOWCASE */}
+      <section className="relative py-24 bg-[#F3F0EB]">
+          <div className="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+              <div className="order-2 lg:order-1 text-center lg:text-left max-w-[500px]">
+                  <Reveal>
+                      <p className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.4em] mb-6">CIUDAD VENECIA</p>
+                      <h2 className="font-serif-display text-3xl md:text-4xl lg:text-5xl text-[#2C2C2C] leading-tight mb-6">
+                          Un punto de encuentro <br className="hidden md:block" /> vibrante, seguro y armonioso
+                      </h2>
+                      <p className="text-[#6B665F] text-base font-light leading-relaxed mb-8">
+                          Cada rincón de Ciudad Venecia ha sido planeado con atención al detalle, fusionando diseño arquitectónico innovador con la calidez de una comunidad auténtica.
+                      </p>
+                      <Link href="/proyectos" className="inline-block px-8 py-3 border-2 border-[#2C2C2C] text-[#2C2C2C] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
+                          Ver Recorrido Virtual
+                      </Link>
+                  </Reveal>
+              </div>
+              <div className="order-1 lg:order-2 relative w-full max-w-[500px] mx-auto aspect-video bg-[#2C2C2C] rounded-sm overflow-hidden shadow-2xl">
+                  <Reveal delay={0.2}>
+                      <video 
+                          src="/Clip1.mp4" 
+                          className="w-full h-full object-cover"
+                          autoPlay 
+                          muted 
+                          loop 
+                          playsInline
+                      />
+                  </Reveal>
+              </div>
+          </div>
+      </section>
+
       {/* ============================================ */}
       {/* SECCIÓN 3: PRECIOS EXCLUSIVOS — SIN CAMBIOS */}
       {/* ============================================ */}
-      <section className="relative pt-[42px] pb-[42px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}>
+      <section className="relative pt-[30px] pb-[30px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS_PREFERIDA.jpg')" }}>
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-[#A69C91]/30 pb-[30px]"></div>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto text-center text-white mt-[30px] mb-[30px]">
+        <CursorSpotlight className="relative z-10 w-full">
+          <div className="max-w-[1200px] mx-auto text-center text-white mt-[20px] mb-[20px]">
            <Reveal>
-             <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl tracking-widest mb-6 drop-shadow-md">PRECIOS EXCLUSIVOS</TextReveal>
-             <p className="font-light text-sm md:text-base max-w-3xl mx-auto mb-16 text-gray-100 drop-shadow-sm">
+             <TextReveal as="h2" className="font-serif-display text-3xl md:text-4xl tracking-widest mb-3 drop-shadow-md">PRECIOS EXCLUSIVOS</TextReveal>
+             <p className="font-light text-xs md:text-sm max-w-3xl mx-auto mb-8 text-gray-100 drop-shadow-sm">
                 Adquiere tu terreno en Ciudad Venecia con exclusivos precios de lanzamiento, descubre los planes de financiamiento y las tasas preferenciales que mejor se adapten a ti.
              </p>
            </Reveal>
 
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-0 mb-10">
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-0 mb-6">
+              <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
                  <Reveal delay={0.1}>
-                   <span className="text-3xl md:text-4xl font-serif-display mb-2 drop-shadow-sm">HASTA 60 MESES</span>
+                   <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">HASTA 60 MESES</span>
                    <span className="text-[10px] uppercase tracking-widest font-medium">SIN INTERESES</span>
                  </Reveal>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
+              <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
                   <Reveal delay={0.2}>
-                    <span className="text-3xl md:text-4xl font-serif-display mb-2 drop-shadow-sm">15% DE DESCUENTO</span>
+                    <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">15% DE DESCUENTO</span>
                     <span className="text-[10px] uppercase tracking-widest font-medium">EN PAGO DE CONTADO</span>
                   </Reveal>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center">
+              <div className="px-4 flex flex-col items-center justify-center">
                   <Reveal delay={0.3}>
-                    <span className="text-sm md:text-base uppercase tracking-widest mb-1 font-medium">TERRENOS DESDE</span>
-                    <span className="text-3xl md:text-4xl font-serif-display drop-shadow-sm">99m² <span className="text-lg">HASTA</span> 250m²</span>
+                    <span className="text-xs md:text-sm uppercase tracking-widest mb-1 font-medium">TERRENOS DESDE</span>
+                    <span className="text-2xl md:text-3xl font-serif-display drop-shadow-sm">99m² <span className="text-base">HASTA</span> 250m²</span>
                   </Reveal>
               </div>
 
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
+              <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
                   <Reveal delay={0.4}>
-                    <span className="text-sm md:text-base uppercase tracking-widest mb-1 font-medium">ENGANCHE DESDE</span>
-                    <span className="text-4xl font-serif-display drop-shadow-sm">10%</span>
+                    <span className="text-xs md:text-sm uppercase tracking-widest mb-1 font-medium">ENGANCHE DESDE</span>
+                    <span className="text-3xl font-serif-display drop-shadow-sm">10%</span>
                   </Reveal>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
+              <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
                    <Reveal delay={0.5}>
-                     <span className="text-sm uppercase tracking-widest max-w-[180px] font-medium">DESCUENTO ESPECIAL POR</span>
-                     <span className="text-xl font-serif-display mt-2 drop-shadow-sm">PRONTA CONSTRUCCIÓN</span>
+                     <span className="text-xs uppercase tracking-widest max-w-[180px] font-medium">DESCUENTO ESPECIAL POR</span>
+                     <span className="text-lg font-serif-display mt-2 drop-shadow-sm">PRONTA CONSTRUCCIÓN</span>
                    </Reveal>
               </div>
-              <div className="px-6 flex flex-col items-center justify-center md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
+              <div className="px-4 flex flex-col items-center justify-center md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
                    <Reveal delay={0.6}>
-                     <span className="text-sm uppercase tracking-widest max-w-[200px] font-medium">PLANES ESPECIALES</span>
+                     <span className="text-xs uppercase tracking-widest max-w-[200px] font-medium">PLANES ESPECIALES</span>
                      <span className="text-[10px] mt-2 text-gray-100">PARA INVERSIONISTAS Y PEQUEÑOS CONSTRUCTORES</span>
                    </Reveal>
               </div>
@@ -405,74 +439,155 @@ export default function Home() {
            <p className="text-[10px] italic text-gray-200 mb-8">*Aplican restricciones.</p>
 
            <Reveal>
-             <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-4 bg-transparent border border-[#EBE7DF] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#EBE7DF] hover:text-[#5C554F] transition-all duration-300">
+             <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="inline-block px-12 py-4 bg-transparent border border-[#EBE7DF] text-white text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#EBE7DF] hover:text-[#5C554F] transition-all duration-300">
                 SOLICITA MÁS INFORMACIÓN
              </a>
            </Reveal>
-        </div>
+          </div>
+        </CursorSpotlight>
       </section>
 
-      {/* ============================================ */}
-      {/* SECCIÓN 4: NUESTROS PROYECTOS — NUEVO GRID */}
-      {/* ============================================ */}
-      <section className="bg-white py-24 px-6">
-          <div className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-16">
-                  <Reveal>
-                    <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">Portafolio</span>
-                    <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-4">Nuestros Proyectos</TextReveal>
-                    <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">
-                        Presencia en 4 ciudades de Honduras con desarrollos residenciales que combinan ubicación estratégica, servicios completos y alta plusvalía.
-                    </p>
-                  </Reveal>
+      {/* SECCIÓN 4: NUESTROS PROYECTOS — Proyecto Destacado + Carril Horizontal */}
+      <section className="relative bg-[#F3F0EB] overflow-hidden">
+  
+        {/* ZONA 1: Proyecto Estrella — Danlí */}
+        <div className="max-w-[1400px] mx-auto px-6 pt-24 pb-16">
+          <Reveal>
+            <p className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 text-center">Portafolio</p>
+          </Reveal>
+          <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-[#2C2C2C] mb-16 text-center">
+            Nuestros Proyectos
+          </TextReveal>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+            {/* Foto Danlí */}
+            <Reveal>
+              <div className="relative h-[400px] lg:h-[550px] overflow-hidden group">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover"
+                  src="/homepage/CV_DRON_web.mp4"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/10 group-hover:opacity-0 transition-all duration-600 pointer-events-none z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+                <div className="absolute top-6 left-6 z-10">
+                  <span className="bg-[#C5A065] text-white px-4 py-1.5 text-[9px] font-bold uppercase tracking-wider">
+                    Insignia
+                  </span>
+                </div>
               </div>
-
-              {/* Grid: 3 columns top, 4 columns bottom (or responsive) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {proyectos.map((proyecto, i) => (
-                      <Reveal key={i} delay={i * 0.1}>
-                        <Link href={proyecto.slug} className="relative aspect-[4/3] group overflow-hidden cursor-pointer block shadow-lg">
-                            <Image 
-                                src={proyecto.img} 
-                                alt={proyecto.name}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90"></div>
-                            
-                            {/* Badge */}
-                            {proyecto.badge && (
-                                <div className="absolute top-4 left-4 z-20">
-                                    <span className={`px-3 py-1 text-[9px] font-bold uppercase tracking-wider ${
-                                        proyecto.badge === 'PRÓXIMAMENTE' 
-                                            ? 'bg-white/20 backdrop-blur-sm text-white border border-white/30' 
-                                            : proyecto.badge === 'NUEVO 2026'
-                                            ? 'bg-[#C5A065] text-white'
-                                            : 'bg-white/90 text-[#2C2C2C]'
-                                    }`}>
-                                        {proyecto.badge}
-                                    </span>
-                                </div>
-                            )}
-
-                            {/* Info */}
-                            <div className="absolute bottom-6 left-6 right-6 z-20">
-                                <h4 className="text-white font-bold text-sm md:text-base mb-1">{proyecto.name}</h4>
-                                <p className="text-white/60 text-[10px] uppercase tracking-wider">{proyecto.location}</p>
-                            </div>
-                        </Link>
-                      </Reveal>
-                  ))}
-              </div>
-
-              <div className="text-center mt-12">
-                  <Reveal>
-                    <Link href="/proyectos" className="inline-block px-10 py-4 border-2 border-[#2C2C2C] text-[#2C2C2C] text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#2C2C2C] hover:text-white transition-all">
-                        Ver Todos los Proyectos
-                    </Link>
-                  </Reveal>
-              </div>
+            </Reveal>
+            
+            {/* Info Danlí */}
+            <div className="bg-[#EBE7DF] flex flex-col justify-center px-8 lg:px-16 py-12 lg:py-0">
+              <Reveal>
+                <p className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.4em] mb-4">Proyecto Estrella</p>
+                <h3 className="font-serif-display text-3xl md:text-4xl lg:text-5xl text-[#2C2C2C] leading-tight mb-3">
+                  Ciudad Venecia<br />Danlí
+                </h3>
+                <p className="text-[#6B665F] text-xs uppercase tracking-[0.3em] mb-8">El Paraíso, Honduras</p>
+                
+                <div className="grid grid-cols-3 gap-4 mb-10">
+                  <div className="text-center">
+                    <p className="font-serif-display text-2xl md:text-3xl text-[#2C2C2C] font-medium">250+</p>
+                    <p className="text-[#6B665F] text-[9px] uppercase tracking-wider mt-1">Lotes</p>
+                  </div>
+                  <div className="text-center border-l border-r border-[#C5A065]/30">
+                    <p className="font-serif-display text-2xl md:text-3xl text-[#2C2C2C] font-medium">99-250</p>
+                    <p className="text-[#6B665F] text-[9px] uppercase tracking-wider mt-1">m² por lote</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-serif-display text-2xl md:text-3xl text-[#C5A065] font-medium">L.2,500</p>
+                    <p className="text-[#6B665F] text-[9px] uppercase tracking-wider mt-1">Prima desde</p>
+                  </div>
+                </div>
+                
+                <Link href="/proyectos/danli" className="inline-block px-10 py-4 bg-[#2C2C2C] text-white text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-all duration-300">
+                  Explorar Proyecto
+                </Link>
+              </Reveal>
+            </div>
           </div>
+        </div>
+
+        {/* ZONA 2: Carril Horizontal — Más Proyectos */}
+        <div className="pt-8 pb-24">
+          <div className="max-w-[1400px] mx-auto px-6 mb-8 flex items-center justify-between">
+            <Reveal>
+              <p className="text-[#6B665F] text-xs uppercase tracking-[0.3em]">Más Proyectos</p>
+            </Reveal>
+            <Reveal>
+              <Link href="/proyectos" className="text-[#C5A065] text-xs uppercase tracking-[0.2em] font-bold hover:text-[#2C2C2C] transition-colors">
+                Ver Todos →
+              </Link>
+            </Reveal>
+          </div>
+
+          <div className="max-w-[1400px] mx-auto px-6">
+            <div 
+              className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
+              style={{ 
+                scrollbarWidth: 'none', 
+                msOverflowStyle: 'none',
+              }}
+            >
+              {[
+                { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", img: "/amenidades/CV_OLANCHO.jpg.jpeg", badge: "PREMIUM", slug: "/proyectos/olancho" },
+                { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", badge: "NUEVO 2026", slug: "/proyectos/talanga" },
+                { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos/san-lorenzo" },
+                { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos/versalles" },
+                { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca" },
+                { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", img: "/homepage/portal_ai-ciudad_venecia.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/tegucigalpa" },
+              ].map((proyecto, i) => (
+                <Link 
+                  key={i} 
+                  href={proyecto.slug}
+                  className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] snap-start group cursor-pointer"
+                >
+                  <div className="relative h-[350px] md:h-[400px] overflow-hidden">
+                    <Image 
+                      src={proyecto.img} 
+                      alt={proyecto.name} 
+                      fill 
+                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/10 group-hover:opacity-0 transition-all duration-600 pointer-events-none z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+                    
+                    {proyecto.badge && (
+                      <div className="absolute top-5 left-5 z-10">
+                        <span className={`px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider ${
+                          proyecto.badge === 'PRÓXIMAMENTE' 
+                            ? 'bg-white/20 backdrop-blur-sm text-white border border-white/30' 
+                            : proyecto.badge === 'NUEVO 2026'
+                            ? 'bg-[#C5A065] text-white'
+                            : 'bg-white/90 text-[#2C2C2C]'
+                        }`}>
+                          {proyecto.badge}
+                        </span>
+                      </div>
+                    )}
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <h4 className="text-white font-bold text-base md:text-lg mb-1 group-hover:translate-y-[-4px] transition-transform duration-300">
+                        {proyecto.name}
+                      </h4>
+                      <p className="text-white/50 text-[10px] uppercase tracking-wider mb-3">
+                        {proyecto.location}
+                      </p>
+                      <span className="text-[#C5A065] text-[10px] uppercase tracking-wider font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Ver Proyecto →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ============================================ */}
@@ -481,7 +596,7 @@ export default function Home() {
       {/* ============================================ */}
       
       {/* 5a. Parallax visual */}
-      <section className="relative h-[50vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/amenidades/amenidades_piscina002.jpeg')" }}>
+      <section className="relative h-[50vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES004.jpg')" }}>
          <div className="absolute inset-0 bg-black/40"></div>
          <div className="relative z-10 text-center">
             <Reveal>
@@ -511,13 +626,13 @@ export default function Home() {
                  </ul>
                </Reveal>
             </div>
-            <div className="relative h-[600px]">
+            <div className="relative h-[600px] overflow-hidden">
                <Reveal delay={0.2} className="h-full">
-                 <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl relative">
-                    <Image src="/homepage/patio_asador.jpg.jpeg" alt="Amenidades" fill className="object-cover" />
+                 <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl">
+                    <Image src="/DRON-FOTOS-SAMANTHA/VERSALLES/juegos-piscina.jpg" alt="Amenidades" fill className="object-cover" />
                  </div>
-                 <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl relative">
-                    <Image src="/amenidades/amenidades_piscina002.jpeg" alt="Piscina" fill className="object-cover" />
+                 <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl">
+                    <Image src="/DRON-FOTOS-SAMANTHA/VERSALLES/piscina.jpg" alt="Piscina" fill className="object-cover" />
                  </div>
                </Reveal>
             </div>
