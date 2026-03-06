@@ -3,12 +3,15 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';   
 import GridRevealHero from '@/components/motion/GridRevealHero';
 import TextReveal from '@/components/motion/TextReveal';
 import CursorSpotlight from '@/components/motion/CursorSpotlight';
+import BeforeAfterSlider from '@/components/motion/BeforeAfterSlider';
+import ProjectModal, { type ProjectModalData } from '@/components/motion/ProjectModal';
+import FinancingCalculator from '@/components/FinancingCalculator';
 
 // Hook for Animated Counters (Kept for reference, but superseded by CountUp component)
 function useCounter(end, duration = 2000) {
@@ -138,6 +141,9 @@ export default function Home() {
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
+  // Modal state for "Más Proyectos" cards
+  const [selectedProject, setSelectedProject] = useState<ProjectModalData | null>(null);
+
   // Projects data for the grid
   const proyectos = [
     { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg", slug: "/proyectos/danli" },
@@ -147,6 +153,16 @@ export default function Home() {
     { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg", slug: "/proyectos/versalles" },
     { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", slug: "#" },
     { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", badge: "PRÓXIMAMENTE", img: "/homepage/portal_ai-ciudad_venecia.jpeg", slug: "#" },
+  ];
+
+  // Más Proyectos data (for carousel cards + modal)
+  const masProyectos: ProjectModalData[] = [
+    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", img: "/amenidades/CV_OLANCHO.jpg.jpeg", badge: "PREMIUM", slug: "/proyectos/olancho", description: "En el corazón del Valle de Lepaguare, un desarrollo premium que combina naturaleza y comodidad.", amenities: ["Seguridad 24/7", "Áreas verdes", "Casa club", "Piscinas", "Canchas deportivas"] },
+    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", badge: "NUEVO 2026", slug: "/proyectos/talanga", description: "Nuevo lanzamiento 2026 en Francisco Morazán. Terrenos con plusvalía garantizada.", amenities: ["Accesos pavimentados", "Áreas comunes", "Plan de financiamiento"] },
+    { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos/san-lorenzo", description: "Desarrollo residencial en el Valle con excelente ubicación y conectividad.", amenities: ["Seguridad", "Parques", "Infraestructura"] },
+    { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos/versalles", description: "Exclusivo residencial en Danlí con vistas panorámicas y diseño arquitectónico contemporáneo.", amenities: ["Club social", "Piscina", "Juegos infantiles", "Zona BBQ"] },
+    { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca", description: "Próximo lanzamiento en Olancho. Reserva tu oportunidad.", amenities: [] },
+    { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", img: "/homepage/portal_ai-ciudad_venecia.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/tegucigalpa", description: "Próximamente en la capital. Mantente informado.", amenities: [] },
   ];
 
   return (
@@ -438,6 +454,25 @@ export default function Home() {
 
            <p className="text-[10px] italic text-gray-200 mb-8">*Aplican restricciones.</p>
 
+           <div className="flex items-center justify-center gap-4 mb-8">
+             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-4 rounded-sm">
+               <div className="relative">
+                 <span className="text-4xl md:text-5xl font-serif-display text-[#C5A065] tabular-nums">
+                   12
+                 </span>
+                 <span className="absolute -top-1 -right-3 w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
+               </div>
+               <div className="text-left">
+                 <p className="text-white text-xs font-bold uppercase tracking-widest">Lotes disponibles</p>
+                 <p className="text-white/50 text-[10px]">Ciudad Venecia Danlí · Etapa 3</p>
+               </div>
+             </div>
+           </div>
+
+           <div className="mt-12 mb-8">
+             <FinancingCalculator />
+           </div>
+
            <Reveal>
              <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="inline-block px-12 py-4 bg-transparent border border-[#EBE7DF] text-white text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#EBE7DF] hover:text-[#5C554F] transition-all duration-300">
                 SOLICITA MÁS INFORMACIÓN
@@ -534,26 +569,24 @@ export default function Home() {
                 msOverflowStyle: 'none',
               }}
             >
-              {[
-                { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", img: "/amenidades/CV_OLANCHO.jpg.jpeg", badge: "PREMIUM", slug: "/proyectos/olancho" },
-                { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", badge: "NUEVO 2026", slug: "/proyectos/talanga" },
-                { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos/san-lorenzo" },
-                { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos/versalles" },
-                { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca" },
-                { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", img: "/homepage/portal_ai-ciudad_venecia.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/tegucigalpa" },
-              ].map((proyecto, i) => (
-                <Link 
-                  key={i} 
-                  href={proyecto.slug}
+              {masProyectos.map((proyecto, i) => (
+                <div
+                  key={i}
+                  onClick={() => setSelectedProject(proyecto)}
                   className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] snap-start group cursor-pointer"
                 >
                   <div className="relative h-[350px] md:h-[400px] overflow-hidden">
-                    <Image 
-                      src={proyecto.img} 
-                      alt={proyecto.name} 
-                      fill 
-                      className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                    />
+                    <motion.div
+                      layoutId={`project-image-${proyecto.slug.replace(/\//g, '-')}`}
+                      className="absolute inset-0"
+                    >
+                      <Image 
+                        src={proyecto.img} 
+                        alt={proyecto.name} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                    </motion.div>
                     <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/10 group-hover:opacity-0 transition-all duration-600 pointer-events-none z-10" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
                     
@@ -583,7 +616,7 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
@@ -703,6 +736,22 @@ export default function Home() {
                   </div>
                 </Reveal>
          </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* SECCIÓN: TRANSFORMACIÓN BEFORE/AFTER */}
+      {/* ============================================ */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">TRANSFORMACIÓN</span>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]">De terreno a hogar</h2>
+          </div>
+          <BeforeAfterSlider
+            beforeImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg"
+            afterImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE002.jpg"
+          />
+        </div>
       </section>
 
       {/* ============================================ */}
@@ -899,6 +948,17 @@ export default function Home() {
             </div>
         </div>
       </footer>
+
+      {/* Project Modal — opens on click from "Más Proyectos" cards */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            key={selectedProject.slug}
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
