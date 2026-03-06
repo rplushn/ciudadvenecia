@@ -144,6 +144,18 @@ export default function Home() {
   // Modal state for "Más Proyectos" cards
   const [selectedProject, setSelectedProject] = useState<ProjectModalData | null>(null);
 
+  // Bloquear scroll del body cuando el modal está abierto
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject]);
+
   // Projects data for the grid
   const proyectos = [
     { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg", slug: "/proyectos/danli" },
