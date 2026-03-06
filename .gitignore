@@ -40,3 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 public/DRON-FOTOS-SAMANTHA-ORIGINAL/
+
+# Videos pesados y fotos originales
+public/DRON-FOTOS-SAMANTHA-ORIGINAL/
+public/Clip1.mp4
+public/Clip2.mp4
+public/Clip 3.mp4
+*.mp4
