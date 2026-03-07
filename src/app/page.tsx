@@ -6,11 +6,13 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';   
+import CurtainHero from '@/components/motion/CurtainHero';
 import GridRevealHero from '@/components/motion/GridRevealHero';
 import TextReveal from '@/components/motion/TextReveal';
 import CursorSpotlight from '@/components/motion/CursorSpotlight';
 import BeforeAfterSlider from '@/components/motion/BeforeAfterSlider';
 import ProjectModal, { type ProjectModalData } from '@/components/motion/ProjectModal';
+import HondurasMap from "@/components/HondurasMap";
 import FinancingCalculator from '@/components/FinancingCalculator';
 
 // Hook for Animated Counters (Kept for reference, but superseded by CountUp component)
@@ -274,7 +276,8 @@ export default function Home() {
       {/* ============================================ */}
       {/* SECCIÓN 1: HERO — SIN CAMBIOS */}
       {/* ============================================ */}
-      <GridRevealHero
+      <CurtainHero>
+        <GridRevealHero
   imageSrc="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg"
   cols={8}
   rows={5}
@@ -300,6 +303,7 @@ export default function Home() {
     </div>
   </div>
 </GridRevealHero>
+      </CurtainHero>
 
       {/* ============================================ */}
       {/* SECCIÓN 2: PROPUESTA DE VALOR */}
@@ -409,9 +413,59 @@ export default function Home() {
       </section>
 
       {/* ============================================ */}
+      {/* ESTADÍSTICAS — FRANJA ANIMADA */}
+      {/* ============================================ */}
+      <section className="py-20 bg-gradient-to-r from-[#1A1A1A] via-[#2C2C2C] to-[#1A1A1A] text-white relative overflow-hidden border-y border-[#C5A065]/20">
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[#C5A065]/[0.04] font-serif-display text-[400px] leading-none pointer-events-none select-none">
+          11
+        </div>
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-white/10">
+
+            <Reveal delay={0}>
+              <div className="text-center group">
+                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                  <CountUp to={11} />
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Años de Trayectoria</span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="text-center group">
+                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                  <CountUp to={5} />
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Ciudades</span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <div className="text-center group">
+                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                  <CountUp to={700} prefix="+" />
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Familias Felices</span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <div className="text-center group">
+                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                  <CountUp to={100} suffix="%" />
+                </span>
+                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Plusvalía</span>
+              </div>
+            </Reveal>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
       {/* SECCIÓN 3: PRECIOS EXCLUSIVOS — SIN CAMBIOS */}
       {/* ============================================ */}
-      <section className="relative pt-[30px] pb-[30px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS_PREFERIDA.jpg')" }}>
+      <section className="relative pt-[30px] pb-[30px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-JUANJOSE/Talanga/Talanga001.jpeg')" }}>
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-[#A69C91]/30 pb-[30px]"></div>
 
@@ -493,6 +547,16 @@ export default function Home() {
           </div>
         </CursorSpotlight>
       </section>
+      <section className="py-16 px-6 bg-[#E8E4DA] border-y border-[#C5A065]/15">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-6">
+            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">PRESENCIA NACIONAL</span>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-3">Nuestros Proyectos en Honduras</h2>
+            <p className="text-[#6B665F] text-sm max-w-lg mx-auto">5 ciudades, +700 familias, un estándar de calidad que se expande por todo el país.</p>
+          </div>
+          <HondurasMap />
+        </div>
+      </section>
 
       {/* SECCIÓN 4: NUESTROS PROYECTOS — Proyecto Destacado + Carril Horizontal */}
       <section className="relative bg-[#F3F0EB] overflow-hidden">
@@ -506,10 +570,10 @@ export default function Home() {
             Nuestros Proyectos
           </TextReveal>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] rounded-md overflow-hidden">
             {/* Foto Danlí */}
             <Reveal>
-              <div className="relative h-[400px] lg:h-[550px] overflow-hidden group">
+              <div className="relative h-[400px] lg:h-[550px] overflow-hidden group rounded-l-md">
                 <video
                   autoPlay
                   muted
@@ -585,7 +649,7 @@ export default function Home() {
                 <div
                   key={i}
                   onClick={() => setSelectedProject(proyecto)}
-                  className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] snap-start group cursor-pointer"
+                  className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] snap-start group cursor-pointer rounded-lg overflow-hidden"
                 >
                   <div className="relative h-[350px] md:h-[400px] overflow-hidden">
                     <motion.div

@@ -13,7 +13,7 @@ interface CursorSpotlightProps {
 export default function CursorSpotlight({
   children,
   className = "",
-  color = "rgba(197, 160, 101, 0.15)",
+  color = "rgba(255, 255, 255, 0.07)",
   radius = 350,
   intensity = 1,
 }: CursorSpotlightProps) {
@@ -42,7 +42,7 @@ export default function CursorSpotlight({
         className="pointer-events-none absolute inset-0 z-10 transition-opacity duration-500"
         style={{
           opacity: isHovering ? intensity : 0,
-          background: `radial-gradient(${radius}px circle at ${mousePosition.x}px ${mousePosition.y}px, ${color}, transparent 70%)`,
+          background: `radial-gradient(${radius}px circle at ${mousePosition.x}px ${mousePosition.y}px, ${color}, rgba(255, 255, 255, 0) 70%)`,
         }}
       />
       <div className="relative z-20">
