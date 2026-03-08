@@ -189,16 +189,15 @@ export default function CurtainHero({ children }: CurtainHeroProps) {
       setScrollPct(v);
 
       // Phase logic
-      if (v < 0.22) {
+      if (v < 0.12) {
         setPhase(0);
         setVisibleLetters(0);
-      } else if (v >= 0.22 && v < 0.50) {
+      } else if (v >= 0.12 && v < 0.30) {
         setPhase(1);
-        // Each 3.5% of scroll reveals one letter (8 letters over 28% range)
-        const letterProgress = (v - 0.22) / 0.28;
+        const letterProgress = (v - 0.12) / 0.18;
         const count = Math.min(Math.floor(letterProgress * 8) + 1, 8);
         setVisibleLetters(count);
-      } else if (v >= 0.50 && v < 0.68) {
+      } else if (v >= 0.30 && v < 0.65) {
         setPhase(2);
         setVisibleLetters(8);
       } else {
@@ -244,7 +243,7 @@ export default function CurtainHero({ children }: CurtainHeroProps) {
   const allLettersVisible = visibleLetters >= 8;
 
   return (
-    <div ref={containerRef} className="relative h-[250vh] bg-[#F7F6F4]">
+    <div ref={containerRef} className="relative h-[400vh] bg-[#F7F6F4]">
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#1A1A1A]">
 
         {/* ============================================ */}
@@ -254,10 +253,10 @@ export default function CurtainHero({ children }: CurtainHeroProps) {
           className="absolute inset-0 z-0 overflow-hidden"
           style={{ scale: videoScale, y: videoY }}
         >
-          <video
-            autoPlay muted loop playsInline
+          <img
+            src="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg"
+            alt="Ciudad Venecia"
             className="w-full h-full object-cover"
-            src="/homepage/Clip5.mp4"
           />
         </motion.div>
 

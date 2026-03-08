@@ -24,7 +24,7 @@ export default function BeforeAfterSlider({
 
   const { scrollYProgress } = useScroll({
     target: scrollContainerRef,
-    offset: ['start center', 'end center'],
+    offset: ['start center', 'end end'],
   });
 
   useMotionValueEvent(scrollYProgress, 'change', (v) => {
@@ -109,7 +109,7 @@ export default function BeforeAfterSlider({
   }, [handleMouseMove, handleMouseUp, handleTouchMove, handleTouchEnd]);
 
   return (
-    <div ref={scrollContainerRef} style={{ height: '250vh' }}>
+    <div ref={scrollContainerRef} style={{ height: '400vh' }}>
       <div className="sticky top-[15vh]">
     <div
       ref={containerRef}

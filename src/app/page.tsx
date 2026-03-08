@@ -16,58 +16,7 @@ import HondurasMap from "@/components/HondurasMap";
 import FinancingCalculator from '@/components/FinancingCalculator';
 import ProjectShowcase, { type ShowcaseProject } from '@/components/ProjectShowcase';
 import ScrollBridge from '@/components/ScrollBridge';
-
-// Hook for Animated Counters (Kept for reference, but superseded by CountUp component)
-function useCounter(end, duration = 2000) {
-  const [count, setCount] = useState(0);
-  const elementRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          let start = 0;
-          const increment = end / (duration / 16);
-          const timer = setInterval(() => {
-            start += increment;
-            if (start >= end) {
-              setCount(end);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [end, duration]);
-
-  return { count, elementRef };
-}
-
-// Counter Component
-const AnimatedStat = ({ end, label, prefix = "", suffix = "" }) => {
-    const { count, elementRef } = useCounter(end);
-    return (
-        <div ref={elementRef} className="text-center">
-            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
-                {prefix}{count.toLocaleString()}{suffix}
-            </div>
-            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
-                {label}
-            </div>
-        </div>
-    );
-};
-
+import FadeRevealSection from '@/components/FadeRevealSection';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -390,7 +339,7 @@ export default function Home() {
       <a href="/proyectos" className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
         Ver Proyectos
       </a>
-      <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="group relative inline-block px-10 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#A88650] transition-all duration-300">
+      <a href="https://wa.me/50489494639" target="_blank" rel="noopener noreferrer" className="group relative inline-block px-10 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#A88650] transition-all duration-300">
         WhatsApp Ventas
       </a>
     </div>
@@ -404,25 +353,13 @@ export default function Home() {
       {/* ============================================ */}
       
       {/* 2a. Intro "Un estilo de vida extraordinario" */}
-      <section className="py-24 px-6 bg-[#F7F6F4] text-center">
-         <div className="max-w-4xl mx-auto">
-            <Reveal>
-              <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Un estilo de vida extraordinario</TextReveal>
-              <span className="flex justify-center mb-8">
-                <div className="w-16 h-[1px] bg-[#C5A065]"></div>
-              </span>
-              <p className="text-[#666] font-light text-lg leading-relaxed max-w-2xl mx-auto">
-                 Descubre Ciudad Venecia, donde la naturaleza y la arquitectura moderna convergen para crear el escenario perfecto para tu familia. Espacios diseñados para perdurar.
-              </p>
-            </Reveal>
-         </div>
-      </section>
+      <FadeRevealSection />
 
       {/* 2b. Creado por INMAER */}
-      <section className="bg-[#E8E4DA] pt-12 pb-12 text-center border-b border-[#D5CFC1]">
-          <div className="max-w-[1000px] mx-auto px-6">
+      <section className="bg-[#E8E4DA] pt-20 pb-20 text-center border-b border-[#D5CFC1]">
+          <div className="max-w-[1200px] mx-auto px-6">
               <Reveal>
-                  <div className="flex flex-col items-center justify-center gap-6">
+                  <div className="flex flex-col items-center justify-center gap-6" style={{ transform: "scale(1.08)", transformOrigin: "center" }}>
                       <div className="flex items-center gap-4">
                           <span className="font-serif-display text-2xl md:text-3xl text-[#2C2C2C] tracking-wide">CREADO POR:</span>
                            <div className="flex flex-col items-start leading-none">
@@ -508,46 +445,46 @@ export default function Home() {
       {/* ============================================ */}
       {/* ESTADÍSTICAS — FRANJA ANIMADA */}
       {/* ============================================ */}
-      <section className="py-20 bg-gradient-to-r from-[#1A1A1A] via-[#2C2C2C] to-[#1A1A1A] text-white relative overflow-hidden border-y border-[#C5A065]/20">
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 text-[#C5A065]/[0.04] font-serif-display text-[400px] leading-none pointer-events-none select-none">
-          11
-        </div>
+      <section className="py-28 bg-[#E8E2D5] relative overflow-hidden border-y border-[#C5A065]/15">
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-white/10">
+          <div className="text-center mb-14">
+            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em]">INMAER EN NÚMEROS</span>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x md:divide-[#C5A065]/25">
 
             <Reveal delay={0}>
               <div className="text-center group">
-                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-serif-display text-[#C5A065] group-hover:text-[#2C2C2C] transition-colors duration-500">
                   <CountUp to={11} />
                 </span>
-                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Años de Trayectoria</span>
+                <span className="text-[10px] md:text-[11px] font-bold font-semibold uppercase tracking-[0.25em] text-[#6B665F] mt-3 block">Años de Trayectoria</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
               <div className="text-center group">
-                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-serif-display text-[#C5A065] group-hover:text-[#2C2C2C] transition-colors duration-500">
                   <CountUp to={5} />
                 </span>
-                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Ciudades</span>
+                <span className="text-[10px] md:text-[11px] font-bold font-semibold uppercase tracking-[0.25em] text-[#6B665F] mt-3 block">Ciudades</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.2}>
               <div className="text-center group">
-                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-serif-display text-[#C5A065] group-hover:text-[#2C2C2C] transition-colors duration-500">
                   <CountUp to={700} prefix="+" />
                 </span>
-                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Familias Felices</span>
+                <span className="text-[10px] md:text-[11px] font-bold font-semibold uppercase tracking-[0.25em] text-[#6B665F] mt-3 block">Familias Felices</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.3}>
               <div className="text-center group">
-                <span className="block text-5xl md:text-7xl font-serif-display text-[#C5A065] group-hover:text-white transition-colors duration-500">
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-serif-display text-[#C5A065] group-hover:text-[#2C2C2C] transition-colors duration-500">
                   <CountUp to={100} suffix="%" />
                 </span>
-                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mt-3 block">Plusvalía</span>
+                <span className="text-[10px] md:text-[11px] font-bold font-semibold uppercase tracking-[0.25em] text-[#6B665F] mt-3 block">Plusvalía</span>
               </div>
             </Reveal>
 
@@ -587,11 +524,12 @@ export default function Home() {
       {/* ============================================ */}
       {/* SECCIÓN 3: PRECIOS EXCLUSIVOS — SIN CAMBIOS */}
       {/* ============================================ */}
-      <section className="relative pt-[30px] pb-[30px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-JUANJOSE/Talanga/Talanga001.jpeg')" }}>
+      <section className="relative pt-[200px] pb-[120px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-JUANJOSE/Talanga/Talanga002.jpeg')" }}>
+        <div className="absolute inset-0 bg-[#2C2C2C]/35 backdrop-blur-[2px] z-[1]" />
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-[#A69C91]/30 pb-[30px]"></div>
 
-        <CursorSpotlight className="relative z-10 w-full">
+        <CursorSpotlight className="relative z-[2] w-full">
           <div className="max-w-[1200px] mx-auto text-center text-white mt-[20px] mb-[20px]">
            <Reveal>
              <TextReveal as="h2" className="font-serif-display text-3xl md:text-4xl tracking-widest mb-3 drop-shadow-md">PRECIOS EXCLUSIVOS</TextReveal>
@@ -642,32 +580,28 @@ export default function Home() {
 
            <p className="text-[10px] italic text-gray-200 mb-8">*Aplican restricciones.</p>
 
-           <div className="flex items-center justify-center gap-4 mb-8">
-             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-4 rounded-sm">
-               <div className="relative">
-                 <span className="text-4xl md:text-5xl font-serif-display text-[#C5A065] tabular-nums">
-                   12
-                 </span>
-                 <span className="absolute -top-1 -right-3 w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
-               </div>
-               <div className="text-left">
-                 <p className="text-white text-xs font-bold uppercase tracking-widest">Lotes disponibles</p>
-                 <p className="text-white/50 text-[10px]">Ciudad Venecia Danlí · Etapa 3</p>
-               </div>
-             </div>
-           </div>
-
            <div className="mt-12 mb-8">
              <FinancingCalculator />
            </div>
 
-           <Reveal>
-             <a href="https://wa.me/50495498925" target="_blank" rel="noopener noreferrer" className="inline-block px-12 py-4 bg-transparent border border-[#EBE7DF] text-white text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#EBE7DF] hover:text-[#5C554F] transition-all duration-300">
-                SOLICITA MÁS INFORMACIÓN
-             </a>
-           </Reveal>
           </div>
         </CursorSpotlight>
+      </section>
+
+      {/* ============================================ */}
+      {/* SECCIÓN: TRANSFORMACIÓN BEFORE/AFTER */}
+      {/* ============================================ */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">TRANSFORMACIÓN</span>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]">De terreno a hogar</h2>
+          </div>
+          <BeforeAfterSlider
+            beforeImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS-FRENTE.jpg"
+            afterImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS-FRENTE_ANTES.webp"
+          />
+        </div>
       </section>
 
       {/* ============================================ */}
@@ -783,22 +717,6 @@ export default function Home() {
                   </div>
                 </Reveal>
          </div>
-      </section>
-
-      {/* ============================================ */}
-      {/* SECCIÓN: TRANSFORMACIÓN BEFORE/AFTER */}
-      {/* ============================================ */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">TRANSFORMACIÓN</span>
-            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]">De terreno a hogar</h2>
-          </div>
-          <BeforeAfterSlider
-            beforeImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg"
-            afterImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE002.jpg"
-          />
-        </div>
       </section>
 
       {/* ============================================ */}

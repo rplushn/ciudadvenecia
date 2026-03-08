@@ -69,7 +69,7 @@ export default function ScrollBridge() {
           style={{ opacity: bgOpacity }}
         >
           {/* Subtle gold particles */}
-          {[...Array(12)].map((_, i) => (
+          {[...Array(30)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 rounded-full bg-[#C5A065]"
@@ -81,6 +81,71 @@ export default function ScrollBridge() {
               }}
             />
           ))}
+
+          {/* Shooting star */}
+          <motion.div
+            className="absolute w-[120px] h-[1px]"
+            style={{
+              background: "linear-gradient(to right, transparent, rgba(197,160,101,0.6), transparent)",
+              top: "25%",
+              left: "-10%",
+              rotate: "35deg",
+              y: grain1Y,
+            }}
+          >
+            <motion.div
+              className="w-full h-full"
+              animate={{
+                x: ["-100%", "1500%"],
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatDelay: 8,
+                ease: "easeInOut",
+              }}
+              style={{
+                background: "linear-gradient(to right, transparent, rgba(197,160,101,0.8), rgba(255,255,255,0.9))",
+                width: "60px",
+                height: "1px",
+                boxShadow: "0 0 8px rgba(197,160,101,0.4), 0 0 20px rgba(197,160,101,0.2)",
+              }}
+            />
+          </motion.div>
+
+          {/* Second shooting star — different angle and timing */}
+          <motion.div
+            className="absolute w-[80px] h-[1px]"
+            style={{
+              background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)",
+              top: "60%",
+              right: "-5%",
+              rotate: "25deg",
+              y: grain2Y,
+            }}
+          >
+            <motion.div
+              className="w-full h-full"
+              animate={{
+                x: ["200%", "-1500%"],
+                opacity: [0, 0.8, 0.8, 0],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatDelay: 12,
+                ease: "easeInOut",
+                delay: 5,
+              }}
+              style={{
+                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.7), rgba(197,160,101,0.5))",
+                width: "40px",
+                height: "1px",
+                boxShadow: "0 0 6px rgba(255,255,255,0.3)",
+              }}
+            />
+          </motion.div>
 
           {/* Decorative corner accents */}
           <div className="absolute top-12 left-12 w-16 h-16 border-t border-l border-[#C5A065]/10" />
@@ -183,7 +248,7 @@ export default function ScrollBridge() {
 
             {/* Supporting text */}
             <motion.p
-              className="text-white/20 text-xs md:text-sm mt-6 max-w-md mx-auto leading-relaxed"
+              className="text-white/20 text-xs md:text-sm mt-10 max-w-md mx-auto leading-relaxed"
               style={{ opacity: answerOpacity }}
             >
               Financiamiento directo sin intereses. Prima desde L.2,500.

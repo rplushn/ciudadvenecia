@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import MapPreviewCard, { PROJECT_PREVIEWS } from './MapPreviewCard';
 
 // ============================================
 // INMAER PROJECTS
@@ -63,6 +64,7 @@ const DEPT_LABELS: Record<string, { x: number; y: number }> = {
 
 export default function HondurasMap() {
   const [active, setActive] = useState<string | null>(null);
+  const [previewProject, setPreviewProject] = useState<string | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
   const [hoveredDept, setHoveredDept] = useState<string | null>(null);
 
@@ -86,6 +88,14 @@ export default function HondurasMap() {
     if (proj) setActive(active === proj.id ? null : proj.id);
   };
 
+  const handlePinClick = (projectId: string) => {
+    if (PROJECT_PREVIEWS[projectId]) {
+      setPreviewProject(projectId);
+    } else {
+      setActive(active === projectId ? null : projectId);
+    }
+  };
+
   return (
     <div className="w-full">
       <div className="flex flex-col lg:flex-row gap-8 items-start">
@@ -96,7 +106,7 @@ export default function HondurasMap() {
             {PROJECTS.map((p) => (
               <button
                 key={p.id}
-                onClick={() => setActive(active === p.id ? null : p.id)}
+                onClick={() => handlePinClick(p.id)}
                 onMouseEnter={() => setHovered(p.id)}
                 onMouseLeave={() => setHovered(null)}
                 className={`w-full text-left p-3 rounded transition-all duration-300 border ${
@@ -221,7 +231,7 @@ export default function HondurasMap() {
               return (
                 <g
                   key={p.id}
-                  onClick={() => setActive(active === p.id ? null : p.id)}
+                  onClick={() => handlePinClick(p.id)}
                   onMouseEnter={() => setHovered(p.id)}
                   onMouseLeave={() => setHovered(null)}
                   className="cursor-pointer"
@@ -272,6 +282,14 @@ export default function HondurasMap() {
           </svg>
         </div>
       </div>
+      {previewProject && PROJECT_PREVIEWS[previewProject] && (
+        <MapPreviewCard
+          project={PROJECT_PREVIEWS[previewProject]}
+          originX={0}
+          originY={0}
+          onClose={() => setPreviewProject(null)}
+        />
+      )}
     </div>
   );
 }

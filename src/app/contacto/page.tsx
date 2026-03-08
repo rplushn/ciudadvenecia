@@ -4,15 +4,10 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
+import Navbar from '@/components/Navbar';
 
 export default function Contacto() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-
-  // Navbar Logic
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isAtTop, setIsAtTop] = useState(true);
 
   useEffect(() => {
     const link = document.createElement('link');
@@ -21,28 +16,6 @@ export default function Contacto() {
     document.head.appendChild(link);
     return () => { document.head.removeChild(link); };
   }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY < 100) {
-        setIsAtTop(true);
-        setIsVisible(true);
-      } else {
-        setIsAtTop(false);
-        if (currentScrollY > 300) {
-           setIsVisible(currentScrollY <= lastScrollY);
-        } else {
-           setIsVisible(true);
-        }
-      }
-      setLastScrollY(currentScrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
-
-  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const faqs = [
     { q: "¿Cómo puedo agendar una visita?", a: "Puedes agendar directamente por WhatsApp o llamando a nuestras oficinas. Coordinamos visitas guiadas todos los fines de semana." },
@@ -57,54 +30,7 @@ export default function Contacto() {
         h1, h2, h3, h4, h5, h6, .font-serif-display { font-family: 'Cormorant Garamond', serif; }
       `}</style>
       
-      {/* ------------------- HEADER ------------------- */}
-      <nav 
-        className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.25,0.8,0.25,1)] transform ${
-            isVisible ? 'translate-y-0' : '-translate-y-full'
-        } ${
-            isAtTop 
-            ? 'bg-gradient-to-b from-black/60 to-transparent py-6 border-none' 
-            : 'bg-[#5D737E]/85 backdrop-blur-lg py-4 shadow-sm' 
-        }`}
-      >
-        <div className="max-w-[1600px] mx-auto px-8 md:px-12 flex items-center justify-between">
-          <Link href="/#start" className="flex items-center gap-3 group">
-             <div className="text-white">
-                <svg height="45" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
-                    <g transform="translate(40, 40)">
-                         {Array.from({ length: 24 }).map((_, i) => (
-                            <line key={i} x1="0" y1="-14" x2="0" y2="-32" transform={`rotate(${i * 15})`} stroke="currentColor" strokeWidth="1.5"/>
-                         ))}
-                    </g>
-                    <text x="85" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="300" letterSpacing="0.1em">CIUDAD</text>
-                    <text x="200" y="50" fontFamily="Montserrat" fontSize="24" fontWeight="700" letterSpacing="0.1em">VENECIA</text>
-                </svg>
-             </div>
-          </Link>
-          <div className="hidden lg:flex items-center gap-8 xl:gap-12">
-            <div className="flex items-center gap-8">
-                <Link href="/#start" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">Inicio</Link>
-                <Link href="/quienes-somos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">Quiénes Somos</Link>
-                <Link href="/proyectos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">Proyectos</Link>
-                <Link href="/contacto" className="text-[#C5A065] text-[11px] font-medium uppercase tracking-[0.15em] transition-colors">Contacto</Link>
-                <Link href="#" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">Portal Clientes</Link>
-            </div>
-            <div className="h-4 w-[1px] bg-white/30"></div>
-            <div className="flex items-center gap-4">
-                <span className="text-white/80 text-[10px] font-medium uppercase tracking-wider hidden xl:block">Síguenos</span>
-                <div className="flex gap-3">
-                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">FB</a>
-                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">IG</a>
-                    <a href="#" className="text-white hover:text-[#C5A065] transition-colors">TK</a>
-                </div>
-            </div>
-          </div>
-          <div className="hidden lg:flex items-center">
-             <Link href="#form" className="border border-white/80 text-white px-8 py-3 text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">Escríbenos</Link>
-          </div>
-          <button onClick={toggleMenu} className="lg:hidden text-white p-2"><span className="text-2xl">{isMobileMenuOpen ? '✕' : '☰'}</span></button>
-        </div>
-      </nav>
+      <Navbar activeRoute="/contacto" />
 
       {/* ------------------- 1. HERO ------------------- */}
       <section className="relative h-[60vh] flex items-center justify-center bg-[#1A3A52] overflow-hidden">
