@@ -109,3 +109,33 @@ html.lenis, html.lenis body {
   border: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes letterDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) rotateX(40deg);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(8px) rotateX(-5deg);
+    filter: blur(0px);
+  }
+  80% {
+    transform: translateY(-3px) rotateX(2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0px);
+  }
+}

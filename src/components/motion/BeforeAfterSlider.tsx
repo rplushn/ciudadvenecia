@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback, useEffect } from 'react';
+import { useScroll, useMotionValueEvent } from 'motion/react';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -16,8 +17,21 @@ export default function BeforeAfterSlider({
   afterLabel = 'Después',
 }: BeforeAfterSliderProps) {
   const [position, setPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const dragRef = useRef(false);
+
+  const { scrollYProgress } = useScroll({
+    target: scrollContainerRef,
+    offset: ['start center', 'end center'],
+  });
+
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    if (!isDragging) {
+      setPosition(v * 100);
+    }
+  });
 
   const updatePosition = useCallback(
     (clientX: number) => {
@@ -33,7 +47,8 @@ export default function BeforeAfterSlider({
   const handleMouseDown = useCallback(
     (e: React.MouseEvent) => {
       e.preventDefault();
-      isDragging.current = true;
+      dragRef.current = true;
+      setIsDragging(true);
       updatePosition(e.clientX);
     },
     [updatePosition]
@@ -41,7 +56,8 @@ export default function BeforeAfterSlider({
 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent) => {
-      isDragging.current = true;
+      dragRef.current = true;
+      setIsDragging(true);
       updatePosition(e.touches[0].clientX);
     },
     [updatePosition]
@@ -49,7 +65,7 @@ export default function BeforeAfterSlider({
 
   const handleMouseMove = useCallback(
     (e: MouseEvent) => {
-      if (!isDragging.current) return;
+      if (!dragRef.current) return;
       updatePosition(e.clientX);
     },
     [updatePosition]
@@ -57,25 +73,27 @@ export default function BeforeAfterSlider({
 
   const handleTouchMove = useCallback(
     (e: TouchEvent) => {
-      if (!isDragging.current) return;
+      if (!dragRef.current) return;
       updatePosition(e.touches[0].clientX);
     },
     [updatePosition]
   );
 
   const handleMouseUp = useCallback(() => {
-    isDragging.current = false;
+    dragRef.current = false;
+    setIsDragging(false);
   }, []);
 
   const handleTouchEnd = useCallback(() => {
-    isDragging.current = false;
+    dragRef.current = false;
+    setIsDragging(false);
   }, []);
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', handleMouseUp);
     const tm = (e: TouchEvent) => {
-      if (isDragging.current) {
+      if (dragRef.current) {
         e.preventDefault();
         handleTouchMove(e);
       }
@@ -91,6 +109,8 @@ export default function BeforeAfterSlider({
   }, [handleMouseMove, handleMouseUp, handleTouchMove, handleTouchEnd]);
 
   return (
+    <div ref={scrollContainerRef} style={{ height: '250vh' }}>
+      <div className="sticky top-[15vh]">
     <div
       ref={containerRef}
       className="relative aspect-video rounded-lg overflow-hidden max-w-5xl mx-auto select-none"
@@ -151,6 +171,8 @@ export default function BeforeAfterSlider({
             <path d="M14 8l4 6-4 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
+      </div>
+    </div>
       </div>
     </div>
   );

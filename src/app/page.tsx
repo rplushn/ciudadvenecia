@@ -14,6 +14,8 @@ import BeforeAfterSlider from '@/components/motion/BeforeAfterSlider';
 import ProjectModal, { type ProjectModalData } from '@/components/motion/ProjectModal';
 import HondurasMap from "@/components/HondurasMap";
 import FinancingCalculator from '@/components/FinancingCalculator';
+import ProjectShowcase, { type ShowcaseProject } from '@/components/ProjectShowcase';
+import ScrollBridge from '@/components/ScrollBridge';
 
 // Hook for Animated Counters (Kept for reference, but superseded by CountUp component)
 function useCounter(end, duration = 2000) {
@@ -167,6 +169,97 @@ export default function Home() {
     { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg", slug: "/proyectos/versalles" },
     { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", slug: "#" },
     { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", badge: "PRÓXIMAMENTE", img: "/homepage/portal_ai-ciudad_venecia.jpeg", slug: "#" },
+  ];
+
+  const showcaseProjects: ShowcaseProject[] = [
+    {
+      name: "Ciudad Venecia Danlí",
+      location: "El Paraíso, Honduras",
+      badge: "INSIGNIA",
+      img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg",
+      slug: "/proyectos/danli",
+      description: "El proyecto insignia de INMAER y uno de los de mayor crecimiento en la zona oriental del país. Más de 250 lotes con amenidades completas.",
+      stats: [
+        { label: "Lotes", value: "250+" },
+        { label: "M² por lote", value: "99-250" },
+        { label: "Prima desde", value: "L.6,000" },
+      ],
+      amenities: ["Seguridad 24/7", "Piscinas", "Canchas de Padel", "Casa Club", "Áreas Verdes"],
+    },
+    {
+      name: "Ciudad Venecia Olancho",
+      location: "Valle de Lepaguare, Olancho",
+      badge: "PREMIUM",
+      img: "/amenidades/CV_OLANCHO.jpg.jpeg",
+      slug: "/proyectos/olancho",
+      description: "El proyecto más ambicioso de INMAER. Desarrollo premium en el hermoso Valle de Lepaguare con amenidades de primer nivel.",
+      stats: [
+        { label: "Terreno", value: "10×17m" },
+        { label: "Prima desde", value: "L.6,000" },
+      ],
+      amenities: ["Piscinas", "Canchas Sintéticas", "Casa Club", "Gimnasio", "Cafetería"],
+    },
+    {
+      name: "Ciudad Venecia Talanga",
+      location: "Francisco Morazán",
+      badge: "NUEVO 2026",
+      img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg",
+      slug: "/proyectos/talanga",
+      description: "Nuevo lanzamiento 2026. Tres conceptos disponibles: Raíces, Estándar y Premium para cada tipo de inversionista.",
+      stats: [
+        { label: "Conceptos", value: "3" },
+        { label: "Desde", value: "L.900/mes" },
+      ],
+      amenities: ["Accesos Pavimentados", "Áreas Verdes", "Financiamiento Directo"],
+    },
+    {
+      name: "Ciudad Venecia San Lorenzo",
+      location: "Valle",
+      badge: null,
+      img: "/amenidades/san_lorenzo.jpeg",
+      slug: "/proyectos/san-lorenzo",
+      description: "A 10 minutos de la playa. Desarrollo residencial con ubicación estratégica en el Golfo de Fonseca.",
+      stats: [
+        { label: "Lotes", value: "10×15m" },
+        { label: "Prima desde", value: "L.6,000" },
+      ],
+      amenities: ["Cerca de la playa", "Áreas Recreativas", "Seguridad"],
+    },
+    {
+      name: "Residencial Versalles",
+      location: "Danlí, El Paraíso",
+      badge: null,
+      img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg",
+      slug: "/proyectos/versalles",
+      description: "Exclusivo residencial en Danlí con vistas panorámicas. Solo 3 terrenos disponibles.",
+      stats: [
+        { label: "Lotes", value: "12×20m" },
+        { label: "Disponibles", value: "3" },
+      ],
+      amenities: ["Piscina", "Club Social", "Máxima Seguridad"],
+    },
+    {
+      name: "Ciudad Venecia Guaimaca",
+      location: "Francisco Morazán",
+      badge: "PRÓXIMAMENTE",
+      img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg",
+      slug: "#",
+      description: "Próximo lanzamiento en Francisco Morazán. Mismos planes de pago que Talanga. Reserva tu oportunidad.",
+      stats: [
+        { label: "Estado", value: "Próximamente" },
+      ],
+    },
+    {
+      name: "Ciudad Venecia Tegucigalpa",
+      location: "Francisco Morazán",
+      badge: "PRÓXIMAMENTE",
+      img: "/homepage/portal_ai-ciudad_venecia.jpeg",
+      slug: "#",
+      description: "El proyecto más esperado. Ciudad Venecia llega a la capital de Honduras.",
+      stats: [
+        { label: "Estado", value: "Próximamente" },
+      ],
+    },
   ];
 
   // Más Proyectos data (for carousel cards + modal)
@@ -462,6 +555,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-16 px-6 bg-[#E8E4DA] border-y border-[#C5A065]/15">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-6">
+            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">PRESENCIA NACIONAL</span>
+            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-3">Nuestros Proyectos en Honduras</h2>
+            <p className="text-[#6B665F] text-sm max-w-lg mx-auto">5 ciudades, +700 familias, un estándar de calidad que se expande por todo el país.</p>
+          </div>
+          <HondurasMap />
+        </div>
+      </section>
+
+      <ProjectShowcase
+        projects={showcaseProjects}
+        onProjectClick={(project) => {
+          const modalData = masProyectos.find(p => p.slug === project.slug) || {
+            name: project.name,
+            location: project.location,
+            img: project.img,
+            badge: project.badge,
+            slug: project.slug,
+            description: project.description,
+            amenities: project.amenities,
+          };
+          setSelectedProject(modalData);
+        }}
+      />
+
+      <ScrollBridge />
+
       {/* ============================================ */}
       {/* SECCIÓN 3: PRECIOS EXCLUSIVOS — SIN CAMBIOS */}
       {/* ============================================ */}
@@ -546,157 +668,6 @@ export default function Home() {
            </Reveal>
           </div>
         </CursorSpotlight>
-      </section>
-      <section className="py-16 px-6 bg-[#E8E4DA] border-y border-[#C5A065]/15">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-6">
-            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">PRESENCIA NACIONAL</span>
-            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-3">Nuestros Proyectos en Honduras</h2>
-            <p className="text-[#6B665F] text-sm max-w-lg mx-auto">5 ciudades, +700 familias, un estándar de calidad que se expande por todo el país.</p>
-          </div>
-          <HondurasMap />
-        </div>
-      </section>
-
-      {/* SECCIÓN 4: NUESTROS PROYECTOS — Proyecto Destacado + Carril Horizontal */}
-      <section className="relative bg-[#F3F0EB] overflow-hidden">
-  
-        {/* ZONA 1: Proyecto Estrella — Danlí */}
-        <div className="max-w-[1400px] mx-auto px-6 pt-24 pb-16">
-          <Reveal>
-            <p className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.4em] mb-4 text-center">Portafolio</p>
-          </Reveal>
-          <TextReveal as="h2" className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-[#2C2C2C] mb-16 text-center">
-            Nuestros Proyectos
-          </TextReveal>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px] rounded-md overflow-hidden">
-            {/* Foto Danlí */}
-            <Reveal>
-              <div className="relative h-[400px] lg:h-[550px] overflow-hidden group rounded-l-md">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover"
-                  src="/homepage/CV_DRON_web.mp4"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/10 group-hover:opacity-0 transition-all duration-600 pointer-events-none z-10" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-                <div className="absolute top-6 left-6 z-10">
-                  <span className="bg-[#C5A065] text-white px-4 py-1.5 text-[9px] font-bold uppercase tracking-wider">
-                    Insignia
-                  </span>
-                </div>
-              </div>
-            </Reveal>
-            
-            {/* Info Danlí */}
-            <div className="bg-[#EBE7DF] flex flex-col justify-center px-8 lg:px-16 py-12 lg:py-0">
-              <Reveal>
-                <p className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.4em] mb-4">Proyecto Estrella</p>
-                <h3 className="font-serif-display text-3xl md:text-4xl lg:text-5xl text-[#2C2C2C] leading-tight mb-3">
-                  Ciudad Venecia<br />Danlí
-                </h3>
-                <p className="text-[#6B665F] text-xs uppercase tracking-[0.3em] mb-8">El Paraíso, Honduras</p>
-                
-                <div className="grid grid-cols-3 gap-4 mb-10">
-                  <div className="text-center">
-                    <p className="font-serif-display text-2xl md:text-3xl text-[#2C2C2C] font-medium">250+</p>
-                    <p className="text-[#6B665F] text-[9px] uppercase tracking-wider mt-1">Lotes</p>
-                  </div>
-                  <div className="text-center border-l border-r border-[#C5A065]/30">
-                    <p className="font-serif-display text-2xl md:text-3xl text-[#2C2C2C] font-medium">99-250</p>
-                    <p className="text-[#6B665F] text-[9px] uppercase tracking-wider mt-1">m² por lote</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="font-serif-display text-2xl md:text-3xl text-[#C5A065] font-medium">L.2,500</p>
-                    <p className="text-[#6B665F] text-[9px] uppercase tracking-wider mt-1">Prima desde</p>
-                  </div>
-                </div>
-                
-                <Link href="/proyectos/danli" className="inline-block px-10 py-4 bg-[#2C2C2C] text-white text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#C5A065] transition-all duration-300">
-                  Explorar Proyecto
-                </Link>
-              </Reveal>
-            </div>
-          </div>
-        </div>
-
-        {/* ZONA 2: Carril Horizontal — Más Proyectos */}
-        <div className="pt-8 pb-24">
-          <div className="max-w-[1400px] mx-auto px-6 mb-8 flex items-center justify-between">
-            <Reveal>
-              <p className="text-[#6B665F] text-xs uppercase tracking-[0.3em]">Más Proyectos</p>
-            </Reveal>
-            <Reveal>
-              <Link href="/proyectos" className="text-[#C5A065] text-xs uppercase tracking-[0.2em] font-bold hover:text-[#2C2C2C] transition-colors">
-                Ver Todos →
-              </Link>
-            </Reveal>
-          </div>
-
-          <div className="max-w-[1400px] mx-auto px-6">
-            <div 
-              className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
-              style={{ 
-                scrollbarWidth: 'none', 
-                msOverflowStyle: 'none',
-              }}
-            >
-              {masProyectos.map((proyecto, i) => (
-                <div
-                  key={i}
-                  onClick={() => setSelectedProject(proyecto)}
-                  className="flex-shrink-0 w-[280px] md:w-[320px] lg:w-[350px] snap-start group cursor-pointer rounded-lg overflow-hidden"
-                >
-                  <div className="relative h-[350px] md:h-[400px] overflow-hidden">
-                    <motion.div
-                      layoutId={`project-image-${proyecto.slug.replace(/\//g, '-')}`}
-                      className="absolute inset-0"
-                    >
-                      <Image 
-                        src={proyecto.img} 
-                        alt={proyecto.name} 
-                        fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
-                      />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-black/10 group-hover:opacity-0 transition-all duration-600 pointer-events-none z-10" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
-                    
-                    {proyecto.badge && (
-                      <div className="absolute top-5 left-5 z-10">
-                        <span className={`px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider ${
-                          proyecto.badge === 'PRÓXIMAMENTE' 
-                            ? 'bg-white/20 backdrop-blur-sm text-white border border-white/30' 
-                            : proyecto.badge === 'NUEVO 2026'
-                            ? 'bg-[#C5A065] text-white'
-                            : 'bg-white/90 text-[#2C2C2C]'
-                        }`}>
-                          {proyecto.badge}
-                        </span>
-                      </div>
-                    )}
-                    
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <h4 className="text-white font-bold text-base md:text-lg mb-1 group-hover:translate-y-[-4px] transition-transform duration-300">
-                        {proyecto.name}
-                      </h4>
-                      <p className="text-white/50 text-[10px] uppercase tracking-wider mb-3">
-                        {proyecto.location}
-                      </p>
-                      <span className="text-[#C5A065] text-[10px] uppercase tracking-wider font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        Ver Proyecto →
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* ============================================ */}
