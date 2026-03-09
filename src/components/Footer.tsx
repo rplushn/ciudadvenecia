@@ -44,11 +44,11 @@ export default function Footer() {
               Nuestros Proyectos
             </h4>
             <ul className="space-y-4 text-sm text-text-secondary">
-              <li><Link href="#" className="hover:text-accent transition-colors">Ciudad Venecia Tegucigalpa</Link></li>
-              <li><Link href="#" className="hover:text-accent transition-colors">Ciudad Venecia Danlí</Link></li>
-              <li><Link href="#" className="hover:text-accent transition-colors">Ciudad Venecia Valle</Link></li>
-              <li><Link href="#" className="hover:text-accent transition-colors">Ciudad Venecia Olancho</Link></li>
-              <li><Link href="#" className="hover:text-accent transition-colors">Hill's City (Comercial)</Link></li>
+              <li><Link href="/proyectos" className="hover:text-accent transition-colors">Ciudad Venecia Tegucigalpa</Link></li>
+              <li><Link href="/proyectos" className="hover:text-accent transition-colors">Ciudad Venecia Danlí</Link></li>
+              <li><Link href="/proyectos" className="hover:text-accent transition-colors">Ciudad Venecia Valle</Link></li>
+              <li><Link href="/proyectos" className="hover:text-accent transition-colors">Ciudad Venecia Olancho</Link></li>
+              <li><Link href="/proyectos" className="hover:text-accent transition-colors">Hill&apos;s City (Comercial)</Link></li>
             </ul>
           </div>
 
@@ -91,8 +91,8 @@ export default function Footer() {
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-text-secondary">
           <p>&copy; {new Date().getFullYear()} Inmobiliaria y Constructora INMAER. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-primary">Tu Casa Honduras</Link>
-            <Link href="#" className="hover:text-primary">Aviso Legal</Link>
+            <Link href="/" className="hover:text-primary">Tu Casa Honduras</Link>
+            <Link href="/" className="hover:text-primary">Aviso Legal</Link>
           </div>
         </div>
       </div>

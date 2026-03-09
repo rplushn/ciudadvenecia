@@ -8,6 +8,21 @@ import CountUp from '@/components/motion/CountUp';
 import Navbar from '@/components/Navbar';
 
 export default function QuienesSomos() {
+  function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const nombre = (data.get('nombre') as string || '').trim();
+    const telefono = (data.get('telefono') as string || '').trim();
+    const proyecto = (data.get('proyecto') as string || '').trim();
+    const mensaje = (data.get('mensaje') as string || '').trim();
+    const parts = ['Hola, me comunico desde la web de Ciudad Venecia.'];
+    if (nombre) parts.push(`*Nombre:* ${nombre}`);
+    if (telefono) parts.push(`*Teléfono:* ${telefono}`);
+    if (proyecto && proyecto !== 'Seleccionar...') parts.push(`*Proyecto de interés:* ${proyecto}`);
+    if (mensaje) parts.push(`*Mensaje:* ${mensaje}`);
+    window.open(`https://wa.me/50489494639?text=${encodeURIComponent(parts.join('\n'))}`, '_blank');
+  }
+
   // Load Fonts
   useEffect(() => {
     const link = document.createElement('link');
@@ -49,17 +64,43 @@ export default function QuienesSomos() {
          </div>
          <div className="absolute inset-0 bg-gradient-to-b from-[#1A3A52]/80 to-[#1A3A52]"></div>
          <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
-            <Reveal>
-              <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.4em] mb-6 block">
-                  INMAER Real Estate
-              </span>
-              <h1 className="font-serif-display text-5xl md:text-8xl text-white mb-8 leading-none">
-                Más que tierra, <br/><span className="italic font-light text-white/50">creamos futuro.</span>
-              </h1>
-              <p className="text-white/70 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                Somos los arquitectos detrás de Ciudad Venecia. Desarrollamos comunidades planeadas para que tu inversión crezca tan fuerte como tu familia.
-              </p>
-            </Reveal>
+            <motion.span
+              className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.4em] mb-6 block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              INMAER Real Estate
+            </motion.span>
+            <h1 className="font-serif-display text-5xl md:text-8xl text-white mb-8 leading-none">
+              <motion.div
+                initial={{ x: -80, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+              >
+                Más que tierra,
+              </motion.div>
+              <motion.div
+                className="italic font-light text-white/50"
+                initial={{ x: 80, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.8, 0.25, 1] }}
+              >
+                creamos futuro.
+              </motion.div>
+            </h1>
+            <motion.p
+              className="text-white/70 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+            >
+              Somos los arquitectos detrás de Ciudad Venecia. Desarrollamos comunidades planeadas para que tu inversión crezca tan fuerte como tu familia.
+            </motion.p>
          </div>
       </section>
 
@@ -78,12 +119,19 @@ export default function QuienesSomos() {
       <section className="py-20 bg-white border-y border-[#C5A065]/20">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
               {stats.map((stat, i) => (
-                  <div key={i} className="space-y-2">
+                  <motion.div
+                    key={i}
+                    className="space-y-2"
+                    initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
+                  >
                       <span className="font-serif-display text-5xl md:text-7xl text-[#C5A065] block">
                         <CountUp to={stat.number} prefix={stat.prefix} suffix={stat.suffix} />
                       </span>
                       <span className="text-[#2C2C2C] uppercase tracking-widest text-xs font-bold">{stat.label}</span>
-                  </div>
+                  </motion.div>
               ))}
           </div>
       </section>
@@ -91,15 +139,25 @@ export default function QuienesSomos() {
       {/* ------------------- 4. HISTORY / ORIGIN ------------------- */}
       <section className="py-24 px-6 md:px-12 max-w-[1600px] mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 relative">
-            <Reveal delay={0.2}>
+            <motion.div
+              initial={{ opacity: 0, x: -60, rotate: -2 }}
+              whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="aspect-[3/4] bg-[#E5E0D8] overflow-hidden relative">
-                  {/* Changed to local asset for consistency */}
                   <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/homepage/portal_ai-ciudad_venecia.jpeg')" }}></div>
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-[#C5A065] text-white p-8 max-w-xs hidden md:block shadow-2xl">
-                  <p className="font-serif-display text-2xl italic">"Todo comenzó con un sueño en Danlí."</p>
-              </div>
-            </Reveal>
+            </motion.div>
+            <motion.div
+              className="absolute -bottom-10 -right-10 bg-[#C5A065] text-white p-8 max-w-xs hidden md:block shadow-2xl"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+            >
+              <p className="font-serif-display text-2xl italic">"Todo comenzó con un sueño en Danlí."</p>
+            </motion.div>
           </div>
           <div className="order-1 md:order-2">
             <Reveal>
@@ -113,6 +171,56 @@ export default function QuienesSomos() {
               </p>
             </Reveal>
           </div>
+      </section>
+
+      {/* ------------------- 4B. TIMELINE "NUESTRA HISTORIA" ------------------- */}
+      <section className="py-24 px-6 bg-[#F9F7F4]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <motion.span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.35em] block mb-3" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Trayectoria</motion.span>
+            <motion.h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Nuestra Historia</motion.h2>
+          </div>
+
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-[#C5A065]/20 -translate-x-1/2" />
+
+            {[
+              { year: "2014", title: "Nace INMAER", desc: "Fundación de la empresa con una visión clara: transformar el desarrollo inmobiliario en Honduras.", side: "left" },
+              { year: "2016", title: "Ciudad Venecia Danlí", desc: "Lanzamiento del proyecto insignia. Los primeros 50 lotes se vendieron en tiempo récord.", side: "right" },
+              { year: "2019", title: "250 Familias", desc: "Un cuarto de millar de familias confían en INMAER. La plusvalía supera el 40%.", side: "left" },
+              { year: "2022", title: "Expansión Regional", desc: "Olancho y Valle se suman al portafolio. INMAER sale de El Paraíso por primera vez.", side: "right" },
+              { year: "2024", title: "+700 Familias", desc: "Consolidación como la desarrolladora líder del oriente hondureño.", side: "left" },
+              { year: "2026", title: "5 Ciudades, 7 Proyectos", desc: "Talanga, Guaimaca y Tegucigalpa se unen. El futuro es nacional.", side: "right" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.year}
+                className={`relative flex items-center mb-16 last:mb-0 ${item.side === "left" ? "flex-row" : "flex-row-reverse"}`}
+                initial={{ opacity: 0, x: item.side === "left" ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <div className={`w-[calc(50%-24px)] ${item.side === "left" ? "text-right pr-8" : "text-left pl-8"}`}>
+                  <span className="font-serif-display text-4xl text-[#C5A065] block mb-2">{item.year}</span>
+                  <h3 className="font-bold text-[#2C2C2C] text-lg mb-2">{item.title}</h3>
+                  <p className="text-[#6B665F] text-sm leading-relaxed">{item.desc}</p>
+                </div>
+
+                {/* Center dot */}
+                <motion.div
+                  className="absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#C5A065] border-4 border-[#F9F7F4] z-10 shadow-lg shadow-[#C5A065]/30"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 300 }}
+                />
+
+                <div className="w-[calc(50%-24px)]" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ------------------- 5. PARALLAX BREAK 1 (Landscape) ------------------- */}
@@ -136,12 +244,26 @@ export default function QuienesSomos() {
               </div>
               <div className="grid md:grid-cols-4 gap-8">
                   {values.map((val, i) => (
-                      <Reveal key={i} delay={i * 0.1}>
-                        <div className="bg-white p-10 shadow-sm border-t-2 border-[#C5A065] hover:-translate-y-2 transition-transform duration-500 h-full">
-                            <h3 className="font-serif-display text-2xl text-[#2C2C2C] mb-4">{val.title}</h3>
-                            <p className="text-[#6B665F] text-sm leading-relaxed">{val.desc}</p>
-                        </div>
-                      </Reveal>
+                      <motion.div
+                        key={i}
+                        className="bg-white p-10 shadow-sm h-full"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.15, duration: 0.5 }}
+                        whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(197,160,101,0.15)" }}
+                      >
+                        <motion.div
+                          className="h-[2px] bg-[#C5A065] mb-6"
+                          initial={{ scaleX: 0 }}
+                          whileInView={{ scaleX: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.3 + i * 0.15, duration: 0.6 }}
+                          style={{ originX: 0 }}
+                        />
+                        <h3 className="font-serif-display text-2xl text-[#2C2C2C] mb-4">{val.title}</h3>
+                        <p className="text-[#6B665F] text-sm leading-relaxed">{val.desc}</p>
+                      </motion.div>
                   ))}
               </div>
           </div>
@@ -159,35 +281,78 @@ export default function QuienesSomos() {
                           { title: "Diseño Atemporal", text: "Fachadas, pórticos y áreas comunes diseñadas para envejecer con elegancia." },
                           { title: "Servicios Premium", text: "Redes eléctricas, agua potable propia y gestión de residuos de primer nivel." }
                       ].map((item, i) => (
-                          <div key={i} className="flex gap-6">
+                          <motion.div
+                            key={i}
+                            className="flex gap-6"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.2, duration: 0.5 }}
+                          >
                               <span className="text-[#C5A065] font-serif-display text-4xl italic">0{i+1}</span>
                               <div>
                                   <h4 className="font-bold text-[#2C2C2C] uppercase tracking-wider text-sm mb-2">{item.title}</h4>
                                   <p className="text-[#6B665F] leading-relaxed">{item.text}</p>
                               </div>
-                          </div>
+                          </motion.div>
                       ))}
                   </div>
                 </Reveal>
               </div>
-              <div className="bg-gray-200 h-full min-h-[500px] relative">
-                <Reveal className="h-full" delay={0.2}>
-                   {/* Changed to local asset for consistency */}
-                   <div className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700" 
-                        style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}></div>
-                </Reveal>
+              <div className="bg-gray-200 h-full min-h-[500px] relative overflow-hidden">
+                <motion.div
+                  className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
+                  style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}
+                  initial={{ scale: 1.1, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1 }}
+                />
               </div>
           </div>
       </section>
 
       {/* ------------------- 8. PARALLAX BREAK 2 (Lifestyle) ------------------- */}
-      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/homepage/familia_jugando.jpg.jpeg')" }}>
+      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}>
           <Reveal>
             <div className="bg-white/90 p-12 max-w-2xl text-center shadow-2xl backdrop-blur-sm mx-4">
                 <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4">"No vendemos tierra, vendemos el futuro de tu familia."</h3>
                 <p className="text-[#C5A065] font-bold uppercase tracking-widest text-xs">— La Dirección</p>
             </div>
           </Reveal>
+      </section>
+
+      {/* ------------------- 8B. NÚMEROS QUE HABLAN ------------------- */}
+      <section className="py-24 px-6 bg-[#1A1A1A] text-white overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <motion.span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.35em] block mb-3" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>Impacto Real</motion.span>
+            <motion.h2 className="font-serif-display text-4xl md:text-5xl text-white" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>Números que Hablan</motion.h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { number: "12M+", label: "m² desarrollados", desc: "De terreno transformado en comunidad" },
+              { number: "98%", label: "Clientes satisfechos", desc: "Según encuesta interna 2025" },
+              { number: "0", label: "Demandas legales", desc: "Historial jurídico impecable" },
+              { number: "2x", label: "Plusvalía promedio", desc: "Valor duplicado en 5 años" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                className="text-center p-6 border border-white/[0.06] rounded-lg bg-white/[0.02]"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, duration: 0.5 }}
+                whileHover={{ borderColor: "rgba(197,160,101,0.3)", transition: { duration: 0.3 } }}
+              >
+                <span className="font-serif-display text-4xl md:text-5xl text-[#C5A065] block mb-2">{item.number}</span>
+                <span className="text-white text-xs font-bold uppercase tracking-widest block mb-1">{item.label}</span>
+                <span className="text-white/40 text-[10px]">{item.desc}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ------------------- 9. LEADERSHIP / TEAM ------------------- */}
@@ -218,14 +383,24 @@ export default function QuienesSomos() {
 
       {/* ------------------- 10. SOCIAL PROOF / TESTIMONIALS ------------------- */}
       <section className="py-24 px-6 bg-[#2C2C2C] text-white overflow-hidden relative">
-          <div className="absolute top-0 right-0 text-[#C5A065]/5 font-serif-display text-[20rem] leading-none -mt-20 -mr-20 pointer-events-none">
-              “
-          </div>
+          <motion.div
+            className="absolute top-0 right-0 text-[#C5A065]/5 font-serif-display text-[20rem] leading-none -mt-20 -mr-20 pointer-events-none"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 4, repeat: Infinity }}
+          >
+              {'"'}
+          </motion.div>
           <div className="max-w-4xl mx-auto text-center relative z-10">
+            <motion.p
+              className="font-serif-display text-2xl md:text-4xl leading-relaxed italic mb-10 text-white/90"
+              initial={{ opacity: 0, filter: "blur(10px)" }}
+              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
+            >
+                {"\"Invertir en Ciudad Venecia fue la mejor decisión financiera que he tomado. En 3 años mi lote duplicó su valor y la seguridad es incomparable.\""}
+            </motion.p>
             <Reveal>
-              <p className="font-serif-display text-2xl md:text-4xl leading-relaxed italic mb-10 text-white/90">
-                  "Invertir en Ciudad Venecia fue la mejor decisión financiera que he tomado. En 3 años mi lote duplicó su valor y la seguridad es incomparable."
-              </p>
               <div className="flex items-center justify-center gap-4">
                   <div className="w-12 h-12 bg-[#C5A065] rounded-full"></div>
                   <div className="text-left">
@@ -338,30 +513,30 @@ export default function QuienesSomos() {
 
                    {/* RIGHT: Form (8 cols) - Clean White with Gold Accents */}
                    <div className="lg:col-span-8 bg-white p-10 md:p-12">
-                       <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                       <form onSubmit={handleContactSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
                            {/* Name */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">NOMBRE COMPLETO</label>
-                               <input type="text" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                               <input type="text" name="nombre" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
                            
                            {/* Phone */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">TELÉFONO / WHATSAPP</label>
-                               <input type="text" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                               <input type="text" name="telefono" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
 
                            {/* Email */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">CORREO ELECTRÓNICO</label>
-                               <input type="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                               <input type="email" name="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
 
                            {/* Project Dropdown */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
                                <div className="relative">
-                                   <select className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
+                                   <select name="proyecto" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
                                        <option>Seleccionar...</option>
                                        <option>Ciudad Venecia Danlí</option>
                                        <option>Ciudad Venecia Olancho</option>
@@ -377,7 +552,7 @@ export default function QuienesSomos() {
                            {/* Message */}
                            <div className="md:col-span-2 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">¿QUÉ TIENES EN MENTE?</label>
-                               <textarea rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea>
+                               <textarea name="mensaje" rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea>
                            </div>
 
                            {/* Submit Button */}
@@ -433,10 +608,10 @@ export default function QuienesSomos() {
                 <div>
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
                     <ul className="space-y-4">
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
                     </ul>
                 </div>
 
@@ -465,8 +640,8 @@ export default function QuienesSomos() {
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
                 <div className="flex gap-8">
-                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
-                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
+                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>

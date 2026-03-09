@@ -9,6 +9,19 @@ import Navbar from '@/components/Navbar';
 export default function Contacto() {
   const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
 
+  function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const nombre = (data.get('nombre') as string || '').trim();
+    const telefono = (data.get('telefono') as string || '').trim();
+    const mensaje = (data.get('mensaje') as string || '').trim();
+    const parts = ['Hola, me comunico desde la web de Ciudad Venecia.'];
+    if (nombre) parts.push(`*Nombre:* ${nombre}`);
+    if (telefono) parts.push(`*Teléfono:* ${telefono}`);
+    if (mensaje) parts.push(`*Mensaje:* ${mensaje}`);
+    window.open(`https://wa.me/50489494639?text=${encodeURIComponent(parts.join('\n'))}`, '_blank');
+  }
+
   useEffect(() => {
     const link = document.createElement('link');
     link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap';
@@ -102,7 +115,7 @@ export default function Contacto() {
                   <div className="space-y-4 border-l-2 border-[#C5A065] pl-6">
                       <p className="text-sm font-bold text-[#2C2C2C]">Col. El Zarzal, Edificio INMAER</p>
                       <p className="text-sm text-[#6B665F]">Contiguo a Pizza Hut, Danlí, El Paraíso.</p>
-                      <Link href="#" className="text-[#C5A065] text-xs font-bold uppercase tracking-widest hover:underline mt-4 block">Cómo llegar →</Link>
+                      <Link href="/contacto" className="text-[#C5A065] text-xs font-bold uppercase tracking-widest hover:underline mt-4 block">Cómo llegar →</Link>
                   </div>
               </Reveal>
           </div>
@@ -163,7 +176,7 @@ export default function Contacto() {
                <h2 className="font-serif-display text-3xl text-white mb-10">Conecta en Digital</h2>
                <div className="flex justify-center gap-12">
                    {['Instagram', 'Facebook', 'TikTok', 'YouTube'].map((social, i) => (
-                       <a key={i} href="#" className="text-white font-bold uppercase tracking-widest text-xs hover:text-[#1A3A52] transition-colors border-b border-transparent hover:border-[#1A3A52] pb-1">
+                       <a key={i} href="/" className="text-white font-bold uppercase tracking-widest text-xs hover:text-[#1A3A52] transition-colors border-b border-transparent hover:border-[#1A3A52] pb-1">
                            {social}
                        </a>
                    ))}
@@ -179,23 +192,23 @@ export default function Contacto() {
                    <h2 className="font-serif-display text-4xl text-[#2C2C2C] mb-12">Envíanos un Mensaje</h2>
                </Reveal>
                <Reveal delay={0.2}>
-                   <form className="space-y-8 text-left max-w-2xl mx-auto">
+                   <form onSubmit={handleContactSubmit} className="space-y-8 text-left max-w-2xl mx-auto">
                        <div className="grid md:grid-cols-2 gap-8">
                            <div className="group">
                                <label className="block text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-2">Nombre</label>
-                               <input type="text" className="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#C5A065] transition-colors bg-transparent"/>
+                               <input type="text" name="nombre" className="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#C5A065] transition-colors bg-transparent"/>
                            </div>
                            <div className="group">
                                <label className="block text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-2">Teléfono</label>
-                               <input type="text" className="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#C5A065] transition-colors bg-transparent"/>
+                               <input type="text" name="telefono" className="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#C5A065] transition-colors bg-transparent"/>
                            </div>
                        </div>
                        <div className="group">
                            <label className="block text-[9px] font-bold uppercase tracking-widest text-gray-400 mb-2">Mensaje</label>
-                           <textarea rows={4} className="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#C5A065] transition-colors bg-transparent resize-none"></textarea>
+                           <textarea name="mensaje" rows={4} className="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#C5A065] transition-colors bg-transparent resize-none"></textarea>
                        </div>
                        <div className="text-center pt-8">
-                           <button className="bg-[#1A3A52] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all shadow-lg hover:shadow-xl">
+                           <button type="submit" className="bg-[#1A3A52] text-white px-12 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C5A065] transition-all shadow-lg hover:shadow-xl">
                                Enviar Mensaje
                            </button>
                        </div>
@@ -234,10 +247,10 @@ export default function Contacto() {
                 <div>
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
                     <ul className="space-y-4">
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
                     </ul>
                 </div>
                 <div>
@@ -259,8 +272,8 @@ export default function Contacto() {
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
                 <div className="flex gap-8">
-                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
-                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
+                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>

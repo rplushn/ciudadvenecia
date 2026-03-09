@@ -619,8 +619,8 @@ export default function Design3Page() {
         <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400">
            <p>© 2026 Inmobiliaria y Constructora INMAER. Todos los derechos reservados.</p>
            <div className="flex gap-4">
-              <a href="#">Aviso Legal</a>
-              <a href="#">Tu Casa Honduras</a>
+              <a href="/">Aviso Legal</a>
+              <a href="/">Tu Casa Honduras</a>
            </div>
         </div>
       </footer>

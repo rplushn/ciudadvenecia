@@ -305,8 +305,8 @@ export default function Design4Page() {
            <div className="text-xs font-bold uppercase tracking-[0.2em] text-white">Ciudad Venecia</div>
            <div className="text-[10px] uppercase tracking-widest">© 2026 Inmobiliaria INMAER</div>
            <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition-colors"><span className="sr-only">Facebook</span>FB</a>
-              <a href="#" className="hover:text-white transition-colors"><span className="sr-only">Instagram</span>IG</a>
+              <a href="/" className="hover:text-white transition-colors"><span className="sr-only">Facebook</span>FB</a>
+              <a href="/" className="hover:text-white transition-colors"><span className="sr-only">Instagram</span>IG</a>
            </div>
         </div>
       </footer>

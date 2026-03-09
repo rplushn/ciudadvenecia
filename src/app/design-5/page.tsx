@@ -61,6 +61,21 @@ export default function Design5Page() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isAtTop, setIsAtTop] = useState(true);
 
+  function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const nombre = (data.get('nombre') as string || '').trim();
+    const telefono = (data.get('telefono') as string || '').trim();
+    const proyecto = (data.get('proyecto') as string || '').trim();
+    const mensaje = (data.get('mensaje') as string || '').trim();
+    const parts = ['Hola, me comunico desde la web de Ciudad Venecia.'];
+    if (nombre) parts.push(`*Nombre:* ${nombre}`);
+    if (telefono) parts.push(`*Teléfono:* ${telefono}`);
+    if (proyecto && proyecto !== 'Seleccionar...') parts.push(`*Proyecto de interés:* ${proyecto}`);
+    if (mensaje) parts.push(`*Mensaje:* ${mensaje}`);
+    window.open(`https://wa.me/50489494639?text=${encodeURIComponent(parts.join('\n'))}`, '_blank');
+  }
+
   // Carousel State
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -72,7 +87,7 @@ export default function Design5Page() {
     { title: "Canchas Basquetbol", img: "/amenidades/amenidades_cancha.jpg.jpeg" },
     { title: "Áreas Verdes", img: "/homepage/versalles_outdoor.jpg.jpeg" },
     { title: "Senderos", img: "/homepage/outdoor2.jpg.jpeg" },
-    { title: "Juegos Infantiles", img: "/homepage/familia_jugando.jpg.jpeg" },
+    { title: "Juegos Infantiles", img: "/homepage/outdoor2.jpg.jpeg" },
     { title: "Zona BBQ", img: "/homepage/patio_asador.jpg.jpeg" },
   ];
   
@@ -759,30 +774,30 @@ export default function Design5Page() {
 
                    {/* RIGHT: Form (8 cols) - Clean White with Gold Accents */}
                    <div className="lg:col-span-8 bg-white p-10 md:p-12">
-                       <form className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                       <form onSubmit={handleContactSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
                            {/* Name */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">NOMBRE COMPLETO</label>
-                               <input type="text" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                               <input type="text" name="nombre" placeholder="Ej. Juan Pérez" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
                            
                            {/* Phone */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">TELÉFONO / WHATSAPP</label>
-                               <input type="text" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                               <input type="text" name="telefono" placeholder="+504 0000-0000" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
 
                            {/* Email */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">CORREO ELECTRÓNICO</label>
-                               <input type="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
+                               <input type="email" name="email" placeholder="tucorreo@ejemplo.com" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C]" />
                            </div>
 
                            {/* Project Dropdown */}
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
                                <div className="relative">
-                                   <select className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
+                                   <select name="proyecto" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
                                        <option>Seleccionar...</option>
                                        <option>Ciudad Venecia Danlí</option>
                                        <option>Ciudad Venecia Olancho</option>
@@ -798,7 +813,7 @@ export default function Design5Page() {
                            {/* Message */}
                            <div className="md:col-span-2 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">¿QUÉ TIENES EN MENTE?</label>
-                               <textarea rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea>
+                               <textarea name="mensaje" rows={3} placeholder="Cuéntanos si buscas lote, casa, información de financiamiento, etc." className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent placeholder-gray-300 text-[#2C2C2C] resize-none"></textarea>
                            </div>
 
                            {/* Submit Button */}
@@ -854,10 +869,10 @@ export default function Design5Page() {
                 <div>
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
                     <ul className="space-y-4">
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
-                        <li><Link href="#" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
                     </ul>
                 </div>
 
@@ -886,8 +901,8 @@ export default function Design5Page() {
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
                 <div className="flex gap-8">
-                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
-                     <Link href="#" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
+                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
+                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>
