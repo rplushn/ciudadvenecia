@@ -313,7 +313,7 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 8. PARALLAX BREAK 2 (Lifestyle) ------------------- */}
-      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}>
+      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg')" }}>
           <Reveal>
             <div className="bg-white/90 p-12 max-w-2xl text-center shadow-2xl backdrop-blur-sm mx-4">
                 <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4">"No vendemos tierra, vendemos el futuro de tu familia."</h3>
@@ -365,13 +365,17 @@ export default function QuienesSomos() {
           </div>
           {/* Placeholder for Team Grid - Abstract representation for now */}
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {[1, 2, 3].map((_, i) => (
+              {[
+                '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/KIOSKO_PREFERIDO.jpg',
+                '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS_PREFERIDA.jpg',
+                '/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg',
+              ].map((img, i) => (
                   <Reveal key={i} delay={i * 0.1}>
                     <div className="group cursor-pointer">
                         <div className="aspect-[3/4] bg-[#F3F0EB] mb-6 overflow-hidden relative">
-                             {/* Placeholder images - keeping unsplash as placeholders but darkened/styled */}
+                             {/* TODO: reemplazar con foto real del ejecutivo */}
                              <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                                  style={{ backgroundImage: `url('https://images.unsplash.com/photo-${i === 0 ? '1560250097-0b93528c311a' : i === 1 ? '1573496359142-b8d87734a5a2' : '1519085360753-af0119f7cbe7'}?q=80&w=1000')` }}></div>
+                                  style={{ backgroundImage: `url('${img}')` }}></div>
                         </div>
                         <h3 className="font-serif-display text-2xl text-[#2C2C2C]">Ejecutivo {i+1}</h3>
                         <p className="text-[#C5A065] text-xs uppercase tracking-widest font-bold">Dirección General</p>
@@ -432,8 +436,7 @@ export default function QuienesSomos() {
                 </Reveal>
               </div>
               <div className="aspect-square bg-white border p-4 shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                  {/* Changed to local asset */}
-                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}></div>
+                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/DRON-JUANJOSE/Talanga/foto_Talanga.jpeg')" }}></div>
               </div>
           </div>
       </section>
