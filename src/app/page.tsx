@@ -17,6 +17,9 @@ import FinancingCalculator from '@/components/FinancingCalculator';
 import ProjectShowcase, { type ShowcaseProject } from '@/components/ProjectShowcase';
 import ScrollBridge from '@/components/ScrollBridge';
 import FadeRevealSection from '@/components/FadeRevealSection';
+import VideoTextMaskHero from '@/components/hero/VideoTextMaskHero';
+import BrandStrip from '@/components/hero/BrandStrip';
+import PinnedProjectsShowcase from '@/components/hero/PinnedProjectsShowcase';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -331,36 +334,11 @@ export default function Home() {
       </nav>
 
       {/* ============================================ */}
-      {/* SECCIÓN 1: HERO — SIN CAMBIOS */}
+      {/* SECCIÓN 1: HERO — VIDEO TEXT MASK + BRAND STRIP + PINNED PROJECTS */}
       {/* ============================================ */}
-      <CurtainHero>
-        <GridRevealHero
-  imageSrc="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg"
-  cols={8}
-  rows={5}
-  direction="bottomRight" 
-  staggerDelay={0.14}
-  tileDuration={1.4}
->
-  <div className="w-full max-w-[1400px] px-6 text-center text-white mt-16 flex flex-col items-center justify-center">
-    <h1 className="font-serif-display font-medium text-5xl md:text-7xl lg:text-[85px] leading-[1.1] mb-8 drop-shadow-md">
-      CIUDAD VENECIA<br />
-      <span className="italic">Tu vida aquí.</span>
-    </h1>
-    <p className="text-[#E5D5B0] text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] mb-12 drop-shadow-sm">
-      TERRENOS RESIDENCIALES DESDE L. 2,500 DE PRIMA · DANLÍ · OLANCHO · VALLE
-    </p>
-    <div className="flex justify-center gap-4 flex-wrap">
-      <a href="/proyectos" className="group relative inline-block px-10 py-4 border border-white text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-white hover:text-[#2C2C2C] transition-all duration-300">
-        Ver Proyectos
-      </a>
-      <a href="https://wa.me/50489494639" target="_blank" rel="noopener noreferrer" className="group relative inline-block px-10 py-4 bg-[#C5A065] text-white text-xs font-bold uppercase tracking-[0.25em] hover:bg-[#A88650] transition-all duration-300">
-        WhatsApp Ventas
-      </a>
-    </div>
-  </div>
-</GridRevealHero>
-      </CurtainHero>
+      <VideoTextMaskHero />
+      <BrandStrip />
+      <PinnedProjectsShowcase />
 
       {/* ============================================ */}
       {/* SECCIÓN 2: PROPUESTA DE VALOR */}
