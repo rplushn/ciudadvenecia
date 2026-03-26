@@ -51,7 +51,7 @@ export default function ScrollBridge() {
   const accentWidth = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], ["0%", "100%", "100%", "0%"]);
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
 
         {/* Background — starts black, fades to transparent revealing Precios below */}
@@ -180,7 +180,7 @@ export default function ScrollBridge() {
               className="text-[#C5A065]/60 text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
               style={{ opacity: mesOpacity }}
             >
-              Cuota mensual desde
+              TU PRÓXIMO PASO
             </motion.p>
 
             {/* THE BIG NUMBER */}
@@ -189,7 +189,7 @@ export default function ScrollBridge() {
               style={{ filter: numberBlur.get ? undefined : undefined }}
             >
               <span className="font-serif-display text-[120px] md:text-[180px] lg:text-[220px] text-white leading-none tracking-tight">
-                L.900
+                Tu Terreno
               </span>
 
               {/* Decorative underline */}
@@ -204,7 +204,7 @@ export default function ScrollBridge() {
               className="text-white/30 text-2xl md:text-3xl font-serif-display mt-4 italic"
               style={{ opacity: mesOpacity, y: mesY }}
             >
-              al mes
+              tu legado
             </motion.p>
           </motion.div>
         </motion.div>
@@ -251,7 +251,7 @@ export default function ScrollBridge() {
               className="text-white/20 text-xs md:text-sm mt-10 max-w-md mx-auto leading-relaxed"
               style={{ opacity: answerOpacity }}
             >
-              Financiamiento directo sin intereses. Prima desde L.2,500.
+              Financiamiento directo, sin complicaciones.
               <br />
               Calificación inmediata.
             </motion.p>
