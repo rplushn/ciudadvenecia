@@ -149,7 +149,7 @@ export default function Proyectos() {
                                 <li>• Agua potable, energía eléctrica, aguas negras</li>
                                 <li>• Agua las 24 horas</li>
                                 <li>• Vigilancia las 24 horas</li>
-                                <li>• Financiamiento directo con aprobación inmediata</li>
+                                <li>• Financiamiento directo disponible</li>
                             </ul>
                         </div>
                         <div>
@@ -158,7 +158,7 @@ export default function Proyectos() {
                                 <li>• Casas de 2 y 3 habitaciones</li>
                                 <li>• Garaje para 2 vehículos</li>
                                 <li>• Finos acabados</li>
-                                <li>• Financiamiento a través de Banco Atlántida</li>
+                                <li>• Alianzas con instituciones bancarias</li>
                                 <li>• Asesoría completa con trámite bancario</li>
                             </ul>
                         </div>
@@ -168,7 +168,7 @@ export default function Proyectos() {
                         <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-2">Datos Adicionales</strong>
                         <ul className="space-y-2 text-xs text-[#6B665F]">
                             <li><strong>Etapas:</strong> El proyecto ya cuenta con su 3ra Etapa en desarrollo.</li>
-                            <li><strong>Modelo destacado:</strong> Casa de 62 m² de construcción, acabados modernos, precio L.1,400,000.00, terreno de 150 m², 2 dormitorios, 1 baño, garaje para 2 vehículos.</li>
+                            <li><strong>Modelo destacado:</strong> Casa de 62 m² de construcción, acabados modernos, terreno de 150 m², 2 dormitorios, 1 baño, garaje para 2 vehículos.</li>
                             <li><strong>Especificaciones técnicas:</strong> dosificación de concreto 1:2:2 con resistencia de 3,500 PSI, bloques de 700 PSI, cerámica en interiores, ventanas tipo francesa, puertas termofadas de metal, instalaciones sanitarias y eléctricas completas.</li>
                         </ul>
                     </div>
@@ -216,7 +216,7 @@ export default function Proyectos() {
                         <h4 className="font-serif-display text-xl text-[#2C2C2C] mb-3">Características</h4>
                         <ul className="space-y-2 text-xs text-[#484848]">
                              <li>• Lotes de terreno de 10×15 m², totalmente urbanizados</li>
-                             <li>• Financiamiento directo con prima de L 6,000 y cuotas accesibles</li>
+                             <li>• Financiamiento directo con cuotas accesibles</li>
                              <li>• Áreas verdes y espacios recreativos</li>
                              <li>• A 10 minutos de la playa (zona costera del Golfo de Fonseca)</li>
                         </ul>
@@ -291,28 +291,28 @@ export default function Proyectos() {
                           <p className="text-white/60 mt-2 text-sm">Talanga, Francisco Morazán. El proyecto más nuevo de la marca.</p>
                       </div>
                       <div className="text-right mt-6 md:mt-0">
-                          <p className="text-2xl font-serif-display text-[#C5A065]">L 2,500</p>
-                          <p className="text-[10px] uppercase tracking-widest">Prima desde</p>
+                          <p className="text-2xl font-serif-display text-[#C5A065]">3 Conceptos</p>
+                          <p className="text-[10px] uppercase tracking-widest">Disponibles</p>
                       </div>
                   </div>
 
                   <div className="grid md:grid-cols-3 gap-6 mb-12">
                       <div className="bg-white/5 p-6 border border-white/10">
                           <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Raíces</h4>
-                          <p className="text-2xl font-bold mb-1">L 900</p>
-                          <p className="text-[10px] uppercase opacity-60 mb-4">Mensuales</p>
+                          <p className="text-lg font-bold mb-1">Concepto Inicial</p>
+                          <p className="text-[10px] uppercase opacity-60 mb-4">Terreno</p>
                           <p className="text-xs opacity-80">Perfil: Nuevos inversionistas, primera propiedad.</p>
                       </div>
                       <div className="bg-white/5 p-6 border border-white/10">
                           <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Estándar</h4>
-                          <p className="text-lg font-bold mb-1">Mayor a Raíces</p>
-                          <p className="text-[10px] uppercase opacity-60 mb-4">Cuota</p>
+                          <p className="text-lg font-bold mb-1">Concepto Familiar</p>
+                          <p className="text-[10px] uppercase opacity-60 mb-4">Terreno</p>
                           <p className="text-xs opacity-80">Perfil: Familias en crecimiento.</p>
                       </div>
                       <div className="bg-white/5 p-6 border border-white/10">
                           <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Premium</h4>
-                          <p className="text-lg font-bold mb-1">Precio Premium</p>
-                          <p className="text-[10px] uppercase opacity-60 mb-4">Valor</p>
+                          <p className="text-lg font-bold mb-1">Concepto Exclusivo</p>
+                          <p className="text-[10px] uppercase opacity-60 mb-4">Terreno</p>
                           <p className="text-xs opacity-80">Perfil: Nivel exclusivo.</p>
                       </div>
                   </div>

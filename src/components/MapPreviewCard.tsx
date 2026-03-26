@@ -36,8 +36,8 @@ export const PROJECT_PREVIEWS: Record<string, ProjectPreview> = {
     ],
     stats: [
       { label: "Conceptos", value: "3" },
-      { label: "Desde", value: "L.900/mes" },
-      { label: "Contado", value: "L.160K" },
+      { label: "Seguridad", value: "24/7" },
+      { label: "Plusvalía", value: "100%" },
     ],
     whatsappMsg: "Hola, me interesa Ciudad Venecia Guaimaca. ¿Pueden avisarme cuando esté disponible?",
   },
@@ -47,7 +47,7 @@ export const PROJECT_PREVIEWS: Record<string, ProjectPreview> = {
     location: "Valle de Lepaguare",
     status: "activo",
     statusLabel: "Disponible",
-    description: "El proyecto más ambicioso de INMAER. Terrenos de 10×17m en el hermoso Valle de Lepaguare. Amenidades completas incluyendo piscinas, canchas sintéticas, casa club y gimnasio.",
+    description: "La evolución de INMAER. Terrenos en el hermoso Valle de Lepaguare con amenidades de nueva generación: planta de tratamiento, agua potable 365 días, piscinas, canchas deportivas, casa club y gimnasio.",
     video: "/homepage/Olancho_preview.mp4",
     heroImage: "/DRON-JUANJOSE/Olancho/foto_Olancho.jpeg",
     gallery: [
@@ -55,9 +55,9 @@ export const PROJECT_PREVIEWS: Record<string, ProjectPreview> = {
       "/amenidades/CV_OLANCHO.jpg.jpeg",
     ],
     stats: [
-      { label: "Terreno", value: "10×17m" },
-      { label: "Prima", value: "L.6,000" },
-      { label: "Desde", value: "L.2,100/mes" },
+      { label: "Agua", value: "365 días" },
+      { label: "Seguridad", value: "24/7" },
+      { label: "Urbanizado", value: "100%" },
     ],
     whatsappMsg: "Hola, me interesa Ciudad Venecia Olancho. ¿Pueden darme más información?",
   },
@@ -67,7 +67,7 @@ export const PROJECT_PREVIEWS: Record<string, ProjectPreview> = {
     location: "Francisco Morazán",
     status: "nuevo",
     statusLabel: "Nuevo 2026",
-    description: "Nuevo lanzamiento 2026 con tres conceptos: Raíces, Estándar y Premium. Ubicación estratégica con accesos pavimentados y financiamiento directo desde L.900 al mes.",
+    description: "Nuevo lanzamiento 2026 con tres conceptos: Raíces, Estándar y Premium. Ubicación estratégica con accesos pavimentados y financiamiento directo.",
     video: "/homepage/Talanga_preview.mp4",
     heroImage: "/DRON-JUANJOSE/Talanga/foto_Talanga.jpeg",
     gallery: [
@@ -77,8 +77,8 @@ export const PROJECT_PREVIEWS: Record<string, ProjectPreview> = {
     ],
     stats: [
       { label: "Conceptos", value: "3" },
-      { label: "Desde", value: "L.900/mes" },
-      { label: "Contado", value: "L.160K" },
+      { label: "Seguridad", value: "24/7" },
+      { label: "Plusvalía", value: "100%" },
     ],
     whatsappMsg: "Hola, me interesa Ciudad Venecia Talanga. ¿Pueden darme más información?",
   },

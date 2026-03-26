@@ -13,7 +13,7 @@ import CursorSpotlight from '@/components/motion/CursorSpotlight';
 import BeforeAfterSlider from '@/components/motion/BeforeAfterSlider';
 import ProjectModal, { type ProjectModalData } from '@/components/motion/ProjectModal';
 import HondurasMap from "@/components/HondurasMap";
-import FinancingCalculator from '@/components/FinancingCalculator';
+// import FinancingCalculator from '@/components/FinancingCalculator';
 import ProjectShowcase, { type ShowcaseProject } from '@/components/ProjectShowcase';
 import ScrollBridge from '@/components/ScrollBridge';
 import FadeRevealSection from '@/components/FadeRevealSection';
@@ -142,29 +142,30 @@ export default function Home() {
     {
       name: "Ciudad Venecia Danlí",
       location: "El Paraíso, Honduras",
-      badge: "INSIGNIA",
+      badge: "DONDE NACIÓ LA MARCA",
       img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg",
       slug: "/proyectos/danli",
-      description: "El proyecto insignia de INMAER y uno de los de mayor crecimiento en la zona oriental del país. Más de 250 lotes con amenidades completas.",
+      description: "El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa y familias que ya disfrutan de la vida en armonía.",
       stats: [
-        { label: "Lotes", value: "250+" },
-        { label: "M² por lote", value: "99-250" },
-        { label: "Prima desde", value: "L.6,000" },
+        { label: "Seguridad", value: "24/7" },
+        { label: "Etapas", value: "3" },
+        { label: "Urbanizado", value: "100%" },
       ],
-      amenities: ["Seguridad 24/7", "Piscinas", "Canchas de Padel", "Casa Club", "Áreas Verdes"],
+      amenities: ["Seguridad 24/7", "Piscinas", "Canchas de Padel", "Casa Club", "Áreas Verdes", "Agua 365 días"],
     },
     {
       name: "Ciudad Venecia Olancho",
       location: "Valle de Lepaguare, Olancho",
-      badge: "PREMIUM",
+      badge: "NUEVA GENERACIÓN",
       img: "/amenidades/CV_OLANCHO.jpg.jpeg",
       slug: "/proyectos/olancho",
-      description: "El proyecto más ambicioso de INMAER. Desarrollo premium en el hermoso Valle de Lepaguare con amenidades de primer nivel.",
+      description: "El proyecto que representa la evolución de INMAER. Todo lo aprendido en años de experiencia aplicado en un desarrollo de nueva generación con amenidades premium y planta de tratamiento de desechos.",
       stats: [
-        { label: "Terreno", value: "10×17m" },
-        { label: "Prima desde", value: "L.6,000" },
+        { label: "Agua potable", value: "365 días" },
+        { label: "Seguridad", value: "24/7" },
+        { label: "Urbanizado", value: "100%" },
       ],
-      amenities: ["Piscinas", "Canchas Sintéticas", "Casa Club", "Gimnasio", "Cafetería"],
+      amenities: ["Piscinas", "Canchas de Fútbol", "Canchas de Basketball", "Padel", "Casa Club", "Planta de Tratamiento", "Agua Potable 365 días"],
     },
     {
       name: "Ciudad Venecia Talanga",
@@ -172,12 +173,13 @@ export default function Home() {
       badge: "NUEVO 2026",
       img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg",
       slug: "/proyectos/talanga",
-      description: "Nuevo lanzamiento 2026. Tres conceptos disponibles: Raíces, Estándar y Premium para cada tipo de inversionista.",
+      description: "Nuevo lanzamiento 2026. Tres conceptos disponibles — Raíces, Estándar y Premium — diseñados para diferentes perfiles de inversión con accesos pavimentados y alta plusvalía.",
       stats: [
         { label: "Conceptos", value: "3" },
-        { label: "Desde", value: "L.900/mes" },
+        { label: "Plusvalía", value: "100%" },
+        { label: "Seguridad", value: "24/7" },
       ],
-      amenities: ["Accesos Pavimentados", "Áreas Verdes", "Financiamiento Directo"],
+      amenities: ["Accesos Pavimentados", "Áreas Verdes", "Financiamiento Directo", "Alta Plusvalía"],
     },
     {
       name: "Ciudad Venecia San Lorenzo",
@@ -185,25 +187,27 @@ export default function Home() {
       badge: null,
       img: "/amenidades/san_lorenzo.jpeg",
       slug: "/proyectos/san-lorenzo",
-      description: "A 10 minutos de la playa. Desarrollo residencial con ubicación estratégica en el Golfo de Fonseca.",
+      description: "A minutos de la zona costera del Golfo de Fonseca. Desarrollo residencial con ubicación estratégica, terrenos urbanizados y áreas recreativas para toda la familia.",
       stats: [
-        { label: "Lotes", value: "10×15m" },
-        { label: "Prima desde", value: "L.6,000" },
+        { label: "Seguridad", value: "24/7" },
+        { label: "Urbanizado", value: "100%" },
+        { label: "Ubicación", value: "Golfo de Fonseca" },
       ],
-      amenities: ["Cerca de la playa", "Áreas Recreativas", "Seguridad"],
+      amenities: ["Cerca de la costa", "Áreas Recreativas", "Seguridad", "Terrenos Urbanizados"],
     },
     {
       name: "Residencial Versalles",
       location: "Danlí, El Paraíso",
-      badge: null,
+      badge: "ÚLTIMOS DISPONIBLES",
       img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg",
       slug: "/proyectos/versalles",
-      description: "Exclusivo residencial en Danlí con vistas panorámicas. Solo 3 terrenos disponibles.",
+      description: "Exclusivo residencial en Danlí con vistas panorámicas, piscina, club social y los últimos terrenos disponibles en una de las comunidades más consolidadas.",
       stats: [
-        { label: "Lotes", value: "12×20m" },
-        { label: "Disponibles", value: "3" },
+        { label: "Seguridad", value: "24/7" },
+        { label: "Exclusividad", value: "Premium" },
+        { label: "Urbanizado", value: "100%" },
       ],
-      amenities: ["Piscina", "Club Social", "Máxima Seguridad"],
+      amenities: ["Piscina", "Club Social", "Máxima Seguridad", "Vistas Panorámicas"],
     },
     {
       name: "Ciudad Venecia Guaimaca",
@@ -211,7 +215,7 @@ export default function Home() {
       badge: "PRÓXIMAMENTE",
       img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg",
       slug: "#",
-      description: "Próximo lanzamiento en Francisco Morazán. Mismos planes de pago que Talanga. Reserva tu oportunidad.",
+      description: "Próximo lanzamiento en Francisco Morazán. La experiencia Ciudad Venecia llega a una nueva comunidad.",
       stats: [
         { label: "Estado", value: "Próximamente" },
       ],
@@ -573,9 +577,11 @@ export default function Home() {
 
            <p className="text-[10px] italic text-gray-200 mb-8">*Aplican restricciones.</p>
 
+           {/* CALCULADORA DESACTIVADA TEMPORALMENTE — descomentar cuando se quiera reactivar
            <div className="mt-12 mb-8">
              <FinancingCalculator />
            </div>
+           */}
 
           </div>
         </CursorSpotlight>
