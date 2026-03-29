@@ -427,7 +427,7 @@ export default function Home() {
               <div className="order-1 lg:order-2 relative w-full max-w-[500px] mx-auto aspect-video bg-[#2C2C2C] rounded-sm overflow-hidden shadow-2xl">
                   <Reveal delay={0.2}>
                       <video 
-                          src="/Clip1.mp4" 
+                          src="/Clip1_web.mp4" 
                           className="w-full h-full object-cover"
                           autoPlay 
                           muted 
