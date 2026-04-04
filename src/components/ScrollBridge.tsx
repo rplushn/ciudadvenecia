@@ -12,35 +12,35 @@ export default function ScrollBridge() {
   });
 
   // ============================================
-  // PHASE 1: "¿Cuánto cuesta" (0% - 40%)
+  // PHASE 1: "¿Cuánto cuesta soñar?" (0% - 45%)
   // ============================================
-  const word1Opacity = useTransform(scrollYProgress, [0.02, 0.08, 0.30, 0.38], [0, 1, 1, 0]);
-  const word1Y = useTransform(scrollYProgress, [0.02, 0.08, 0.30, 0.38], [80, 0, 0, -60]);
+  const word1Opacity = useTransform(scrollYProgress, [0, 0.05, 0.32, 0.40], [0, 1, 1, 0]);
+  const word1Y = useTransform(scrollYProgress, [0, 0.05, 0.32, 0.40], [60, 0, 0, -80]);
 
-  // "soñar?" — gold italic, delayed
-  const word3Opacity = useTransform(scrollYProgress, [0.10, 0.18, 0.30, 0.38], [0, 1, 1, 0]);
-  const word3Y = useTransform(scrollYProgress, [0.10, 0.18, 0.30, 0.38], [60, 0, 0, -60]);
-  const word3Scale = useTransform(scrollYProgress, [0.10, 0.18], [0.8, 1]);
+  // "soñar?" — gold italic, slightly delayed
+  const word3Opacity = useTransform(scrollYProgress, [0.06, 0.13, 0.32, 0.40], [0, 1, 1, 0]);
+  const word3Y = useTransform(scrollYProgress, [0.06, 0.13, 0.32, 0.40], [50, 0, 0, -80]);
+  const word3Scale = useTransform(scrollYProgress, [0.06, 0.13], [0.85, 1]);
 
   // ============================================
-  // PHASE 2: Answer (35% - 70%)
+  // PHASE 2: Answer (42% - 75%)
   // ============================================
-  const answerOpacity = useTransform(scrollYProgress, [0.35, 0.43, 0.60, 0.68], [0, 1, 1, 0]);
-  const answerY = useTransform(scrollYProgress, [0.35, 0.43, 0.60, 0.68], [50, 0, 0, -50]);
-  const answerScale = useTransform(scrollYProgress, [0.35, 0.43], [0.9, 1]);
+  const answerOpacity = useTransform(scrollYProgress, [0.42, 0.50, 0.65, 0.73], [0, 1, 1, 0]);
+  const answerY = useTransform(scrollYProgress, [0.42, 0.50, 0.65, 0.73], [50, 0, 0, -50]);
+  const answerScale = useTransform(scrollYProgress, [0.42, 0.50], [0.9, 1]);
 
   // Gold line draws
-  const lineScaleX = useTransform(scrollYProgress, [0.40, 0.50], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.40, 0.46, 0.60, 0.66], [0, 1, 1, 0]);
+  const lineScaleX = useTransform(scrollYProgress, [0.48, 0.56], [0, 1]);
+  const lineOpacity = useTransform(scrollYProgress, [0.48, 0.54, 0.65, 0.71], [0, 1, 1, 0]);
 
   // Supporting text
-  const supportOpacity = useTransform(scrollYProgress, [0.46, 0.52, 0.60, 0.66], [0, 1, 1, 0]);
-  const supportY = useTransform(scrollYProgress, [0.46, 0.52], [20, 0]);
+  const supportOpacity = useTransform(scrollYProgress, [0.53, 0.58, 0.65, 0.71], [0, 1, 1, 0]);
+  const supportY = useTransform(scrollYProgress, [0.53, 0.58], [20, 0]);
 
   // ============================================
-  // PHASE 3: Fade out (65% - 100%)
+  // PHASE 3: Fade out (72% - 100%)
   // ============================================
-  const bgOpacity = useTransform(scrollYProgress, [0.65, 0.90], [1, 0]);
+  const bgOpacity = useTransform(scrollYProgress, [0.72, 0.95], [1, 0]);
 
   // Nebula glow movement
   const nebula1X = useTransform(scrollYProgress, [0, 1], [-50, 50]);
@@ -49,7 +49,7 @@ export default function ScrollBridge() {
   const nebula2Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
 
   // Top accent
-  const accentWidth = useTransform(scrollYProgress, [0, 0.1, 0.85, 1], ["0%", "100%", "100%", "0%"]);
+  const accentWidth = useTransform(scrollYProgress, [0, 0.08, 0.90, 1], ["0%", "100%", "100%", "0%"]);
 
   // Generate starfield positions deterministically
   const stars = Array.from({ length: 80 }, (_, i) => ({
@@ -61,7 +61,7 @@ export default function ScrollBridge() {
   }));
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
 
         {/* BG — fades to reveal Precios */}
@@ -288,7 +288,7 @@ export default function ScrollBridge() {
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
           style={{
-            opacity: useTransform(scrollYProgress, [0, 0.05, 0.7, 0.8], [0.6, 0.3, 0.3, 0]),
+            opacity: useTransform(scrollYProgress, [0, 0.03, 0.75, 0.85], [0.6, 0.3, 0.3, 0]),
           }}
         >
           <span className="text-white/20 text-[8px] uppercase tracking-[0.4em]">Scroll</span>
