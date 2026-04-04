@@ -170,36 +170,119 @@ export default function QuienesSomos() {
          <div className="absolute bottom-8 right-8 w-12 h-12 border-b border-r border-[#C5A065]/15 z-30" />
       </section>
 
-      {/* ------------------- 2. THE MANIFESTO (Text Heavy / Elegant) ------------------- */}
-      <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center">
-        <Reveal>
-          <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-10">Nuestro Porqué</h2>
-          <p className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic mb-8">
-              "Creemos que el orden urbano no es un lujo, es un derecho. En un país donde el crecimiento desordenado es la norma, nosotros elegimos ser la excepción."
-          </p>
-          <div className="w-16 h-[2px] bg-[#C5A065] mx-auto"></div>
-        </Reveal>
+      {/* ------------------- 2. THE MANIFESTO ------------------- */}
+      <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center overflow-hidden">
+        {/* Title — each letter staggers in */}
+        <div className="mb-12 overflow-hidden">
+          <motion.h2 
+            className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]"
+            initial={{ y: '100%' }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+          >
+            Nuestro Porqué
+          </motion.h2>
+        </div>
+
+        {/* Quote — blur to sharp with split lines */}
+        <div className="space-y-2 mb-12">
+          {[
+            '"Creemos que el orden urbano',
+            'no es un lujo, es un derecho.',
+            'En un país donde el crecimiento',
+            'desordenado es la norma,',
+            'nosotros elegimos ser la excepción."',
+          ].map((line, i) => (
+            <div key={i} className="overflow-hidden">
+              <motion.p
+                className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic"
+                initial={{ y: 40, opacity: 0, filter: 'blur(8px)' }}
+                whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 + i * 0.12, duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
+              >
+                {line}
+              </motion.p>
+            </div>
+          ))}
+        </div>
+
+        {/* Gold line — draws from center */}
+        <motion.div
+          className="w-16 h-[2px] bg-[#C5A065] mx-auto"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.9, duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+        />
       </section>
 
-      {/* ------------------- 3. STATISTICS (Visual Break) ------------------- */}
-      <section className="py-20 bg-white border-y border-[#C5A065]/20">
+      {/* ------------------- 3. STATISTICS ------------------- */}
+      <section className="py-24 bg-white border-y border-[#C5A065]/20 overflow-hidden">
+          {/* Horizontal gold line that draws across */}
+          <motion.div
+            className="h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/30 to-transparent max-w-5xl mx-auto mb-16"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: [0.25, 0.8, 0.25, 1] }}
+          />
+
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
               {stats.map((stat, i) => (
                   <motion.div
                     key={i}
-                    className="space-y-2"
-                    initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    className="relative"
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.15, duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
+                    transition={{ delay: 0.2 + i * 0.18, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                   >
-                      <span className="font-serif-display text-5xl md:text-7xl text-[#C5A065] block">
+                      {/* Number with glow */}
+                      <motion.span 
+                        className="font-serif-display text-5xl md:text-7xl text-[#C5A065] block mb-3 relative"
+                        initial={{ scale: 0.5, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 + i * 0.18, duration: 0.6, type: "spring", stiffness: 150 }}
+                      >
                         <CountUp to={stat.number} prefix={stat.prefix} suffix={stat.suffix} />
-                      </span>
-                      <span className="text-[#2C2C2C] uppercase tracking-widest text-xs font-bold">{stat.label}</span>
+                      </motion.span>
+
+                      {/* Label slides up from behind mask */}
+                      <div className="overflow-hidden">
+                        <motion.span 
+                          className="text-[#2C2C2C] uppercase tracking-widest text-xs font-bold block"
+                          initial={{ y: '100%' }}
+                          whileInView={{ y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.6 + i * 0.18, duration: 0.5, ease: [0.25, 0.8, 0.25, 1] }}
+                        >
+                          {stat.label}
+                        </motion.span>
+                      </div>
+
+                      {/* Subtle gold dot below */}
+                      <motion.div
+                        className="w-1.5 h-1.5 rounded-full bg-[#C5A065] mx-auto mt-4"
+                        initial={{ scale: 0 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.8 + i * 0.18, type: "spring", stiffness: 300 }}
+                      />
                   </motion.div>
               ))}
           </div>
+
+          {/* Bottom gold line */}
+          <motion.div
+            className="h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/30 to-transparent max-w-5xl mx-auto mt-16"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 1.2, ease: [0.25, 0.8, 0.25, 1] }}
+          />
       </section>
 
       {/* ------------------- 4. HISTORY / ORIGIN ------------------- */}
