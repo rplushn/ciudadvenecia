@@ -13,17 +13,16 @@ export default function ScrollBridge() {
     offset: ["start start", "end start"],
   });
 
-  // Trigger counter animation when Phase 2 becomes visible
+  // Trigger counter animation when section enters view
   useMotionValueEvent(scrollYProgress, "change", (v) => {
-    if (v > 0.38 && !hasAnimated) {
+    if (v > 0.02 && !hasAnimated) {
       setHasAnimated(true);
       const target = 1500;
-      const duration = 2000;
+      const duration = 2500;
       const startTime = Date.now();
       const animate = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        // Ease out cubic
         const eased = 1 - Math.pow(1 - progress, 3);
         setCount(Math.floor(eased * target));
         if (progress < 1) requestAnimationFrame(animate);
@@ -33,19 +32,19 @@ export default function ScrollBridge() {
   });
 
   // ============================================
-  // PHASE: "Imagina tu nuevo hogar" (35% - 80%)
+  // PHASE: Social proof (5% - 80%)
   // ============================================
-  const answerOpacity = useTransform(scrollYProgress, [0.35, 0.43, 0.70, 0.80], [0, 1, 1, 0]);
-  const answerY = useTransform(scrollYProgress, [0.35, 0.43, 0.70, 0.80], [50, 0, -20, -60]);
-  const answerScale = useTransform(scrollYProgress, [0.35, 0.43], [0.9, 1]);
+  const answerOpacity = useTransform(scrollYProgress, [0.03, 0.10, 0.70, 0.80], [0, 1, 1, 0]);
+  const answerY = useTransform(scrollYProgress, [0.03, 0.10, 0.70, 0.80], [50, 0, -20, -60]);
+  const answerScale = useTransform(scrollYProgress, [0.03, 0.10], [0.9, 1]);
 
   // Gold line draws
-  const lineScaleX = useTransform(scrollYProgress, [0.40, 0.50], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.40, 0.46, 0.70, 0.78], [0, 1, 1, 0]);
+  const lineScaleX = useTransform(scrollYProgress, [0.08, 0.18], [0, 1]);
+  const lineOpacity = useTransform(scrollYProgress, [0.08, 0.14, 0.70, 0.78], [0, 1, 1, 0]);
 
   // Supporting text
-  const supportOpacity = useTransform(scrollYProgress, [0.46, 0.52, 0.70, 0.78], [0, 1, 1, 0]);
-  const supportY = useTransform(scrollYProgress, [0.46, 0.52], [20, 0]);
+  const supportOpacity = useTransform(scrollYProgress, [0.12, 0.20, 0.70, 0.78], [0, 1, 1, 0]);
+  const supportY = useTransform(scrollYProgress, [0.12, 0.20], [20, 0]);
 
   // ============================================
   // PHASE 3: Fade out (65% - 100%)
@@ -88,9 +87,9 @@ export default function ScrollBridge() {
           <img 
             src="/amenidades/familia_homepage.jpg" 
             alt="" 
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.35]"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.50]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-[#0a0a0a]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-[#0a0a0a]/25 to-[#0a0a0a]/10" />
         </motion.div>
 
         {/* ============================================ */}
