@@ -560,6 +560,90 @@ export default function QuienesSomos() {
         <div className="absolute bottom-8 right-8 w-12 h-12 border-b border-r border-[#C5A065]/15 z-20" />
       </section>
 
+      {/* ------------------- BRIDGE: PROMESA ------------------- */}
+      <section className="py-32 px-6 bg-[#F3F0EB] overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center">
+          
+          {/* Decorative top element */}
+          <motion.div
+            className="w-[1px] h-16 bg-gradient-to-b from-transparent to-[#C5A065]/40 mx-auto mb-12"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            style={{ originY: 0 }}
+          />
+
+          {/* Quote */}
+          <motion.p
+            className="font-serif-display text-3xl md:text-5xl lg:text-6xl text-[#2C2C2C] leading-[1.15] mb-8"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.25, 0.8, 0.25, 1] }}
+          >
+            Cada proyecto es una{' '}
+            <motion.span 
+              className="italic text-[#C5A065]"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              promesa cumplida.
+            </motion.span>
+          </motion.p>
+
+          {/* Supporting text */}
+          <motion.p
+            className="text-[#6B665F] text-sm md:text-base max-w-lg mx-auto leading-relaxed mb-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            Por eso hacemos que invertir sea fácil, transparente y accesible. Tu terreno te espera.
+          </motion.p>
+
+          {/* Mini stats row */}
+          <motion.div
+            className="flex justify-center gap-12 md:gap-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1, duration: 0.6 }}
+          >
+            {[
+              { value: '100%', label: 'Escrituras al día' },
+              { value: 'Directo', label: 'Sin intermediarios' },
+              { value: 'Flexible', label: 'A tu medida' },
+            ].map((item, i) => (
+              <motion.div 
+                key={item.label} 
+                className="text-center"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1.1 + i * 0.15, duration: 0.5 }}
+              >
+                <span className="font-serif-display text-2xl md:text-3xl text-[#C5A065] block mb-1">{item.value}</span>
+                <span className="text-[#6B665F] text-[9px] uppercase tracking-[0.3em]">{item.label}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Decorative bottom element */}
+          <motion.div
+            className="w-[1px] h-16 bg-gradient-to-b from-[#C5A065]/40 to-transparent mx-auto mt-12"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            style={{ originY: 0 }}
+          />
+        </div>
+      </section>
+
       {/* ------------------- FACILIDADES DE PAGO ------------------- */}
       <AdvisorCTA />
       {/* ------------------- 12. NEW COMPLEX CONTACT CTA (EXACT CLONE FROM HOME) ------------------- */}
