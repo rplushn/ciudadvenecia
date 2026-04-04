@@ -6,7 +6,7 @@ import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import Navbar from '@/components/Navbar';
 import AdvisorCTA from '@/components/AdvisorCTA';
-import BeforeAfterReveal from '@/components/BeforeAfterReveal';
+import WhyCiudadVenecia from '@/components/WhyCiudadVenecia';
 import AvailabilityPulse from '@/components/AvailabilityPulse';
 import CinematicExperience from '@/components/CinematicExperience';
 import gsap from 'gsap';
@@ -435,9 +435,9 @@ export default function Contacto() {
 
 
       {/* ═══════════════════════════════════════════════════════════
-          1B. BEFORE/AFTER — Terrain Transformation Slider
+          1B. WHY CIUDAD VENECIA — Editorial Differentiators
          ═══════════════════════════════════════════════════════════ */}
-      <BeforeAfterReveal />
+      <WhyCiudadVenecia />
 
 
       {/* ═══════════════════════════════════════════════════════════
