@@ -143,20 +143,6 @@ export default function Home() {
 
   const showcaseProjects: ShowcaseProject[] = [
     {
-      name: "Ciudad Venecia Danlí",
-      location: "El Paraíso, Honduras",
-      badge: "DONDE NACIÓ LA MARCA",
-      img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg",
-      slug: "/proyectos/danli",
-      description: "El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa y familias que ya disfrutan de la vida en armonía.",
-      stats: [
-        { label: "Seguridad", value: "24/7" },
-        { label: "Etapas", value: "3" },
-        { label: "Urbanizado", value: "100%" },
-      ],
-      amenities: ["Seguridad 24/7", "Piscinas", "Canchas de Padel", "Casa Club", "Áreas Verdes", "Agua 365 días"],
-    },
-    {
       name: "Ciudad Venecia Olancho",
       location: "Valle de Lepaguare, Olancho",
       badge: "NUEVA GENERACIÓN",
@@ -169,6 +155,20 @@ export default function Home() {
         { label: "Urbanizado", value: "100%" },
       ],
       amenities: ["Piscinas", "Canchas de Fútbol", "Canchas de Basketball", "Padel", "Casa Club", "Planta de Tratamiento", "Agua Potable 365 días"],
+    },
+    {
+      name: "Ciudad Venecia Danlí",
+      location: "El Paraíso, Honduras",
+      badge: "DONDE NACIÓ LA MARCA",
+      img: "/amenidades/amenidades009.jpg.jpeg",
+      slug: "/proyectos/danli",
+      description: "El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa y familias que ya disfrutan de la vida en armonía.",
+      stats: [
+        { label: "Seguridad", value: "24/7" },
+        { label: "Etapas", value: "3" },
+        { label: "Urbanizado", value: "100%" },
+      ],
+      amenities: ["Seguridad 24/7", "Piscinas", "Canchas de Padel", "Casa Club", "Áreas Verdes", "Agua 365 días"],
     },
     {
       name: "Ciudad Venecia Talanga",
