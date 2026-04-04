@@ -206,7 +206,7 @@ export default function Proyectos() {
              <div className="lg:col-span-7 order-2 lg:order-1">
                  <Reveal>
                     <div className="aspect-video bg-gray-200 relative overflow-hidden shadow-xl">
-                        <img src="/homepage/portal_ai-ciudad_venecia.jpeg" alt="Ciudad Venecia Valle" className="w-full h-full object-cover"/>
+                        <img src="/homepage/san_lorenzo.jpg.jpeg" alt="Ciudad Venecia San Lorenzo" className="w-full h-full object-cover"/>
                          <div className="absolute bottom-0 left-0 bg-[#1A3A52] text-white px-6 py-3">
                             <p className="text-[10px] font-bold uppercase tracking-widest">A 10 min de la playa</p>
                         </div>
