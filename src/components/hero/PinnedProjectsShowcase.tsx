@@ -9,23 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    id: 'danli',
-    tag: 'Donde Nació la Marca',
-    location: 'Danlí, El Paraíso',
-    title: 'Ciudad Venecia\nDanlí',
-    desc: 'El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa, seguridad 24/7, piscinas, canchas de padel y casa club.',
-    stats: [
-      { number: '24/7', label: 'Seguridad' },
-      { number: '3', label: 'Etapas' },
-      { number: '100%', label: 'Urbanizado' },
-    ],
-    cta: 'Explorar Danlí',
-    ctaBg: '#C5A065',
-    ctaColor: '#fff',
-    slug: '/proyectos/danli',
-    img: '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGOS_PREFERIDO.jpg',
-  },
-  {
     id: 'olancho',
     tag: 'Nueva Generación',
     location: 'Valle de Lepaguare, Olancho',
@@ -37,10 +20,27 @@ const projects = [
       { number: '100%', label: 'Urbanizado' },
     ],
     cta: 'Ver Olancho',
+    ctaBg: '#C5A065',
+    ctaColor: '#fff',
+    slug: '/proyectos/olancho',
+    img: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg',
+  },
+  {
+    id: 'danli',
+    tag: 'Donde Nació la Marca',
+    location: 'Danlí, El Paraíso',
+    title: 'Ciudad Venecia\nDanlí',
+    desc: 'El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa, seguridad 24/7, piscinas, canchas de padel y casa club.',
+    stats: [
+      { number: '24/7', label: 'Seguridad' },
+      { number: '3', label: 'Etapas' },
+      { number: '100%', label: 'Urbanizado' },
+    ],
+    cta: 'Explorar Danlí',
     ctaBg: '#E8E2D5',
     ctaColor: '#2C2C2C',
-    slug: '/proyectos/olancho',
-    img: '/amenidades/CV_OLANCHO.jpg.jpeg',
+    slug: '/proyectos/danli',
+    img: '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGOS_PREFERIDO.jpg',
   },
   {
     id: 'talanga',
