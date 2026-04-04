@@ -212,7 +212,7 @@ export default function QuienesSomos() {
               transition={{ duration: 0.8 }}
             >
               <div className="aspect-[3/4] bg-[#E5E0D8] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGOS_PREFERIDO.jpg')" }}></div>
+                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg')" }}></div>
               </div>
             </motion.div>
             <motion.div
