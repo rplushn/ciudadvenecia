@@ -67,7 +67,7 @@ export default function QuienesSomos() {
               loop
               muted
               playsInline
-              className="w-full h-full object-cover opacity-50"
+              className="w-full h-full object-cover opacity-60"
             >
               <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4" type="video/mp4" />
             </video>
