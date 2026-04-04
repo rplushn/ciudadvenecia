@@ -130,8 +130,8 @@ export default function Proyectos() {
           <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12">
               <Reveal>
                   <div className="grid grid-cols-2 gap-4 h-full">
-                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_social2_vertical_web.jpg" alt="Ciudad Venecia Olancho" className="w-full h-full object-cover rounded-sm"/>
-                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_social3_vertical_web.jpg" alt="Ciudad Venecia Olancho" className="w-full h-full object-cover rounded-sm"/>
+                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_002dron_vertical_web.jpg" alt="Ciudad Venecia Olancho - Vista aérea" className="w-full h-full object-cover rounded-sm"/>
+                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg" alt="Ciudad Venecia Olancho - Arquitectura" className="w-full h-full object-cover rounded-sm"/>
                   </div>
               </Reveal>
               <Reveal delay={0.2}>
