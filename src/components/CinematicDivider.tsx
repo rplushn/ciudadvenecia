@@ -11,8 +11,6 @@ if (typeof window !== 'undefined') {
 export default function CinematicDivider() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const topBarRef = useRef<HTMLDivElement>(null);
-  const bottomBarRef = useRef<HTMLDivElement>(null);
   const wordsRef = useRef<(HTMLSpanElement | null)[]>([]);
   const lineRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
@@ -38,39 +36,7 @@ export default function CinematicDivider() {
         );
       }
 
-      // 2. Letterbox bars retract
-      if (topBarRef.current) {
-        gsap.fromTo(topBarRef.current,
-          { scaleY: 1 },
-          {
-            scaleY: 0.3,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 80%',
-              end: 'center center',
-              scrub: true,
-            }
-          }
-        );
-      }
-      if (bottomBarRef.current) {
-        gsap.fromTo(bottomBarRef.current,
-          { scaleY: 1 },
-          {
-            scaleY: 0.3,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 80%',
-              end: 'center center',
-              scrub: true,
-            }
-          }
-        );
-      }
-
-      // 3. Words stagger reveal
+      // 2. Words stagger reveal
       const validWords = wordsRef.current.filter(Boolean);
       if (validWords.length > 0) {
         gsap.fromTo(validWords,
@@ -158,16 +124,6 @@ export default function CinematicDivider() {
       {/* Center darken for text readability */}
       <div className="absolute inset-0 bg-black/30" />
 
-      {/* === LETTERBOX BARS === */}
-      <div 
-        ref={topBarRef}
-        className="absolute top-0 left-0 right-0 h-[12vh] bg-[#0a0a0a] origin-top z-20"
-      />
-      <div 
-        ref={bottomBarRef}
-        className="absolute bottom-0 left-0 right-0 h-[12vh] bg-[#0a0a0a] origin-bottom z-20"
-      />
-
       {/* === FILM GRAIN OVERLAY === */}
       <div 
         className="absolute inset-0 z-10 opacity-[0.04] pointer-events-none mix-blend-overlay"
@@ -213,7 +169,7 @@ export default function CinematicDivider() {
       </div>
 
       {/* === SCROLL INDICATOR === */}
-      <div className="absolute bottom-[14vh] left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2">
         <span className="text-white/30 text-[8px] uppercase tracking-[0.4em]">Scroll</span>
         <div className="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent animate-pulse" />
       </div>
