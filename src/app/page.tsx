@@ -519,9 +519,9 @@ export default function Home() {
       <ScrollBridge />
 
       {/* ============================================ */}
-      {/* SECCIÓN 3: PRECIOS EXCLUSIVOS — SIN CAMBIOS */}
+      {/* SECCIÓN 3: PRECIOS EXCLUSIVOS */}
       {/* ============================================ */}
-      <section className="relative pt-[200px] pb-[120px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-JUANJOSE/Talanga/Talanga002.jpeg')" }}>
+      <section className="relative pt-[200px] pb-[120px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg')" }}>
         <div className="absolute inset-0 bg-[#2C2C2C]/35 backdrop-blur-[2px] z-[1]" />
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-[#A69C91]/30 pb-[30px]"></div>
@@ -531,57 +531,51 @@ export default function Home() {
            <Reveal>
              <TextReveal as="h2" className="font-serif-display text-3xl md:text-4xl tracking-widest mb-3 drop-shadow-md">PRECIOS EXCLUSIVOS</TextReveal>
              <p className="font-light text-xs md:text-sm max-w-3xl mx-auto mb-8 text-gray-100 drop-shadow-sm">
-                Adquiere tu terreno en Ciudad Venecia con exclusivos precios de lanzamiento, descubre los planes de financiamiento y las tasas preferenciales que mejor se adapten a ti.
+                Invertir en Ciudad Venecia es invertir en tu futuro. Descubre nuestros planes diseñados para que adquirir tu terreno sea una realidad accesible.
              </p>
            </Reveal>
 
            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-4 gap-x-0 mb-6">
               <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
                  <Reveal delay={0.1}>
-                   <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">HASTA 60 MESES</span>
-                   <span className="text-[10px] uppercase tracking-widest font-medium">SIN INTERESES</span>
+                   <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">FINANCIAMIENTO</span>
+                   <span className="text-[10px] uppercase tracking-widest font-medium">DIRECTO Y FLEXIBLE</span>
                  </Reveal>
               </div>
               <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80">
                   <Reveal delay={0.2}>
-                    <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">15% DE DESCUENTO</span>
+                    <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">DESCUENTOS</span>
                     <span className="text-[10px] uppercase tracking-widest font-medium">EN PAGO DE CONTADO</span>
                   </Reveal>
               </div>
               <div className="px-4 flex flex-col items-center justify-center">
                   <Reveal delay={0.3}>
-                    <span className="text-xs md:text-sm uppercase tracking-widest mb-1 font-medium">TERRENOS DESDE</span>
-                    <span className="text-2xl md:text-3xl font-serif-display drop-shadow-sm">99m² <span className="text-base">HASTA</span> 250m²</span>
+                    <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">PLUSVALÍA</span>
+                    <span className="text-[10px] uppercase tracking-widest font-medium">COMPROBADA EN CADA PROYECTO</span>
                   </Reveal>
               </div>
 
               <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
                   <Reveal delay={0.4}>
-                    <span className="text-xs md:text-sm uppercase tracking-widest mb-1 font-medium">ENGANCHE DESDE</span>
-                    <span className="text-3xl font-serif-display drop-shadow-sm">10%</span>
+                    <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">CUOTAS</span>
+                    <span className="text-[10px] uppercase tracking-widest font-medium">ACCESIBLES Y SIN SORPRESAS</span>
                   </Reveal>
               </div>
               <div className="px-4 flex flex-col items-center justify-center border-r-0 md:border-r border-[#EBE7DF]/80 md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
                    <Reveal delay={0.5}>
-                     <span className="text-xs uppercase tracking-widest max-w-[180px] font-medium">DESCUENTO ESPECIAL POR</span>
-                     <span className="text-lg font-serif-display mt-2 drop-shadow-sm">PRONTA CONSTRUCCIÓN</span>
+                     <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">SIN</span>
+                     <span className="text-[10px] uppercase tracking-widest font-medium">INTERMEDIARIOS BANCARIOS</span>
                    </Reveal>
               </div>
               <div className="px-4 flex flex-col items-center justify-center md:mt-8 pt-8 md:pt-0 border-t md:border-t-0 border-[#EBE7DF]/30">
                    <Reveal delay={0.6}>
-                     <span className="text-xs uppercase tracking-widest max-w-[200px] font-medium">PLANES ESPECIALES</span>
-                     <span className="text-[10px] mt-2 text-gray-100">PARA INVERSIONISTAS Y PEQUEÑOS CONSTRUCTORES</span>
+                     <span className="text-2xl md:text-3xl font-serif-display mb-2 drop-shadow-sm">PLANES</span>
+                     <span className="text-[10px] uppercase tracking-widest font-medium">PARA INVERSIONISTAS</span>
                    </Reveal>
               </div>
            </div>
 
-           <p className="text-[10px] italic text-gray-200 mb-8">*Aplican restricciones.</p>
-
-           {/* CALCULADORA DESACTIVADA TEMPORALMENTE — descomentar cuando se quiera reactivar
-           <div className="mt-12 mb-8">
-             <FinancingCalculator />
-           </div>
-           */}
+           <p className="text-[10px] italic text-gray-200 mb-8">*Consulta condiciones con tu asesor.</p>
 
           </div>
         </CursorSpotlight>
