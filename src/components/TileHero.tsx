@@ -41,9 +41,8 @@ export default function TileHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const currentImgRef = useRef<HTMLImageElement>(null);
   const nextImgRef = useRef<HTMLImageElement>(null);
-  const titleCurrentRef = useRef<HTMLDivElement>(null);
-  const titleNextRef = useRef<HTMLDivElement>(null);
-  const titleContainerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const subtitleRef = useRef<HTMLSpanElement>(null);
   const previewCurrentRef = useRef<HTMLImageElement>(null);
   const previewNextRef = useRef<HTMLImageElement>(null);
   const nextDetailsRef = useRef<HTMLDivElement>(null);
@@ -58,7 +57,7 @@ export default function TileHero() {
     return (base + 1) % tiles.length;
   }, []);
 
-  // Initialize images and text on mount
+  // Initialize on mount
   useEffect(() => {
     const idx = activeIndexRef.current;
     const nextIdx = getNextIndex(idx);
@@ -79,8 +78,7 @@ export default function TileHero() {
     if (isAnimating.current) return;
     isAnimating.current = true;
 
-    const oldIdx = activeIndexRef.current;
-    const newIdx = getNextIndex(oldIdx);
+    const newIdx = getNextIndex();
     const futureIdx = getNextIndex(newIdx);
 
     activeIndexRef.current = newIdx;
@@ -88,20 +86,12 @@ export default function TileHero() {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        // Reset for next transition
+        // Reset images
         if (currentImgRef.current) currentImgRef.current.src = tiles[newIdx].image;
         if (nextImgRef.current) {
           nextImgRef.current.src = tiles[futureIdx].image;
           gsap.set(nextImgRef.current, { opacity: 0, scale: 1.15 });
         }
-
-        // Reset title
-        if (titleContainerRef.current) gsap.set(titleContainerRef.current, { yPercent: 0 });
-        if (titleCurrentRef.current) {
-          titleCurrentRef.current.textContent = tiles[newIdx].title;
-          gsap.set(titleCurrentRef.current, { opacity: 1 });
-        }
-        if (titleNextRef.current) titleNextRef.current.textContent = tiles[futureIdx].title;
 
         // Reset preview
         if (previewCurrentRef.current) {
@@ -113,7 +103,7 @@ export default function TileHero() {
           gsap.set(previewNextRef.current, { opacity: 0 });
         }
 
-        // Reset next button details
+        // Reset next button
         if (nextDetailsRef.current) gsap.set(nextDetailsRef.current, { xPercent: 0 });
         if (nextTitleCurrentRef.current) {
           nextTitleCurrentRef.current.textContent = tiles[futureIdx].subtitle;
@@ -128,14 +118,30 @@ export default function TileHero() {
       }
     });
 
-    // Title slide up + fade
-    tl.to(titleContainerRef.current, { yPercent: -50, duration: 0.8, ease: 'power2.out' }, 0);
-    tl.to(titleCurrentRef.current, { opacity: 0, duration: 0.5 }, 0);
+    // === TITLE: fade out + slide up, swap text, fade in + slide from below ===
+    tl.to(titleRef.current, {
+      y: -60, opacity: 0, duration: 0.5, ease: 'power2.in',
+      onComplete: () => {
+        if (titleRef.current) titleRef.current.textContent = tiles[newIdx].title;
+        gsap.set(titleRef.current, { y: 60 });
+      }
+    }, 0);
+    tl.to(titleRef.current, { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' }, 0.55);
 
-    // Image crossfade
+    // === SUBTITLE: same pattern ===
+    tl.to(subtitleRef.current, {
+      y: -20, opacity: 0, duration: 0.4, ease: 'power2.in',
+      onComplete: () => {
+        if (subtitleRef.current) subtitleRef.current.textContent = tiles[newIdx].subtitle;
+        gsap.set(subtitleRef.current, { y: 20 });
+      }
+    }, 0);
+    tl.to(subtitleRef.current, { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' }, 0.6);
+
+    // === IMAGE crossfade ===
     tl.to(nextImgRef.current, { opacity: 1, scale: 1, duration: 0.7, ease: 'sine.out' }, 0);
 
-    // Next button slide out and back
+    // === NEXT BUTTON: slide out and back ===
     tl.to(nextDetailsRef.current, { xPercent: 80, duration: 0.6, ease: 'power1.out' }, 0);
     tl.to(previewCurrentRef.current, { opacity: 0, duration: 0.01 }, 0.55);
     tl.to(previewNextRef.current, { opacity: 1, duration: 0.6, ease: 'sine.out' }, 0.55);
@@ -163,13 +169,11 @@ export default function TileHero() {
 
       {/* === BACKGROUND TILES === */}
       <div className="absolute inset-0">
-        {/* Current image */}
         <img
           ref={currentImgRef}
           alt=""
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover"
         />
-        {/* Next image (hidden, fades in on transition) */}
         <img
           ref={nextImgRef}
           alt=""
@@ -181,28 +185,25 @@ export default function TileHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/60 via-transparent to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/40 via-transparent to-transparent" />
 
-      {/* === TITLE === */}
+      {/* === SINGLE TITLE (only 2 lines ever visible) === */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full pointer-events-none z-10">
-        <div ref={titleContainerRef} className="w-full">
-          {/* Current title */}
-          <div className="px-8 md:px-16 lg:px-24 mb-12">
-            <div ref={titleCurrentRef} className="font-serif-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-light whitespace-pre-line">
-              {tiles[activeIndex].title}
-            </div>
-          </div>
-          {/* Next title (below, revealed on slide up) */}
-          <div className="px-8 md:px-16 lg:px-24">
-            <div ref={titleNextRef} className="font-serif-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-light whitespace-pre-line">
-              {tiles[nextIdx].title}
-            </div>
+        <div className="px-8 md:px-16 lg:px-24">
+          <div
+            ref={titleRef}
+            className="font-serif-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-light whitespace-pre-line"
+          >
+            {tiles[0].title}
           </div>
         </div>
       </div>
 
       {/* === SUBTITLE BADGE === */}
       <div className="absolute bottom-32 md:bottom-24 left-8 md:left-16 lg:left-24 z-10">
-        <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium">
-          {tiles[activeIndex].subtitle}
+        <span
+          ref={subtitleRef}
+          className="inline-block text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium"
+        >
+          {tiles[0].subtitle}
         </span>
       </div>
 
@@ -212,7 +213,7 @@ export default function TileHero() {
           {String(activeIndex + 1).padStart(2, '0')}
         </span>
         <div className="w-12 h-[1px] bg-white/30 relative">
-          <div 
+          <div
             className="h-full bg-[#C5A065] transition-all duration-300"
             style={{ width: `${((activeIndex + 1) / tiles.length) * 100}%` }}
           />
@@ -235,13 +236,13 @@ export default function TileHero() {
               Siguiente
             </span>
             <div className="relative">
-              <span 
+              <span
                 ref={nextTitleCurrentRef}
                 className="text-[#1A1A1A] text-sm md:text-base font-serif-display leading-tight block"
               >
                 {tiles[nextIdx].subtitle}
               </span>
-              <span 
+              <span
                 ref={nextTitleNextRef}
                 className="text-[#1A1A1A] text-sm md:text-base font-serif-display leading-tight absolute top-0 left-0 opacity-0"
               >
@@ -275,7 +276,7 @@ export default function TileHero() {
       {/* === DOT INDICATORS === */}
       <div className="absolute right-8 md:right-[calc(200px+130px+2rem)] bottom-8 z-10 flex gap-2">
         {tiles.map((_, i) => (
-          <div 
+          <div
             key={i}
             className={`w-2 h-2 rounded-full transition-all duration-500 ${
               i === activeIndex ? 'bg-[#C5A065] scale-125' : 'bg-white/30'
