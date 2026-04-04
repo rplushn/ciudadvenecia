@@ -244,62 +244,76 @@ export default function Proyectos() {
       </section>
 
       {/* --- 3.1 CIUDAD VENECIA DANLÍ --- */}
-      <section className="py-24 px-6 max-w-[1500px] mx-auto border-b border-[#C5A065]/20">
-         <div className="grid lg:grid-cols-2 gap-16 items-start">
-             <div>
+      <section className="border-b border-[#C5A065]/20">
+         {/* Cinematic Video Banner */}
+         <div className="relative h-[60vh] overflow-hidden">
+            <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+                <source src="/homepage/CV_DRON_web.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/50 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
                 <Reveal>
-                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">EL PARAÍSO</span>
-                    <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Ciudad Venecia Danlí</h2>
-                    <p className="text-lg font-medium text-[#2C2C2C] mb-4">Comunidad consolidada con más de 850 familias residentes y plusvalía comprobada.</p>
-                    
-                    <div className="space-y-6 text-[#6B665F] text-sm leading-relaxed mb-8">
-                        <div>
-                            <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-1">Ubicación</strong>
-                            A pocos kilómetros del centro de Danlí, muy cerca de la sede de la UNAH-TEC y del Hospital Regional Gabriela Alvarado. Salida hacia la ciudad de El Paraíso.
-                        </div>
-                        <div>
-                            <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-1">Descripción</strong>
+                    <span className="text-[#C5A065] text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] mb-3 block">EL PARAÍSO · COMUNIDAD CONSOLIDADA</span>
+                    <h2 className="font-serif-display text-4xl md:text-6xl text-white mb-4 font-light">Ciudad Venecia Danlí</h2>
+                    <p className="text-white/60 text-sm md:text-base max-w-lg">A pocos kilómetros del centro de Danlí, cerca de la UNAH-TEC y del Hospital Regional Gabriela Alvarado.</p>
+                </Reveal>
+            </div>
+            {/* Stats overlay */}
+            <div className="absolute bottom-0 right-0 hidden lg:flex items-end gap-0">
+                <div className="bg-[#C5A065] text-white px-8 py-6 text-center">
+                    <span className="block font-serif-display text-3xl">+850</span>
+                    <span className="text-[8px] uppercase tracking-widest">Familias</span>
+                </div>
+                <div className="bg-white text-[#1A1A1A] px-8 py-6 text-center">
+                    <span className="block font-serif-display text-3xl">100%</span>
+                    <span className="text-[8px] uppercase tracking-widest">Plusvalía</span>
+                </div>
+                <div className="bg-[#F3F0EB] text-[#1A1A1A] px-8 py-6 text-center">
+                    <span className="block font-serif-display text-3xl">3ra</span>
+                    <span className="text-[8px] uppercase tracking-widest">Etapa</span>
+                </div>
+            </div>
+         </div>
+
+         {/* Content below video */}
+         <div className="max-w-[1500px] mx-auto px-6 py-16">
+            <div className="grid lg:grid-cols-3 gap-12">
+                {/* Description */}
+                <div className="lg:col-span-1">
+                    <Reveal>
+                        <p className="text-[#6B665F] text-sm leading-relaxed">
                             Ambiente muy agradable, lleno de frescura y vegetación. Hermosas áreas verdes, espacios recreativos para toda la familia y un paisaje realmente hermoso.
-                        </div>
-                    </div>
-
-                    {/* Amenidades Grid */}
-                    <div className="grid md:grid-cols-2 gap-8 mb-8 bg-[#F9F7F4] p-6">
-                        <div>
-                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Amenidades</h4>
-                            <ul className="space-y-2 text-xs text-[#484848]">
-                                <li>• Piscina para adultos y niños</li>
-                                <li>• Áreas recreativas y parques</li>
-                                <li>• Canchas deportivas</li>
-                                <li>• Áreas sociales y quioscos</li>
-                                <li>• Juegos infantiles</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Infraestructura</h4>
-                            <ul className="space-y-2 text-xs text-[#484848]">
-                                <li>• Calles pavimentadas</li>
-                                <li>• Agua potable 24 horas</li>
-                                <li>• Electrificación completa</li>
-                                <li>• Seguridad privada 24/7</li>
-                                <li>• App de residentes</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="bg-white border border-gray-200 p-6 shadow-sm mb-6">
-                        <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-2">Plusvalía</strong>
-                        <p className="text-xs text-[#6B665F]">El proyecto ya cuenta con su 3ra Etapa en desarrollo. Comunidad consolidada con más de 850 familias residentes y 100% de plusvalía histórica.</p>
-                    </div>
-                </Reveal>
-             </div>
-             <div className="h-full">
-                <Reveal delay={0.2}>
-                    <div className="aspect-[4/5] bg-gray-200 relative overflow-hidden mb-6">
-                        <img src="/amenidades/amenidades_parque_central.jpg.jpeg" alt="Ciudad Venecia Danlí" className="w-full h-full object-cover"/>
-                    </div>
-                </Reveal>
-             </div>
+                        </p>
+                    </Reveal>
+                </div>
+                {/* Amenidades */}
+                <div className="lg:col-span-1">
+                    <Reveal delay={0.1}>
+                        <h4 className="text-[#C5A065] font-serif-display text-xl mb-4">Amenidades</h4>
+                        <ul className="space-y-2 text-xs text-[#484848]">
+                            <li>• Piscina para adultos y niños</li>
+                            <li>• Áreas recreativas y parques</li>
+                            <li>• Canchas deportivas</li>
+                            <li>• Áreas sociales y quioscos</li>
+                            <li>• Juegos infantiles</li>
+                        </ul>
+                    </Reveal>
+                </div>
+                {/* Infraestructura */}
+                <div className="lg:col-span-1">
+                    <Reveal delay={0.2}>
+                        <h4 className="text-[#C5A065] font-serif-display text-xl mb-4">Infraestructura</h4>
+                        <ul className="space-y-2 text-xs text-[#484848]">
+                            <li>• Calles pavimentadas</li>
+                            <li>• Agua potable 24 horas</li>
+                            <li>• Electrificación completa</li>
+                            <li>• Seguridad privada 24/7</li>
+                            <li>• App de residentes</li>
+                        </ul>
+                    </Reveal>
+                </div>
+            </div>
          </div>
       </section>
 
