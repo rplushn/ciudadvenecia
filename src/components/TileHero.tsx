@@ -31,12 +31,12 @@ const tiles: Tile[] = [
     subtitle: 'Vida al aire libre'
   },
   {
-    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_001dron_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A002_horizontal_web.jpg',
     title: 'Plusvalía\ngarantizada',
     subtitle: 'Vista aérea del proyecto'
   },
   {
-    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina4_horizontal_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina2_horizontal_web.jpg',
     title: 'Espacios\npara disfrutar',
     subtitle: 'Áreas recreativas'
   },
