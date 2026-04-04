@@ -25,22 +25,22 @@ export default function ScrollBridge() {
   // ============================================
   // PHASE 2: Answer (35% - 70%)
   // ============================================
-  const answerOpacity = useTransform(scrollYProgress, [0.35, 0.43, 0.60, 0.68], [0, 1, 1, 0]);
-  const answerY = useTransform(scrollYProgress, [0.35, 0.43, 0.60, 0.68], [50, 0, 0, -50]);
+  const answerOpacity = useTransform(scrollYProgress, [0.35, 0.43, 0.70, 0.80], [0, 1, 1, 0]);
+  const answerY = useTransform(scrollYProgress, [0.35, 0.43, 0.70, 0.80], [50, 0, -20, -60]);
   const answerScale = useTransform(scrollYProgress, [0.35, 0.43], [0.9, 1]);
 
   // Gold line draws
   const lineScaleX = useTransform(scrollYProgress, [0.40, 0.50], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.40, 0.46, 0.60, 0.66], [0, 1, 1, 0]);
+  const lineOpacity = useTransform(scrollYProgress, [0.40, 0.46, 0.70, 0.78], [0, 1, 1, 0]);
 
   // Supporting text
-  const supportOpacity = useTransform(scrollYProgress, [0.46, 0.52, 0.60, 0.66], [0, 1, 1, 0]);
+  const supportOpacity = useTransform(scrollYProgress, [0.46, 0.52, 0.70, 0.78], [0, 1, 1, 0]);
   const supportY = useTransform(scrollYProgress, [0.46, 0.52], [20, 0]);
 
   // ============================================
   // PHASE 3: Fade out (65% - 100%)
   // ============================================
-  const bgOpacity = useTransform(scrollYProgress, [0.65, 0.90], [1, 0]);
+  const bgOpacity = useTransform(scrollYProgress, [0.75, 0.95], [1, 0]);
 
   // Nebula glow movement
   const nebula1X = useTransform(scrollYProgress, [0, 1], [-50, 50]);
@@ -258,13 +258,13 @@ export default function ScrollBridge() {
           <div className="text-center max-w-3xl">
             {/* Subtle label */}
             <p className="text-[#C5A065]/50 text-[10px] uppercase tracking-[0.5em] mb-8">
-              La respuesta
+              Tu próximo paso
             </p>
 
-            {/* Main answer */}
+            {/* Main text */}
             <h3 className="font-serif-display text-4xl md:text-6xl text-white mb-8 font-light">
-              Menos de lo que{' '}
-              <span className="italic text-[#C5A065]">imaginas.</span>
+              ¿Cuánto cuesta{' '}
+              <span className="italic text-[#C5A065]">tu sueño?</span>
             </h3>
 
             {/* Gold line */}
