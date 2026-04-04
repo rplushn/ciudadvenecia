@@ -114,7 +114,7 @@ export default function CinematicDivider() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/NUEVAS-JUANJOSE/cv_olancho_social_horizontal_web.mp4" type="video/mp4" />
+          <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_social_horizontal_web.mp4" type="video/mp4" />
         </video>
       </div>
 

@@ -11,34 +11,34 @@ interface Tile {
 
 const tiles: Tile[] = [
   {
-    image: '/NUEVAS-JUANJOSE/cv_olancho_A003_web.jpg',
-    title: 'Ciudad Venecia\nOlancho',
-    subtitle: 'Nuestro proyecto premium'
-  },
-  {
-    image: '/NUEVAS-JUANJOSE/cv_olancho_piscina_horizontal_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg',
     title: 'Piscinas\nresidenciales',
     subtitle: 'Amenidades de primer nivel'
   },
   {
-    image: '/NUEVAS-JUANJOSE/cv_olancho_A001_horizontal_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A001_horizontal_web.jpg',
     title: 'Diseño que\ninspira vida',
     subtitle: 'Arquitectura moderna'
   },
   {
-    image: '/NUEVAS-JUANJOSE/cv_olancho_horizontal_juegos_web.jpg',
-    title: 'Espacios\npara disfrutar',
-    subtitle: 'Áreas recreativas'
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A003_web.jpg',
+    title: 'Ciudad Venecia\nOlancho',
+    subtitle: 'Nuestro proyecto premium'
   },
   {
-    image: '/NUEVAS-JUANJOSE/cv_olancho_001dron_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina3_horizontal_web.jpg',
+    title: 'Naturaleza\ny comunidad',
+    subtitle: 'Vida al aire libre'
+  },
+  {
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_001dron_web.jpg',
     title: 'Plusvalía\ngarantizada',
     subtitle: 'Vista aérea del proyecto'
   },
   {
-    image: '/NUEVAS-JUANJOSE/cv_olancho_piscina4_horizontal_web.jpg',
-    title: 'Naturaleza\ny comunidad',
-    subtitle: 'Vida al aire libre'
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina4_horizontal_web.jpg',
+    title: 'Espacios\npara disfrutar',
+    subtitle: 'Áreas recreativas'
   },
 ];
 

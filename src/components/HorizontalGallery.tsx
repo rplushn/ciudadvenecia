@@ -113,7 +113,7 @@ export default function HorizontalGallery() {
 
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm">
             <img
-              src="/NUEVAS-JUANJOSE/cv_olancho_A002_horizontal_web.jpg"
+              src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_A002_horizontal_web.jpg"
               alt="Ciudad Venecia Olancho - Fachadas"
               className="w-full h-full object-cover"
             />
@@ -121,7 +121,7 @@ export default function HorizontalGallery() {
 
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm">
             <img
-              src="/NUEVAS-JUANJOSE/cv_olancho_piscina2_horizontal_web.jpg"
+              src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina2_horizontal_web.jpg"
               alt="Ciudad Venecia Olancho - Piscina"
               className="w-full h-full object-cover"
             />
@@ -129,7 +129,7 @@ export default function HorizontalGallery() {
 
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm mr-24">
             <img
-              src="/NUEVAS-JUANJOSE/cv_olancho_piscina3_horizontal_web.jpg"
+              src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina3_horizontal_web.jpg"
               alt="Ciudad Venecia Olancho - Áreas comunes"
               className="w-full h-full object-cover"
             />
@@ -143,7 +143,7 @@ export default function HorizontalGallery() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="h-[70vh] md:h-[80vh] overflow-hidden rounded-sm">
               <img
-                src="/NUEVAS-JUANJOSE/cv_olancho_social_vertical_web.jpg"
+                src="/NUEVAS-JUANJOSE/verticales/cv_olancho_social_vertical_web.jpg"
                 alt="Ciudad Venecia Olancho - Residencial"
                 className="w-full h-full object-cover"
               />
