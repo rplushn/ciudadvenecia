@@ -129,8 +129,8 @@ export default function HorizontalGallery() {
 
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm mr-24">
             <img
-              src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina3_horizontal_web.jpg"
-              alt="Ciudad Venecia Olancho - Áreas comunes"
+              src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_horizontal_juegos_web.jpg"
+              alt="Ciudad Venecia Olancho - Áreas recreativas"
               className="w-full h-full object-cover"
             />
           </div>
