@@ -40,28 +40,30 @@ export default function HorizontalGallery() {
         ease: "none",
       });
 
-      // Parallax on intro section text
+      // Parallax on intro text (like Locomotive data-scroll-speed)
+      // Title: speed 1 (slower parallax)
       if (titleRef.current && introRef.current) {
         gsap.to(titleRef.current, {
           scrollTrigger: {
             trigger: introRef.current,
-            scrub: true,
+            scrub: 0.5,
             start: "top bottom",
             end: "bottom top",
           },
-          y: -80,
+          y: -50,
           ease: "none",
         });
       }
+      // Subtitle: speed 2 + delay (faster parallax, like original)
       if (subtitleRef.current && introRef.current) {
         gsap.to(subtitleRef.current, {
           scrollTrigger: {
             trigger: introRef.current,
-            scrub: true,
+            scrub: 1.2,
             start: "top bottom",
             end: "bottom top",
           },
-          y: -40,
+          y: -120,
           ease: "none",
         });
       }
@@ -75,29 +77,25 @@ export default function HorizontalGallery() {
   return (
     <div ref={wrapperRef}>
       {/* === SECTION 1: INTRO (beige) === */}
-      <section ref={introRef} className="relative bg-[#F3F0EB] min-h-screen flex items-center overflow-hidden">
-        <div className="w-full max-w-[1100px] mx-auto px-8 md:px-16 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div ref={titleRef}>
-              <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium block mb-8">
-                Ciudad Venecia Olancho
-              </span>
-              <h2 className="font-serif-display text-[#1A1A1A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light">
-                Un estándar{' '}
-                <em className="italic text-[#C5A065]">superior</em>{' '}
-                de vida
-              </h2>
-            </div>
-            <div ref={subtitleRef} className="lg:mt-32">
-              <div className="w-12 h-[1px] bg-[#C5A065] mb-6" />
-              <p className="text-[#1A1A1A]/60 text-sm md:text-base leading-relaxed max-w-md">
-                Cada detalle de Ciudad Venecia Olancho ha sido pensado para 
-                ofrecer una experiencia residencial sin precedentes. Piscinas, 
-                áreas sociales, senderos y arquitectura moderna en armonía 
-                con la naturaleza.
-              </p>
-            </div>
-          </div>
+      <section ref={introRef} className="relative bg-[#F3F0EB] h-screen overflow-hidden">
+        {/* Title — absolute top-left */}
+        <div ref={titleRef} className="absolute top-[10vw] left-[10vw] z-10">
+          <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium block mb-6">
+            Ciudad Venecia Olancho
+          </span>
+          <h2 className="font-serif-display text-[#1A1A1A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light">
+            Un estándar{' '}
+            <em className="italic text-[#C5A065]">superior</em>{' '}
+            de vida
+          </h2>
+        </div>
+        {/* Subtitle — absolute bottom-right */}
+        <div ref={subtitleRef} className="absolute bottom-[10vw] right-[10vw] z-10 w-[220px] md:w-[280px]">
+          <div className="w-12 h-[1px] bg-[#C5A065] mb-5" />
+          <p className="text-[#1A1A1A]/60 text-sm leading-relaxed">
+            Cada detalle ha sido pensado para ofrecer una experiencia 
+            residencial sin precedentes en armonía con la naturaleza.
+          </p>
         </div>
       </section>
 
