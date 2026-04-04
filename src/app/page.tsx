@@ -56,7 +56,7 @@ export default function Home() {
     { title: "Piscinas", img: "/amenidades/amenidades_piscina002.jpeg" },
     { title: "Canchas Deportivas", img: "/homepage/cancha_tennis.jpg.jpeg" },
     { title: "Áreas Verdes", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/PARQUE.jpg" },
-    { title: "Senderos", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg" },
+    { title: "Senderos", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg" },
     { title: "Juegos Infantiles", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGO002.jpg" },
     { title: "Zona BBQ", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/ASADOR.jpg" },
     { title: "Entrada Principal", img: "/homepage/portal_ai-ciudad_venecia.jpeg" },
@@ -132,7 +132,7 @@ export default function Home() {
 
   // Projects data for the grid
   const proyectos = [
-    { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg", slug: "/proyectos/danli" },
+    { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg", slug: "/proyectos/danli" },
     { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", badge: "PREMIUM", img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_002dron_vertical_web.jpg", slug: "/proyectos/olancho" },
     { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", badge: "NUEVO 2026", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", slug: "/proyectos/talanga" },
     { name: "Ciudad Venecia San Lorenzo", location: "Valle", badge: null, img: "/amenidades/san_lorenzo.jpeg", slug: "/proyectos/san-lorenzo" },
@@ -146,7 +146,7 @@ export default function Home() {
       name: "Ciudad Venecia Danlí",
       location: "El Paraíso, Honduras",
       badge: "DONDE NACIÓ LA MARCA",
-      img: "/amenidades/amenidades009.jpg.jpeg",
+      img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg",
       slug: "/proyectos/danli",
       description: "El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa y familias que ya disfrutan de la vida en armonía.",
       stats: [
