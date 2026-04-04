@@ -11,21 +11,23 @@ export default function ScrollBridge() {
     offset: ["start start", "end start"],
   });
 
-  // Text — visible from start, fades out at end
-  const textOpacity = useTransform(scrollYProgress, [0, 0.75, 0.92], [1, 1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.75, 0.92], [0, 0, -60]);
+  // Text — visible from start, fades out smoothly as scroll progresses
+  const textOpacity = useTransform(scrollYProgress, [0, 0.50, 0.78], [1, 0.9, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.50, 0.78], [0, -10, -80]);
+  const textScale = useTransform(scrollYProgress, [0.50, 0.78], [1, 0.95]);
 
   // "soñar?" — slight entrance delay
-  const sonarOpacity = useTransform(scrollYProgress, [0, 0.04, 0.75, 0.92], [0, 1, 1, 0]);
+  const sonarOpacity = useTransform(scrollYProgress, [0, 0.04, 0.50, 0.75], [0, 1, 0.9, 0]);
   const sonarY = useTransform(scrollYProgress, [0, 0.04], [30, 0]);
   const sonarScale = useTransform(scrollYProgress, [0, 0.04], [0.88, 1]);
 
-  // Gold line — draws itself early, stays
+  // Gold line — draws itself early, fades with text
   const lineScaleX = useTransform(scrollYProgress, [0.03, 0.12], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.03, 0.08, 0.75, 0.90], [0, 0.6, 0.6, 0]);
+  const lineOpacity = useTransform(scrollYProgress, [0.03, 0.08, 0.50, 0.72], [0, 0.6, 0.5, 0]);
 
-  // Entire section fades to reveal Precios below
-  const bgOpacity = useTransform(scrollYProgress, [0.78, 0.98], [1, 0]);
+  // Background layers for smooth transition
+  const darkBgOpacity = useTransform(scrollYProgress, [0.60, 0.90], [1, 0]);
+  const warmBgOpacity = useTransform(scrollYProgress, [0.55, 0.75, 0.90, 1], [0, 0.8, 0.8, 0]);
 
   // Nebula drift
   const nebula1X = useTransform(scrollYProgress, [0, 1], [-30, 50]);
@@ -49,16 +51,24 @@ export default function ScrollBridge() {
     <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
 
-        {/* Background */}
+        {/* Background — dark carbon that transitions to warm gray */}
         <motion.div
           className="absolute inset-0 z-10"
-          style={{ opacity: bgOpacity, background: "#080808" }}
+          style={{ opacity: darkBgOpacity, background: "#1A1A1A" }}
+        />
+        {/* Warm gray-brown layer — fades in then out to blend with PRECIOS */}
+        <motion.div
+          className="absolute inset-0 z-[9]"
+          style={{
+            opacity: warmBgOpacity,
+            background: "linear-gradient(180deg, #3D3530 0%, #5C554F 50%, #6B665F 100%)",
+          }}
         />
 
         {/* ========== ATMOSPHERE ========== */}
         <motion.div
           className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
-          style={{ opacity: bgOpacity }}
+          style={{ opacity: darkBgOpacity }}
         >
 
           {/* Golden nebula 1 — top left */}
@@ -191,7 +201,7 @@ export default function ScrollBridge() {
         {/* ========== THE PHRASE ========== */}
         <motion.div
           className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6"
-          style={{ opacity: textOpacity, y: textY }}
+          style={{ opacity: textOpacity, y: textY, scale: textScale }}
         >
           <div className="text-center">
             {/* "¿Cuánto cuesta" */}
