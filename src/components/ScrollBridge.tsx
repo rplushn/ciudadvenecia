@@ -54,14 +54,14 @@ export default function ScrollBridge() {
         {/* Background — dark carbon that transitions to warm gray */}
         <motion.div
           className="absolute inset-0 z-10"
-          style={{ opacity: darkBgOpacity, background: "#1A1A1A" }}
+          style={{ opacity: darkBgOpacity, background: "#111111" }}
         />
         {/* Warm gray-brown layer — fades in then out to blend with PRECIOS */}
         <motion.div
           className="absolute inset-0 z-[9]"
           style={{
             opacity: warmBgOpacity,
-            background: "linear-gradient(180deg, #3D3530 0%, #5C554F 50%, #6B665F 100%)",
+            background: "linear-gradient(180deg, #2A2420 0%, #3D3530 50%, #4A433D 100%)",
           }}
         />
 
@@ -205,7 +205,7 @@ export default function ScrollBridge() {
         >
           <div className="text-center">
             {/* "¿Cuánto cuesta" */}
-            <h2 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white/90 leading-[1.05] mb-1">
+            <h2 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-1 drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
               ¿Cuánto cuesta
             </h2>
 
@@ -213,7 +213,7 @@ export default function ScrollBridge() {
             <motion.div
               style={{ opacity: sonarOpacity, y: sonarY, scale: sonarScale }}
             >
-              <span className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#C5A065] leading-[1.05]">
+              <span className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#C5A065] leading-[1.05] drop-shadow-[0_2px_20px_rgba(197,160,101,0.3)]">
                 soñar?
               </span>
             </motion.div>
