@@ -77,13 +77,13 @@ export default function HorizontalGallery() {
   return (
     <div ref={wrapperRef}>
       {/* === SECTION 1: INTRO (beige) === */}
-      <section ref={introRef} className="relative bg-[#F3F0EB] h-screen overflow-hidden">
+      <section ref={introRef} className="relative bg-[#F3F0EB] h-[90vh] overflow-hidden">
         {/* Title — absolute top-left */}
         <div ref={titleRef} className="absolute top-[10vw] left-[10vw] z-10">
-          <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium block mb-6">
+          <span className="text-[#C5A065] text-[11px] md:text-sm uppercase tracking-[0.4em] font-medium block mb-6">
             Ciudad Venecia Olancho
           </span>
-          <h2 className="font-serif-display text-[#1A1A1A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light">
+          <h2 className="font-serif-display text-[#1A1A1A] text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] font-light">
             <span className="block">Un estándar</span>
             <span className="block italic text-[#C5A065]">superior</span>
             <span className="block">de vida</span>
