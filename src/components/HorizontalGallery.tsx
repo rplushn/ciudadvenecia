@@ -9,21 +9,24 @@ if (typeof window !== 'undefined') {
 }
 
 export default function HorizontalGallery() {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const sectionPinRef = useRef<HTMLDivElement>(null);
   const pinWrapRef = useRef<HTMLDivElement>(null);
-  const tweenRef = useRef<gsap.core.Tween | null>(null);
+  const introRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const pinWrap = pinWrapRef.current;
     const sectionPin = sectionPinRef.current;
     if (!pinWrap || !sectionPin) return;
 
-    // Small delay so layout settles (especially with Next.js HMR)
     const ctx = gsap.context(() => {
+      // Horizontal scroll pin
       const pinWrapWidth = pinWrap.scrollWidth;
       const horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
-      tweenRef.current = gsap.to(pinWrap, {
+      gsap.to(pinWrap, {
         scrollTrigger: {
           scrub: true,
           trigger: sectionPin,
@@ -36,20 +39,46 @@ export default function HorizontalGallery() {
         x: -horizontalScrollLength,
         ease: "none",
       });
-    }, sectionPinRef); // Scope to this container
+
+      // Parallax on intro section text
+      if (titleRef.current && introRef.current) {
+        gsap.to(titleRef.current, {
+          scrollTrigger: {
+            trigger: introRef.current,
+            scrub: true,
+            start: "top bottom",
+            end: "bottom top",
+          },
+          y: -80,
+          ease: "none",
+        });
+      }
+      if (subtitleRef.current && introRef.current) {
+        gsap.to(subtitleRef.current, {
+          scrollTrigger: {
+            trigger: introRef.current,
+            scrub: true,
+            start: "top bottom",
+            end: "bottom top",
+          },
+          y: -40,
+          ease: "none",
+        });
+      }
+    }, wrapperRef);
 
     return () => {
-      ctx.revert(); // gsap.context().revert() properly cleans up everything
+      ctx.revert();
     };
   }, []);
 
   return (
-    <div>
+    <div ref={wrapperRef}>
       {/* === SECTION 1: INTRO (beige) === */}
-      <section className="relative bg-[#F3F0EB] min-h-screen flex items-center">
-        <div className="w-full px-8 md:px-16 lg:px-24 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end">
-            <div>
+      <section ref={introRef} className="relative bg-[#F3F0EB] min-h-screen flex items-center overflow-hidden">
+        <div className="w-full max-w-[1100px] mx-auto px-8 md:px-16 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <div ref={titleRef}>
               <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium block mb-8">
                 Ciudad Venecia Olancho
               </span>
@@ -59,7 +88,7 @@ export default function HorizontalGallery() {
                 de vida
               </h2>
             </div>
-            <div className="lg:pb-3">
+            <div ref={subtitleRef} className="lg:mt-32">
               <div className="w-12 h-[1px] bg-[#C5A065] mb-6" />
               <p className="text-[#1A1A1A]/60 text-sm md:text-base leading-relaxed max-w-md">
                 Cada detalle de Ciudad Venecia Olancho ha sido pensado para 
