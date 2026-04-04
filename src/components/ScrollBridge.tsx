@@ -11,95 +11,87 @@ export default function ScrollBridge() {
     offset: ["start start", "end start"],
   });
 
-  // ============================================
-  // PHASE 1: "¿Cuánto cuesta soñar?" (0% - 45%)
-  // Visible IMMEDIATELY, fades out as you scroll
-  // ============================================
-  const word1Opacity = useTransform(scrollYProgress, [0, 0.28, 0.38], [1, 1, 0]);
-  const word1Y = useTransform(scrollYProgress, [0, 0.28, 0.38], [0, 0, -80]);
+  // Text — visible from start, fades out at end
+  const textOpacity = useTransform(scrollYProgress, [0, 0.75, 0.92], [1, 1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.75, 0.92], [0, 0, -60]);
 
-  // "soñar?" — gold italic, slight delay then always visible
-  const word3Opacity = useTransform(scrollYProgress, [0, 0.03, 0.28, 0.38], [0, 1, 1, 0]);
-  const word3Y = useTransform(scrollYProgress, [0, 0.03, 0.28, 0.38], [40, 0, 0, -80]);
-  const word3Scale = useTransform(scrollYProgress, [0, 0.03], [0.85, 1]);
+  // "soñar?" — slight entrance delay
+  const sonarOpacity = useTransform(scrollYProgress, [0, 0.04, 0.75, 0.92], [0, 1, 1, 0]);
+  const sonarY = useTransform(scrollYProgress, [0, 0.04], [30, 0]);
+  const sonarScale = useTransform(scrollYProgress, [0, 0.04], [0.88, 1]);
 
-  // ============================================
-  // PHASE 2: Answer (40% - 75%)
-  // ============================================
-  const answerOpacity = useTransform(scrollYProgress, [0.40, 0.48, 0.65, 0.73], [0, 1, 1, 0]);
-  const answerY = useTransform(scrollYProgress, [0.40, 0.48, 0.65, 0.73], [50, 0, 0, -50]);
-  const answerScale = useTransform(scrollYProgress, [0.40, 0.48], [0.9, 1]);
+  // Gold line — draws itself early, stays
+  const lineScaleX = useTransform(scrollYProgress, [0.03, 0.12], [0, 1]);
+  const lineOpacity = useTransform(scrollYProgress, [0.03, 0.08, 0.75, 0.90], [0, 0.6, 0.6, 0]);
 
-  // Gold line draws
-  const lineScaleX = useTransform(scrollYProgress, [0.46, 0.54], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.46, 0.52, 0.65, 0.71], [0, 1, 1, 0]);
+  // Entire section fades to reveal Precios below
+  const bgOpacity = useTransform(scrollYProgress, [0.78, 0.98], [1, 0]);
 
-  // Supporting text
-  const supportOpacity = useTransform(scrollYProgress, [0.51, 0.56, 0.65, 0.71], [0, 1, 1, 0]);
-  const supportY = useTransform(scrollYProgress, [0.51, 0.56], [20, 0]);
+  // Nebula drift
+  const nebula1X = useTransform(scrollYProgress, [0, 1], [-30, 50]);
+  const nebula1Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const nebula2X = useTransform(scrollYProgress, [0, 1], [20, -30]);
+  const nebula2Y = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
-  // ============================================
-  // PHASE 3: Fade out (72% - 100%)
-  // ============================================
-  const bgOpacity = useTransform(scrollYProgress, [0.72, 0.95], [1, 0]);
+  // Top accent line
+  const accentWidth = useTransform(scrollYProgress, [0, 0.06, 0.90, 1], ["0%", "100%", "100%", "0%"]);
 
-  // Nebula glow movement
-  const nebula1X = useTransform(scrollYProgress, [0, 1], [-50, 50]);
-  const nebula1Y = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const nebula2X = useTransform(scrollYProgress, [0, 1], [30, -40]);
-  const nebula2Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
-
-  // Top accent
-  const accentWidth = useTransform(scrollYProgress, [0, 0.08, 0.90, 1], ["0%", "100%", "100%", "0%"]);
-
-  // Generate starfield positions deterministically
+  // Deterministic starfield
   const stars = Array.from({ length: 80 }, (_, i) => ({
     x: ((i * 17 + 31) % 100),
     y: ((i * 23 + 47) % 100),
-    size: (i % 5 === 0) ? 2 : (i % 3 === 0) ? 1.5 : 1,
-    delay: (i * 0.3) % 4,
-    duration: 2 + (i % 3),
+    size: (i % 7 === 0) ? 2.5 : (i % 4 === 0) ? 1.8 : (i % 2 === 0) ? 1.2 : 0.8,
+    delay: (i * 0.37) % 5,
+    duration: 2.5 + (i % 4),
   }));
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "300vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
 
-        {/* BG — fades to reveal Precios */}
+        {/* Background */}
         <motion.div
           className="absolute inset-0 z-10"
-          style={{ opacity: bgOpacity, background: "#0a0a0a" }}
+          style={{ opacity: bgOpacity, background: "#080808" }}
         />
 
-        {/* ============================================ */}
-        {/* STARFIELD + ATMOSPHERE */}
-        {/* ============================================ */}
+        {/* ========== ATMOSPHERE ========== */}
         <motion.div
           className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
           style={{ opacity: bgOpacity }}
         >
-          {/* Golden nebula glow 1 */}
+
+          {/* Golden nebula 1 — top left */}
           <motion.div
-            className="absolute w-[500px] h-[500px] rounded-full"
+            className="absolute w-[600px] h-[600px] rounded-full"
             style={{
-              background: "radial-gradient(circle, rgba(197,160,101,0.08) 0%, transparent 70%)",
-              top: "15%",
-              left: "20%",
+              background: "radial-gradient(circle, rgba(197,160,101,0.07) 0%, rgba(197,160,101,0.02) 40%, transparent 70%)",
+              top: "10%",
+              left: "15%",
               x: nebula1X,
               y: nebula1Y,
               filter: "blur(80px)",
             }}
           />
 
-          {/* Golden nebula glow 2 */}
+          {/* Golden nebula 2 — bottom right */}
           <motion.div
-            className="absolute w-[400px] h-[400px] rounded-full"
+            className="absolute w-[450px] h-[450px] rounded-full"
             style={{
-              background: "radial-gradient(circle, rgba(197,160,101,0.06) 0%, transparent 70%)",
-              bottom: "20%",
-              right: "15%",
+              background: "radial-gradient(circle, rgba(197,160,101,0.05) 0%, rgba(197,160,101,0.015) 40%, transparent 70%)",
+              bottom: "15%",
+              right: "10%",
               x: nebula2X,
               y: nebula2Y,
+              filter: "blur(60px)",
+            }}
+          />
+
+          {/* Center glow behind text */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full"
+            style={{
+              background: "radial-gradient(ellipse, rgba(197,160,101,0.04) 0%, transparent 70%)",
               filter: "blur(60px)",
             }}
           />
@@ -108,99 +100,86 @@ export default function ScrollBridge() {
           {stars.map((star, i) => (
             <div
               key={i}
-              className="absolute rounded-full bg-white animate-pulse"
+              className="absolute rounded-full"
               style={{
                 left: `${star.x}%`,
                 top: `${star.y}%`,
                 width: `${star.size}px`,
                 height: `${star.size}px`,
-                opacity: star.size > 1.5 ? 0.4 : star.size > 1 ? 0.2 : 0.1,
-                animationDelay: `${star.delay}s`,
-                animationDuration: `${star.duration}s`,
+                backgroundColor: star.size > 2 ? '#C5A065' : '#ffffff',
+                opacity: star.size > 2 ? 0.35 : star.size > 1.5 ? 0.2 : star.size > 1 ? 0.12 : 0.06,
+                animation: `twinkle ${star.duration}s ease-in-out ${star.delay}s infinite`,
               }}
             />
           ))}
 
-          {/* ============================================ */}
-          {/* SHOOTING STARS — 6 total, varied */}
-          {/* ============================================ */}
+          {/* ========== SHOOTING STARS (6) ========== */}
 
-          {/* Star 1 — long, gold, top-left */}
-          <div className="absolute top-[20%] left-0 w-full h-[1px] rotate-[25deg] overflow-hidden">
-            <div
-              className="h-[1.5px] w-[120px] rounded-full"
+          {/* Star 1 — long gold streak, top-left to right */}
+          <div className="absolute top-[18%] left-0 w-full h-[2px] rotate-[22deg] overflow-hidden">
+            <div className="shooting-star-1 h-[1.5px] w-[140px] rounded-full"
               style={{
-                background: "linear-gradient(to right, transparent, #C5A065, rgba(255,255,255,0.9), transparent)",
-                boxShadow: "0 0 12px rgba(197,160,101,0.6), 0 0 30px rgba(197,160,101,0.3)",
-                animation: "shootingStar1 6s ease-in-out infinite",
+                background: "linear-gradient(to right, transparent 0%, #C5A065 30%, rgba(255,255,255,0.95) 80%, transparent 100%)",
+                boxShadow: "0 0 12px rgba(197,160,101,0.7), 0 0 30px rgba(197,160,101,0.3)",
               }}
             />
           </div>
 
-          {/* Star 2 — fast, white, right side */}
-          <div className="absolute top-[45%] right-0 w-full h-[1px] -rotate-[20deg] overflow-hidden">
-            <div
-              className="h-[1px] w-[80px] rounded-full"
+          {/* Star 2 — fast white, right to left */}
+          <div className="absolute top-[42%] right-0 w-full h-[2px] -rotate-[18deg] overflow-hidden">
+            <div className="shooting-star-2 h-[1px] w-[90px] rounded-full"
               style={{
-                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.8), rgba(197,160,101,0.5), transparent)",
-                boxShadow: "0 0 8px rgba(255,255,255,0.4)",
-                animation: "shootingStar2 4s ease-in-out 2s infinite",
+                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.85), rgba(197,160,101,0.4), transparent)",
+                boxShadow: "0 0 8px rgba(255,255,255,0.5)",
               }}
             />
           </div>
 
-          {/* Star 3 — slow, long trail */}
-          <div className="absolute top-[70%] left-0 w-full h-[1px] rotate-[15deg] overflow-hidden">
-            <div
-              className="h-[1px] w-[180px] rounded-full"
+          {/* Star 3 — slow long trail */}
+          <div className="absolute top-[68%] left-0 w-full h-[2px] rotate-[12deg] overflow-hidden">
+            <div className="shooting-star-3 h-[1px] w-[200px] rounded-full"
               style={{
-                background: "linear-gradient(to right, transparent, rgba(197,160,101,0.4), rgba(255,255,255,0.7), transparent)",
-                boxShadow: "0 0 15px rgba(197,160,101,0.3)",
-                animation: "shootingStar3 8s ease-in-out 4s infinite",
+                background: "linear-gradient(to right, transparent, rgba(197,160,101,0.3), rgba(255,255,255,0.6), rgba(197,160,101,0.5), transparent)",
+                boxShadow: "0 0 18px rgba(197,160,101,0.25)",
               }}
             />
           </div>
 
-          {/* Star 4 — tiny, quick */}
-          <div className="absolute top-[30%] left-0 w-full h-[1px] rotate-[35deg] overflow-hidden">
-            <div
-              className="h-[1px] w-[50px] rounded-full"
+          {/* Star 4 — tiny quick */}
+          <div className="absolute top-[28%] left-0 w-full h-[2px] rotate-[38deg] overflow-hidden">
+            <div className="shooting-star-4 h-[1px] w-[55px] rounded-full"
               style={{
                 background: "linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent)",
-                animation: "shootingStar4 3.5s ease-in-out 7s infinite",
+                boxShadow: "0 0 4px rgba(255,255,255,0.4)",
               }}
             />
           </div>
 
-          {/* Star 5 — medium, gold dominant */}
-          <div className="absolute top-[55%] left-0 w-full h-[1px] rotate-[28deg] overflow-hidden">
-            <div
-              className="h-[1.5px] w-[100px] rounded-full"
+          {/* Star 5 — gold dominant, mid */}
+          <div className="absolute top-[55%] left-0 w-full h-[2px] rotate-[26deg] overflow-hidden">
+            <div className="shooting-star-5 h-[1.5px] w-[110px] rounded-full"
               style={{
-                background: "linear-gradient(to right, transparent, #C5A065, #C5A065, transparent)",
-                boxShadow: "0 0 20px rgba(197,160,101,0.5)",
-                animation: "shootingStar5 5s ease-in-out 10s infinite",
+                background: "linear-gradient(to right, transparent, #C5A065, #C5A065, rgba(255,255,255,0.7), transparent)",
+                boxShadow: "0 0 20px rgba(197,160,101,0.5), 0 0 40px rgba(197,160,101,0.2)",
               }}
             />
           </div>
 
-          {/* Star 6 — diagonal cross */}
-          <div className="absolute top-[15%] right-0 w-full h-[1px] -rotate-[30deg] overflow-hidden">
-            <div
-              className="h-[1px] w-[90px] rounded-full"
+          {/* Star 6 — reverse diagonal */}
+          <div className="absolute top-[12%] right-0 w-full h-[2px] -rotate-[32deg] overflow-hidden">
+            <div className="shooting-star-6 h-[1px] w-[80px] rounded-full"
               style={{
-                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.6), rgba(197,160,101,0.8), transparent)",
+                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.5), #C5A065, transparent)",
                 boxShadow: "0 0 10px rgba(197,160,101,0.4)",
-                animation: "shootingStar6 7s ease-in-out 3s infinite",
               }}
             />
           </div>
 
           {/* Corner accents */}
-          <div className="absolute top-10 left-10 w-20 h-20 border-t border-l border-[#C5A065]/15" />
-          <div className="absolute top-10 right-10 w-20 h-20 border-t border-r border-[#C5A065]/15" />
-          <div className="absolute bottom-10 left-10 w-20 h-20 border-b border-l border-[#C5A065]/15" />
-          <div className="absolute bottom-10 right-10 w-20 h-20 border-b border-r border-[#C5A065]/15" />
+          <div className="absolute top-10 left-10 w-20 h-20 border-t border-l border-[#C5A065]/12" />
+          <div className="absolute top-10 right-10 w-20 h-20 border-t border-r border-[#C5A065]/12" />
+          <div className="absolute bottom-10 left-10 w-20 h-20 border-b border-l border-[#C5A065]/12" />
+          <div className="absolute bottom-10 right-10 w-20 h-20 border-b border-r border-[#C5A065]/12" />
         </motion.div>
 
         {/* Gold accent line at top */}
@@ -209,143 +188,75 @@ export default function ScrollBridge() {
           style={{ width: accentWidth }}
         />
 
-        {/* ============================================ */}
-        {/* PHASE 1: THE QUESTION — word by word */}
-        {/* ============================================ */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center px-6">
-          <div className="text-center max-w-5xl">
-            <div className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05]">
-              {/* "¿Cuánto cuesta" — visible immediately */}
-              <div className="mb-2">
-                <motion.span
-                  className="inline-block"
-                  style={{
-                    opacity: word1Opacity,
-                    y: word1Y,
-                  }}
-                >
-                  ¿Cuánto cuesta
-                </motion.span>
-              </div>
-
-              {/* "soñar?" — appears just after */}
-              <div>
-                <motion.span
-                  className="inline-block italic text-[#C5A065]"
-                  style={{
-                    opacity: word3Opacity,
-                    y: word3Y,
-                    scale: word3Scale,
-                  }}
-                >
-                  soñar?
-                </motion.span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ============================================ */}
-        {/* PHASE 2: THE ANSWER */}
-        {/* ============================================ */}
+        {/* ========== THE PHRASE ========== */}
         <motion.div
           className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6"
-          style={{
-            opacity: answerOpacity,
-            y: answerY,
-            scale: answerScale,
-          }}
+          style={{ opacity: textOpacity, y: textY }}
         >
-          <div className="text-center max-w-3xl">
-            {/* Subtle label */}
-            <p className="text-[#C5A065]/50 text-[10px] uppercase tracking-[0.5em] mb-8">
-              La respuesta
-            </p>
+          <div className="text-center">
+            {/* "¿Cuánto cuesta" */}
+            <h2 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white/90 leading-[1.05] mb-1">
+              ¿Cuánto cuesta
+            </h2>
 
-            {/* Main answer */}
-            <h3 className="font-serif-display text-4xl md:text-6xl text-white mb-8 font-light">
-              Menos de lo que{' '}
-              <span className="italic text-[#C5A065]">imaginas.</span>
-            </h3>
+            {/* "soñar?" */}
+            <motion.div
+              style={{ opacity: sonarOpacity, y: sonarY, scale: sonarScale }}
+            >
+              <span className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#C5A065] leading-[1.05]">
+                soñar?
+              </span>
+            </motion.div>
 
             {/* Gold line */}
             <motion.div
-              className="h-[1px] bg-[#C5A065] mx-auto mb-10 origin-center"
-              style={{ scaleX: lineScaleX, opacity: lineOpacity, width: "100px" }}
+              className="h-[1px] bg-gradient-to-r from-transparent via-[#C5A065] to-transparent mx-auto mt-10 origin-center"
+              style={{ scaleX: lineScaleX, opacity: lineOpacity, width: "120px" }}
             />
-
-            {/* Supporting */}
-            <motion.div style={{ opacity: supportOpacity, y: supportY }}>
-              <p className="text-white/25 text-sm leading-relaxed max-w-md mx-auto">
-                Financiamiento directo, sin intermediarios.
-                <br />
-                Cuotas que se adaptan a tu realidad.
-              </p>
-            </motion.div>
           </div>
         </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
-          style={{
-            opacity: useTransform(scrollYProgress, [0, 0.03, 0.75, 0.85], [0.6, 0.3, 0.3, 0]),
-          }}
+          style={{ opacity: useTransform(scrollYProgress, [0, 0.03, 0.8, 0.9], [0.5, 0.25, 0.25, 0]) }}
         >
-          <span className="text-white/20 text-[8px] uppercase tracking-[0.4em]">Scroll</span>
+          <span className="text-white/15 text-[7px] uppercase tracking-[0.5em]">Scroll</span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="w-[1px] h-8 bg-gradient-to-b from-[#C5A065]/0 to-[#C5A065]/30"
+            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+            className="w-[1px] h-8 bg-gradient-to-b from-[#C5A065]/0 to-[#C5A065]/25"
           />
         </motion.div>
 
       </div>
 
-      {/* CSS Keyframes for shooting stars */}
+      {/* CSS Animations */}
       <style jsx>{`
-        @keyframes shootingStar1 {
-          0%, 100% { transform: translateX(-200px); opacity: 0; }
-          5% { opacity: 1; }
-          30% { opacity: 1; }
-          35% { transform: translateX(calc(100vw + 200px)); opacity: 0; }
-          36%, 100% { opacity: 0; }
+        @keyframes twinkle {
+          0%, 100% { opacity: inherit; }
+          50% { opacity: 0.02; }
         }
-        @keyframes shootingStar2 {
-          0%, 100% { transform: translateX(calc(100vw + 100px)); opacity: 0; }
-          5% { opacity: 0.8; }
-          25% { opacity: 0.8; }
-          30% { transform: translateX(-200px); opacity: 0; }
-          31%, 100% { opacity: 0; }
+        @keyframes shootAcross {
+          0% { transform: translateX(-250px); opacity: 0; }
+          3% { opacity: 1; }
+          28% { opacity: 1; }
+          32% { transform: translateX(calc(100vw + 250px)); opacity: 0; }
+          100% { opacity: 0; }
         }
-        @keyframes shootingStar3 {
-          0%, 100% { transform: translateX(-300px); opacity: 0; }
-          3% { opacity: 0.6; }
-          20% { opacity: 0.6; }
-          25% { transform: translateX(calc(100vw + 300px)); opacity: 0; }
-          26%, 100% { opacity: 0; }
+        @keyframes shootReverse {
+          0% { transform: translateX(calc(100vw + 150px)); opacity: 0; }
+          4% { opacity: 0.8; }
+          22% { opacity: 0.8; }
+          26% { transform: translateX(-250px); opacity: 0; }
+          100% { opacity: 0; }
         }
-        @keyframes shootingStar4 {
-          0%, 100% { transform: translateX(-100px); opacity: 0; }
-          8% { opacity: 0.9; }
-          35% { opacity: 0.9; }
-          40% { transform: translateX(calc(100vw + 100px)); opacity: 0; }
-          41%, 100% { opacity: 0; }
-        }
-        @keyframes shootingStar5 {
-          0%, 100% { transform: translateX(-200px); opacity: 0; }
-          4% { opacity: 0.7; }
-          22% { opacity: 0.7; }
-          28% { transform: translateX(calc(100vw + 200px)); opacity: 0; }
-          29%, 100% { opacity: 0; }
-        }
-        @keyframes shootingStar6 {
-          0%, 100% { transform: translateX(calc(100vw + 150px)); opacity: 0; }
-          5% { opacity: 0.5; }
-          18% { opacity: 0.5; }
-          22% { transform: translateX(-200px); opacity: 0; }
-          23%, 100% { opacity: 0; }
-        }
+        .shooting-star-1 { animation: shootAcross 7s ease-in-out 1s infinite; }
+        .shooting-star-2 { animation: shootReverse 5s ease-in-out 4s infinite; }
+        .shooting-star-3 { animation: shootAcross 9s ease-in-out 6s infinite; }
+        .shooting-star-4 { animation: shootAcross 4s ease-in-out 9s infinite; }
+        .shooting-star-5 { animation: shootAcross 6s ease-in-out 12s infinite; }
+        .shooting-star-6 { animation: shootReverse 8s ease-in-out 3s infinite; }
       `}</style>
     </div>
   );
