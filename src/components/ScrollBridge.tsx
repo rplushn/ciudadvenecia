@@ -12,18 +12,7 @@ export default function ScrollBridge() {
   });
 
   // ============================================
-  // PHASE 1: "¿Cuánto cuesta" (0% - 40%)
-  // ============================================
-  const word1Opacity = useTransform(scrollYProgress, [0.02, 0.08, 0.30, 0.38], [0, 1, 1, 0]);
-  const word1Y = useTransform(scrollYProgress, [0.02, 0.08, 0.30, 0.38], [80, 0, 0, -60]);
-
-  // "soñar?" — gold italic, delayed
-  const word3Opacity = useTransform(scrollYProgress, [0.10, 0.18, 0.30, 0.38], [0, 1, 1, 0]);
-  const word3Y = useTransform(scrollYProgress, [0.10, 0.18, 0.30, 0.38], [60, 0, 0, -60]);
-  const word3Scale = useTransform(scrollYProgress, [0.10, 0.18], [0.8, 1]);
-
-  // ============================================
-  // PHASE 2: Answer (35% - 70%)
+  // PHASE: "Imagina tu nuevo hogar" (35% - 80%)
   // ============================================
   const answerOpacity = useTransform(scrollYProgress, [0.35, 0.43, 0.70, 0.80], [0, 1, 1, 0]);
   const answerY = useTransform(scrollYProgress, [0.35, 0.43, 0.70, 0.80], [50, 0, -20, -60]);
@@ -78,9 +67,9 @@ export default function ScrollBridge() {
           <img 
             src="/amenidades/familia_homepage.jpg" 
             alt="" 
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.25]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-[#0a0a0a]/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-[#0a0a0a]/30" />
         </motion.div>
 
         {/* ============================================ */}
@@ -221,41 +210,6 @@ export default function ScrollBridge() {
           style={{ width: accentWidth }}
         />
 
-        {/* ============================================ */}
-        {/* PHASE 1: THE QUESTION — word by word */}
-        {/* ============================================ */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center px-6">
-          <div className="text-center max-w-5xl">
-            <div className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05]">
-              {/* "¿Cuánto cuesta" */}
-              <div className="overflow-hidden mb-2">
-                <motion.span
-                  className="inline-block"
-                  style={{
-                    opacity: word1Opacity,
-                    y: word1Y,
-                  }}
-                >
-                  ¿Cuánto cuesta
-                </motion.span>
-              </div>
-
-              {/* "soñar?" */}
-              <div className="overflow-hidden">
-                <motion.span
-                  className="inline-block italic text-[#C5A065]"
-                  style={{
-                    opacity: word3Opacity,
-                    y: word3Y,
-                    scale: word3Scale,
-                  }}
-                >
-                  soñar?
-                </motion.span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* ============================================ */}
         {/* PHASE 2: THE ANSWER */}
