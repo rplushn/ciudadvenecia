@@ -22,6 +22,7 @@ import BrandStrip from '@/components/hero/BrandStrip';
 import PinnedProjectsShowcase from '@/components/hero/PinnedProjectsShowcase';
 import CinematicDivider from '@/components/CinematicDivider';
 import InvestmentJourney from '@/components/InvestmentJourney';
+import AdvisorCTA from '@/components/AdvisorCTA';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -706,6 +707,11 @@ export default function Home() {
                 </Reveal>
          </div>
       </section>
+
+      {/* ============================================ */}
+      {/* SECCIÓN: FACILIDADES DE PAGO */}
+      {/* ============================================ */}
+      <AdvisorCTA />
 
       {/* ============================================ */}
       {/* SECCIÓN 7: CONTACTO — SIN CAMBIOS */}
