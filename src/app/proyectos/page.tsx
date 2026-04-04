@@ -44,9 +44,6 @@ export default function Proyectos() {
       {/* ------------------- HERO: TILE SLIDER ------------------- */}
       <TileHero />
 
-      {/* ------------------- OLANCHO SHOWCASE: HORIZONTAL SCROLL ------------------- */}
-      <HorizontalGallery />
-
       {/* ------------------- NEW SECTION 1: MANIFESTO (TEXTO ELEGANTE) ------------------- */}
       <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
         <Reveal>
@@ -103,6 +100,9 @@ export default function Proyectos() {
              </div>
           </div>
       </section>
+
+      {/* ------------------- OLANCHO SHOWCASE: HORIZONTAL SCROLL ------------------- */}
+      <HorizontalGallery />
 
       {/* =========================================================================================
           SECCIÓN 3: CIUDAD VENECIA (MARCA PRINCIPAL)
