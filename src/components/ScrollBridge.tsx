@@ -11,253 +11,270 @@ export default function ScrollBridge() {
     offset: ["start start", "end start"],
   });
 
-  // Text — visible from start, fades out at end
-  const textOpacity = useTransform(scrollYProgress, [0, 0.75, 0.92], [1, 1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.75, 0.92], [0, 0, -60]);
+  // ============================================
+  // PHASE 1: The Number (0% - 35%)
+  // ============================================
+  const numberOpacity = useTransform(scrollYProgress, [0, 0.08, 0.25, 0.35], [0, 1, 1, 0]);
+  const numberY = useTransform(scrollYProgress, [0, 0.08, 0.25, 0.35], [60, 0, 0, -80]);
+  const numberScale = useTransform(scrollYProgress, [0, 0.08, 0.25, 0.35], [0.85, 1, 1, 1.05]);
+  const numberBlur = useTransform(scrollYProgress, [0, 0.08, 0.25, 0.35], [8, 0, 0, 8]);
 
-  // "soñar?" — slight entrance delay
-  const sonarOpacity = useTransform(scrollYProgress, [0, 0.04, 0.75, 0.92], [0, 1, 1, 0]);
-  const sonarY = useTransform(scrollYProgress, [0, 0.04], [30, 0]);
-  const sonarScale = useTransform(scrollYProgress, [0, 0.04], [0.88, 1]);
+  // "/ mes" label
+  const mesOpacity = useTransform(scrollYProgress, [0.05, 0.12, 0.25, 0.33], [0, 1, 1, 0]);
+  const mesY = useTransform(scrollYProgress, [0.05, 0.12], [20, 0]);
 
-  // Gold line — draws itself early, stays
-  const lineScaleX = useTransform(scrollYProgress, [0.03, 0.12], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.03, 0.08, 0.75, 0.90], [0, 0.6, 0.6, 0]);
+  // ============================================
+  // PHASE 2: The Question (30% - 65%)
+  // ============================================
+  const questionOpacity = useTransform(scrollYProgress, [0.3, 0.38, 0.55, 0.65], [0, 1, 1, 0]);
+  const questionY = useTransform(scrollYProgress, [0.3, 0.38, 0.55, 0.65], [50, 0, 0, -60]);
+  const questionScale = useTransform(scrollYProgress, [0.3, 0.38], [0.95, 1]);
 
-  // Entire section fades to reveal Precios below
-  const bgOpacity = useTransform(scrollYProgress, [0.78, 0.98], [1, 0]);
+  // "Menos de lo que imaginas" — appears slightly after question
+  const answerOpacity = useTransform(scrollYProgress, [0.4, 0.48, 0.55, 0.63], [0, 1, 1, 0]);
+  const answerY = useTransform(scrollYProgress, [0.4, 0.48], [30, 0]);
 
-  // Nebula drift
-  const nebula1X = useTransform(scrollYProgress, [0, 1], [-30, 50]);
-  const nebula1Y = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const nebula2X = useTransform(scrollYProgress, [0, 1], [20, -30]);
-  const nebula2Y = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  // Gold line that draws itself
+  const lineScaleX = useTransform(scrollYProgress, [0.42, 0.52], [0, 1]);
+  const lineOpacity = useTransform(scrollYProgress, [0.42, 0.48, 0.55, 0.63], [0, 1, 1, 0]);
 
-  // Top accent line
-  const accentWidth = useTransform(scrollYProgress, [0, 0.06, 0.90, 1], ["0%", "100%", "100%", "0%"]);
+  // ============================================
+  // PHASE 3: The Reveal (60% - 100%)
+  // ============================================
+  const bgOpacity = useTransform(scrollYProgress, [0.6, 0.85], [1, 0]);
+  
+  // Subtle particles / atmospheric effect
+  const grain1Y = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const grain2Y = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
-  // Deterministic starfield
-  const stars = Array.from({ length: 80 }, (_, i) => ({
-    x: ((i * 17 + 31) % 100),
-    y: ((i * 23 + 47) % 100),
-    size: (i % 7 === 0) ? 2.5 : (i % 4 === 0) ? 1.8 : (i % 2 === 0) ? 1.2 : 0.8,
-    delay: (i * 0.37) % 5,
-    duration: 2.5 + (i % 4),
-  }));
+  // Gold accent line at top — visible throughout
+  const accentWidth = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], ["0%", "100%", "100%", "0%"]);
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
+    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
 
-        {/* Background */}
+        {/* Background — starts black, fades to transparent revealing Precios below */}
         <motion.div
           className="absolute inset-0 z-10"
-          style={{ opacity: bgOpacity, background: "#080808" }}
+          style={{
+            opacity: bgOpacity,
+            background: "linear-gradient(180deg, #1A1A1A 0%, #1A1A1A 70%, rgba(26,26,26,0.95) 100%)",
+          }}
         />
 
-        {/* ========== ATMOSPHERE ========== */}
+        {/* Atmospheric floating elements */}
         <motion.div
           className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
           style={{ opacity: bgOpacity }}
         >
-
-          {/* Golden nebula 1 — top left */}
-          <motion.div
-            className="absolute w-[600px] h-[600px] rounded-full"
-            style={{
-              background: "radial-gradient(circle, rgba(197,160,101,0.07) 0%, rgba(197,160,101,0.02) 40%, transparent 70%)",
-              top: "10%",
-              left: "15%",
-              x: nebula1X,
-              y: nebula1Y,
-              filter: "blur(80px)",
-            }}
-          />
-
-          {/* Golden nebula 2 — bottom right */}
-          <motion.div
-            className="absolute w-[450px] h-[450px] rounded-full"
-            style={{
-              background: "radial-gradient(circle, rgba(197,160,101,0.05) 0%, rgba(197,160,101,0.015) 40%, transparent 70%)",
-              bottom: "15%",
-              right: "10%",
-              x: nebula2X,
-              y: nebula2Y,
-              filter: "blur(60px)",
-            }}
-          />
-
-          {/* Center glow behind text */}
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full"
-            style={{
-              background: "radial-gradient(ellipse, rgba(197,160,101,0.04) 0%, transparent 70%)",
-              filter: "blur(60px)",
-            }}
-          />
-
-          {/* Starfield */}
-          {stars.map((star, i) => (
-            <div
+          {/* Subtle gold particles */}
+          {[...Array(30)].map((_, i) => (
+            <motion.div
               key={i}
-              className="absolute rounded-full"
+              className="absolute w-1 h-1 rounded-full bg-[#C5A065]"
               style={{
-                left: `${star.x}%`,
-                top: `${star.y}%`,
-                width: `${star.size}px`,
-                height: `${star.size}px`,
-                backgroundColor: star.size > 2 ? '#C5A065' : '#ffffff',
-                opacity: star.size > 2 ? 0.35 : star.size > 1.5 ? 0.2 : star.size > 1 ? 0.12 : 0.06,
-                animation: `twinkle ${star.duration}s ease-in-out ${star.delay}s infinite`,
+                left: `${8 + (i * 7.5)}%`,
+                top: `${20 + (i % 3) * 25}%`,
+                opacity: 0.08 + (i % 4) * 0.04,
+                y: i % 2 === 0 ? grain1Y : grain2Y,
               }}
             />
           ))}
 
-          {/* ========== SHOOTING STARS (6) ========== */}
-
-          {/* Star 1 — long gold streak, top-left to right */}
-          <div className="absolute top-[18%] left-0 w-full h-[2px] rotate-[22deg] overflow-hidden">
-            <div className="shooting-star-1 h-[1.5px] w-[140px] rounded-full"
+          {/* Shooting star */}
+          <motion.div
+            className="absolute w-[120px] h-[1px]"
+            style={{
+              background: "linear-gradient(to right, transparent, rgba(197,160,101,0.6), transparent)",
+              top: "25%",
+              left: "-10%",
+              rotate: "35deg",
+              y: grain1Y,
+            }}
+          >
+            <motion.div
+              className="w-full h-full"
+              animate={{
+                x: ["-100%", "1500%"],
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatDelay: 8,
+                ease: "easeInOut",
+              }}
               style={{
-                background: "linear-gradient(to right, transparent 0%, #C5A065 30%, rgba(255,255,255,0.95) 80%, transparent 100%)",
-                boxShadow: "0 0 12px rgba(197,160,101,0.7), 0 0 30px rgba(197,160,101,0.3)",
+                background: "linear-gradient(to right, transparent, rgba(197,160,101,0.8), rgba(255,255,255,0.9))",
+                width: "60px",
+                height: "1px",
+                boxShadow: "0 0 8px rgba(197,160,101,0.4), 0 0 20px rgba(197,160,101,0.2)",
               }}
             />
-          </div>
+          </motion.div>
 
-          {/* Star 2 — fast white, right to left */}
-          <div className="absolute top-[42%] right-0 w-full h-[2px] -rotate-[18deg] overflow-hidden">
-            <div className="shooting-star-2 h-[1px] w-[90px] rounded-full"
+          {/* Second shooting star — different angle and timing */}
+          <motion.div
+            className="absolute w-[80px] h-[1px]"
+            style={{
+              background: "linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent)",
+              top: "60%",
+              right: "-5%",
+              rotate: "25deg",
+              y: grain2Y,
+            }}
+          >
+            <motion.div
+              className="w-full h-full"
+              animate={{
+                x: ["200%", "-1500%"],
+                opacity: [0, 0.8, 0.8, 0],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatDelay: 12,
+                ease: "easeInOut",
+                delay: 5,
+              }}
               style={{
-                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.85), rgba(197,160,101,0.4), transparent)",
-                boxShadow: "0 0 8px rgba(255,255,255,0.5)",
+                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.7), rgba(197,160,101,0.5))",
+                width: "40px",
+                height: "1px",
+                boxShadow: "0 0 6px rgba(255,255,255,0.3)",
               }}
             />
-          </div>
+          </motion.div>
 
-          {/* Star 3 — slow long trail */}
-          <div className="absolute top-[68%] left-0 w-full h-[2px] rotate-[12deg] overflow-hidden">
-            <div className="shooting-star-3 h-[1px] w-[200px] rounded-full"
-              style={{
-                background: "linear-gradient(to right, transparent, rgba(197,160,101,0.3), rgba(255,255,255,0.6), rgba(197,160,101,0.5), transparent)",
-                boxShadow: "0 0 18px rgba(197,160,101,0.25)",
-              }}
-            />
-          </div>
-
-          {/* Star 4 — tiny quick */}
-          <div className="absolute top-[28%] left-0 w-full h-[2px] rotate-[38deg] overflow-hidden">
-            <div className="shooting-star-4 h-[1px] w-[55px] rounded-full"
-              style={{
-                background: "linear-gradient(to right, transparent, rgba(255,255,255,0.9), transparent)",
-                boxShadow: "0 0 4px rgba(255,255,255,0.4)",
-              }}
-            />
-          </div>
-
-          {/* Star 5 — gold dominant, mid */}
-          <div className="absolute top-[55%] left-0 w-full h-[2px] rotate-[26deg] overflow-hidden">
-            <div className="shooting-star-5 h-[1.5px] w-[110px] rounded-full"
-              style={{
-                background: "linear-gradient(to right, transparent, #C5A065, #C5A065, rgba(255,255,255,0.7), transparent)",
-                boxShadow: "0 0 20px rgba(197,160,101,0.5), 0 0 40px rgba(197,160,101,0.2)",
-              }}
-            />
-          </div>
-
-          {/* Star 6 — reverse diagonal */}
-          <div className="absolute top-[12%] right-0 w-full h-[2px] -rotate-[32deg] overflow-hidden">
-            <div className="shooting-star-6 h-[1px] w-[80px] rounded-full"
-              style={{
-                background: "linear-gradient(to left, transparent, rgba(255,255,255,0.5), #C5A065, transparent)",
-                boxShadow: "0 0 10px rgba(197,160,101,0.4)",
-              }}
-            />
-          </div>
-
-          {/* Corner accents */}
-          <div className="absolute top-10 left-10 w-20 h-20 border-t border-l border-[#C5A065]/12" />
-          <div className="absolute top-10 right-10 w-20 h-20 border-t border-r border-[#C5A065]/12" />
-          <div className="absolute bottom-10 left-10 w-20 h-20 border-b border-l border-[#C5A065]/12" />
-          <div className="absolute bottom-10 right-10 w-20 h-20 border-b border-r border-[#C5A065]/12" />
+          {/* Decorative corner accents */}
+          <div className="absolute top-12 left-12 w-16 h-16 border-t border-l border-[#C5A065]/10" />
+          <div className="absolute top-12 right-12 w-16 h-16 border-t border-r border-[#C5A065]/10" />
+          <div className="absolute bottom-12 left-12 w-16 h-16 border-b border-l border-[#C5A065]/10" />
+          <div className="absolute bottom-12 right-12 w-16 h-16 border-b border-r border-[#C5A065]/10" />
         </motion.div>
 
-        {/* Gold accent line at top */}
+        {/* Gold accent line at very top */}
         <motion.div
           className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-[#C5A065] to-transparent z-30"
           style={{ width: accentWidth }}
         />
 
-        {/* ========== THE PHRASE ========== */}
+        {/* ============================================ */}
+        {/* PHASE 1: THE NUMBER */}
+        {/* ============================================ */}
         <motion.div
-          className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6"
-          style={{ opacity: textOpacity, y: textY }}
+          className="absolute inset-0 z-20 flex flex-col items-center justify-center"
+          style={{
+            opacity: numberOpacity,
+            y: numberY,
+            scale: numberScale,
+          }}
         >
-          <div className="text-center">
-            {/* "¿Cuánto cuesta" */}
-            <h2 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white/90 leading-[1.05] mb-1">
-              ¿Cuánto cuesta
-            </h2>
+          {/* Subtle glow behind number */}
+          <div className="absolute w-[400px] h-[400px] rounded-full bg-[#C5A065]/[0.03] blur-[100px]" />
 
-            {/* "soñar?" */}
-            <motion.div
-              style={{ opacity: sonarOpacity, y: sonarY, scale: sonarScale }}
+          <motion.div className="relative text-center">
+            {/* Small label above */}
+            <motion.p
+              className="text-[#C5A065]/60 text-[10px] font-bold uppercase tracking-[0.5em] mb-6"
+              style={{ opacity: mesOpacity }}
             >
-              <span className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#C5A065] leading-[1.05]">
-                soñar?
+              TU PRÓXIMO PASO
+            </motion.p>
+
+            {/* THE BIG NUMBER */}
+            <motion.div
+              className="relative"
+              
+            >
+              <span className="font-serif-display text-[120px] md:text-[180px] lg:text-[220px] text-white leading-none tracking-tight">
+                Tu Terreno
               </span>
+
+              {/* Decorative underline */}
+              <motion.div
+                className="absolute -bottom-2 left-1/2 -translate-x-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/40 to-transparent"
+                style={{ width: "80%" }}
+              />
             </motion.div>
 
-            {/* Gold line */}
+            {/* "/mes" label */}
+            <motion.p
+              className="text-white/30 text-2xl md:text-3xl font-serif-display mt-4 italic"
+              style={{ opacity: mesOpacity, y: mesY }}
+            >
+              tu legado
+            </motion.p>
+          </motion.div>
+        </motion.div>
+
+        {/* ============================================ */}
+        {/* PHASE 2: THE QUESTION */}
+        {/* ============================================ */}
+        <motion.div
+          className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6"
+          style={{
+            opacity: questionOpacity,
+            y: questionY,
+            scale: questionScale,
+          }}
+        >
+          <div className="text-center max-w-4xl">
+            {/* Main question */}
+            <h2 className="font-serif-display text-4xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6">
+              ¿Cuánto cuesta
+              <br />
+              <span className="italic text-white/40">tu sueño?</span>
+            </h2>
+
+            {/* Gold divider line */}
             <motion.div
-              className="h-[1px] bg-gradient-to-r from-transparent via-[#C5A065] to-transparent mx-auto mt-10 origin-center"
-              style={{ scaleX: lineScaleX, opacity: lineOpacity, width: "120px" }}
+              className="h-[1px] bg-[#C5A065] mx-auto mb-8 origin-center"
+              style={{
+                scaleX: lineScaleX,
+                opacity: lineOpacity,
+                width: "120px",
+              }}
             />
+
+            {/* Answer */}
+            <motion.p
+              className="text-[#C5A065] text-lg md:text-2xl font-serif-display tracking-wide"
+              style={{ opacity: answerOpacity, y: answerY }}
+            >
+              Menos de lo que imaginas.
+            </motion.p>
+
+            {/* Supporting text */}
+            <motion.p
+              className="text-white/20 text-xs md:text-sm mt-10 max-w-md mx-auto leading-relaxed"
+              style={{ opacity: answerOpacity }}
+            >
+              Financiamiento directo, sin complicaciones.
+              <br />
+              Calificación inmediata.
+            </motion.p>
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* ============================================ */}
+        {/* PHASE 3: SCROLL CUE (bottom) */}
+        {/* ============================================ */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
-          style={{ opacity: useTransform(scrollYProgress, [0, 0.03, 0.8, 0.9], [0.5, 0.25, 0.25, 0]) }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
+          style={{
+            opacity: useTransform(scrollYProgress, [0, 0.05, 0.7, 0.8], [1, 0.6, 0.6, 0]),
+          }}
         >
-          <span className="text-white/15 text-[7px] uppercase tracking-[0.5em]">Scroll</span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-            className="w-[1px] h-8 bg-gradient-to-b from-[#C5A065]/0 to-[#C5A065]/25"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="w-[1px] h-8 bg-gradient-to-b from-[#C5A065]/0 to-[#C5A065]/40"
           />
         </motion.div>
 
       </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes twinkle {
-          0%, 100% { opacity: inherit; }
-          50% { opacity: 0.02; }
-        }
-        @keyframes shootAcross {
-          0% { transform: translateX(-250px); opacity: 0; }
-          3% { opacity: 1; }
-          28% { opacity: 1; }
-          32% { transform: translateX(calc(100vw + 250px)); opacity: 0; }
-          100% { opacity: 0; }
-        }
-        @keyframes shootReverse {
-          0% { transform: translateX(calc(100vw + 150px)); opacity: 0; }
-          4% { opacity: 0.8; }
-          22% { opacity: 0.8; }
-          26% { transform: translateX(-250px); opacity: 0; }
-          100% { opacity: 0; }
-        }
-        .shooting-star-1 { animation: shootAcross 7s ease-in-out 1s infinite; }
-        .shooting-star-2 { animation: shootReverse 5s ease-in-out 4s infinite; }
-        .shooting-star-3 { animation: shootAcross 9s ease-in-out 6s infinite; }
-        .shooting-star-4 { animation: shootAcross 4s ease-in-out 9s infinite; }
-        .shooting-star-5 { animation: shootAcross 6s ease-in-out 12s infinite; }
-        .shooting-star-6 { animation: shootReverse 8s ease-in-out 3s infinite; }
-      `}</style>
     </div>
   );
 }
