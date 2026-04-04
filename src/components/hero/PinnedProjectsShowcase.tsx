@@ -23,7 +23,7 @@ const projects = [
     ctaBg: '#C5A065',
     ctaColor: '#fff',
     slug: '/proyectos/danli',
-    img: '/amenidades/amenidades011.jpg.jpeg',
+    img: '/amenidades/amenidades005.jpg.jpeg',
   },
   {
     id: 'olancho',
