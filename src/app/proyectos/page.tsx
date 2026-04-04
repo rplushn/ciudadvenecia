@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import Navbar from '@/components/Navbar';
+import SplitParallaxHero from '@/components/SplitParallaxHero';
 
 export default function Proyectos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -39,24 +40,12 @@ export default function Proyectos() {
       
       <Navbar activeRoute="/proyectos" />
 
-      {/* ------------------- HERO ------------------- */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#1A3A52]">
-         <div className="absolute inset-0 opacity-40">
-            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/casa_fachada.jpg.jpeg')" }}></div>
-         </div>
-         <div className="absolute inset-0 bg-gradient-to-b from-[#1A3A52]/80 to-[#1A3A52]"></div>
-         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
-            <Reveal>
-              <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.4em] mb-6 block">Portafolio Inmobiliario</span>
-              <h1 className="font-serif-display text-5xl md:text-8xl text-white mb-8 leading-none">
-                Construyendo <br/><span className="italic font-light text-white/50">Legado</span>
-              </h1>
-              <p className="text-white/70 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto">
-                Más que terrenos y casas, desarrollamos ecosistemas de vida con plusvalía garantizada.
-              </p>
-            </Reveal>
-         </div>
-      </section>
+      {/* ------------------- HERO: SPLIT PARALLAX ------------------- */}
+      <SplitParallaxHero 
+        imageSrc="/NUEVAS-JUANJOSE/cv_olancho_A003_web.jpg"
+        title="PROYECTOS"
+        subtitle="DESARROLLOS RESIDENCIALES · HONDURAS"
+      />
 
       {/* ------------------- NEW SECTION 1: MANIFESTO (TEXTO ELEGANTE) ------------------- */}
       <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
