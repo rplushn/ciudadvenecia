@@ -70,6 +70,19 @@ export default function ScrollBridge() {
           style={{ opacity: bgOpacity, background: "#0a0a0a" }}
         />
 
+        {/* Family photo background — subtle */}
+        <motion.div
+          className="absolute inset-0 z-[11]"
+          style={{ opacity: bgOpacity }}
+        >
+          <img 
+            src="/amenidades/familia_homepage.jpg" 
+            alt="" 
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-[#0a0a0a]/60" />
+        </motion.div>
+
         {/* ============================================ */}
         {/* STARFIELD + ATMOSPHERE */}
         {/* ============================================ */}
@@ -263,8 +276,8 @@ export default function ScrollBridge() {
 
             {/* Main text */}
             <h3 className="font-serif-display text-4xl md:text-6xl text-white mb-8 font-light">
-              ¿Cuánto cuesta{' '}
-              <span className="italic text-[#C5A065]">tu sueño?</span>
+              Imagina{' '}
+              <span className="italic text-[#C5A065]">tu nuevo hogar.</span>
             </h3>
 
             {/* Gold line */}
