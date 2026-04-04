@@ -305,44 +305,84 @@ export default function Proyectos() {
 
       {/* --- 3.4 CIUDAD VENECIA RAÍCES – TALANGA (NUEVO 2026) --- */}
       <section className="py-24 px-6 bg-[#2C2C2C] text-white">
-          <div className="max-w-[1200px] mx-auto">
+          <div className="max-w-[1400px] mx-auto">
               <Reveal>
                   <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-white/20 pb-8">
                       <div>
                           <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] mb-2 block">NUEVO LANZAMIENTO 2026</span>
                           <h2 className="font-serif-display text-4xl md:text-5xl">Ciudad Venecia Raíces</h2>
-                          <p className="text-white/60 mt-2 text-sm">Talanga, Francisco Morazán. El proyecto más nuevo de la marca.</p>
+                          <p className="text-white/60 mt-2 text-sm">Talanga, Francisco Morazán.</p>
                       </div>
                       <div className="text-right mt-6 md:mt-0">
                           <p className="text-2xl font-serif-display text-[#C5A065]">3 Conceptos</p>
                           <p className="text-[10px] uppercase tracking-widest">Disponibles</p>
                       </div>
                   </div>
+              </Reveal>
 
-                  <div className="grid md:grid-cols-3 gap-6 mb-12">
-                      <div className="bg-white/5 p-6 border border-white/10">
-                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Raíces</h4>
-                          <p className="text-lg font-bold mb-1">Concepto Inicial</p>
-                          <p className="text-[10px] uppercase opacity-60 mb-4">Terreno</p>
-                          <p className="text-xs opacity-80">Perfil: Nuevos inversionistas, primera propiedad.</p>
+              {/* Video + Conceptos Grid */}
+              <div className="grid lg:grid-cols-2 gap-12 mb-12">
+                  {/* Video */}
+                  <Reveal>
+                      <div className="aspect-video overflow-hidden rounded-sm relative">
+                          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                              <source src="/DRON-JUANJOSE/Talanga/dron_Talanga.mp4" type="video/mp4" />
+                          </video>
+                          <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80">
+                              Vista aérea · Talanga
+                          </div>
                       </div>
-                      <div className="bg-white/5 p-6 border border-white/10">
-                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Estándar</h4>
-                          <p className="text-lg font-bold mb-1">Concepto Familiar</p>
-                          <p className="text-[10px] uppercase opacity-60 mb-4">Terreno</p>
-                          <p className="text-xs opacity-80">Perfil: Familias en crecimiento.</p>
-                      </div>
-                      <div className="bg-white/5 p-6 border border-white/10">
-                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-2">Premium</h4>
-                          <p className="text-lg font-bold mb-1">Concepto Exclusivo</p>
-                          <p className="text-[10px] uppercase opacity-60 mb-4">Terreno</p>
-                          <p className="text-xs opacity-80">Perfil: Nivel exclusivo.</p>
-                      </div>
-                  </div>
+                  </Reveal>
 
-                  <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/70 bg-black/20 p-6 rounded-lg">
-                      <p><strong>Concepto:</strong> Pensado para quienes desean iniciar su patrimonio, invertir con visión y vivir en un entorno planificado.</p>
-                      <p className="text-right"><strong>Estado:</strong> Nuevo lanzamiento 2026</p>
+                  {/* Conceptos */}
+                  <Reveal delay={0.2}>
+                      <div className="grid grid-rows-3 gap-4 h-full">
+                          <div className="bg-white/5 p-6 border border-white/10 flex items-center justify-between">
+                              <div>
+                                  <h4 className="text-[#C5A065] font-serif-display text-xl mb-1">Raíces</h4>
+                                  <p className="text-xs opacity-80">Primera propiedad e inversión inteligente.</p>
+                              </div>
+                              <span className="text-[10px] uppercase tracking-widest opacity-40">Concepto Inicial</span>
+                          </div>
+                          <div className="bg-white/5 p-6 border border-white/10 flex items-center justify-between">
+                              <div>
+                                  <h4 className="text-[#C5A065] font-serif-display text-xl mb-1">Estándar</h4>
+                                  <p className="text-xs opacity-80">Familias en crecimiento.</p>
+                              </div>
+                              <span className="text-[10px] uppercase tracking-widest opacity-40">Concepto Familiar</span>
+                          </div>
+                          <div className="bg-white/5 p-6 border border-white/10 flex items-center justify-between">
+                              <div>
+                                  <h4 className="text-[#C5A065] font-serif-display text-xl mb-1">Premium</h4>
+                                  <p className="text-xs opacity-80">Nivel exclusivo.</p>
+                              </div>
+                              <span className="text-[10px] uppercase tracking-widest opacity-40">Concepto Exclusivo</span>
+                          </div>
+                      </div>
+                  </Reveal>
+              </div>
+
+              {/* Amenidades */}
+              <Reveal>
+                  <div className="grid md:grid-cols-2 gap-8 bg-white/5 border border-white/10 p-8">
+                      <div>
+                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-4">Amenidades</h4>
+                          <ul className="space-y-2 text-xs text-white/70">
+                              <li>• Piscinas residenciales</li>
+                              <li>• Áreas sociales y parques</li>
+                              <li>• Canchas deportivas</li>
+                              <li>• Juegos infantiles</li>
+                          </ul>
+                      </div>
+                      <div>
+                          <h4 className="text-[#C5A065] font-serif-display text-xl mb-4">Infraestructura</h4>
+                          <ul className="space-y-2 text-xs text-white/70">
+                              <li>• Calles pavimentadas</li>
+                              <li>• Electrificación completa</li>
+                              <li>• Agua potable</li>
+                              <li>• Seguridad privada 24/7</li>
+                          </ul>
+                      </div>
                   </div>
               </Reveal>
           </div>
@@ -359,22 +399,33 @@ export default function Proyectos() {
                     <p className="text-lg font-medium text-[#2C2C2C] mb-4">Un nuevo desarrollo que llevará el estándar Ciudad Venecia a Francisco Morazán.</p>
                     <div className="bg-[#F9F7F4] p-6">
                         <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Amenidades proyectadas</h4>
-                        <ul className="space-y-2 text-xs text-[#484848]">
-                            <li>• Piscinas residenciales</li>
-                            <li>• Áreas sociales y parques</li>
-                            <li>• Canchas deportivas</li>
-                            <li>• Calles pavimentadas</li>
-                            <li>• Seguridad privada 24/7</li>
-                            <li>• Electrificación y agua potable</li>
-                        </ul>
+                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                            <ul className="space-y-2 text-xs text-[#484848]">
+                                <li>• Piscinas residenciales</li>
+                                <li>• Áreas sociales y parques</li>
+                                <li>• Canchas deportivas</li>
+                                <li>• Juegos infantiles</li>
+                            </ul>
+                            <ul className="space-y-2 text-xs text-[#484848]">
+                                <li>• Calles pavimentadas</li>
+                                <li>• Seguridad privada 24/7</li>
+                                <li>• Electrificación y agua potable</li>
+                                <li>• App de residentes</li>
+                            </ul>
+                        </div>
                     </div>
                 </Reveal>
              </div>
-             <div className="h-full flex items-center justify-center">
+             <div className="h-full">
                 <Reveal delay={0.2}>
-                    <div className="aspect-[4/5] w-full bg-gray-200 relative overflow-hidden">
-                        <img src="/DRON-JUANJOSE/Guaimaca/Guaimaca001.jpeg" alt="Ciudad Venecia Guaimaca" className="w-full h-full object-cover"/>
-                        <div className="absolute top-6 left-6 bg-[#C5A065] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Próximamente</div>
+                    <div className="aspect-video overflow-hidden rounded-sm relative">
+                        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                            <source src="/homepage/Guaimaca_web.mp4" type="video/mp4" />
+                        </video>
+                        <div className="absolute top-4 left-4 bg-[#C5A065] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Próximamente</div>
+                        <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80">
+                            Vista aérea · Guaimaca
+                        </div>
                     </div>
                 </Reveal>
              </div>
