@@ -642,7 +642,7 @@ export default function Home() {
                     <Image src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_A001_horizontal_web.jpg" alt="Amenidades Ciudad Venecia" fill className="object-cover" />
                  </div>
                  <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl">
-                    <Image src="/DRON-FOTOS-SAMANTHA/VERSALLES/piscina.jpg" alt="Piscina" fill className="object-cover" />
+                    <Image src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg" alt="Piscina Ciudad Venecia" fill className="object-cover" />
                  </div>
                </Reveal>
             </div>
