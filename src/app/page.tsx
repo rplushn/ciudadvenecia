@@ -84,13 +84,6 @@ export default function Home() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Always hide if modal is open
-      if (selectedProject) {
-        setIsVisible(false);
-        setLastScrollY(currentScrollY);
-        return;
-      }
-      
       if (currentScrollY < 100) {
         setIsAtTop(true);
         setIsVisible(true);
@@ -115,7 +108,7 @@ export default function Home() {
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(hideTimeout);
     };
-  }, [lastScrollY, selectedProject]);
+  }, [lastScrollY]);
 
   // Carousel Auto-scroll
   useEffect(() => {
