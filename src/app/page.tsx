@@ -79,24 +79,43 @@ export default function Home() {
 
   // Navbar Scroll Logic
   useEffect(() => {
+    let hideTimeout: NodeJS.Timeout;
+    
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      
+      // Always hide if modal is open
+      if (selectedProject) {
+        setIsVisible(false);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+      
       if (currentScrollY < 100) {
         setIsAtTop(true);
         setIsVisible(true);
       } else {
         setIsAtTop(false);
-        if (currentScrollY > 300) {
-           setIsVisible(currentScrollY <= lastScrollY);
-        } else {
-           setIsVisible(true);
+        // Only show on scroll UP
+        const isScrollingUp = currentScrollY < lastScrollY;
+        setIsVisible(isScrollingUp);
+        
+        // Hide after scroll stops (1.5s)
+        clearTimeout(hideTimeout);
+        if (isScrollingUp && currentScrollY > 100) {
+          hideTimeout = setTimeout(() => {
+            setIsVisible(false);
+          }, 1500);
         }
       }
       setLastScrollY(currentScrollY);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(hideTimeout);
+    };
+  }, [lastScrollY, selectedProject]);
 
   // Carousel Auto-scroll
   useEffect(() => {
