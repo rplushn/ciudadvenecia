@@ -171,10 +171,10 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 2. THE MANIFESTO ------------------- */}
-      <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
+      <section className="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center">
         {/* Title */}
         <motion.h2 
-          className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-12"
+          className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -183,33 +183,24 @@ export default function QuienesSomos() {
           Nuestro Porqué
         </motion.h2>
 
-        {/* Quote — line by line reveal */}
-        {[
-          '"Creemos que el orden urbano',
-          'no es un lujo, es un derecho.',
-          'En un país donde el crecimiento',
-          'desordenado es la norma,',
-          'nosotros elegimos ser la excepción."',
-        ].map((line, i) => (
-          <motion.p
-            key={i}
-            className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 + i * 0.12, duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
-          >
-            {line}
-          </motion.p>
-        ))}
+        {/* Quote — 2 lines */}
+        <motion.p
+          className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
+        >
+          "Creemos que el orden urbano no es un lujo, es un derecho. En un país donde el crecimiento desordenado es la norma, nosotros elegimos ser la excepción."
+        </motion.p>
 
         {/* Gold line */}
         <motion.div
-          className="w-16 h-[2px] bg-[#C5A065] mx-auto mt-12"
+          className="w-16 h-[2px] bg-[#C5A065] mx-auto"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.9, duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+          transition={{ delay: 0.6, duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
         />
       </section>
 
