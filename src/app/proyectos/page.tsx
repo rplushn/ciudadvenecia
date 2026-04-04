@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import Navbar from '@/components/Navbar';
-import SplitParallaxHero from '@/components/SplitParallaxHero';
+import TileHero from '@/components/TileHero';
 
 export default function Proyectos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -40,12 +40,8 @@ export default function Proyectos() {
       
       <Navbar activeRoute="/proyectos" />
 
-      {/* ------------------- HERO: SPLIT PARALLAX ------------------- */}
-      <SplitParallaxHero 
-        imageSrc="/NUEVAS-JUANJOSE/cv_olancho_A003_web.jpg"
-        title="PROYECTOS"
-        subtitle="DESARROLLOS RESIDENCIALES · HONDURAS"
-      />
+      {/* ------------------- HERO: TILE SLIDER ------------------- */}
+      <TileHero />
 
       {/* ------------------- NEW SECTION 1: MANIFESTO (TEXTO ELEGANTE) ------------------- */}
       <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
