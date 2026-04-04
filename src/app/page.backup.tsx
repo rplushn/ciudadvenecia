@@ -20,7 +20,6 @@ import FadeRevealSection from '@/components/FadeRevealSection';
 import VideoTextMaskHero from '@/components/hero/VideoTextMaskHero';
 import BrandStrip from '@/components/hero/BrandStrip';
 import PinnedProjectsShowcase from '@/components/hero/PinnedProjectsShowcase';
-import CinematicDivider from '@/components/CinematicDivider';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -343,7 +342,6 @@ export default function Home() {
       {/* ============================================ */}
       <VideoTextMaskHero />
       <BrandStrip />
-      <CinematicDivider />
       <PinnedProjectsShowcase />
 
       {/* ============================================ */}
