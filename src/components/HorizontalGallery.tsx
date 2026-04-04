@@ -4,23 +4,26 @@ import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function HorizontalGallery() {
   const sectionPinRef = useRef<HTMLDivElement>(null);
   const pinWrapRef = useRef<HTMLDivElement>(null);
+  const tweenRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
     const pinWrap = pinWrapRef.current;
     const sectionPin = sectionPinRef.current;
     if (!pinWrap || !sectionPin) return;
 
-    // Wait for layout to settle
-    const timer = setTimeout(() => {
+    // Small delay so layout settles (especially with Next.js HMR)
+    const ctx = gsap.context(() => {
       const pinWrapWidth = pinWrap.scrollWidth;
       const horizontalScrollLength = pinWrapWidth - window.innerWidth;
 
-      const st = gsap.to(pinWrap, {
+      tweenRef.current = gsap.to(pinWrap, {
         scrollTrigger: {
           scrub: true,
           trigger: sectionPin,
@@ -33,28 +36,19 @@ export default function HorizontalGallery() {
         x: -horizontalScrollLength,
         ease: "none",
       });
-
-      // Store for cleanup
-      (sectionPin as any)._st = st;
-    }, 100);
+    }, sectionPinRef); // Scope to this container
 
     return () => {
-      clearTimeout(timer);
-      const st = (sectionPinRef.current as any)?._st;
-      if (st) {
-        st.scrollTrigger?.kill();
-        st.kill();
-      }
+      ctx.revert(); // gsap.context().revert() properly cleans up everything
     };
   }, []);
 
   return (
-    <div className="relative z-10">
+    <div>
       {/* === SECTION 1: INTRO (beige) === */}
-      <section className="relative z-20 bg-[#F3F0EB] min-h-screen flex items-center">
+      <section className="relative bg-[#F3F0EB] min-h-screen flex items-center">
         <div className="w-full px-8 md:px-16 lg:px-24 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-end">
-            {/* Large title */}
             <div>
               <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium block mb-8">
                 Ciudad Venecia Olancho
@@ -65,7 +59,6 @@ export default function HorizontalGallery() {
                 de vida
               </h2>
             </div>
-            {/* Subtitle */}
             <div className="lg:pb-3">
               <div className="w-12 h-[1px] bg-[#C5A065] mb-6" />
               <p className="text-[#1A1A1A]/60 text-sm md:text-base leading-relaxed max-w-md">
@@ -80,22 +73,17 @@ export default function HorizontalGallery() {
       </section>
 
       {/* === SECTION 2: HORIZONTAL SCROLL (dark, pinned) === */}
-      <section 
-        ref={sectionPinRef} 
-        className="relative z-30 bg-[#1A1A1A] h-screen overflow-hidden"
-      >
+      <div ref={sectionPinRef} className="bg-[#1A1A1A] h-screen overflow-hidden">
         <div 
           ref={pinWrapRef}
           className="flex items-center h-full gap-8 pl-8 md:pl-16 lg:pl-24"
           style={{ width: 'max-content' }}
         >
-          {/* Leading text */}
           <h3 className="font-serif-display text-white/80 text-xl sm:text-2xl md:text-3xl leading-relaxed font-light max-w-[500px] shrink-0 pr-8">
             Espacios diseñados para vivir, compartir y crecer — donde cada 
             rincón cuenta una historia de calidad y bienestar.
           </h3>
 
-          {/* Image 1 */}
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm">
             <img
               src="/NUEVAS-JUANJOSE/cv_olancho_A002_horizontal_web.jpg"
@@ -104,7 +92,6 @@ export default function HorizontalGallery() {
             />
           </div>
 
-          {/* Image 2 */}
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm">
             <img
               src="/NUEVAS-JUANJOSE/cv_olancho_piscina2_horizontal_web.jpg"
@@ -113,7 +100,6 @@ export default function HorizontalGallery() {
             />
           </div>
 
-          {/* Image 3 */}
           <div className="shrink-0 h-[70vh] w-[60vw] md:w-[50vw] overflow-hidden rounded-sm mr-24">
             <img
               src="/NUEVAS-JUANJOSE/cv_olancho_piscina3_horizontal_web.jpg"
@@ -122,13 +108,12 @@ export default function HorizontalGallery() {
             />
           </div>
         </div>
-      </section>
+      </div>
 
       {/* === SECTION 3: CLOSING (beige + vertical image) === */}
-      <section className="relative z-20 bg-[#F3F0EB] min-h-screen flex items-center">
+      <section className="relative bg-[#F3F0EB] min-h-screen flex items-center">
         <div className="w-full px-8 md:px-16 lg:px-24 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-            {/* Vertical image */}
             <div className="h-[70vh] md:h-[80vh] overflow-hidden rounded-sm">
               <img
                 src="/NUEVAS-JUANJOSE/cv_olancho_social_vertical_web.jpg"
@@ -136,7 +121,6 @@ export default function HorizontalGallery() {
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Title + CTA */}
             <div>
               <span className="text-[#C5A065] text-[10px] md:text-xs uppercase tracking-[0.4em] font-medium block mb-8">
                 Tu próximo hogar
