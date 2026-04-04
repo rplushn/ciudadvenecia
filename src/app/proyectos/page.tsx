@@ -117,7 +117,7 @@ export default function Proyectos() {
          <div className="grid lg:grid-cols-2 gap-16 items-start">
              <div>
                 <Reveal>
-                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">MARCA PRINCIPAL</span>
+                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">COMUNIDAD CONSOLIDADA</span>
                     <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Ciudad Venecia Danlí</h2>
                     <p className="text-lg font-medium text-[#2C2C2C] mb-4">El proyecto insignia de INMAER y uno de los de mayor crecimiento en la zona oriental del país.</p>
                     
@@ -132,38 +132,33 @@ export default function Proyectos() {
                         </div>
                     </div>
 
-                    {/* Características Grid */}
+                    {/* Amenidades Grid */}
                     <div className="grid md:grid-cols-2 gap-8 mb-8 bg-[#F9F7F4] p-6">
                         <div>
-                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Características de Terrenos</h4>
+                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Amenidades</h4>
                             <ul className="space-y-2 text-xs text-[#484848]">
-                                <li>• Terrenos de 10×15 metros</li>
-                                <li>• Topografía plana</li>
-                                <li>• Agua potable, energía eléctrica, aguas negras</li>
-                                <li>• Agua las 24 horas</li>
-                                <li>• Vigilancia las 24 horas</li>
-                                <li>• Financiamiento directo disponible</li>
+                                <li>• Piscina para adultos y niños</li>
+                                <li>• Áreas recreativas y parques</li>
+                                <li>• Canchas deportivas</li>
+                                <li>• Áreas sociales y quioscos</li>
+                                <li>• Juegos infantiles</li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Construcción de Casas</h4>
+                            <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Infraestructura</h4>
                             <ul className="space-y-2 text-xs text-[#484848]">
-                                <li>• Casas de 2 y 3 habitaciones</li>
-                                <li>• Garaje para 2 vehículos</li>
-                                <li>• Finos acabados</li>
-                                <li>• Alianzas con instituciones bancarias</li>
-                                <li>• Asesoría completa con trámite bancario</li>
+                                <li>• Calles pavimentadas</li>
+                                <li>• Agua potable 24 horas</li>
+                                <li>• Electrificación completa</li>
+                                <li>• Seguridad privada 24/7</li>
+                                <li>• App de residentes</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="bg-white border border-gray-200 p-6 shadow-sm mb-6">
-                        <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-2">Datos Adicionales</strong>
-                        <ul className="space-y-2 text-xs text-[#6B665F]">
-                            <li><strong>Etapas:</strong> El proyecto ya cuenta con su 3ra Etapa en desarrollo.</li>
-                            <li><strong>Modelo destacado:</strong> Casa de 62 m² de construcción, acabados modernos, terreno de 150 m², 2 dormitorios, 1 baño, garaje para 2 vehículos.</li>
-                            <li><strong>Especificaciones técnicas:</strong> dosificación de concreto 1:2:2 con resistencia de 3,500 PSI, bloques de 700 PSI, cerámica en interiores, ventanas tipo francesa, puertas termofadas de metal, instalaciones sanitarias y eléctricas completas.</li>
-                        </ul>
+                        <strong className="block text-[#1A3A52] uppercase text-[10px] tracking-widest mb-2">Plusvalía</strong>
+                        <p className="text-xs text-[#6B665F]">El proyecto ya cuenta con su 3ra Etapa en desarrollo. Comunidad consolidada con más de 850 familias residentes y 100% de plusvalía histórica.</p>
                     </div>
                 </Reveal>
              </div>
@@ -206,18 +201,14 @@ export default function Proyectos() {
                     </div>
 
                     <div className="bg-white p-6 shadow-sm mb-6 border-l-2 border-[#C5A065]">
-                        <h4 className="font-serif-display text-xl text-[#2C2C2C] mb-3">Características</h4>
+                        <h4 className="font-serif-display text-xl text-[#2C2C2C] mb-3">Amenidades</h4>
                         <ul className="space-y-2 text-xs text-[#484848]">
-                             <li>• Lotes de terreno de 10×15 m², totalmente urbanizados</li>
-                             <li>• Financiamiento directo con cuotas accesibles</li>
                              <li>• Áreas verdes y espacios recreativos</li>
-                             <li>• A 10 minutos de la playa (zona costera del Golfo de Fonseca)</li>
+                             <li>• A 10 minutos de la playa (Golfo de Fonseca)</li>
+                             <li>• Calles pavimentadas</li>
+                             <li>• Seguridad privada</li>
+                             <li>• Electrificación y agua potable</li>
                         </ul>
-                    </div>
-
-                    <div className="text-xs text-[#6B665F]">
-                        <p><strong>Contacto específico:</strong> (504) 3255-1991 / (504) 2763-3699</p>
-                        <p><strong>Redes:</strong> Página de Facebook "Ciudad Venecia Valle" con sede en Nacaome</p>
                     </div>
                  </Reveal>
              </div>
@@ -265,8 +256,7 @@ export default function Proyectos() {
                           </ul>
                       </div>
                       <div className="mt-8 pt-8 border-t border-[#C5A065]/30">
-                          <p className="text-xs text-[#6B665F] mb-1"><strong>Conceptos disponibles:</strong> Ciudad Venecia Estándar y Ciudad Venecia Premium</p>
-                          <p className="text-xs text-[#6B665F]"><strong>Contacto:</strong> Se maneja a través de Tu Casa Honduras y las redes de Ciudad Venecia</p>
+                          <p className="text-xs text-[#6B665F]"><strong>Concepto:</strong> Ciudad Venecia Estándar y Ciudad Venecia Premium disponibles.</p>
                       </div>
                   </div>
               </Reveal>
@@ -312,7 +302,7 @@ export default function Proyectos() {
 
                   <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-white/70 bg-black/20 p-6 rounded-lg">
                       <p><strong>Concepto:</strong> Pensado para quienes desean iniciar su patrimonio, invertir con visión y vivir en un entorno planificado.</p>
-                      <p className="text-right"><strong>Contacto:</strong> 9630-2106 / 9484-0346 / +504 3194-6163</p>
+                      <p className="text-right"><strong>Estado:</strong> Nuevo lanzamiento 2026</p>
                   </div>
               </Reveal>
           </div>
@@ -337,11 +327,11 @@ export default function Proyectos() {
                               <p><strong>Ubicación:</strong> A 5 km del centro de Danlí, a orilla de Carretera Panamericana.</p>
                               <p><strong>Descripción:</strong> Lugar exclusivo con disponibilidad muy limitada.</p>
                               <ul className="bg-[#F9F7F4] p-4 space-y-2">
-                                  <li>• Lotes de: 12×20 metros</li>
-                                  <li>• Amenidades: Piscina, áreas recreativas</li>
-                                  <li>• Seguridad: Máxima seguridad</li>
+                                  <li>• Piscina y áreas recreativas</li>
+                                  <li>• Seguridad privada 24/7</li>
+                                  <li>• Calles pavimentadas</li>
+                                  <li>• Últimas disponibilidades</li>
                               </ul>
-                              <p className="text-[#C5A065] font-bold">Contacto: +504 9549-8925</p>
                           </div>
                       </div>
                   </Reveal>
@@ -427,7 +417,7 @@ export default function Proyectos() {
                        ¿Listo para hablar con un asesor?
                    </h2>
                    <p className="text-[#6B665F] font-light max-w-2xl mx-auto leading-relaxed">
-                       Cuéntanos qué proyecto te interesa y te mostramos opciones reales de financiamiento, sin compromisos ni promesas infladas.
+                       Cuéntanos qué proyecto te interesa y te contactamos sin compromisos.
                    </p>
                   </Reveal>
                </div>
@@ -436,7 +426,7 @@ export default function Proyectos() {
                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
                    {[
                        "Respuesta en menos de 24 horas hábiles.",
-                       "Información clara sobre cuotas y primas según proyecto.",
+                       "Información clara sobre cada proyecto y sus amenidades.",
                        "Acompañamiento durante todo el proceso de compra."
                    ].map((text, i) => (
                        <Reveal key={i} delay={i * 0.1}>
@@ -463,7 +453,7 @@ export default function Proyectos() {
                        <Reveal>
                          <h3 className="font-serif-display text-2xl md:text-3xl mb-6 text-[#2C2C2C]">¿Prefieres hablar directo?</h3>
                          <p className="text-[#6B665F] text-xs leading-relaxed mb-8">
-                             También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver dudas puntuales sobre financiamiento.
+                             También puedes escribir o llamar a nuestro equipo comercial para agendar una visita a proyecto o resolver cualquier duda.
                          </p>
                          
                          <div className="h-[1px] w-12 bg-[#C5A065] mb-8"></div>
