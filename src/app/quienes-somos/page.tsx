@@ -482,28 +482,82 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 11. FUTURE VISION (Expansion) ------------------- */}
-      <section className="py-24 px-6 bg-[#F3F0EB]">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <Reveal>
-                   <span className="text-[#C5A065] uppercase tracking-widest text-xs font-bold mb-4 block">Lo que viene</span>
-                   <h2 className="font-serif-display text-5xl text-[#2C2C2C] mb-6">Expansión Nacional</h2>
-                   <p className="text-[#6B665F] leading-loose mb-8">
-                       No nos detenemos. Nuestra visión para 2030 es llevar el sello de calidad INMAER a las principales ciudades de Honduras. 
-                   </p>
-                   <ul className="space-y-4">
-                       {['Tegucigalpa', 'San Lorenzo', 'Olancho', 'Comayagua'].map((city, i) => (
-                           <li key={i} className="flex items-center gap-4 text-[#2C2C2C] font-medium border-b border-[#C5A065]/20 pb-2">
-                               <span className="text-[#C5A065]">➝</span> {city} {i === 0 && <span className="text-[10px] bg-[#C5A065] text-white px-2 py-0.5 rounded-full ml-2">PRÓXIMAMENTE</span>}
-                           </li>
-                       ))}
-                   </ul>
-                </Reveal>
-              </div>
-              <div className="aspect-square bg-white border p-4 shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/Talanga/cv-talanga_construccion002.jpg.jpeg')" }}></div>
-              </div>
+      {/* ------------------- 11. EXPANSIÓN NACIONAL — CINEMATIC ------------------- */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-[#0a0a0a]">
+        {/* Video background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        >
+          <source src="/DRON-JUANJOSE/Guaimaca/GUAIMACA_DRON.mp4" type="video/mp4" />
+        </video>
+
+        {/* Cinematic overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/40" />
+
+        {/* Film grain */}
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none z-10"
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }}
+        />
+
+        {/* Gold lines top & bottom */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/20 to-transparent" />
+
+        {/* Content */}
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-8 md:px-16 py-24">
+          <div className="max-w-xl">
+            <Reveal>
+              <span className="text-[#C5A065] text-[9px] font-bold uppercase tracking-[0.5em] block mb-6">El Futuro</span>
+              <h2 className="font-serif-display text-5xl md:text-7xl text-white mb-6 leading-[0.95]">
+                Expansión{' '}
+                <span className="italic text-[#C5A065]">Nacional</span>
+              </h2>
+              <div className="w-[60px] h-[1px] bg-[#C5A065] mb-8" />
+              <p className="text-white/50 text-sm leading-relaxed mb-12 max-w-md">
+                Nuestra visión: llevar el estándar INMAER a las principales ciudades de Honduras. El crecimiento no se detiene.
+              </p>
+            </Reveal>
+
+            {/* Cities */}
+            <div className="space-y-0">
+              {[
+                { city: 'Danlí', status: 'Consolidado', active: true },
+                { city: 'Olancho', status: 'Activo', active: true },
+                { city: 'San Lorenzo', status: 'Activo', active: true },
+                { city: 'Talanga', status: 'En construcción', active: true },
+                { city: 'Guaimaca', status: 'Próximamente', active: false },
+                { city: 'Tegucigalpa', status: 'Próximamente', active: false },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.city}
+                  className="flex items-center justify-between py-4 border-b border-white/[0.06] group"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.5 }}
+                >
+                  <div className="flex items-center gap-4">
+                    <span className={`w-2 h-2 rounded-full ${item.active ? 'bg-[#C5A065]' : 'bg-white/20'}`} />
+                    <span className="font-serif-display text-2xl md:text-3xl text-white group-hover:text-[#C5A065] transition-colors duration-300">{item.city}</span>
+                  </div>
+                  <span className={`text-[9px] uppercase tracking-[0.3em] ${item.active ? 'text-[#C5A065]' : 'text-white/30'}`}>
+                    {item.status}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </div>
+        </div>
+
+        {/* Corner accents */}
+        <div className="absolute top-8 right-8 w-12 h-12 border-t border-r border-[#C5A065]/15 z-20" />
+        <div className="absolute bottom-8 right-8 w-12 h-12 border-b border-r border-[#C5A065]/15 z-20" />
       </section>
 
       {/* ------------------- FACILIDADES DE PAGO ------------------- */}
