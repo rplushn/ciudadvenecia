@@ -84,9 +84,9 @@ export default function HorizontalGallery() {
             Ciudad Venecia Olancho
           </span>
           <h2 className="font-serif-display text-[#1A1A1A] text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-light">
-            Un estándar{' '}
-            <em className="italic text-[#C5A065]">superior</em>{' '}
-            de vida
+            <span className="block">Un estándar</span>
+            <span className="block italic text-[#C5A065]">superior</span>
+            <span className="block">de vida</span>
           </h2>
         </div>
         {/* Subtitle — absolute bottom-right */}
