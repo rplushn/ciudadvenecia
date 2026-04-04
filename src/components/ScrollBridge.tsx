@@ -13,29 +13,30 @@ export default function ScrollBridge() {
 
   // ============================================
   // PHASE 1: "¿Cuánto cuesta soñar?" (0% - 45%)
+  // Visible IMMEDIATELY, fades out as you scroll
   // ============================================
-  const word1Opacity = useTransform(scrollYProgress, [0, 0.05, 0.32, 0.40], [0, 1, 1, 0]);
-  const word1Y = useTransform(scrollYProgress, [0, 0.05, 0.32, 0.40], [60, 0, 0, -80]);
+  const word1Opacity = useTransform(scrollYProgress, [0, 0.28, 0.38], [1, 1, 0]);
+  const word1Y = useTransform(scrollYProgress, [0, 0.28, 0.38], [0, 0, -80]);
 
-  // "soñar?" — gold italic, slightly delayed
-  const word3Opacity = useTransform(scrollYProgress, [0.06, 0.13, 0.32, 0.40], [0, 1, 1, 0]);
-  const word3Y = useTransform(scrollYProgress, [0.06, 0.13, 0.32, 0.40], [50, 0, 0, -80]);
-  const word3Scale = useTransform(scrollYProgress, [0.06, 0.13], [0.85, 1]);
+  // "soñar?" — gold italic, slight delay then always visible
+  const word3Opacity = useTransform(scrollYProgress, [0, 0.03, 0.28, 0.38], [0, 1, 1, 0]);
+  const word3Y = useTransform(scrollYProgress, [0, 0.03, 0.28, 0.38], [40, 0, 0, -80]);
+  const word3Scale = useTransform(scrollYProgress, [0, 0.03], [0.85, 1]);
 
   // ============================================
-  // PHASE 2: Answer (42% - 75%)
+  // PHASE 2: Answer (40% - 75%)
   // ============================================
-  const answerOpacity = useTransform(scrollYProgress, [0.42, 0.50, 0.65, 0.73], [0, 1, 1, 0]);
-  const answerY = useTransform(scrollYProgress, [0.42, 0.50, 0.65, 0.73], [50, 0, 0, -50]);
-  const answerScale = useTransform(scrollYProgress, [0.42, 0.50], [0.9, 1]);
+  const answerOpacity = useTransform(scrollYProgress, [0.40, 0.48, 0.65, 0.73], [0, 1, 1, 0]);
+  const answerY = useTransform(scrollYProgress, [0.40, 0.48, 0.65, 0.73], [50, 0, 0, -50]);
+  const answerScale = useTransform(scrollYProgress, [0.40, 0.48], [0.9, 1]);
 
   // Gold line draws
-  const lineScaleX = useTransform(scrollYProgress, [0.48, 0.56], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.48, 0.54, 0.65, 0.71], [0, 1, 1, 0]);
+  const lineScaleX = useTransform(scrollYProgress, [0.46, 0.54], [0, 1]);
+  const lineOpacity = useTransform(scrollYProgress, [0.46, 0.52, 0.65, 0.71], [0, 1, 1, 0]);
 
   // Supporting text
-  const supportOpacity = useTransform(scrollYProgress, [0.53, 0.58, 0.65, 0.71], [0, 1, 1, 0]);
-  const supportY = useTransform(scrollYProgress, [0.53, 0.58], [20, 0]);
+  const supportOpacity = useTransform(scrollYProgress, [0.51, 0.56, 0.65, 0.71], [0, 1, 1, 0]);
+  const supportY = useTransform(scrollYProgress, [0.51, 0.56], [20, 0]);
 
   // ============================================
   // PHASE 3: Fade out (72% - 100%)
@@ -214,8 +215,8 @@ export default function ScrollBridge() {
         <div className="absolute inset-0 z-20 flex items-center justify-center px-6">
           <div className="text-center max-w-5xl">
             <div className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05]">
-              {/* "¿Cuánto cuesta" */}
-              <div className="overflow-hidden mb-2">
+              {/* "¿Cuánto cuesta" — visible immediately */}
+              <div className="mb-2">
                 <motion.span
                   className="inline-block"
                   style={{
@@ -227,8 +228,8 @@ export default function ScrollBridge() {
                 </motion.span>
               </div>
 
-              {/* "soñar?" */}
-              <div className="overflow-hidden">
+              {/* "soñar?" — appears just after */}
+              <div>
                 <motion.span
                   className="inline-block italic text-[#C5A065]"
                   style={{
