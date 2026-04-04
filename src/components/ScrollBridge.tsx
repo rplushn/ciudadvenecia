@@ -1,14 +1,35 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
 
 export default function ScrollBridge() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
+  });
+
+  // Trigger counter animation when Phase 2 becomes visible
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (v > 0.38 && !hasAnimated) {
+      setHasAnimated(true);
+      const target = 1500;
+      const duration = 2000;
+      const startTime = Date.now();
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.floor(eased * target));
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+    }
   });
 
   // ============================================
@@ -67,9 +88,9 @@ export default function ScrollBridge() {
           <img 
             src="/amenidades/familia_homepage.jpg" 
             alt="" 
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.25]"
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.35]"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-[#0a0a0a]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-[#0a0a0a]/20" />
         </motion.div>
 
         {/* ============================================ */}
@@ -222,30 +243,30 @@ export default function ScrollBridge() {
             scale: answerScale,
           }}
         >
-          <div className="text-center max-w-3xl">
-            {/* Subtle label */}
-            <p className="text-[#C5A065]/50 text-[10px] uppercase tracking-[0.5em] mb-8">
-              Tu próximo paso
-            </p>
+          <div className="text-center max-w-4xl">
+            {/* The Big Number */}
+            <div className="mb-4">
+              <span className="font-serif-display text-[100px] sm:text-[130px] md:text-[160px] lg:text-[200px] text-white leading-none tracking-tight">
+                +{count.toLocaleString()}
+              </span>
+            </div>
 
-            {/* Main text */}
-            <h3 className="font-serif-display text-4xl md:text-6xl text-white mb-8 font-light">
-              Imagina{' '}
-              <span className="italic text-[#C5A065]">tu nuevo hogar.</span>
+            {/* Label */}
+            <h3 className="font-serif-display text-3xl md:text-5xl text-white/80 mb-4 font-light">
+              familias ya viven{' '}
+              <span className="italic text-[#C5A065]">su sueño</span>
             </h3>
 
             {/* Gold line */}
             <motion.div
-              className="h-[1px] bg-[#C5A065] mx-auto mb-10 origin-center"
+              className="h-[1px] bg-[#C5A065] mx-auto mb-8 origin-center"
               style={{ scaleX: lineScaleX, opacity: lineOpacity, width: "100px" }}
             />
 
-            {/* Supporting */}
+            {/* The hook */}
             <motion.div style={{ opacity: supportOpacity, y: supportY }}>
-              <p className="text-white/25 text-sm leading-relaxed max-w-md mx-auto">
-                Financiamiento directo, sin intermediarios.
-                <br />
-                Cuotas que se adaptan a tu realidad.
+              <p className="font-serif-display text-xl md:text-2xl text-[#C5A065] italic">
+                La tuya puede ser la siguiente.
               </p>
             </motion.div>
           </div>
