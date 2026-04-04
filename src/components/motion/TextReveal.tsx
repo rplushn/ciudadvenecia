@@ -58,7 +58,7 @@ export default function TextReveal({
       opacity: 1,
       transition: {
         duration: duration,
-        ease: [0.25, 0.8, 0.25, 1], // cubic-bezier premium
+        ease: [0.25, 0.8, 0.25, 1] as const, // cubic-bezier premium
       },
     },
   };

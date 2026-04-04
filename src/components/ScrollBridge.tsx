@@ -186,7 +186,7 @@ export default function ScrollBridge() {
             {/* THE BIG NUMBER */}
             <motion.div
               className="relative"
-              style={{ filter: numberBlur.get ? undefined : undefined }}
+              
             >
               <span className="font-serif-display text-[120px] md:text-[180px] lg:text-[220px] text-white leading-none tracking-tight">
                 Tu Terreno
