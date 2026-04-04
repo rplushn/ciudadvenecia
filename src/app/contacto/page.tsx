@@ -6,6 +6,9 @@ import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import Navbar from '@/components/Navbar';
 import AdvisorCTA from '@/components/AdvisorCTA';
+import BeforeAfterReveal from '@/components/BeforeAfterReveal';
+import AvailabilityPulse from '@/components/AvailabilityPulse';
+import CinematicExperience from '@/components/CinematicExperience';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -432,6 +435,12 @@ export default function Contacto() {
 
 
       {/* ═══════════════════════════════════════════════════════════
+          1B. BEFORE/AFTER — Terrain Transformation Slider
+         ═══════════════════════════════════════════════════════════ */}
+      <BeforeAfterReveal />
+
+
+      {/* ═══════════════════════════════════════════════════════════
           2. CANALES DIRECTOS — Animated Gold Border Cards
          ═══════════════════════════════════════════════════════════ */}
       <section className="py-28 px-6 bg-white relative">
@@ -486,6 +495,12 @@ export default function Contacto() {
           />
         </div>
       </section>
+
+
+      {/* ═══════════════════════════════════════════════════════════
+          2B. AVAILABILITY PULSE — Interactive Honduras Map
+         ═══════════════════════════════════════════════════════════ */}
+      <AvailabilityPulse />
 
 
       {/* ═══════════════════════════════════════════════════════════
@@ -631,6 +646,12 @@ export default function Contacto() {
           </div>
         </div>
       </section>
+
+
+      {/* ═══════════════════════════════════════════════════════════
+          4B. CINEMATIC EXPERIENCE — Video Ambient Strip
+         ═══════════════════════════════════════════════════════════ */}
+      <CinematicExperience />
 
 
       {/* ═══════════════════════════════════════════════════════════
