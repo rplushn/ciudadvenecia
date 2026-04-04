@@ -11,23 +11,21 @@ export default function ScrollBridge() {
     offset: ["start start", "end start"],
   });
 
-  // Text — visible from start, fades out smoothly as scroll progresses
-  const textOpacity = useTransform(scrollYProgress, [0, 0.50, 0.78], [1, 0.9, 0]);
-  const textY = useTransform(scrollYProgress, [0, 0.50, 0.78], [0, -10, -80]);
-  const textScale = useTransform(scrollYProgress, [0.50, 0.78], [1, 0.95]);
+  // Text — visible from start, fades out at end
+  const textOpacity = useTransform(scrollYProgress, [0, 0.75, 0.92], [1, 1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.75, 0.92], [0, 0, -60]);
 
   // "soñar?" — slight entrance delay
-  const sonarOpacity = useTransform(scrollYProgress, [0, 0.04, 0.50, 0.75], [0, 1, 0.9, 0]);
+  const sonarOpacity = useTransform(scrollYProgress, [0, 0.04, 0.75, 0.92], [0, 1, 1, 0]);
   const sonarY = useTransform(scrollYProgress, [0, 0.04], [30, 0]);
   const sonarScale = useTransform(scrollYProgress, [0, 0.04], [0.88, 1]);
 
-  // Gold line — draws itself early, fades with text
+  // Gold line — draws itself early, stays
   const lineScaleX = useTransform(scrollYProgress, [0.03, 0.12], [0, 1]);
-  const lineOpacity = useTransform(scrollYProgress, [0.03, 0.08, 0.50, 0.72], [0, 0.6, 0.5, 0]);
+  const lineOpacity = useTransform(scrollYProgress, [0.03, 0.08, 0.75, 0.90], [0, 0.6, 0.6, 0]);
 
-  // Background layers for smooth transition
-  const darkBgOpacity = useTransform(scrollYProgress, [0.60, 0.90], [1, 0]);
-  const warmBgOpacity = useTransform(scrollYProgress, [0.55, 0.75, 0.90, 1], [0, 0.8, 0.8, 0]);
+  // Entire section fades to reveal Precios below
+  const bgOpacity = useTransform(scrollYProgress, [0.78, 0.98], [1, 0]);
 
   // Nebula drift
   const nebula1X = useTransform(scrollYProgress, [0, 1], [-30, 50]);
@@ -51,24 +49,16 @@ export default function ScrollBridge() {
     <div ref={containerRef} className="relative" style={{ height: "200vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
 
-        {/* Background — dark carbon that transitions to warm gray */}
+        {/* Background */}
         <motion.div
           className="absolute inset-0 z-10"
-          style={{ opacity: darkBgOpacity, background: "#111111" }}
-        />
-        {/* Warm gray-brown layer — fades in then out to blend with PRECIOS */}
-        <motion.div
-          className="absolute inset-0 z-[9]"
-          style={{
-            opacity: warmBgOpacity,
-            background: "linear-gradient(180deg, #2A2420 0%, #3D3530 50%, #4A433D 100%)",
-          }}
+          style={{ opacity: bgOpacity, background: "#080808" }}
         />
 
         {/* ========== ATMOSPHERE ========== */}
         <motion.div
           className="absolute inset-0 z-20 pointer-events-none overflow-hidden"
-          style={{ opacity: darkBgOpacity }}
+          style={{ opacity: bgOpacity }}
         >
 
           {/* Golden nebula 1 — top left */}
@@ -201,11 +191,11 @@ export default function ScrollBridge() {
         {/* ========== THE PHRASE ========== */}
         <motion.div
           className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6"
-          style={{ opacity: textOpacity, y: textY, scale: textScale }}
+          style={{ opacity: textOpacity, y: textY }}
         >
           <div className="text-center">
             {/* "¿Cuánto cuesta" */}
-            <h2 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] mb-1 drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
+            <h2 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white/90 leading-[1.05] mb-1">
               ¿Cuánto cuesta
             </h2>
 
@@ -213,7 +203,7 @@ export default function ScrollBridge() {
             <motion.div
               style={{ opacity: sonarOpacity, y: sonarY, scale: sonarScale }}
             >
-              <span className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#C5A065] leading-[1.05] drop-shadow-[0_2px_20px_rgba(197,160,101,0.3)]">
+              <span className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-[#C5A065] leading-[1.05]">
                 soñar?
               </span>
             </motion.div>
