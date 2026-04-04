@@ -57,8 +57,15 @@ export default function VideoTextMaskHero() {
     camera.position.set(0, 200, 500);
     camera.lookAt(0, 0, 0);
 
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+
     // Terrain
-    const G = 245, SP = 3.77, CT = G * G;
+    const G = 220, SP = 4.2, CT = G * G;
     const geo = new THREE.BufferGeometry();
     const pos = new Float32Array(CT * 3);
     const col = new Float32Array(CT * 3);
@@ -111,7 +118,6 @@ export default function VideoTextMaskHero() {
     geo.setAttribute('size', new THREE.BufferAttribute(siz, 1));
 
     const vs = `
-      uniform float uScale;
       attribute float size;
       varying vec3 vColor;
       varying float vDist;
@@ -119,7 +125,7 @@ export default function VideoTextMaskHero() {
         vColor = color;
         vec4 mv = modelViewMatrix * vec4(position, 1.0);
         vDist = -mv.z;
-        gl_PointSize = size * uScale * (380.0 / -mv.z);
+        gl_PointSize = size * (380.0 / -mv.z);
         gl_Position = projectionMatrix * mv;
       }
     `;
@@ -141,7 +147,6 @@ export default function VideoTextMaskHero() {
 
     const mat = new THREE.ShaderMaterial({
       vertexShader: vs, fragmentShader: fs,
-      uniforms: { uScale: { value: Math.max(W / 800, 1.0) } },
       vertexColors: true, transparent: true,
       depthWrite: false, blending: THREE.AdditiveBlending,
     });
@@ -184,25 +189,11 @@ export default function VideoTextMaskHero() {
 
     const dMat = new THREE.ShaderMaterial({
       vertexShader: vs, fragmentShader: dFs,
-      uniforms: { uScale: { value: Math.max(W / 800, 1.0) } },
       vertexColors: true, transparent: true,
       depthWrite: false, blending: THREE.AdditiveBlending,
     });
     const dust = new THREE.Points(dGeo, dMat);
     scene.add(dust);
-
-    const handleResize = () => {
-      const w = window.innerWidth;
-      const h = window.innerHeight;
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      renderer.setSize(w, h);
-      const scale = Math.max(window.innerWidth / 800, 1.0);
-      mat.uniforms.uScale.value = scale;
-      dMat.uniforms.uScale.value = scale;
-    };
-    window.addEventListener('resize', handleResize);
 
     // Mouse tracking
     let mX = 0, mY = 0, tMX = 0, tMY = 0;
