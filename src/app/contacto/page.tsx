@@ -679,7 +679,7 @@ export default function Contacto() {
       {/* ═══════════════════════════════════════════════════════════
           6. ADVISOR CTA — Facilidades de Pago (Component)
          ═══════════════════════════════════════════════════════════ */}
-      <AdvisorCTA />
+      <AdvisorCTA variant="family" />
 
 
       {/* ═══════════════════════════════════════════════════════════

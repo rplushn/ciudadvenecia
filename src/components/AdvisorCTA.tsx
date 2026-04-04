@@ -2,13 +2,38 @@
 
 import { Reveal } from '@/components/motion/Reveal';
 
-export default function AdvisorCTA() {
+interface AdvisorCTAProps {
+  variant?: 'advisor' | 'family';
+}
+
+const variants = {
+  advisor: {
+    image: '/amenidades/asesora_cv.png',
+    alt: 'Asesora Ciudad Venecia',
+    eyebrow: 'Tu terreno, a tu alcance',
+    headline: 'Facilidades de',
+    headlineAccent: 'pago',
+    body: 'En Ciudad Venecia hacemos que adquirir tu terreno sea fácil y accesible. Financiamiento directo, sin trámites bancarios complicados y con planes que se adaptan a tu presupuesto.',
+  },
+  family: {
+    image: '/amenidades/familia_hn.png',
+    alt: 'Familia Ciudad Venecia',
+    eyebrow: 'El hogar que tu familia merece',
+    headline: 'Cumpliendo',
+    headlineAccent: 'sueños',
+    body: 'Más de 1,200 familias ya viven la experiencia Ciudad Venecia. Un lugar donde tus hijos crecen seguros, con amenidades de primer nivel y la plusvalía que protege tu inversión.',
+  },
+};
+
+export default function AdvisorCTA({ variant = 'advisor' }: AdvisorCTAProps) {
+  const v = variants[variant];
+
   return (
     <section className="relative bg-white overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-end">
 
-          {/* LEFT: Advisor Image */}
+          {/* LEFT: Image */}
           <div className="relative h-[500px] md:h-[650px] flex items-end justify-center lg:justify-start">
             {/* Decorative circle behind */}
             <div className="absolute bottom-0 left-1/2 lg:left-[45%] -translate-x-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-[#F3F0EB] -z-0" />
@@ -16,8 +41,8 @@ export default function AdvisorCTA() {
             <div className="absolute bottom-10 left-1/2 lg:left-[45%] -translate-x-1/2 w-[420px] h-[420px] md:w-[520px] md:h-[520px] rounded-full border border-[#C5A065]/20 -z-0" />
 
             <img
-              src="/amenidades/asesora_cv.png"
-              alt="Asesora Ciudad Venecia"
+              src={v.image}
+              alt={v.alt}
               className="relative z-10 h-[450px] md:h-[600px] object-contain object-bottom"
             />
           </div>
@@ -26,16 +51,14 @@ export default function AdvisorCTA() {
           <div className="px-8 md:px-12 lg:px-16 py-16 lg:py-24">
             <Reveal>
               <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">
-                Tu terreno, a tu alcance
+                {v.eyebrow}
               </span>
               <h2 className="font-serif-display text-4xl md:text-5xl lg:text-6xl text-[#1A1A1A] mb-6 leading-[1.05]">
-                Facilidades de{' '}
-                <span className="italic text-[#C5A065]">pago</span>
+                {v.headline}{' '}
+                <span className="italic text-[#C5A065]">{v.headlineAccent}</span>
               </h2>
               <p className="text-[#6B665F] text-sm md:text-base leading-relaxed mb-10 max-w-lg">
-                En Ciudad Venecia hacemos que adquirir tu terreno sea fácil y accesible. 
-                Financiamiento directo, sin trámites bancarios complicados y con planes 
-                que se adaptan a tu presupuesto.
+                {v.body}
               </p>
             </Reveal>
 
