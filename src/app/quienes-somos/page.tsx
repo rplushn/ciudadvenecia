@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';
 import Navbar from '@/components/Navbar';
+import AdvisorCTA from '@/components/AdvisorCTA';
 
 export default function QuienesSomos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -441,6 +442,8 @@ export default function QuienesSomos() {
           </div>
       </section>
 
+      {/* ------------------- FACILIDADES DE PAGO ------------------- */}
+      <AdvisorCTA />
       {/* ------------------- 12. NEW COMPLEX CONTACT CTA (EXACT CLONE FROM HOME) ------------------- */}
        <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB]">
            <div className="max-w-[1200px] mx-auto">

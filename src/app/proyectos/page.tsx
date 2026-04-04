@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar';
 import TileHero from '@/components/TileHero';
 import HorizontalGallery from '@/components/HorizontalGallery';
 import CinematicDivider from '@/components/CinematicDivider';
+import AdvisorCTA from '@/components/AdvisorCTA';
 
 export default function Proyectos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -480,6 +481,8 @@ export default function Proyectos() {
              </div>
          </div>
       </section>
+      {/* ------------------- FACILIDADES DE PAGO ------------------- */}
+      <AdvisorCTA />
       {/* ------------------- 7. CONTACT CTA (Standardized) ------------------- */}
        <section id="kontakt" className="py-24 px-6 bg-[#F3F0EB] border-t border-[#C5A065]/10">
            <div className="max-w-[1200px] mx-auto">
