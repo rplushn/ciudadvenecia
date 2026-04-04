@@ -139,13 +139,17 @@ export default function CinematicDivider() {
       ref={sectionRef} 
       className="relative h-screen overflow-hidden bg-[#0a0a0a]"
     >
-      {/* === DRONE IMAGE with parallax zoom === */}
+      {/* === DRONE VIDEO with parallax zoom === */}
       <div ref={imageRef} className="absolute inset-[-10%] will-change-transform">
-        <img
-          src="/NUEVAS-JUANJOSE/cv_olancho_001dron_web.jpg"
-          alt=""
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/NUEVAS-JUANJOSE/cv_olancho_social_horizontal_web.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* === CINEMATIC OVERLAYS === */}
