@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import Navbar from '@/components/Navbar';
 import TileHero from '@/components/TileHero';
+import HorizontalGallery from '@/components/HorizontalGallery';
 
 export default function Proyectos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -42,6 +43,9 @@ export default function Proyectos() {
 
       {/* ------------------- HERO: TILE SLIDER ------------------- */}
       <TileHero />
+
+      {/* ------------------- OLANCHO SHOWCASE: HORIZONTAL SCROLL ------------------- */}
+      <HorizontalGallery />
 
       {/* ------------------- NEW SECTION 1: MANIFESTO (TEXTO ELEGANTE) ------------------- */}
       <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
