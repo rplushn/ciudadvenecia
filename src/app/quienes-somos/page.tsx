@@ -644,6 +644,62 @@ export default function QuienesSomos() {
         </div>
       </section>
 
+      {/* ------------------- SOBRE INMAER (Cloned from Homepage) ------------------- */}
+      <section className="bg-[#003B5C] py-24 px-6 md:px-12 text-white relative overflow-hidden">
+         <div className="max-w-[1100px] mx-auto text-center">
+             <Reveal>
+                  <div className="flex items-center justify-center gap-4 mb-6">
+                       <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.25em]">UNA CREACIÓN DE</span>
+                       <div className="h-[1px] w-12 bg-[#C5A065]"></div>
+                  </div>
+                  
+                  <h2 className="font-serif-display text-5xl md:text-6xl mb-2 tracking-wide text-white">INMAER</h2>
+                  <p className="text-[#C5A065] text-xs uppercase tracking-[0.4em] mb-8 font-bold">REAL ESTATE</p>
+
+                  <h3 className="font-serif-display text-3xl md:text-4xl leading-tight mb-6 text-white/90 max-w-3xl mx-auto">
+                      Nuestras creaciones impactan positivamente el futuro de miles de personas.
+                  </h3>
+                  
+                  <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-2xl mx-auto">
+                      INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
+                  </p>
+             </Reveal>
+
+                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10 max-w-2xl mx-auto">
+                     <Reveal delay={0.2}>
+                       <div className="text-center">
+                            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
+                                <CountUp to={10} suffix="+" />
+                            </div>
+                            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
+                                AÑOS DE EXPERIENCIA
+                            </div>
+                       </div>
+                     </Reveal>
+                     <Reveal delay={0.3}>
+                       <div className="text-center">
+                            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
+                                <CountUp to={7500} prefix="+" />
+                            </div>
+                            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
+                                CLIENTES SATISFECHOS
+                            </div>
+                       </div>
+                     </Reveal>
+                     <Reveal delay={0.4}>
+                       <div className="text-center">
+                            <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
+                                <CountUp to={4} />
+                            </div>
+                            <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
+                                CIUDADES CON PRESENCIA
+                            </div>
+                       </div>
+                     </Reveal>
+                </div>
+         </div>
+      </section>
+
       {/* ------------------- FACILIDADES DE PAGO ------------------- */}
       <AdvisorCTA />
       {/* ------------------- 12. NEW COMPLEX CONTACT CTA (EXACT CLONE FROM HOME) ------------------- */}
