@@ -35,10 +35,10 @@ export default function QuienesSomos() {
 
   // DATA MOCKUP (Updated for CountUp compatibility)
   const stats = [
-    { number: 12, prefix: "", suffix: "", label: "Años de Trayectoria" },
-    { number: 4, prefix: "+", suffix: "", label: "Ciudades" },
-    { number: 850, prefix: "", suffix: "+", label: "Familias Felices" },
-    { number: 100, prefix: "", suffix: "%", label: "Plusvalía" }
+    { number: 10, prefix: "+", suffix: "", label: "Años de Trayectoria" },
+    { number: 7, prefix: "", suffix: "", label: "Proyectos Activos" },
+    { number: 1500, prefix: "+", suffix: "", label: "Familias Felices" },
+    { number: 100, prefix: "", suffix: "%", label: "Plusvalía Garantizada" }
   ];
 
   const values = [
@@ -212,7 +212,7 @@ export default function QuienesSomos() {
               transition={{ duration: 0.8 }}
             >
               <div className="aspect-[3/4] bg-[#E5E0D8] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/homepage/portal_ai-ciudad_venecia.jpeg')" }}></div>
+                  <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/JUEGOS_PREFERIDO.jpg')" }}></div>
               </div>
             </motion.div>
             <motion.div
@@ -290,7 +290,7 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 5. PARALLAX BREAK 1 (Landscape) ------------------- */}
-      <section className="py-32 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: "url('/homepage/outdoor2.jpg.jpeg')" }}>
+      <section className="py-32 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: "url('/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg')" }}>
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 text-center text-white px-6">
             <Reveal>
@@ -368,7 +368,7 @@ export default function QuienesSomos() {
               <div className="bg-gray-200 h-full min-h-[500px] relative overflow-hidden">
                 <motion.div
                   className="absolute inset-0 bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-700"
-                  style={{ backgroundImage: "url('/amenidades/amenidades_club.jpg.jpeg')" }}
+                  style={{ backgroundImage: "url('/NUEVAS-JUANJOSE/horizontales/cv_olancho_A001_horizontal_web.jpg')" }}
                   initial={{ scale: 1.1, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
@@ -400,7 +400,7 @@ export default function QuienesSomos() {
             {[
               { number: "12M+", label: "m² desarrollados", desc: "De terreno transformado en comunidad" },
               { number: "98%", label: "Clientes satisfechos", desc: "Según encuesta interna 2025" },
-              { number: "0", label: "Demandas legales", desc: "Historial jurídico impecable" },
+              { number: "7", label: "Proyectos activos", desc: "En 5 ciudades de Honduras" },
               { number: "2x", label: "Plusvalía promedio", desc: "Valor duplicado en 5 años" },
             ].map((item, i) => (
               <motion.div
@@ -423,31 +423,30 @@ export default function QuienesSomos() {
 
       {/* ------------------- 9. LEADERSHIP / TEAM ------------------- */}
       <section className="py-24 px-6 bg-white">
-          <div className="max-w-7xl mx-auto text-center mb-16">
+          <div className="max-w-4xl mx-auto text-center">
             <Reveal>
-              <span className="text-[#C5A065] uppercase tracking-widest text-xs font-bold mb-4 block">Mentes Maestras</span>
-              <h2 className="font-serif-display text-4xl text-[#2C2C2C]">Liderazgo con Visión</h2>
+              <span className="text-[#C5A065] uppercase tracking-widest text-xs font-bold mb-4 block">Nuestro Equipo</span>
+              <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-8">Liderazgo con Visión</h2>
+              <p className="text-[#6B665F] leading-relaxed max-w-2xl mx-auto mb-12">
+                Detrás de cada proyecto hay un equipo comprometido con transformar la forma de vivir en Honduras. 
+                Profesionales con más de una década de experiencia en desarrollo inmobiliario.
+              </p>
             </Reveal>
-          </div>
-          {/* Placeholder for Team Grid - Abstract representation for now */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
               {[
-                '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/KIOSKO_PREFERIDO.jpg',
-                '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS_PREFERIDA.jpg',
-                '/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg',
-              ].map((img, i) => (
-                  <Reveal key={i} delay={i * 0.1}>
-                    <div className="group cursor-pointer">
-                        <div className="aspect-[3/4] bg-[#F3F0EB] mb-6 overflow-hidden relative">
-                             {/* TODO: reemplazar con foto real del ejecutivo */}
-                             <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                                  style={{ backgroundImage: `url('${img}')` }}></div>
-                        </div>
-                        <h3 className="font-serif-display text-2xl text-[#2C2C2C]">Ejecutivo {i+1}</h3>
-                        <p className="text-[#C5A065] text-xs uppercase tracking-widest font-bold">Dirección General</p>
-                    </div>
-                  </Reveal>
+                { role: "Dirección General", focus: "Visión estratégica y expansión" },
+                { role: "Operaciones", focus: "Calidad y ejecución de obra" },
+                { role: "Comercial", focus: "Experiencia del cliente" },
+              ].map((item, i) => (
+                <Reveal key={i} delay={i * 0.1}>
+                  <div className="p-8 border border-[#C5A065]/15 hover:border-[#C5A065]/40 transition-colors duration-300">
+                    <span className="font-serif-display text-5xl text-[#C5A065]/20 block mb-4">0{i+1}</span>
+                    <h3 className="font-bold text-[#2C2C2C] uppercase tracking-wider text-xs mb-2">{item.role}</h3>
+                    <p className="text-[#6B665F] text-sm">{item.focus}</p>
+                  </div>
+                </Reveal>
               ))}
+            </div>
           </div>
       </section>
 
@@ -502,7 +501,7 @@ export default function QuienesSomos() {
                 </Reveal>
               </div>
               <div className="aspect-square bg-white border p-4 shadow-xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/DRON-JUANJOSE/Talanga/foto_Talanga.jpeg')" }}></div>
+                  <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/Talanga/cv-talanga_construccion002.jpg.jpeg')" }}></div>
               </div>
           </div>
       </section>
