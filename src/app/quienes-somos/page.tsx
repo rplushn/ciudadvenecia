@@ -58,51 +58,116 @@ export default function QuienesSomos() {
       
       <Navbar activeRoute="/quienes-somos" />
 
-      {/* ------------------- 1. HERO SECTION (REDESIGNED TO MATCH PROYECTOS) ------------------- */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#1A3A52]">
-         <div className="absolute inset-0 opacity-40">
-            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('/homepage/versalles_outdoor.jpg.jpeg')" }}></div>
-         </div>
-         <div className="absolute inset-0 bg-gradient-to-b from-[#1A3A52]/80 to-[#1A3A52]"></div>
-         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20">
-            <motion.span
-              className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.4em] mb-6 block"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+      {/* ------------------- 1. HERO SECTION — CINEMATIC ------------------- */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+         {/* Video background */}
+         <div className="absolute inset-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover opacity-40"
             >
-              INMAER Real Estate
+              <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4" type="video/mp4" />
+            </video>
+         </div>
+
+         {/* Cinematic overlays */}
+         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70" />
+         <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
+
+         {/* Film grain */}
+         <div 
+           className="absolute inset-0 opacity-[0.04] pointer-events-none z-20"
+           style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }}
+         />
+
+         {/* Gold accent lines — top & bottom */}
+         <motion.div 
+           className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/40 to-transparent z-30"
+           initial={{ scaleX: 0 }}
+           animate={{ scaleX: 1 }}
+           transition={{ duration: 2, delay: 0.5, ease: [0.25, 0.8, 0.25, 1] }}
+         />
+         <motion.div 
+           className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A065]/20 to-transparent z-30"
+           initial={{ scaleX: 0 }}
+           animate={{ scaleX: 1 }}
+           transition={{ duration: 2, delay: 1, ease: [0.25, 0.8, 0.25, 1] }}
+         />
+
+         {/* Content */}
+         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+
+            {/* Label */}
+            <motion.span
+              className="text-[#C5A065] text-[9px] font-bold uppercase tracking-[0.6em] mb-10 block"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              INMAER · Desarrolladores Inmobiliarios
             </motion.span>
-            <h1 className="font-serif-display text-5xl md:text-8xl text-white mb-8 leading-none">
+
+            {/* Main title */}
+            <h1 className="font-serif-display text-5xl sm:text-6xl md:text-7xl lg:text-[90px] text-white mb-6 leading-[0.95]">
               <motion.div
-                initial={{ x: -80, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+                initial={{ y: 60, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
               >
                 Más que tierra,
               </motion.div>
               <motion.div
-                className="italic font-light text-white/50"
-                initial={{ x: 80, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.8, 0.25, 1] }}
+                className="italic font-light text-[#C5A065]"
+                initial={{ y: 60, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 1.1, ease: [0.25, 0.8, 0.25, 1] }}
               >
                 creamos futuro.
               </motion.div>
             </h1>
+
+            {/* Gold line */}
+            <motion.div
+              className="h-[1px] w-[80px] bg-[#C5A065] mx-auto mb-8"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1, delay: 1.5, ease: [0.25, 0.8, 0.25, 1] }}
+            />
+
+            {/* Subtitle */}
             <motion.p
-              className="text-white/70 text-sm md:text-lg font-light leading-relaxed max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
+              className="text-white/50 text-sm md:text-base font-light leading-relaxed max-w-xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.8, duration: 1 }}
             >
-              Somos los arquitectos detrás de Ciudad Venecia. Desarrollamos comunidades planeadas para que tu inversión crezca tan fuerte como tu familia.
+              Desarrollamos comunidades planeadas donde la inversión, la naturaleza y la calidad de vida se encuentran.
             </motion.p>
          </div>
+
+         {/* Scroll indicator */}
+         <motion.div
+           className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3"
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ delay: 2.5 }}
+         >
+           <span className="text-white/20 text-[7px] uppercase tracking-[0.5em]">Scroll</span>
+           <motion.div
+             animate={{ y: [0, 8, 0] }}
+             transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+             className="w-[1px] h-8 bg-gradient-to-b from-[#C5A065]/0 to-[#C5A065]/30"
+           />
+         </motion.div>
+
+         {/* Corner accents */}
+         <div className="absolute top-8 left-8 w-12 h-12 border-t border-l border-[#C5A065]/15 z-30" />
+         <div className="absolute top-8 right-8 w-12 h-12 border-t border-r border-[#C5A065]/15 z-30" />
+         <div className="absolute bottom-8 left-8 w-12 h-12 border-b border-l border-[#C5A065]/15 z-30" />
+         <div className="absolute bottom-8 right-8 w-12 h-12 border-b border-r border-[#C5A065]/15 z-30" />
       </section>
 
       {/* ------------------- 2. THE MANIFESTO (Text Heavy / Elegant) ------------------- */}
