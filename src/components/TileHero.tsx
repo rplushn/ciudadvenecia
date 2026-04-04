@@ -186,11 +186,11 @@ export default function TileHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/40 via-transparent to-transparent" />
 
       {/* === SINGLE TITLE (only 2 lines ever visible) === */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full pointer-events-none z-10">
+      <div className="absolute bottom-44 md:bottom-36 left-0 w-full pointer-events-none z-10">
         <div className="px-8 md:px-16 lg:px-24">
           <div
             ref={titleRef}
-            className="font-serif-display text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.95] font-light whitespace-pre-line"
+            className="font-serif-display text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[0.95] font-light whitespace-pre-line"
           >
             {tiles[0].title}
           </div>
