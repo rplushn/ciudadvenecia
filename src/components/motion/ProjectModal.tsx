@@ -10,6 +10,8 @@ export interface ProjectModalData {
   slug: string;
   description?: string;
   amenities?: string[];
+  video?: string;
+  preVenta?: boolean;
 }
 
 interface ProjectModalProps {
@@ -52,29 +54,47 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </svg>
         </button>
 
-        {/* Hero image - 60vh with layoutId */}
+        {/* Hero image or video */}
         <motion.div
           layoutId={layoutId}
           className="relative w-full shrink-0"
           style={{ height: '60vh' }}
         >
-          <img
-            src={project.img}
-            alt={project.name}
-            className="w-full h-full object-cover"
-          />
+          {project.video ? (
+            <video
+              src={project.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={project.img}
+              alt={project.name}
+              className="w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1A2C2C] via-transparent to-transparent" />
           {project.badge && (
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 flex gap-2">
               <span className={`px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider ${
                 project.badge === 'PRÓXIMAMENTE'
                   ? 'bg-white/20 backdrop-blur-sm text-white border border-white/30'
+                  : project.badge === 'LOTES EN PRE-VENTA'
+                  ? 'bg-[#C5A065] text-white animate-pulse'
                   : project.badge === 'NUEVO 2026'
                   ? 'bg-[#C5A065] text-white'
                   : 'bg-white/90 text-[#2C2C2C]'
               }`}>
                 {project.badge}
               </span>
+              {project.video && (
+                <span className="px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider bg-white/20 backdrop-blur-sm text-white border border-white/30">
+                  ▶ Avance de obra
+                </span>
+              )}
             </div>
           )}
         </motion.div>
@@ -114,9 +134,20 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             )}
 
+            {project.preVenta && (
+              <div className="mb-8 p-5 bg-[#C5A065]/10 border border-[#C5A065]/30 rounded-sm">
+                <p className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] mb-2">
+                  Oportunidad de Pre-Venta
+                </p>
+                <p className="text-white/70 text-sm leading-relaxed">
+                  Asegura tu lote a precio de pre-venta antes del lanzamiento oficial. Disponibilidad limitada con las mejores condiciones de financiamiento.
+                </p>
+              </div>
+            )}
+
             <div className="flex flex-wrap gap-4">
               <a
-                href={`https://wa.me/50495498925?text=Hola, me interesa obtener más información sobre ${encodeURIComponent(project.name)}`}
+                href={`https://wa.me/50489494639?text=Hola, me interesa ${project.preVenta ? 'un lote en PRE-VENTA en' : 'obtener más información sobre'} ${encodeURIComponent(project.name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#25D366] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#20BD5A] transition-colors"

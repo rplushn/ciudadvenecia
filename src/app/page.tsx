@@ -201,10 +201,10 @@ export default function Home() {
     {
       name: "Ciudad Venecia Talanga",
       location: "Francisco Morazán",
-      badge: "NUEVO 2026",
-      img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg",
+      badge: "LOTES EN PRE-VENTA",
+      img: "/Talanga/cv-talanga_construccion002.jpg.jpeg",
       slug: "/proyectos/talanga",
-      description: "Nuevo lanzamiento 2026. Tres conceptos disponibles — Raíces, Estándar y Premium — diseñados para diferentes perfiles de inversión con accesos pavimentados y alta plusvalía.",
+      description: "Nuevo lanzamiento 2026. Tres conceptos disponibles — Raíces, Estándar y Premium — diseñados para diferentes perfiles de inversión con accesos pavimentados y alta plusvalía. ¡Mira el avance de obra!",
       stats: [
         { label: "Conceptos", value: "3" },
         { label: "Plusvalía", value: "100%" },
@@ -239,7 +239,7 @@ export default function Home() {
   // Más Proyectos data (for carousel cards + modal)
   const masProyectos: ProjectModalData[] = [
     { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg", badge: "PREMIUM", slug: "/proyectos/olancho", description: "En el corazón del Valle de Lepaguare, un desarrollo premium que combina naturaleza y comodidad.", amenities: ["Seguridad 24/7", "Áreas verdes", "Casa club", "Piscinas", "Canchas deportivas"] },
-    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", badge: "NUEVO 2026", slug: "/proyectos/talanga", description: "Nuevo lanzamiento 2026 en Francisco Morazán. Terrenos con plusvalía garantizada.", amenities: ["Accesos pavimentados", "Áreas comunes", "Plan de financiamiento"] },
+    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/Talanga/cv-talanga_construccion002.jpg.jpeg", badge: "LOTES EN PRE-VENTA", slug: "/proyectos/talanga", description: "Nuevo lanzamiento 2026 en Francisco Morazán. Obra en progreso — mira cómo avanza tu inversión. Terrenos con plusvalía garantizada.", amenities: ["Accesos pavimentados", "Áreas comunes", "Plan de financiamiento"], video: "/Talanga/cv_talanga_construccion.mp4", preVenta: true },
     { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos/san-lorenzo", description: "Desarrollo residencial en el Valle con excelente ubicación y conectividad.", amenities: ["Seguridad", "Parques", "Infraestructura"] },
     { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos/versalles", description: "Exclusivo residencial en Danlí con vistas panorámicas y diseño arquitectónico contemporáneo.", amenities: ["Club social", "Piscina", "Juegos infantiles", "Zona BBQ"] },
     { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca", description: "Próximo lanzamiento en Olancho. Reserva tu oportunidad.", amenities: [] },
