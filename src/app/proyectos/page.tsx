@@ -341,7 +341,7 @@ export default function Proyectos() {
                   <Reveal>
                       <div className="aspect-video overflow-hidden rounded-sm relative">
                           <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-                              <source src="/DRON-JUANJOSE/Talanga/dron_Talanga.mp4" type="video/mp4" />
+                              <source src="/Talanga/cv_talanga_construccion.mp4" type="video/mp4" />
                           </video>
                           <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80">
                               Vista aérea · Talanga
