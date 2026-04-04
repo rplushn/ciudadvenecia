@@ -134,7 +134,7 @@ export default function Home() {
     { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", badge: "NUEVO 2026", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", slug: "/proyectos/talanga" },
     { name: "Ciudad Venecia San Lorenzo", location: "Valle", badge: null, img: "/amenidades/san_lorenzo.jpeg", slug: "/proyectos/san-lorenzo" },
     { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg", slug: "/proyectos/versalles" },
-    { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", slug: "#" },
+    { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg", slug: "#" },
     { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", badge: "PRÓXIMAMENTE", img: "/homepage/portal_ai-ciudad_venecia.jpeg", slug: "#" },
   ];
 
@@ -213,7 +213,7 @@ export default function Home() {
       name: "Ciudad Venecia Guaimaca",
       location: "Francisco Morazán",
       badge: "PRÓXIMAMENTE",
-      img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg",
+      img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg",
       slug: "#",
       description: "Próximo lanzamiento en Francisco Morazán. La experiencia Ciudad Venecia llega a una nueva comunidad.",
       stats: [
@@ -239,7 +239,7 @@ export default function Home() {
     { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", badge: "NUEVO 2026", slug: "/proyectos/talanga", description: "Nuevo lanzamiento 2026 en Francisco Morazán. Terrenos con plusvalía garantizada.", amenities: ["Accesos pavimentados", "Áreas comunes", "Plan de financiamiento"] },
     { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos/san-lorenzo", description: "Desarrollo residencial en el Valle con excelente ubicación y conectividad.", amenities: ["Seguridad", "Parques", "Infraestructura"] },
     { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos/versalles", description: "Exclusivo residencial en Danlí con vistas panorámicas y diseño arquitectónico contemporáneo.", amenities: ["Club social", "Piscina", "Juegos infantiles", "Zona BBQ"] },
-    { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/amenidades/PORTAL_GUAIMACA_PROVISIONAL.jpg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca", description: "Próximo lanzamiento en Olancho. Reserva tu oportunidad.", amenities: [] },
+    { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca", description: "Próximo lanzamiento en Olancho. Reserva tu oportunidad.", amenities: [] },
     { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", img: "/homepage/portal_ai-ciudad_venecia.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/tegucigalpa", description: "Próximamente en la capital. Mantente informado.", amenities: [] },
   ];
 
