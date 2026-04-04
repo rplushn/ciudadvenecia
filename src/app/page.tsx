@@ -525,7 +525,7 @@ export default function Home() {
       {/* ============================================ */}
       {/* SECCIÓN 3: PRECIOS EXCLUSIVOS */}
       {/* ============================================ */}
-      <section className="relative pt-[200px] pb-[120px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg')" }}>
+      <section className="relative pt-[200px] pb-[120px] px-6 flex items-center justify-center bg-center bg-cover" style={{ backgroundImage: "url('/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg')" }}>
         <div className="absolute inset-0 bg-[#2C2C2C]/35 backdrop-blur-[2px] z-[1]" />
         <div className="absolute inset-0 bg-[#8C8276]/90 mix-blend-multiply"></div>
         <div className="absolute inset-0 bg-[#A69C91]/30 pb-[30px]"></div>
