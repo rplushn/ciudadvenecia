@@ -602,13 +602,16 @@ export default function Home() {
       {/* (Consolida: "espacios que inspiran" + parallax) */}
       {/* ============================================ */}
       
-      {/* 5a. Parallax visual */}
-      <section className="relative h-[50vh] bg-fixed bg-center bg-cover flex items-center justify-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES004.jpg')" }}>
+      {/* 5a. Parallax visual with video */}
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+            <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.mp4" type="video/mp4" />
+         </video>
          <div className="absolute inset-0 bg-black/40"></div>
          <div className="relative z-10 text-center">
             <Reveal>
               <p className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-4">Experiencia Premium</p>
-              <h2 className="text-white font-serif-display text-6xl md:text-7xl">VIDA EN ARMONÍA</h2>
+              <h2 className="text-white font-serif-display text-6xl md:text-7xl">TU OASIS PRIVADO</h2>
             </Reveal>
          </div>
       </section>
@@ -636,7 +639,7 @@ export default function Home() {
             <div className="relative h-[600px] overflow-hidden">
                <Reveal delay={0.2} className="h-full">
                  <div className="absolute top-0 right-0 w-[90%] h-[90%] z-10 overflow-hidden shadow-2xl">
-                    <Image src="/DRON-FOTOS-SAMANTHA/VERSALLES/juegos-piscina.jpg" alt="Amenidades" fill className="object-cover" />
+                    <Image src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_A001_horizontal_web.jpg" alt="Amenidades Ciudad Venecia" fill className="object-cover" />
                  </div>
                  <div className="absolute bottom-0 left-0 w-[50%] h-[40%] z-20 overflow-hidden border-4 border-[#EBE7DF] shadow-xl">
                     <Image src="/DRON-FOTOS-SAMANTHA/VERSALLES/piscina.jpg" alt="Piscina" fill className="object-cover" />
