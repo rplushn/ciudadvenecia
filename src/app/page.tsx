@@ -146,7 +146,7 @@ export default function Home() {
       name: "Ciudad Venecia Danlí",
       location: "El Paraíso, Honduras",
       badge: "DONDE NACIÓ LA MARCA",
-      img: "/amenidades/amenidades009.jpg.jpeg",
+      img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg",
       slug: "/proyectos/danli",
       description: "El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa y familias que ya disfrutan de la vida en armonía.",
       stats: [
