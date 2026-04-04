@@ -185,7 +185,7 @@ export default function QuienesSomos() {
           </motion.h2>
         </div>
 
-        {/* Quote — blur to sharp with split lines */}
+        {/* Quote — line by line reveal */}
         <div className="space-y-2 mb-12">
           {[
             '"Creemos que el orden urbano',
@@ -197,8 +197,8 @@ export default function QuienesSomos() {
             <div key={i} className="overflow-hidden">
               <motion.p
                 className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic"
-                initial={{ y: 40, opacity: 0, filter: 'blur(8px)' }}
-                whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 + i * 0.12, duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
               >
