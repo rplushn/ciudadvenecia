@@ -117,9 +117,9 @@ export default function Proyectos() {
          <div className="grid lg:grid-cols-2 gap-16 items-start">
              <div>
                 <Reveal>
-                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">COMUNIDAD CONSOLIDADA</span>
+                    <span className="text-[#C5A065] text-xs font-bold uppercase tracking-[0.2em] mb-2 block">EL PARAÍSO</span>
                     <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-6">Ciudad Venecia Danlí</h2>
-                    <p className="text-lg font-medium text-[#2C2C2C] mb-4">El proyecto insignia de INMAER y uno de los de mayor crecimiento en la zona oriental del país.</p>
+                    <p className="text-lg font-medium text-[#2C2C2C] mb-4">Comunidad consolidada con más de 850 familias residentes y plusvalía comprobada.</p>
                     
                     <div className="space-y-6 text-[#6B665F] text-sm leading-relaxed mb-8">
                         <div>
