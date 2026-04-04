@@ -171,46 +171,41 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 2. THE MANIFESTO ------------------- */}
-      <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center overflow-hidden">
-        {/* Title — each letter staggers in */}
-        <div className="mb-12 overflow-hidden">
-          <motion.h2 
-            className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]"
-            initial={{ y: '100%' }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
-          >
-            Nuestro Porqué
-          </motion.h2>
-        </div>
+      <section className="py-32 px-6 md:px-12 max-w-4xl mx-auto text-center">
+        {/* Title */}
+        <motion.h2 
+          className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
+        >
+          Nuestro Porqué
+        </motion.h2>
 
         {/* Quote — line by line reveal */}
-        <div className="space-y-2 mb-12">
-          {[
-            '"Creemos que el orden urbano',
-            'no es un lujo, es un derecho.',
-            'En un país donde el crecimiento',
-            'desordenado es la norma,',
-            'nosotros elegimos ser la excepción."',
-          ].map((line, i) => (
-            <div key={i} className="overflow-hidden">
-              <motion.p
-                className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic"
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15 + i * 0.12, duration: 0.7, ease: [0.25, 0.8, 0.25, 1] }}
-              >
-                {line}
-              </motion.p>
-            </div>
-          ))}
-        </div>
+        {[
+          '"Creemos que el orden urbano',
+          'no es un lujo, es un derecho.',
+          'En un país donde el crecimiento',
+          'desordenado es la norma,',
+          'nosotros elegimos ser la excepción."',
+        ].map((line, i) => (
+          <motion.p
+            key={i}
+            className="text-xl md:text-2xl text-[#6B665F] font-serif-display leading-relaxed italic"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 + i * 0.12, duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
+          >
+            {line}
+          </motion.p>
+        ))}
 
-        {/* Gold line — draws from center */}
+        {/* Gold line */}
         <motion.div
-          className="w-16 h-[2px] bg-[#C5A065] mx-auto"
+          className="w-16 h-[2px] bg-[#C5A065] mx-auto mt-12"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
