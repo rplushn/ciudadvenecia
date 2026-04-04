@@ -7,6 +7,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import Navbar from '@/components/Navbar';
 import TileHero from '@/components/TileHero';
 import HorizontalGallery from '@/components/HorizontalGallery';
+import CinematicDivider from '@/components/CinematicDivider';
 
 export default function Proyectos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -103,6 +104,9 @@ export default function Proyectos() {
 
       {/* ------------------- OLANCHO SHOWCASE: HORIZONTAL SCROLL ------------------- */}
       <HorizontalGallery />
+
+      {/* ------------------- CINEMATIC TRANSITION ------------------- */}
+      <CinematicDivider />
 
       {/* =========================================================================================
           SECCIÓN 3: CIUDAD VENECIA (MARCA PRINCIPAL)
