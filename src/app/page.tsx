@@ -21,6 +21,7 @@ import VideoTextMaskHero from '@/components/hero/VideoTextMaskHero';
 import BrandStrip from '@/components/hero/BrandStrip';
 import PinnedProjectsShowcase from '@/components/hero/PinnedProjectsShowcase';
 import CinematicDivider from '@/components/CinematicDivider';
+import InvestmentJourney from '@/components/InvestmentJourney';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -584,20 +585,9 @@ export default function Home() {
       </section>
 
       {/* ============================================ */}
-      {/* SECCIÓN: TRANSFORMACIÓN BEFORE/AFTER */}
+      {/* SECCIÓN: TU CAMINO HACIA EL HOGAR IDEAL */}
       {/* ============================================ */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">TRANSFORMACIÓN</span>
-            <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C]">De terreno a hogar</h2>
-          </div>
-          <BeforeAfterSlider
-            beforeImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS-FRENTE.jpg"
-            afterImage="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/CASA_GRIS-FRENTE_ANTES.webp"
-          />
-        </div>
-      </section>
+      <InvestmentJourney />
 
       {/* ============================================ */}
       {/* SECCIÓN 5: AMENIDADES */}
