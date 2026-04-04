@@ -17,7 +17,7 @@ export default function ScrollBridge() {
   useMotionValueEvent(scrollYProgress, "change", (v) => {
     if (v > 0.02 && !hasAnimated) {
       setHasAnimated(true);
-      const target = 1500;
+      const target = 1200;
       const duration = 2500;
       const startTime = Date.now();
       const animate = () => {

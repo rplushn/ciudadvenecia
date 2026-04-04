@@ -29,7 +29,7 @@ export default function ValueProp() {
     },
     {
       title: "Respaldo INMAER",
-      description: "Más de 8 años de experiencia y miles de familias satisfechas nos respaldan.",
+      description: "Más de 11 años de experiencia y miles de familias satisfechas nos respaldan.",
       icon: (
         <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1.5} d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" />

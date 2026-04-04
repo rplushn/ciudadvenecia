@@ -35,9 +35,9 @@ export default function QuienesSomos() {
 
   // DATA MOCKUP (Updated for CountUp compatibility)
   const stats = [
-    { number: 10, prefix: "+", suffix: "", label: "Años de Trayectoria" },
+    { number: 11, prefix: "+", suffix: "", label: "Años de Trayectoria" },
     { number: 7, prefix: "", suffix: "", label: "Proyectos Activos" },
-    { number: 1500, prefix: "+", suffix: "", label: "Familias Felices" },
+    { number: 1200, prefix: "+", suffix: "", label: "Familias Felices" },
     { number: 100, prefix: "", suffix: "%", label: "Plusvalía Garantizada" }
   ];
 
@@ -730,7 +730,7 @@ export default function QuienesSomos() {
                   </h3>
                   
                   <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-2xl mx-auto">
-                      INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
+                      INMAER es una compañía hondureña con más de 11 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
                   </p>
              </Reveal>
 
@@ -738,7 +738,7 @@ export default function QuienesSomos() {
                      <Reveal delay={0.2}>
                        <div className="text-center">
                             <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
-                                <CountUp to={10} suffix="+" />
+                                <CountUp to={11} suffix="+" />
                             </div>
                             <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 AÑOS DE EXPERIENCIA
@@ -748,7 +748,7 @@ export default function QuienesSomos() {
                      <Reveal delay={0.3}>
                        <div className="text-center">
                             <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
-                                <CountUp to={7500} prefix="+" />
+                                <CountUp to={1200} prefix="+" />
                             </div>
                             <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 CLIENTES SATISFECHOS

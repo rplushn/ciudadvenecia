@@ -381,7 +381,7 @@ export default function Home() {
                            </div>
                       </div>
                       <p className="text-[#6B665F] text-xs md:text-sm font-medium uppercase tracking-[0.15em] max-w-2xl leading-relaxed">
-                          UNA DE LAS DESARROLLADORAS MÁS <span className="text-[#2C2C2C] font-bold">IMPORTANTES</span> DE LA REGIÓN CON MÁS DE <span className="text-[#2C2C2C] font-bold">10 AÑOS</span> DE EXPERIENCIA.
+                          UNA DE LAS DESARROLLADORAS MÁS <span className="text-[#2C2C2C] font-bold">IMPORTANTES</span> DE LA REGIÓN CON MÁS DE <span className="text-[#2C2C2C] font-bold">11 AÑOS</span> DE EXPERIENCIA.
                       </p>
                   </div>
               </Reveal>
@@ -510,7 +510,7 @@ export default function Home() {
           <div className="text-center mb-6">
             <span className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">PRESENCIA NACIONAL</span>
             <h2 className="font-serif-display text-4xl md:text-5xl text-[#2C2C2C] mb-3">Nuestros Proyectos en Honduras</h2>
-            <p className="text-[#6B665F] text-sm max-w-lg mx-auto">5 ciudades, +700 familias, un estándar de calidad que se expande por todo el país.</p>
+            <p className="text-[#6B665F] text-sm max-w-lg mx-auto">5 ciudades, +1,200 familias, un estándar de calidad que se expande por todo el país.</p>
           </div>
           <HondurasMap />
         </div>
@@ -673,7 +673,7 @@ export default function Home() {
                   </h3>
                   
                   <p className="text-gray-300 font-light text-sm leading-relaxed mb-12 max-w-2xl mx-auto">
-                      INMAER es una compañía hondureña con más de 10 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
+                      INMAER es una compañía hondureña con más de 11 años de experiencia, creando productos inmobiliarios de nueva generación. Nuestro propósito principal es crear comunidades plenas donde las personas puedan desarrollar su vida en un entorno de armonía y plusvalía.
                   </p>
              </Reveal>
 
@@ -681,7 +681,7 @@ export default function Home() {
                      <Reveal delay={0.2}>
                        <div className="text-center">
                             <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
-                                <CountUp to={10} suffix="+" />
+                                <CountUp to={11} suffix="+" />
                             </div>
                             <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 AÑOS DE EXPERIENCIA
@@ -691,7 +691,7 @@ export default function Home() {
                      <Reveal delay={0.3}>
                        <div className="text-center">
                             <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
-                                <CountUp to={7500} prefix="+" />
+                                <CountUp to={1200} prefix="+" />
                             </div>
                             <div className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] leading-relaxed opacity-90">
                                 CLIENTES SATISFECHOS

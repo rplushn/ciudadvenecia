@@ -80,7 +80,7 @@ export default function BrandStrip() {
       >
         Una creación de{' '}
         <strong style={{ color: '#C5A065', opacity: 1, fontWeight: 700 }}>INMAER</strong>{' '}
-        Real Estate · +10 años de experiencia
+        Real Estate · +11 años de experiencia
       </p>
 
       <div className="bstrip-cities flex justify-center gap-10 flex-wrap">
