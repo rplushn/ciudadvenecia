@@ -23,7 +23,7 @@ const projects = [
     ctaBg: '#C5A065',
     ctaColor: '#fff',
     slug: '/proyectos/danli',
-    img: '/amenidades/amenidades009.jpg.jpeg',
+    img: '/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg',
   },
   {
     id: 'olancho',
