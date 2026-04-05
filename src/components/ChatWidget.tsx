@@ -150,7 +150,7 @@ export default function ChatWidget() {
       setMessages([{
         id: Date.now().toString(),
         role: 'assistant',
-        content: '¡Hola! 👋 Soy Sofía, tu asesora virtual de Ciudad Venecia. ¿En qué puedo ayudarte?',
+        content: '¡Hola! Soy Sofía, tu asesora virtual de Ciudad Venecia. ¿En qué puedo ayudarte?',
         project: null,
         cta: null,
         timestamp: new Date(),
@@ -208,7 +208,7 @@ export default function ChatWidget() {
         {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
-          content: 'Disculpá, tuve un problema de conexión. ¿Podés intentar de nuevo? 🙏',
+          content: 'Disculpá, tuve un problema de conexión. ¿Podés intentar de nuevo?',
           project: null,
           cta: null,
           timestamp: new Date(),
@@ -296,7 +296,7 @@ export default function ChatWidget() {
             </div>
 
             {/* Messages area */}
-            <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-[#FAFAF8]" style={{ scrollBehavior: 'smooth' }}>
+            <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-[#FAFAF8]" data-lenis-prevent style={{ overscrollBehavior: 'contain' }}>
               {messages.map((msg) => (
                 <div key={msg.id} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] ${msg.role === 'user' ? 'order-1' : 'order-1'}`}>
@@ -304,7 +304,7 @@ export default function ChatWidget() {
                     <motion.div
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className={`px-4 py-2.5 text-[13px] leading-relaxed ${
+                      className={`px-3.5 py-2 text-[11px] leading-relaxed ${
                         msg.role === 'user'
                           ? 'bg-[#1A3A52] text-white rounded-2xl rounded-br-md'
                           : 'bg-white text-[#2C2C2C] rounded-2xl rounded-bl-md shadow-sm border border-gray-100'
@@ -350,7 +350,7 @@ export default function ChatWidget() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
                   placeholder="Escribí tu mensaje..."
-                  className="flex-1 text-sm text-[#2C2C2C] bg-[#F3F0EB] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#C5A065]/30 placeholder:text-gray-400"
+                  className="flex-1 text-[11px] text-[#2C2C2C] bg-[#F3F0EB] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#C5A065]/30 placeholder:text-gray-400"
                   style={{ fontFamily: 'Montserrat, sans-serif' }}
                   disabled={isLoading}
                 />
