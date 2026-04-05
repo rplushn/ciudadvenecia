@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { motion, useInView } from 'motion/react';
 import { Reveal } from '@/components/motion/Reveal';
 import { DEPT_PATHS, PROJECTS, PIN_POSITIONS } from '@/components/HondurasMap';
@@ -17,6 +17,34 @@ export default function AvailabilityPulse() {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const active = PROJECTS.find(p => p.id === activeProject);
+  const leaveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handlePinEnter = useCallback((id: string) => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
+    setActiveProject(id);
+  }, []);
+
+  const handlePinLeave = useCallback(() => {
+    leaveTimeoutRef.current = setTimeout(() => {
+      setActiveProject(null);
+    }, 300);
+  }, []);
+
+  const handlePanelEnter = useCallback(() => {
+    if (leaveTimeoutRef.current) {
+      clearTimeout(leaveTimeoutRef.current);
+      leaveTimeoutRef.current = null;
+    }
+  }, []);
+
+  const handlePanelLeave = useCallback(() => {
+    leaveTimeoutRef.current = setTimeout(() => {
+      setActiveProject(null);
+    }, 300);
+  }, []);
 
   return (
     <section ref={sectionRef} className="relative py-28 md:py-36 px-6 bg-[#1A3A52] overflow-hidden">
@@ -86,9 +114,12 @@ export default function AvailabilityPulse() {
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.6, delay: 0.8 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                     className="cursor-pointer"
-                    onMouseEnter={() => setActiveProject(project.id)}
-                    onMouseLeave={() => setActiveProject(null)}
+                    onMouseEnter={() => handlePinEnter(project.id)}
+                    onMouseLeave={() => handlePinLeave()}
                   >
+                    {/* Invisible large hover target */}
+                    <circle cx={pos.x} cy={pos.y} r="25" fill="transparent" />
+
                     {/* Outer pulse ring 1 */}
                     <circle cx={pos.x} cy={pos.y} r="18" fill="none" stroke={color} strokeWidth="0.5" opacity="0.3">
                       <animate attributeName="r" values="12;22;12" dur="3s" begin={`${delay}s`} repeatCount="indefinite" />
@@ -137,7 +168,7 @@ export default function AvailabilityPulse() {
           </motion.div>
 
           {/* Info Panel (1/3) */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1" onMouseEnter={handlePanelEnter} onMouseLeave={handlePanelLeave}>
             <div className="min-h-[200px]">
               {active ? (
                 <motion.div
