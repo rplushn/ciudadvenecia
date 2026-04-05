@@ -8,7 +8,7 @@ interface AdvisorCTAProps {
 
 const variants = {
   advisor: {
-    image: '/amenidades/asesora_cv.png',
+    image: '/amenidades/asesora_cv.webp',
     alt: 'Asesora Ciudad Venecia',
     eyebrow: 'Tu terreno, a tu alcance',
     headline: 'Facilidades de',
@@ -16,7 +16,7 @@ const variants = {
     body: 'En Ciudad Venecia hacemos que adquirir tu terreno sea fácil y accesible. Financiamiento directo, sin trámites bancarios complicados y con planes que se adaptan a tu presupuesto.',
   },
   family: {
-    image: '/amenidades/familia_hn.png',
+    image: '/amenidades/familia_hn.webp',
     alt: 'Familia Ciudad Venecia',
     eyebrow: 'El hogar que tu familia merece',
     headline: 'Cumpliendo',

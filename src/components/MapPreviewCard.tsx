@@ -166,7 +166,7 @@ export default function MapPreviewCard({ project, originX, originY, onClose }: M
               <img
                 src={typeof activeMedia === "number" ? project.gallery[activeMedia] || project.heroImage : project.heroImage}
                 alt={project.name}
-                className="w-full h-full object-cover"
+                loading="lazy" className="w-full h-full object-cover"
               />
             )}
 
@@ -233,7 +233,7 @@ export default function MapPreviewCard({ project, originX, originY, onClose }: M
                   activeMedia === i ? "border-[#C5A065] ring-1 ring-[#C5A065]/30" : "border-white/10 hover:border-white/30"
                 }`}
               >
-                <img src={img} alt="" className="w-full h-full object-cover" />
+                <img src={img} alt="" loading="lazy" className="w-full h-full object-cover" />
               </button>
             ))}
           </div>

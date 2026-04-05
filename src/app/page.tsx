@@ -395,7 +395,7 @@ export default function Home() {
                    {carouselData.map((item, idx) => (
                        <div key={idx} className="min-w-[50%] px-8 box-border">
                            <div className="relative aspect-[16/10] overflow-hidden group group/item cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500">
-                               <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
+                               <img src={item.img} alt={item.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-105" />
                                <div className="absolute inset-0 bg-[#2C231A]/10 mix-blend-multiply pointer-events-none z-10" />
                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none z-10" />
                                <div className="absolute bottom-8 left-0 right-0 text-center px-4 z-20">

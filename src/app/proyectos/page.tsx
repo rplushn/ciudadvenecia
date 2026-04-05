@@ -132,8 +132,8 @@ export default function Proyectos() {
           <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-12">
               <Reveal>
                   <div className="grid grid-cols-2 gap-4 h-full">
-                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_002dron_vertical_web.jpg" alt="Ciudad Venecia Olancho - Vista aérea" className="w-full h-full object-cover rounded-sm"/>
-                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg" alt="Ciudad Venecia Olancho - Arquitectura" className="w-full h-full object-cover rounded-sm"/>
+                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_002dron_vertical_web.jpg" alt="Ciudad Venecia Olancho - Vista aérea" loading="lazy" className="w-full h-full object-cover rounded-sm"/>
+                      <img src="/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg" alt="Ciudad Venecia Olancho - Arquitectura" loading="lazy" className="w-full h-full object-cover rounded-sm"/>
                   </div>
               </Reveal>
               <Reveal delay={0.2}>
@@ -196,7 +196,7 @@ export default function Proyectos() {
              <div className="h-full">
                 <Reveal delay={0.2}>
                     <div className="aspect-[4/5] bg-gray-200 relative overflow-hidden mb-6">
-                        <img src="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg" alt="Residencial Versalles" className="w-full h-full object-cover"/>
+                        <img src="/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg" alt="Residencial Versalles" loading="lazy" className="w-full h-full object-cover"/>
                     </div>
                 </Reveal>
              </div>
@@ -208,7 +208,7 @@ export default function Proyectos() {
              <div className="lg:col-span-7 order-2 lg:order-1">
                  <Reveal>
                     <div className="aspect-video bg-gray-200 relative overflow-hidden shadow-xl">
-                        <img src="/homepage/san_lorenzo.jpg.jpeg" alt="Ciudad Venecia San Lorenzo" className="w-full h-full object-cover"/>
+                        <img src="/homepage/san_lorenzo.jpg.jpeg" alt="Ciudad Venecia San Lorenzo" loading="lazy" className="w-full h-full object-cover"/>
                          <div className="absolute bottom-0 left-0 bg-[#1A3A52] text-white px-6 py-3">
                             <p className="text-[10px] font-bold uppercase tracking-widest">A 10 min de la playa</p>
                         </div>

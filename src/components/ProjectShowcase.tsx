@@ -105,7 +105,7 @@ function ProjectSlide({
             <img
               src={project.img}
               alt={project.name}
-              className="w-full h-full object-cover"
+              loading="lazy" className="w-full h-full object-cover"
             />
 
             {/* Gradient overlays */}
@@ -394,7 +394,7 @@ export default function ProjectShowcase({ projects, onProjectClick }: ProjectSho
                 <img
                   src={project.img}
                   alt={project.name}
-                  className="w-full h-full object-cover"
+                  loading="lazy" className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
                 

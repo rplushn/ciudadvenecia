@@ -397,7 +397,7 @@ export default function Contacto() {
                   initial={{ opacity: 0, y: 60, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  src="/amenidades/asesora_cv.png"
+                  src="/amenidades/asesora_cv.webp"
                   alt="Asesora Ciudad Venecia"
                   className="h-[300px] sm:h-[400px] md:h-[520px] lg:h-[600px] object-contain object-bottom drop-shadow-2xl"
                 />

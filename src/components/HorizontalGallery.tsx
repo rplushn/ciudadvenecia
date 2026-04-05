@@ -115,7 +115,7 @@ export default function HorizontalGallery() {
             <img
               src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_A002_horizontal_web.jpg"
               alt="Ciudad Venecia Olancho - Fachadas"
-              className="w-full h-full object-cover"
+              loading="lazy" className="w-full h-full object-cover"
             />
           </div>
 
@@ -123,7 +123,7 @@ export default function HorizontalGallery() {
             <img
               src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina2_horizontal_web.jpg"
               alt="Ciudad Venecia Olancho - Piscina"
-              className="w-full h-full object-cover"
+              loading="lazy" className="w-full h-full object-cover"
             />
           </div>
 
@@ -131,7 +131,7 @@ export default function HorizontalGallery() {
             <img
               src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_horizontal_juegos_web.jpg"
               alt="Ciudad Venecia Olancho - Áreas recreativas"
-              className="w-full h-full object-cover"
+              loading="lazy" className="w-full h-full object-cover"
             />
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function HorizontalGallery() {
               <img
                 src="/NUEVAS-JUANJOSE/verticales/cv_olancho_social_vertical_web.jpg"
                 alt="Ciudad Venecia Olancho - Residencial"
-                className="w-full h-full object-cover"
+                loading="lazy" className="w-full h-full object-cover"
               />
             </div>
             <div>
