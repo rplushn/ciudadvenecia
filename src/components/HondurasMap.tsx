@@ -8,12 +8,12 @@ import MapPreviewCard, { PROJECT_PREVIEWS } from './MapPreviewCard';
 // INMAER PROJECTS
 // ============================================
 export const PROJECTS = [
-  { id: "danli", name: "Ciudad Venecia Danlí", location: "El Paraíso", dept: "HNEP", status: "activo", lotes: "Comunidad consolidada", slug: "/proyectos/danli" },
-  { id: "versalles", name: "Residencial Versalles", location: "Danlí, El Paraíso", dept: "HNEP", status: "activo", lotes: "Últimos disponibles", slug: "/proyectos/versalles" },
-  { id: "olancho", name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", dept: "HNOL", status: "activo", lotes: "Nueva generación", slug: "/proyectos/olancho" },
-  { id: "talanga", name: "Ciudad Venecia Talanga", location: "Francisco Morazán", dept: "HNFM", status: "activo", lotes: "Nuevo 2026", slug: "/proyectos/talanga" },
+  { id: "danli", name: "Ciudad Venecia Danlí", location: "El Paraíso", dept: "HNEP", status: "activo", lotes: "Comunidad consolidada", slug: "/proyectos" },
+  { id: "versalles", name: "Residencial Versalles", location: "Danlí, El Paraíso", dept: "HNEP", status: "activo", lotes: "Últimos disponibles", slug: "/proyectos" },
+  { id: "olancho", name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", dept: "HNOL", status: "activo", lotes: "Nueva generación", slug: "/proyectos" },
+  { id: "talanga", name: "Ciudad Venecia Talanga", location: "Francisco Morazán", dept: "HNFM", status: "activo", lotes: "Nuevo 2026", slug: "/proyectos" },
   { id: "guaimaca", name: "Ciudad Venecia Guaimaca", location: "Francisco Morazán", dept: "HNFM", status: "proximamente", lotes: "Próximamente", slug: "#" },
-  { id: "san-lorenzo", name: "Ciudad Venecia San Lorenzo", location: "Valle", dept: "HNVA", status: "activo", lotes: "Cerca de la costa", slug: "/proyectos/san-lorenzo" },
+  { id: "san-lorenzo", name: "Ciudad Venecia San Lorenzo", location: "Valle", dept: "HNVA", status: "activo", lotes: "Cerca de la costa", slug: "/proyectos" },
   { id: "tegucigalpa", name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", dept: "HNFM", status: "proximamente", lotes: "Próximamente", slug: "#" },
 ];
 

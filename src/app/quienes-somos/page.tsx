@@ -962,10 +962,10 @@ export default function QuienesSomos() {
                 <div>
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
                     <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
-                    <div className="flex border-b border-white/20 pb-2">
-                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
-                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
-                    </div>
+                    <form onSubmit={(e) => { e.preventDefault(); const email = (e.currentTarget.elements.namedItem('footer_email') as HTMLInputElement)?.value; if (email) { window.open(`mailto:desarrollo@ciudadvenecia.com?subject=${encodeURIComponent('Suscripción Newsletter - Ciudad Venecia')}&body=${encodeURIComponent('Correo para suscripción: ' + email)}`); (e.currentTarget.elements.namedItem('footer_email') as HTMLInputElement).value = ''; } }} className="flex border-b border-white/20 pb-2">
+                        <input type="email" name="footer_email" required placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button type="submit" className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
+                    </form>
                 </div>
             </div>
 
@@ -973,8 +973,6 @@ export default function QuienesSomos() {
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
                 <div className="flex gap-8">
-                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
-                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>

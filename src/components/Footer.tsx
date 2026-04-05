@@ -34,7 +34,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-accent transition-colors">Inicio</Link></li>
               <li><Link href="/quienes-somos" className="hover:text-accent transition-colors">Quiénes Somos</Link></li>
               <li><Link href="/proyectos" className="hover:text-accent transition-colors">Proyectos</Link></li>
-              <li><Link href="/cotizar" className="hover:text-accent transition-colors">Financiamiento</Link></li>
+              <li><Link href="/contacto" className="hover:text-accent transition-colors">Financiamiento</Link></li>
             </ul>
           </div>
 
@@ -91,8 +91,7 @@ export default function Footer() {
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-text-secondary">
           <p>&copy; {new Date().getFullYear()} Inmobiliaria y Constructora INMAER. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/" className="hover:text-primary">Tu Casa Honduras</Link>
-            <Link href="/" className="hover:text-primary">Aviso Legal</Link>
+            <span className="text-xs text-text-secondary">Un proyecto de INMAER</span>
           </div>
         </div>
       </div>

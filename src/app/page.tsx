@@ -142,11 +142,11 @@ export default function Home() {
 
   // Projects data for the grid
   const proyectos = [
-    { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg", slug: "/proyectos/danli" },
-    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", badge: "PREMIUM", img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg", slug: "/proyectos/olancho" },
-    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", badge: "NUEVO 2026", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", slug: "/proyectos/talanga" },
-    { name: "Ciudad Venecia San Lorenzo", location: "Valle", badge: null, img: "/amenidades/san_lorenzo.jpeg", slug: "/proyectos/san-lorenzo" },
-    { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg", slug: "/proyectos/versalles" },
+    { name: "Ciudad Venecia Danlí", location: "El Paraíso", badge: "INSIGNIA", img: "/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO.jpg", slug: "/proyectos" },
+    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", badge: "PREMIUM", img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg", slug: "/proyectos" },
+    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", badge: "NUEVO 2026", img: "/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg", slug: "/proyectos" },
+    { name: "Ciudad Venecia San Lorenzo", location: "Valle", badge: null, img: "/amenidades/san_lorenzo.jpeg", slug: "/proyectos" },
+    { name: "Residencial Versalles", location: "Danlí", badge: null, img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES002.jpg", slug: "/proyectos" },
     { name: "Ciudad Venecia Guaimaca", location: "Olancho", badge: "PRÓXIMAMENTE", img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg", slug: "#" },
     { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", badge: "PRÓXIMAMENTE", img: "/homepage/portal_ai-ciudad_venecia.jpeg", slug: "#" },
   ];
@@ -157,7 +157,7 @@ export default function Home() {
       location: "Valle de Lepaguare, Olancho",
       badge: "NUEVA GENERACIÓN",
       img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg",
-      slug: "/proyectos/olancho",
+      slug: "/proyectos",
       description: "El proyecto que representa la evolución de INMAER. Todo lo aprendido en años de experiencia aplicado en un desarrollo de nueva generación con amenidades premium y planta de tratamiento de desechos.",
       stats: [
         { label: "Agua potable", value: "365 días" },
@@ -171,7 +171,7 @@ export default function Home() {
       location: "Danlí, El Paraíso",
       badge: "ÚLTIMOS DISPONIBLES",
       img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg",
-      slug: "/proyectos/versalles",
+      slug: "/proyectos",
       description: "Exclusivo residencial en Danlí con vistas panorámicas, piscina, club social y los últimos terrenos disponibles en una de las comunidades más consolidadas.",
       stats: [
         { label: "Seguridad", value: "24/7" },
@@ -185,7 +185,7 @@ export default function Home() {
       location: "El Paraíso, Honduras",
       badge: "DONDE NACIÓ LA MARCA",
       img: "/amenidades/amenidades009.jpg.jpeg",
-      slug: "/proyectos/danli",
+      slug: "/proyectos",
       description: "El primer proyecto de Ciudad Venecia y la base de todo lo que INMAER ha construido. Una comunidad consolidada con infraestructura completa y familias que ya disfrutan de la vida en armonía.",
       stats: [
         { label: "Seguridad", value: "24/7" },
@@ -199,7 +199,7 @@ export default function Home() {
       location: "Valle",
       badge: null,
       img: "/amenidades/san_lorenzo.jpeg",
-      slug: "/proyectos/san-lorenzo",
+      slug: "/proyectos",
       description: "A minutos de la zona costera del Golfo de Fonseca. Desarrollo residencial con ubicación estratégica, terrenos urbanizados y áreas recreativas para toda la familia.",
       stats: [
         { label: "Seguridad", value: "24/7" },
@@ -213,7 +213,7 @@ export default function Home() {
       location: "Francisco Morazán",
       badge: "LOTES EN PRE-VENTA",
       img: "/Talanga/cv-talanga_construccion002.jpg.jpeg",
-      slug: "/proyectos/talanga",
+      slug: "/proyectos",
       description: "Nuevo lanzamiento 2026. Tres conceptos disponibles — Raíces, Estándar y Premium — diseñados para diferentes perfiles de inversión con accesos pavimentados y alta plusvalía. ¡Mira el avance de obra!",
       stats: [
         { label: "Conceptos", value: "3" },
@@ -248,12 +248,12 @@ export default function Home() {
 
   // Más Proyectos data (for carousel cards + modal)
   const masProyectos: ProjectModalData[] = [
-    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg", badge: "PREMIUM", slug: "/proyectos/olancho", description: "En el corazón del Valle de Lepaguare, un desarrollo premium que combina naturaleza y comodidad.", amenities: ["Seguridad 24/7", "Áreas verdes", "Casa club", "Piscinas", "Canchas deportivas"] },
-    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/Talanga/cv-talanga_construccion002.jpg.jpeg", badge: "LOTES EN PRE-VENTA", slug: "/proyectos/talanga", description: "Nuevo lanzamiento 2026 en Francisco Morazán. Obra en progreso — mira cómo avanza tu inversión. Terrenos con plusvalía garantizada.", amenities: ["Accesos pavimentados", "Áreas comunes", "Plan de financiamiento"], video: "/Talanga/cv_talanga_construccion.mp4", preVenta: true },
-    { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos/san-lorenzo", description: "Desarrollo residencial en el Valle con excelente ubicación y conectividad.", amenities: ["Seguridad", "Parques", "Infraestructura"] },
-    { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos/versalles", description: "Exclusivo residencial en Danlí con vistas panorámicas y diseño arquitectónico contemporáneo.", amenities: ["Club social", "Piscina", "Juegos infantiles", "Zona BBQ"] },
-    { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/guaimaca", description: "Próximo lanzamiento en Olancho. Reserva tu oportunidad.", amenities: [] },
-    { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", img: "/homepage/portal_ai-ciudad_venecia.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos/tegucigalpa", description: "Próximamente en la capital. Mantente informado.", amenities: [] },
+    { name: "Ciudad Venecia Olancho", location: "Valle de Lepaguare", img: "/NUEVAS-JUANJOSE/verticales/cv_olancho_A002_vertical_web.jpg", badge: "PREMIUM", slug: "/proyectos", description: "En el corazón del Valle de Lepaguare, un desarrollo premium que combina naturaleza y comodidad.", amenities: ["Seguridad 24/7", "Áreas verdes", "Casa club", "Piscinas", "Canchas deportivas"] },
+    { name: "Ciudad Venecia Talanga", location: "Francisco Morazán", img: "/Talanga/cv-talanga_construccion002.jpg.jpeg", badge: "LOTES EN PRE-VENTA", slug: "/proyectos", description: "Nuevo lanzamiento 2026 en Francisco Morazán. Obra en progreso — mira cómo avanza tu inversión. Terrenos con plusvalía garantizada.", amenities: ["Accesos pavimentados", "Áreas comunes", "Plan de financiamiento"], video: "/Talanga/cv_talanga_construccion.mp4", preVenta: true },
+    { name: "Ciudad Venecia San Lorenzo", location: "Valle", img: "/amenidades/san_lorenzo.jpeg", badge: null, slug: "/proyectos", description: "Desarrollo residencial en el Valle con excelente ubicación y conectividad.", amenities: ["Seguridad", "Parques", "Infraestructura"] },
+    { name: "Residencial Versalles", location: "Danlí", img: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES001.jpg", badge: null, slug: "/proyectos", description: "Exclusivo residencial en Danlí con vistas panorámicas y diseño arquitectónico contemporáneo.", amenities: ["Club social", "Piscina", "Juegos infantiles", "Zona BBQ"] },
+    { name: "Ciudad Venecia Guaimaca", location: "Olancho", img: "/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos", description: "Próximo lanzamiento en Olancho. Reserva tu oportunidad.", amenities: [] },
+    { name: "Ciudad Venecia Tegucigalpa", location: "Francisco Morazán", img: "/homepage/portal_ai-ciudad_venecia.jpeg", badge: "PRÓXIMAMENTE", slug: "/proyectos", description: "Próximamente en la capital. Mantente informado.", amenities: [] },
   ];
 
   return (
@@ -278,7 +278,7 @@ export default function Home() {
         }`}
       >
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 flex items-center justify-between">
-          <Link href="/#start" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-3 group">
              <div className={`transition-colors duration-300 ${isAtTop ? 'text-white' : 'text-white'}`}>
                 <svg height="45" viewBox="0 0 330 80" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className="block">
                     <g transform="translate(40, 40)">
@@ -300,7 +300,7 @@ export default function Home() {
 
           <div className="hidden lg:flex items-center gap-8 xl:gap-12">
             <div className="flex items-center gap-8">
-                <Link href="/#start" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
+                <Link href="/" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
                   Inicio
                 </Link>
                 <Link href="/quienes-somos" className="text-white text-[11px] font-medium uppercase tracking-[0.15em] hover:text-[#C5A065] transition-colors">
@@ -882,10 +882,10 @@ export default function Home() {
                 <div>
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Proyectos</h4>
                     <ul className="space-y-4">
-                        <li><Link href="/proyectos/danli" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
-                        <li><Link href="/proyectos/olancho" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
-                        <li><Link href="/proyectos/san-lorenzo" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
-                        <li><Link href="/proyectos/versalles" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Danlí</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Olancho</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Ciudad Venecia Valle</Link></li>
+                        <li><Link href="/proyectos" className="text-sm font-medium hover:text-[#C5A065] transition-colors">Residencial Versalles</Link></li>
                     </ul>
                 </div>
 
@@ -901,18 +901,16 @@ export default function Home() {
                 <div>
                     <h4 className="text-[#C5A065] text-[10px] font-bold uppercase tracking-[0.25em] mb-8">Mantente Informado</h4>
                     <p className="text-white/60 text-xs mb-6">Recibe actualizaciones sobre nuevos lanzamientos y precios especiales.</p>
-                    <div className="flex border-b border-white/20 pb-2">
-                        <input type="email" placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
-                        <button className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
-                    </div>
+                    <form onSubmit={(e) => { e.preventDefault(); const email = (e.currentTarget.elements.namedItem('footer_email') as HTMLInputElement)?.value; if (email) { window.open(`mailto:desarrollo@ciudadvenecia.com?subject=${encodeURIComponent('Suscripción Newsletter - Ciudad Venecia')}&body=${encodeURIComponent('Correo para suscripción: ' + email)}`); (e.currentTarget.elements.namedItem('footer_email') as HTMLInputElement).value = ''; } }} className="flex border-b border-white/20 pb-2">
+                        <input type="email" name="footer_email" required placeholder="Tu correo electrónico" className="bg-transparent border-none text-white text-sm w-full focus:outline-none placeholder:text-white/30"/>
+                        <button type="submit" className="text-[#C5A065] text-xs font-bold uppercase hover:text-white transition-colors">Suscribir</button>
+                    </form>
                 </div>
             </div>
 
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
                 <div className="flex gap-8">
-                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Privacidad</Link>
-                     <Link href="/" className="text-[10px] text-white/40 hover:text-white uppercase tracking-widest transition-colors">Términos</Link>
                 </div>
             </div>
         </div>
