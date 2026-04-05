@@ -7,6 +7,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import CountUp from '@/components/motion/CountUp';
 import Navbar from '@/components/Navbar';
 import AdvisorCTA from '@/components/AdvisorCTA';
+import ResponsiveVideo from '@/components/ResponsiveVideo';
 
 export default function QuienesSomos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -64,16 +65,11 @@ export default function QuienesSomos() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
          {/* Video background */}
          <div className="absolute inset-0">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
+            <ResponsiveVideo
+              src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4"
+              poster="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg"
               className="w-full h-full object-cover opacity-70"
-            >
-              <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4" type="video/mp4" />
-            </video>
+            />
          </div>
 
          {/* Cinematic overlays */}
@@ -557,16 +553,11 @@ export default function QuienesSomos() {
       {/* ------------------- 11. EXPANSIÓN NACIONAL — CINEMATIC ------------------- */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-[#0a0a0a]">
         {/* Video background */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
+        <ResponsiveVideo
+          src="/DRON-JUANJOSE/Guaimaca/GUAIMACA_DRON.mp4"
+          poster="/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/DRON-JUANJOSE/Guaimaca/GUAIMACA_DRON.mp4" type="video/mp4" />
-        </video>
+        />
 
         {/* Cinematic overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20" />
@@ -873,7 +864,7 @@ export default function QuienesSomos() {
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
                                <div className="relative">
-                                   <select name="proyecto" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
+                                   <select name="proyecto" aria-label="Proyecto de interés" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
                                        <option>Seleccionar...</option>
                                        <option>Ciudad Venecia Danlí</option>
                                        <option>Ciudad Venecia Olancho</option>

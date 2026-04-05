@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import { motion, useInView } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ResponsiveVideo from '@/components/ResponsiveVideo';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -71,7 +72,6 @@ function MomentCard({ moment, index }: { moment: Moment; index: number }) {
 
 export default function CinematicExperience() {
   const sectionRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
   // Parallax-like effect: video opacity shifts on scroll
@@ -98,17 +98,11 @@ export default function CinematicExperience() {
     <section ref={sectionRef} className="relative min-h-[70vh] md:min-h-[80vh] flex items-center overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
+        <ResponsiveVideo
+          src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4"
+          poster="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg"
           className="w-full h-full object-cover"
-        >
-          <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
 
       {/* Dark overlay — animated via GSAP */}

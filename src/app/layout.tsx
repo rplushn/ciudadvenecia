@@ -63,7 +63,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <SmoothScroll>
-          {children}
+          <main>
+            {children}
+          </main>
         </SmoothScroll>
         <a
           href="https://wa.me/50489494639?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20Ciudad%20Venecia"

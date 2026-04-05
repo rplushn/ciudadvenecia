@@ -9,6 +9,7 @@ import TileHero from '@/components/TileHero';
 import HorizontalGallery from '@/components/HorizontalGallery';
 import CinematicDivider from '@/components/CinematicDivider';
 import AdvisorCTA from '@/components/AdvisorCTA';
+import ResponsiveVideo from '@/components/ResponsiveVideo';
 
 export default function Proyectos() {
   function handleContactSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -248,9 +249,11 @@ export default function Proyectos() {
       <section className="border-b border-[#C5A065]/20">
          {/* Cinematic Video Banner */}
          <div className="relative h-[60vh] overflow-hidden">
-            <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
-                <source src="/homepage/CV_DRON_web.mp4" type="video/mp4" />
-            </video>
+            <ResponsiveVideo
+                src="/homepage/CV_DRON_web.mp4"
+                poster="/DRON-FOTOS-SAMANTHA/CIUDAD_VENECIA/SENDERO_PREFERIDO.jpg"
+                className="absolute inset-0 w-full h-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A]/50 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
@@ -340,9 +343,11 @@ export default function Proyectos() {
                   {/* Video */}
                   <Reveal>
                       <div className="aspect-video overflow-hidden rounded-sm relative">
-                          <video autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
-                              <source src="/Talanga/cv_talanga_construccion.mp4" type="video/mp4" />
-                          </video>
+                          <ResponsiveVideo
+                              src="/Talanga/cv_talanga_construccion.mp4"
+                              poster="/amenidades/CV_TALANGA_PROVISIONAL.jpg.jpeg"
+                              className="w-full h-full object-cover"
+                          />
                           <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80">
                               Vista aérea · Talanga
                           </div>
@@ -434,9 +439,11 @@ export default function Proyectos() {
              <div className="h-full">
                 <Reveal delay={0.2}>
                     <div className="aspect-video overflow-hidden rounded-sm relative">
-                        <video autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
-                            <source src="/homepage/Guaimaca_web.mp4" type="video/mp4" />
-                        </video>
+                        <ResponsiveVideo
+                            src="/homepage/Guaimaca_web.mp4"
+                            poster="/DRON-JUANJOSE/Guaimaca/Guaimaca.jpeg"
+                            className="w-full h-full object-cover"
+                        />
                         <div className="absolute top-4 left-4 bg-[#C5A065] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Próximamente</div>
                         <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80">
                             Vista aérea · Guaimaca
@@ -580,7 +587,7 @@ export default function Proyectos() {
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
                                <div className="relative">
-                                   <select name="proyecto" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
+                                   <select name="proyecto" aria-label="Proyecto de interés" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
                                        <option>Seleccionar...</option>
                                        <option>Ciudad Venecia Danlí</option>
                                        <option>Ciudad Venecia Olancho</option>

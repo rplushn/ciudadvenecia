@@ -3,6 +3,7 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import ResponsiveVideo from '@/components/ResponsiveVideo';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -107,15 +108,11 @@ export default function CinematicDivider() {
     >
       {/* === DRONE VIDEO with parallax zoom === */}
       <div ref={imageRef} className="absolute inset-[-10%] will-change-transform">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        <ResponsiveVideo
+          src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_social_horizontal_web.mp4"
+          poster="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina2_horizontal_web.jpg"
           className="w-full h-full object-cover"
-        >
-          <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_social_horizontal_web.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
 
       {/* === CINEMATIC OVERLAYS === */}

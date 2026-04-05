@@ -21,6 +21,7 @@ import PinnedProjectsShowcase from '@/components/hero/PinnedProjectsShowcase';
 import CinematicDivider from '@/components/CinematicDivider';
 import InvestmentJourney from '@/components/InvestmentJourney';
 import AdvisorCTA from '@/components/AdvisorCTA';
+import ResponsiveVideo from '@/components/ResponsiveVideo';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -440,13 +441,10 @@ export default function Home() {
               </div>
               <div className="order-1 lg:order-2 relative w-full max-w-[500px] mx-auto aspect-video bg-[#2C2C2C] rounded-sm overflow-hidden shadow-2xl">
                   <Reveal delay={0.2}>
-                      <video 
-                          src="/clips_editados/Clip1_web.mp4" 
+                      <ResponsiveVideo
+                          src="/clips_editados/Clip1_web.mp4"
+                          poster="/homepage/casa_fachada.jpg.jpeg"
                           className="w-full h-full object-cover"
-                          autoPlay 
-                          muted 
-                          loop 
-                          playsInline
                       />
                   </Reveal>
               </div>
@@ -607,9 +605,11 @@ export default function Home() {
       
       {/* 5a. Parallax visual with video */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-         <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
-            <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.mp4" type="video/mp4" />
-         </video>
+         <ResponsiveVideo
+           src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.mp4"
+           poster="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg"
+           className="absolute inset-0 w-full h-full object-cover"
+         />
          <div className="absolute inset-0 bg-black/40"></div>
          <div className="relative z-10 text-center">
             <Reveal>
@@ -813,7 +813,7 @@ export default function Home() {
                            <div className="md:col-span-1 group">
                                <label className="block text-[#8C857E] text-[9px] font-bold uppercase tracking-widest mb-2 group-focus-within:text-[#C5A065] transition-colors">PROYECTO DE INTERÉS</label>
                                <div className="relative">
-                                   <select name="proyecto" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
+                                   <select name="proyecto" aria-label="Proyecto de interés" className="w-full border-b border-gray-200 py-3 text-sm focus:outline-none focus:border-[#C5A065] transition-all bg-transparent text-[#2C2C2C] appearance-none cursor-pointer">
                                        <option>Seleccionar...</option>
                                        <option>Ciudad Venecia Danlí</option>
                                        <option>Ciudad Venecia Olancho</option>
