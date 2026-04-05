@@ -11,7 +11,7 @@ interface Tile {
 
 const tiles: Tile[] = [
   {
-    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A003_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A001_horizontal_web.jpg',
     title: 'Ciudad Venecia\nOlancho',
     subtitle: 'Nuestro proyecto premium'
   },
@@ -21,7 +21,7 @@ const tiles: Tile[] = [
     subtitle: 'Amenidades de primer nivel'
   },
   {
-    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A001_horizontal_web.jpg',
+    image: '/NUEVAS-JUANJOSE/horizontales/cv_olancho_A003_web.jpg',
     title: 'Diseño que\ninspira vida',
     subtitle: 'Arquitectura moderna'
   },
