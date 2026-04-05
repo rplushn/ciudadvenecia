@@ -1,9 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from '@supabase/supabase-js';
 import { SOFIA_SYSTEM_PROMPT } from '@/lib/sofia-prompt';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
+}
+
+// Supabase client (lazy init)
+function getSupabase() {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
 }
 
 export async function POST(req: NextRequest) {
@@ -69,6 +78,38 @@ export async function POST(req: NextRequest) {
       .replace(/\[CTA:\w+\]/g, '')
       .replace(/\[LEAD:[^\]]+\]/g, '')
       .trim();
+
+    // ─── Save lead to Supabase ───
+    if (leadMatch) {
+      const leadName = leadMatch[1].trim();
+      const leadPhone = leadMatch[2].trim();
+
+      // Find last mentioned project in conversation
+      const allText = messages.map(m => m.content).join(' ') + ' ' + text;
+      const projectMentions = allText.match(/\[PROJECT:(\w[\w-]*)\]/g);
+      const lastProject = projectMentions
+        ? projectMentions[projectMentions.length - 1].replace(/\[PROJECT:|]/g, '')
+        : projectMatch?.[1] || null;
+
+      const supabase = getSupabase();
+      if (supabase) {
+        try {
+          await supabase.from('chat_leads').insert({
+            name: leadName,
+            phone: leadPhone,
+            project_interest: lastProject,
+            page_source: page || '/',
+            conversation: messages.map(m => ({
+              role: m.role,
+              content: m.content,
+            })),
+          });
+          console.log(`✅ Lead saved: ${leadName} — ${leadPhone}`);
+        } catch (err) {
+          console.error('Supabase error saving lead:', err);
+        }
+      }
+    }
 
     return NextResponse.json({
       message: cleanText,
