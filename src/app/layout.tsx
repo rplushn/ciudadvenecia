@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import { Inter, Lato } from "next/font/google";
 import "./globals.css";
 
-// Usamos Inter como fuente principal (Display) para títulos, reemplazando Space Grotesk
 const inter = Inter({ 
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-// Mantenemos Lato para textos largos (Body)
 const lato = Lato({ 
   weight: ['300', '400', '700'],
   subsets: ["latin"],
@@ -18,8 +16,41 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Ciudad Venecia | Inmobiliaria INMAER",
-  description: "Desarrollos inmobiliarios premium en Honduras. Plusvalía, seguridad y naturaleza.",
+  title: {
+    default: "Ciudad Venecia | Desarrollos Inmobiliarios en Honduras",
+    template: "%s | Ciudad Venecia",
+  },
+  description: "Lotes residenciales con financiamiento directo, amenidades completas y plusvalía garantizada. Más de 1,200 familias confían en INMAER. Proyectos en Danlí, Olancho, Talanga, Valle y más.",
+  keywords: ["lotes en Honduras", "terrenos Honduras", "Ciudad Venecia", "INMAER", "financiamiento directo", "lotes residenciales", "plusvalía Honduras", "Danlí", "Olancho", "Talanga"],
+  authors: [{ name: "INMAER Real Estate" }],
+  creator: "INMAER",
+  metadataBase: new URL("https://ciudadvenecia.com"),
+  openGraph: {
+    type: "website",
+    locale: "es_HN",
+    url: "https://ciudadvenecia.com",
+    siteName: "Ciudad Venecia",
+    title: "Ciudad Venecia | Desarrollos Inmobiliarios Premium en Honduras",
+    description: "Lotes con financiamiento directo, amenidades completas y plusvalía garantizada. +11 años de trayectoria, +1,200 familias.",
+    images: [
+      {
+        url: "/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ciudad Venecia — Desarrollo Inmobiliario Premium",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ciudad Venecia | Desarrollos Inmobiliarios en Honduras",
+    description: "Lotes con financiamiento directo y amenidades completas. +1,200 familias confían en nosotros.",
+    images: ["/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 import SmoothScroll from '@/components/motion/SmoothScroll';
