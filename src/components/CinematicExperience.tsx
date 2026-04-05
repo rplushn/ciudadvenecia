@@ -104,6 +104,7 @@ export default function CinematicExperience() {
           loop
           muted
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover"
         >
           <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4" type="video/mp4" />

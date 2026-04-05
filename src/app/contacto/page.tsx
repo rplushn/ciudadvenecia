@@ -288,7 +288,7 @@ export default function Contacto() {
         />
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-0 min-h-screen py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-0 min-h-screen py-20 lg:py-32">
 
             {/* LEFT — Text */}
             <motion.div style={{ y: textY }} className="relative z-20 order-2 lg:order-1">
@@ -371,7 +371,7 @@ export default function Contacto() {
               {/* Rotating gold circle */}
               <motion.div
                 style={{ rotate: circleRotate }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[480px] md:h-[480px] lg:w-[550px] lg:h-[550px]"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[480px] md:h-[480px] lg:w-[550px] lg:h-[550px]"
               >
                 <svg viewBox="0 0 400 400" className="w-full h-full">
                   <circle cx="200" cy="200" r="190" fill="none" stroke="#C5A065" strokeWidth="0.5" opacity="0.3" />
@@ -389,7 +389,7 @@ export default function Contacto() {
               </motion.div>
 
               {/* Solid bg circle */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] rounded-full bg-white/60 backdrop-blur-sm" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[450px] lg:h-[450px] rounded-full bg-white/60 backdrop-blur-sm" />
 
               {/* Asesora image with parallax */}
               <motion.div style={{ y: asesoraY }} className="relative z-10">
@@ -399,7 +399,7 @@ export default function Contacto() {
                   transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   src="/amenidades/asesora_cv.png"
                   alt="Asesora Ciudad Venecia"
-                  className="h-[400px] md:h-[520px] lg:h-[600px] object-contain object-bottom drop-shadow-2xl"
+                  className="h-[300px] sm:h-[400px] md:h-[520px] lg:h-[600px] object-contain object-bottom drop-shadow-2xl"
                 />
               </motion.div>
 
@@ -408,7 +408,7 @@ export default function Contacto() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
-                className="absolute bottom-24 lg:bottom-32 right-0 lg:-right-4 bg-[#1A3A52] text-white px-6 py-4 shadow-xl z-20"
+                className="absolute bottom-16 sm:bottom-24 lg:bottom-32 -right-2 sm:right-0 lg:-right-4 bg-[#1A3A52] text-white px-4 sm:px-6 py-3 sm:py-4 shadow-xl z-20"
               >
                 <p className="text-[9px] uppercase tracking-[0.3em] text-white/50 mb-1">Respuesta en</p>
                 <p className="font-serif-display text-3xl leading-none">24h</p>
@@ -672,7 +672,7 @@ export default function Contacto() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="group relative bg-[#C5A065] text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.25em] overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(197,160,101,0.3)]"
+                    className="group relative bg-[#C5A065] text-white px-8 sm:px-12 py-5 text-xs font-bold uppercase tracking-[0.25em] overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(197,160,101,0.3)]"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-3">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="transition-transform duration-300 group-hover:scale-110">
@@ -761,8 +761,6 @@ export default function Contacto() {
 
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-            <div className="flex gap-8">
-            </div>
           </div>
         </div>
       </footer>

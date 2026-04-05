@@ -607,7 +607,7 @@ export default function Home() {
       
       {/* 5a. Parallax visual with video */}
       <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+         <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
             <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.mp4" type="video/mp4" />
          </video>
          <div className="absolute inset-0 bg-black/40"></div>
@@ -675,7 +675,7 @@ export default function Home() {
                   </p>
              </Reveal>
 
-                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10 max-w-2xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-white/10 pt-10 max-w-2xl mx-auto">
                      <Reveal delay={0.2}>
                        <div className="text-center">
                             <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
@@ -910,8 +910,6 @@ export default function Home() {
 
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-                <div className="flex gap-8">
-                </div>
             </div>
         </div>
       </footer>

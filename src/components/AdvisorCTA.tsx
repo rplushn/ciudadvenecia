@@ -34,16 +34,16 @@ export default function AdvisorCTA({ variant = 'advisor' }: AdvisorCTAProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 items-end">
 
           {/* LEFT: Image */}
-          <div className="relative h-[500px] md:h-[650px] flex items-end justify-center lg:justify-start">
+          <div className="relative h-[400px] sm:h-[500px] md:h-[650px] flex items-end justify-center lg:justify-start">
             {/* Decorative circle behind */}
-            <div className="absolute bottom-0 left-1/2 lg:left-[45%] -translate-x-1/2 w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-[#F3F0EB] -z-0" />
+            <div className="absolute bottom-0 left-1/2 lg:left-[45%] -translate-x-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full bg-[#F3F0EB] -z-0" />
             {/* Decorative gold ring */}
-            <div className="absolute bottom-10 left-1/2 lg:left-[45%] -translate-x-1/2 w-[420px] h-[420px] md:w-[520px] md:h-[520px] rounded-full border border-[#C5A065]/20 -z-0" />
+            <div className="absolute bottom-10 left-1/2 lg:left-[45%] -translate-x-1/2 w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] rounded-full border border-[#C5A065]/20 -z-0" />
 
             <img
               src={v.image}
               alt={v.alt}
-              className="relative z-10 h-[450px] md:h-[600px] object-contain object-bottom"
+              className="relative z-10 h-[350px] sm:h-[450px] md:h-[600px] object-contain object-bottom"
             />
           </div>
 

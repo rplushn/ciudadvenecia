@@ -248,7 +248,7 @@ export default function Proyectos() {
       <section className="border-b border-[#C5A065]/20">
          {/* Cinematic Video Banner */}
          <div className="relative h-[60vh] overflow-hidden">
-            <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+            <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover">
                 <source src="/homepage/CV_DRON_web.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/30 to-transparent" />
@@ -340,7 +340,7 @@ export default function Proyectos() {
                   {/* Video */}
                   <Reveal>
                       <div className="aspect-video overflow-hidden rounded-sm relative">
-                          <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                          <video autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
                               <source src="/Talanga/cv_talanga_construccion.mp4" type="video/mp4" />
                           </video>
                           <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 text-[9px] uppercase tracking-widest text-white/80">
@@ -414,7 +414,7 @@ export default function Proyectos() {
                     <p className="text-lg font-medium text-[#2C2C2C] mb-4">Un nuevo desarrollo que llevará el estándar Ciudad Venecia a Francisco Morazán.</p>
                     <div className="bg-[#F9F7F4] p-6">
                         <h4 className="text-[#C5A065] font-serif-display text-xl mb-3">Amenidades proyectadas</h4>
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
                             <ul className="space-y-2 text-xs text-[#484848]">
                                 <li>• Piscinas residenciales</li>
                                 <li>• Áreas sociales y parques</li>
@@ -434,7 +434,7 @@ export default function Proyectos() {
              <div className="h-full">
                 <Reveal delay={0.2}>
                     <div className="aspect-video overflow-hidden rounded-sm relative">
-                        <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                        <video autoPlay muted loop playsInline preload="metadata" className="w-full h-full object-cover">
                             <source src="/homepage/Guaimaca_web.mp4" type="video/mp4" />
                         </video>
                         <div className="absolute top-4 left-4 bg-[#C5A065] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest">Próximamente</div>
@@ -670,8 +670,6 @@ export default function Proyectos() {
             </div>
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-                <div className="flex gap-8">
-                </div>
             </div>
         </div>
       </footer>

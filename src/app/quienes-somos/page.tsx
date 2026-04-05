@@ -54,6 +54,8 @@ export default function QuienesSomos() {
         body { font-family: 'Montserrat', sans-serif; }
         h1, h2, h3, h4, h5, h6, .font-serif-display { font-family: 'Cormorant Garamond', serif; }
         .parallax-bg { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+        @supports (-webkit-touch-callout: none) { .parallax-bg { background-attachment: scroll; } }
+        @media (max-width: 768px) { .parallax-bg { background-attachment: scroll; } }
       `}</style>
       
       <Navbar activeRoute="/quienes-somos" />
@@ -67,6 +69,7 @@ export default function QuienesSomos() {
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover opacity-70"
             >
               <source src="/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_web.mp4" type="video/mp4" />
@@ -359,7 +362,7 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 5. PARALLAX BREAK 1 (Landscape) ------------------- */}
-      <section className="py-32 bg-fixed bg-cover bg-center relative" style={{ backgroundImage: "url('/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg')" }}>
+      <section className="py-32 md:bg-fixed bg-cover bg-center relative" style={{ backgroundImage: "url('/NUEVAS-JUANJOSE/horizontales/cv_olancho_piscina_horizontal_web.jpg')" }}>
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="relative z-10 text-center text-white px-6">
             <Reveal>
@@ -448,7 +451,7 @@ export default function QuienesSomos() {
       </section>
 
       {/* ------------------- 8. PARALLAX BREAK 2 (Lifestyle) ------------------- */}
-      <section className="h-[60vh] bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg')" }}>
+      <section className="h-[60vh] md:bg-fixed bg-cover bg-center relative flex items-center justify-center" style={{ backgroundImage: "url('/DRON-FOTOS-SAMANTHA/VERSALLES/VERSALLES12-PREFERIDA.jpg')" }}>
           <Reveal>
             <div className="bg-white/90 p-12 max-w-2xl text-center shadow-2xl backdrop-blur-sm mx-4">
                 <h3 className="font-serif-display text-3xl text-[#2C2C2C] mb-4">"No vendemos tierra, vendemos el futuro de tu familia."</h3>
@@ -559,6 +562,7 @@ export default function QuienesSomos() {
           loop
           muted
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
           <source src="/DRON-JUANJOSE/Guaimaca/GUAIMACA_DRON.mp4" type="video/mp4" />
@@ -734,7 +738,7 @@ export default function QuienesSomos() {
                   </p>
              </Reveal>
 
-                <div className="grid grid-cols-3 gap-8 border-t border-white/10 pt-10 max-w-2xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-white/10 pt-10 max-w-2xl mx-auto">
                      <Reveal delay={0.2}>
                        <div className="text-center">
                             <div className="font-serif-display text-5xl md:text-6xl text-[#C5A065] font-medium mb-2">
@@ -972,8 +976,6 @@ export default function QuienesSomos() {
             {/* Bottom Bar */}
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text[10px] text-white/40 uppercase tracking-widest">© 2026 INMAER Real Estate. Todos los derechos reservados.</p>
-                <div className="flex gap-8">
-                </div>
             </div>
         </div>
       </footer>
